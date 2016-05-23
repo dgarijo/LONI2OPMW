@@ -21,7 +21,6 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.AbstractMap;
-import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -30,12 +29,10 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import sun.java2d.loops.CompositeType;
 
 /**
  *
@@ -90,7 +87,7 @@ public class LONI2OPMW {
         NodeList nodeListModuleGroups = document.getElementsByTagName("moduleGroup");
         NodeList dataModuleList = document.getElementsByTagName("dataModule");
         NodeList root = document.getElementsByTagName("pipeline");
-        String templateNameWithClass = null, templateName ="";
+        String templateNameWithClass = null, templateName ="", templateLabel="";
         for (int i=0; i< root.getLength(); i++){
             Node template = root.item(i); //there is a template in here
             NodeList templateChildren = template.getChildNodes();
@@ -101,12 +98,13 @@ public class LONI2OPMW {
                     //this module group has the main metadata for the template. Each with a try.
                     Node currAttr=  attr.getNamedItem("name");
                     if(currAttr!=null){
-                        templateName = currAttr.getNodeValue();
+                        templateLabel = currAttr.getNodeValue();
                     }else{
-                        templateName = attr.getNamedItem("id").getNodeValue();
+                        templateLabel = attr.getNamedItem("id").getNodeValue();
                     }
+                    templateName = f.getName().replace(".pipe", "");
                     templateNameWithClass = Constants.CONCEPT_WORKFLOW_TEMPLATE+"/"+templateName;
-                    GeneralMethods.addIndividual(opmwRDF, templateNameWithClass, Constants.OPMW_WORKFLOW_TEMPLATE, templateName);
+                    GeneralMethods.addIndividual(opmwRDF, templateNameWithClass, Constants.OPMW_WORKFLOW_TEMPLATE, templateLabel);
                     //p-plan
                     GeneralMethods.addSimpleIndividual(opmwRDF, Constants.PREFIX_EXPORT_RESOURCE+GeneralMethods.encode(templateNameWithClass), Constants.P_PLAN_PLAN);
                     GeneralMethods.addDataProperty(opmwRDF, templateNameWithClass, "http://pipeline.loni.usc.edu", Constants.OPMW_DATA_PROP_CREATED_IN_WORKFLOW_SYSTEM);
@@ -369,7 +367,7 @@ public class LONI2OPMW {
 //        test.transformToGraph("CorticalSurfaceLabeling.pipe.xml");
 //        test.transformLONITemplateToOPMW("C:\\Users\\dgarijo\\Desktop\\LONI Pipeline 2 OPMW Converter\\ANTs.pipe");
 //        test.transformLONITemplateToOPMW("C:\\Users\\dgarijo\\Desktop\\LONI Pipeline 2 OPMW Converter\\AutoROIExtraction.pipe");
-        test.processLONIPipelineFolder("C:\\Users\\dgarijo\\Desktop\\LONI Pipeline 2 OPMW Converter\\WC2");
+        test.processLONIPipelineFolder("C:\\Users\\dgarijo\\Documents\\GitHub\\LONI2OPMW\\Corpus\\CorpusToConvert");
         test.repostiroyToRDF("loniExport.ttl");
 //        String g = "C:\\Users\\dgarijo\\Desktop\\LONI Pipeline 2 OPMW Converter";
     }
