@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".1">
+        <connections>
+                <connection source="ExecutionLocation_1.Output" sink="MakeDir_1.DirectoryName" />
+                <connection source="BLASTFASTADBFile_1.Output" sink="NCBIBLAST_1.DatabaseReference" />
+                <connection source="BLASTSearchWordSize_1.Output" sink="NCBIBLAST_1.WordSize" />
+                <connection source="BLASTFASTAQueryInstructions_1.Output" sink="NCBIBLAST_1.QueryInstructions" />
+                <connection source="BLASTFiltering_1.FilteringOutput" sink="NCBIBLAST_1.FilteringOutput" />
+                <connection source="BLASTFiltering_1.FilteringOutput" sink="BLASTClean-Up_1.BLASTOutputFilteringFile" />
+                <connection source="NCBIBLAST_1.OutputFlowControl" sink="BLASTClean-Up_1.InputFlowControl" />
+                <connection source="SourceDirectory_1.Output" sink="InitializeBLAST_1.SourceDirectoryName" />
+                <connection source="ExecutionLocation_1.Output" sink="InitializeBLAST_1.DestinationDirectoryName" />
+                <connection source="MakeDir_1.OutputDirectoryName" sink="InitializeBLAST_1.InputFlowofControl" />
+                <connection source="BLASTFASTADBFile_1.Output" sink="DBFormatting_1.DatabaseReference" />
+                <connection source="InitializeBLAST_1.OutputFlowofControl" sink="DBFormatting_1.InputFlowControl" />
+                <connection source="ExecutionLocation_1.Output" sink="DBFormatting_1.ExecutableLocation" />
+                <connection source="BLASTFASTADBFile_1.Output" sink="DBIndexKey_1.DatabaseReference" />
+                <connection source="BLASTSearchWordSize_1.Output" sink="DBIndexKey_1.WordSize" />
+                <connection source="DBFormatting_1.OutputFlowControl" sink="DBIndexKey_1.InputFlowControl" />
+                <connection source="ExecutionLocation_1.Output" sink="DBIndexKey_1.ExecutableLocation" />
+                <connection source="BLASTFASTADBFile_1.Output" sink="BLASTFiltering_1.DatabaseReference" />
+                <connection source="BLASTSearchWordSize_1.Output" sink="BLASTFiltering_1.WordSize" />
+                <connection source="BLASTFASTAQueryInstructions_1.Output" sink="BLASTFiltering_1.QueryInstructions" />
+                <connection source="DBIndexKey_1.OutputFlowControl" sink="BLASTFiltering_1.InputFlowControl" />
+                <connection source="ExecutionLocation_1.Output" sink="BLASTFiltering_1.ExecutableLocation" />
+                <connection source="NCBIBLAST_1.FinalBLASTOutput" sink="BLASTResults_1.Input" />
+        </connections>
+        <moduleGroup id="BLAST_1" name="BLAST" package="Bioinformatics" version="1.0" description="This is a simple workflow demonstrating a sequence Basic Local Alignment Search Tool (BLAST). " posX="0" posY="0">
+                <authors>
+                        <author fullName="Ivo Dinov" email="" website="" />
+                        <author fullName="Alen Zamanyan" email="" website="" />
+                </authors>
+                <tag>bioinformatics</tag>
+                <tag>blast</tag>
+                <uri>http://wiki.loni.usc.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoBLAST</uri>
+                <module id="MakeDir_1" name="MakeDir" location="pipeline://pws.loni.usc.edu//bin/mkdir" sourceCode="" icon="iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAANbY1E9YMgAAABl0RVh0&#xA;U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAABfxSURBVHjarFr5j2RXdf7u26vq1dLd1dv0&#xA;bD09W489Y89gm7EF8QQwxhOMwSEsUSIQECVBQYEo+QkFKVLIH5CfIJGSKApGEIIiQVhsY4MCtsfr&#xA;zDAzHtuz9r5Ude3LW2++e6ts7MQOtkW3bterqvfePeeec77vO/e1MFDG6/3YArCEgDRMGHyN0xQC&#xA;BhKZIJXgUO/VjwHJI4l0ViI+CiQ38so9NuxpyzSLvNSVMk3SJO5ECDZThEuAOG9BnBF85ZUd3o33&#xA;kTBtA0aWc7RiyFTq+wveAMoONVWKN/yx8DZ/pP5N52n8vYB5d8b2b9mzZ1dhZmYSc3O7sW1mCtms&#xA;C9sy9fndThfLSyu4dOky1lZXcf3qtajRq19NED9qwfgezX2Ip4Vv1x7xViMSp1wtKd6VAJ/3M4UP&#xA;7d07lzt80z7MH5rD9NQUctkswiBCt9WD67oo5PN8tdFqNVBr1Og8TU9iNOoNOnUJp595DlcuX0YY&#xA;Bs9KC/9o5sxvMCKttxqRN+1IlCSwDPOAsLwvZzOlT87N7bIOH9mHme2TMIWNfivB5koNzWoHvWYP&#xA;szt3YWZyEs36FlpNft6q6uHmmHRZE/myj7HpMgzHxPraGi5dfAkXzp1DZKRn6/X6V5NUftv4jTvC&#xA;94kw/zjrjfzt+MRkeW5uGpNTY+jR+OpKF2nPQtCM0aw0kbFs3HToBoyPllDMeaisL6OyuYok6jBS&#xA;bfR6DTi+hRgR7LyF7HgB/mQJ+fEReJksnn3iSfzw0Qdps6Ajxl/RkYU344gpkH2jL3QkGOBiJpP/&#xA;By9T/jJrIDszM0oHQmwuhFi60EBjJUJco9OBDbMPHNl3I7aPTODy2QtI2z0kzQ6cKMGO0TLsMES1&#xA;ugLRbMMJQhi9HsJKFY3lVVRWVjF/wyHcePQI2s0WNpZXbmB2fYhGnON6Xx0W5ttzxDLEtGHlvpPz&#xA;J+/bt28n899FZblH4wW6GxJunEXJGoEvfISNHsazI7jjyK2oLayiRsPSRhudagXdzQrCrS2g3Ua9&#xA;uwmPaerIGHbQR63JlGtuaefmJqeQ8TymX471IdDZao3GcfKx1MA1+vDLt+yIwiPLMKa9TOn7llW8&#xA;fWzUR8pVba3zy06eK++hYBYx5o2iaBaQdHsQSYDjB98JLxVob1ZhxiGsOEaadNFMqygZFtpRHR4d&#xA;qIs2RBpih+nANFPYacRr53Fsfh5xq4Pzp88gtSxMzmxDq7JlE2c+TIhZkFKefkNHmKW6Bl4ZQnmn&#xA;0qn4Pc8buzWf9+BYHuJmBmnTY3rQCcvnqrocDsJOC0HUQDlfwuzYDhhpgMraImTUQzusIiZNuKZE&#xA;2XbhkyemC3nM2B7GXQcFTrjcr2F22xQ+e/JeJL0Onjt1CmfPnGXdBRCOgyzPR5CIfhDcKx3zlzTu&#xA;ohRDQ181zIzI6jQyh5+RWIxspvCvXmb8boeI4ll0oJ1hrlu6DpzEhNkjyyU2xtwCKsEVjDklHJu9&#xA;icUYoNepw5IRi72AjJSIwjZ8LlFodBkVE72wiaDfwrneGh2tY2ykhD+/+4O8l4NHH3oQP714FpuM&#xA;WiEhUjI1U9uCT+Bo1OpGjORufvwgM2ZtgM2/GqZFR+SwjoRU7Op+yc2MfYlQC5vpYAY5xA2LRnlM&#xA;G5c0TSwRETLCxJhfwHr3GurpKiZFGY4hMZrP4drii0j7Hciwi0qyiUZaQ46VK+M+ng4XEaQ91NHG&#xA;/Udvx6fu+C2mUw0PPPJjPHD9PD8VcIilBaZoyFqq97pEuRztshUIeJz+tkTIB2hs+GpHjERTFPmZ&#xA;w7DMw75f/htBZrLpiJsW0G92aQBH0kNOWBwOXF4bpQ3WRZewTAQiO2YYSpcj7LZhEyfVcRR2WCOB&#xA;nsGjcYvpFjoIkOXqf+7gcfz+3R9APufiaw//AF9ffh4VomSGRs0xL3JSzREjCAMCS4XEmuMiFTi3&#xA;OGoK+RUhiKevGozIACFI15QUxX+2rMINJpPQZOq4kY+IK2KJBCNiFHnpo4t1+IaHWrqCNO5hpzOD&#xA;fJqhsSGyjGCTKJSzTUyXR7gAZHdqs6JhYCKbwXq/gp1eDn/0rvfhPcdvxcLlF/Hdn/8E36pcQ4eO&#xA;HqIDo0rPcaH6tCniaPCdImOTxZ/Nc/5Om4snj8VC/pBfr74cEcsUYkiN1knLyp40eTPFHm6SRUKs&#xA;Z3lj3JykQRZCWUVBuHr1u0SiDZLcfn8Gq+EWYbSFUUJHnxEp5TLIORbWrBBdFnsnbqLV6OO9h47i&#xA;nuO3wbdSPH7qMfzk9GP4AQHBYZqWtfCTdIAky4hO0yG1xKpud5oe6swMY9JDucgsaVS82DL+OjHk&#xA;R15GLUNFQspEWLb3l2lksLhtZE0fVkSxF0XkCWolrbGanCjS0akyz01O1gMNjDZgc8VcquHN9grD&#xA;n0WOedVu1jGTH2Fx96B+/+Djn8Snv/B5tGpV/Pypx3HuzLPUV32MMVUVWo5wqCTcq9+pZEzh8NVh&#xA;NEf4mZ+kCDodFBhZx2TaW+a9hiXuEERENayQjrAe7rBM707BSgo6AbkhRxg1UHQKyHE1tvqLXKEJ&#xA;mtPAJh3qMdNdulUQRVhJxOVIdRwbjEyXHJMReXhZD3mm0Z37j+DEPb+F7dvLWD/1NE5fOIufvPA4&#xA;V9vEdqbiLBFugaarGs0raTR0wOfY5Kcd2ucqna30Sb8Hi+ngew6iODBp/+di4DEt402VRk7mE5bh&#xA;GWZscgUIsZJRsR1kUhs94nyRCeZwjRqMQMLgqwj5NEQZsxQsYt7ejkQ7RPFILQVGtbbVwtT+nbjn&#xA;ffdzcbbwo395AJtrV/Hk1jVc0zBPwmQtbtLANgbGqpRWURnh0RVGnyKGkRY4nbTIRRbTnTnBLPGp&#xA;pjsEkX6afkgacop+rBmK2m3bO2kopFKr7BVhRlyBOEBMkVeQGYUUam3oDPRRiUeUeJyUiMVi7rMG&#xA;DEECIyyTunC2dgFTU2WceO8JMnMFpx58RN9vdscOeOSFiMgZ8LrHaWyFjtQ4/KEza1yqGsd1ztPi&#xA;gE7hhC6lekgqBpeI6pBcLdMY45rcpcrcdA3/dtctftFKbeEyX3MgAnUjvRJ5FrbJyRJiVcxh8UZT&#xA;TAAVxSZ/lYIdo0MkDDJ4gCk3j5VgE7vHp/GJk/dha2UZ//3Iw1iqLKCUoTrgGt9UHsdcJoOY9bFE&#xA;sKB2xs20ZIIQGrI8ujRqU8G7LmChiTpWPMFa4cSQHAZrsE9oDkXK85jrBh4yPav0cc/Jv9+ISXqC&#xA;KcQiD7jCOaaJp/oQ2dKvWcJjxLSK9PqEutiVI+q7mUyRN+6jR15RPcin77oPm0vLOPP001hauwaP&#xA;k7c6NXTaNSx2a8gTEO6a2U7pX8M2xTlstDK0uE5bV2n0AH5BNCOKsUZupFTpK8omrO/gteR7Os0I&#xA;MUWYXi7R6xHTd8t/YonMEYMO5KmhJAnIY5rlDUaDhUi9qtWY4omuprOATiSYkC5SIpjBMWooxidy&#xA;OAY+c8/9SLtdPPHLp3GRNVEg/itS5NmwKT08S6DMHB8ZK+K+3/kADo+P0aEtXKDOWmQExul0b8gN&#xA;jhq8/ohloMH7+56NDOdoqtLnfWI600vTbCLxuGWb9j6qJ8Iqi4lRiGm8ykWfadVRv5K8wFW3lKE6&#xA;VxPms6Proc/fEqXLSrCBsnTw/mN3sr4CfPOn38O5+nXMWuMIuIpr7ToSKqVJx8ZUOyYxNlEP6kyj&#xA;AONjeRxnDyKJZrWVDSwrRud8U+Sq5VilGI3ltXVaaxJQCgxDTChWCt1mvRlhlKM/82benfiyZ/kl&#xA;hVQ5I8seg7Qk+xjhcVPWiFR1XQchjW6w/NRuxThhoc/INPlXkZZJJ6fcHGZGRvH0mWcQMSLHduzH&#xA;bL6MzUYVu4slNPttomCCOSrdXtDBE5sLWF1cwPrqIpbbDWwrs1MMiIpkwCux1FEJVNfAe69Qp7X5&#xA;eZvv2cwjMFQ0pEorggajw0usJIkz1CkwlDampzZP8mSWaSCITp5G9wHjhhrNm1yjHGtJ99OpqpZI&#xA;l/1OEmfcYd1FfRxmv77FJuq7G2eRJR+BLUDICdepjs9vbbBPoX7iHWqM/vkml6PdxP3eNDJZBx/e&#xA;UcDm1QqealNBWwPVUeUosF5UdBokX5XqKe2TGgR0FhYtS4kYTuKSLU167ts5aikmUNxhgbtMojw1&#xA;VsK/GRRUJ60hMdFsq+R7RORQ8Lx/cgKTu6cIv7GW8WHUxR6qZYU+dip1JFOT13gZbNZb2EMUU8jY&#xA;oXPsFvAk293dJQ9TLIw7pzysLzF1mWZhqvYOWKEaBJhQjIKZqtQaeDB8cSyT/CjppVAhi9rMy3VO&#xA;3iU2MRV4VoanEY80PaW8VYbXvshwdxRikUDd4cbApeU28qsv4LF+FXOM6MFcGYUCe5k4xd7RGYx2&#xA;KnQwYNAjlCkzXiCotOMIR3LkFTvFGXagV2KCCKMc0PDjowJPNQnF8UBV9xO1ASKJblJH11IeKCdU&#xA;WDiIByKyGEKHAG2za4mpehU5TvBX7XVUSU9bQzKEJi86MBR01PaU24ppSGRBCxNGHvfnplHMFXBs&#xA;bCeqRLSp3BhEEMMtECBYe8sb12Cy959WsR7LosvFI0Lwnimea0XYrYSqJ7Avl8VlRrXGiOwrCDzL&#xA;lp9gh+0FieWe6psoZXxTbQOokPSsbrfVsi0x3QwiOqO2RPsamYqskCp5t8VoZOiS0j8djViWJkSP&#xA;V/tqg0AjGcuAKfYMe5SPUeqf3HUA11fWcG71Ov4t7eAgI5TjOQ0rwAGmVKfVwErcQjkxsKD6I4f9&#xA;EBdzvmjh+IEZXFxaxPVupLlEJXKFxe9YitOANh1TIjGR6WAvwlSiV9bomPe7DszdtlphElMklOEm&#xA;EYqT0ZFQl9jgt6NvK3VjlcUAGvO8TimwktJFisSYHvv8og7/qEVVRjlxjQw+SdVwOq1jhOquRfK8&#xA;zNqI6XyVdXOFxm0wdXb5Qu+qXGn38LP1GLWIC8XP6yEZn1MbSpAzjQSdEuSTmCsYpKwMyP8wM2bu&#xA;uCvsW7KKJonTQqR6hbtaPJBBh8YroaKkdaR1kdArTHHCY+hin1P6gfWyQdJ7qb2FveOTGM358Hn5&#xA;+XaFGqrPqEbYM1bGDpIhlSQbOQu78jbBPMR8ycCeosG2OcHFjsB6IBSsspdhVKTeJYEgogoqAMfl&#xA;d0wzdh2qcpv09eumA2+7LYwPOqlJc9iN6YxPmFJdjTRCl3gyjMtgP7bPozLdnRzIOB2N/lD8ZShl&#xA;aoTX6/UK5iamyOAj2FWexs0zsxjJZiF7LWxU19BhlFa5cKsh9RrR6tBkTivaK4Sq52qMuDNwQkeC&#xA;BntasSoniGKsIcXsiSp8yHOpcsQVuYiOfJZNmxnr5jLVppsaaGP92lOSe7jj5Qw7sg6PD2pJmWqe&#xA;UfpoVdeQIJJRmRIie9UqZqencXj/AcxMT+H2dxzFzM5p9uFtvFTdxAgR68SRfbjl4E62uikevF7D&#xA;le4A4FvxYENERYPARxbXOyWQjAozFlJFRAsnfIel/W3TRY5pKu6jodOG3lxNNfFhOKz/tVfpDM9Q&#xA;9XBI99WUCjoVpe63e2pzjyPL1Svw+xUq4OevXsLC2jImp8YxMU1dkKMUirvYtWMCs7Pb0WAPc2Vt&#xA;Bacq7EBMobknlINIKB7ZNcEs4IcWOaY0OlDDidrcILvz+69yqucJv2ZMGfOfTJ5jarvaeHlrCAN+&#xA;UDWimtHmsFaS4Q6MeurRo0v9YcFjiGSqU2zxeEM5RCIcZ/ImhNHnl6q4/v06tk2QRDtVHDy8lymS&#xA;4kdPPkkt1sBqrOaioVyV1vApiUIp1Wt4LEaHjvBW8Eucty21nJeWuIKefFQZykZW7YDINUbjM5Ql&#xA;jmr2xbBbi7RQT4YuSV3c1oBTdVRUdHZyqDsYqmVW4pLH4/xsVKUXTxzTjRTRKQnxfK+K7fk83v3u&#xA;d2J1cxmPsW8f3TaOW4/sRZNN3GIzwAYxV/GaikSY6McFYLPK5vNXKUUeps6CYv6v0ZgfClM7qRIq&#xA;rhrCmM+Y9pFQyQsdXDnYdKAjKnXyOga/SjWlvNRjG5NGvptMXVIIw2ZnklKnzc8mlMTia45w22Px&#xA;S1brH554L246PI9nTp/CU5cuMmrAu44epKUSd9w0i9sPTTDFNrDZTbQzUTqoC7WVQk0KlxCp0CrQ&#xA;gpFlJOWfCiG39L5WRvO0WnN51TbNT/PISrSmUrlvaMhVHFPgcUP3eAMIzmAQuSXeZC+lepHFukSp&#xA;U3BsvTSkB84Uw2Akdu/agfvufj/TIo+fPfELnHrxEptsicus5IcvLuKxSyu4cWcOhw7twTvmR7G0&#xA;sYGFrYitPyUSJ/KydIQcY5K8YjrSZYL0YnydevQbr2yZesOV1vupsKfJ4Lcp3DI1qyb6G2vIGYHG&#xA;MxIdBnv4PSXpuVoH6cQLahONhTqdcXCVxGowGiHf752Zxo7ZXRSMEleuX8ULV15C5Ax4gMFDnQRX&#xA;Zwo1WmozOwN/1Mfu7S4uLGyhShp3MwYcRsPmhAn5o68iH2EtjPEpmtZ6eb+XEfGHJcq+T4pnGIOP&#xA;UoKU5LAWzGFxW8PNAaVAM9oxSXE3QBDCOtUze3y1IcAIvUgBSL2HW3ZM4Yb5/ah3Wzh/8QLOLF7H&#xA;OequOfJGTaqeI+H1g9RZbiW4tFrF3h1ZmIUsSmUDLy3VmR8GnWDsM0L39JpbQnyJtv/sNXu/eM1D&#xA;hXSdPfIXlKaE3g8e6Bn96G1Y7BO8SqUXswlTplad2FS1wlQxh+mldNyxso/JER8LbJzWKqu6z2/z&#xA;/BYnvdoPUVEb1InQIE88QJ6G/uJSgJfqtJSC0R0pwuZnTBnkJwkYvK6rduiF9R1e80+vfRbCBc9p&#xA;gSFfGUql02jpGvhtaEaROsWkjoTEjUIZkxJWBd5JNJm1ldjLYNQz0UwVOlG2U3Zs911sNBtYb7do&#xA;qcF6iXQBLxOOVAErw6rElEAqvQStqfr0YaQUY3TKR7VPPba8hR4bkYSiske9knru+V6Y/J4UsqPl&#xA;yqsG68d7vSdWP5fS2O4KedR6hQylltpZpoOvcpuGnKEBqsce4YqWfQ95CrmcZ+GW3dsoH7jyWzVs&#xA;sOC7cYhzVLNd1k1f7cjQsBqNbtE4JT3USrusG4U+B28ooTBZxFPnLmN5jTnBRVAoJXKZlW4v/kgY&#xA;x9de3q5+zROr13Nk8H8Nzo+lsPYwkQ4bQuqnvAVGomkoHWRo8dZXGcj3W0yTpV5A42LcRhrusXm6&#xA;WmvgEush5Gr5GRsrDIHu8vhecYLJ0ZMDAVjID57jH5zP4z333IprlSrOXNhAm5Wd2Erim6vSsT8a&#xA;BuEzb/jo7fUdUYVusvaz32dXNmqJ8DZXqWJjuEGmBBtXSalThTxjzEOlgTr8vuSk6JJPFnsh4dqk&#xA;oQYbLba4JZc9uYUMvx8fddCknFDCTzklzATb94zg5uN7EfCGjz/9AjY2qPuy2vnnE8f4qGXbTyVh&#xA;pFP8LTmiUEwIK0mE+EFiJFvCTE9IQ9qqB1B9gdpB1sqdDhS4qhO+BZ9GdxjLDiNVYqGrAlYsXCHg&#xA;q7Rir0u8FGjwsEm4swmtSqZs2zOOkx+5E06piAvXFnDxEsGBjXzs4b94/cdNYbxgERHit+8IwZ41&#xA;IUX8ZGRaD6eGPMBI7NIODCOjImLTAYv8URgtMO9jNJJUP+eok0+6TOgK00pt4SgEic3BEHTeoCPT&#xA;s+M4cPMBVDo9XLh6DVeW19jLx43YwVeoar/Irqmutkt/nSNv6p9qxMC3U4Fw7ooo+aUI/yIScs7S&#xA;jySERrZ2ECCIXVg+2YvF3TdUa6qeNrERc1UqKkIVmjcke4Y8wWFsZhL+SIk1UcPaVhWrla2on6T/&#xA;zpz+O054/q38U82biEiqdxU149AeRuUpvvtmZJrLRJRJMuB0ZKoUUoTFk9iTJ44Fm2miCDNRhMNi&#xA;V2Smnh2FZgqv5KO0bZLnEaJbLSxtVqsrm/Vv9cL0z4Rh/D1pbHP4P1RqpwpvJiJijP3d//1RGwpq&#xA;W5TMQSeE0dX1MCh2Aj5bMKnI0DbUlssJ05IfcD3rhGuL/X7O8x3XYe9g6g2CIAo0DyXDDjNTzCNX&#xA;LFBGJqu1VutUo9V+MA7jHzG4i5qhCcNSWz/QHgm1vKWeUGU99Nud4aaD/M39v9ZQGUSJlA+lwniY&#xA;nh3sBuHhdtp/R1ZizkmNEiW4HUYxAra0JLE0Wyp0gmx+davTOxtHnWfDMLgYhFHVGmxQ/X//ofFr&#xA;f/5HgAEAOLKDwvqWF5kAAAAASUVORK5CYII=" posX="492" posY="242">
+                        <authors>
+                                <author fullName="Petros Petrosyan" email="petros.petrosyan@loni.usc.edu" website="http://wiki.loni.usc.edu" />
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed May 12 17:07:35 PDT 2010" />
+                        </metadata>
+                        <input id="MakeDir_1.DirectoryName" name="Directory Name" required="true" enabled="true" order="0" switch="-p" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                                <dependencies>
+                                        <dependent>Output Directory Name</dependent>
+                                </dependencies>
+                        </input>
+                        <output id="MakeDir_1.OutputDirectoryName" name="Output Directory Name" required="true" enabled="true" order="1">
+                                <format type="Flow Control" cardinality="1">
+                                        <transform order="0" operation="Replace">/:/</transform>
+                                </format>
+                                <dependencies>
+                                        <dependsOn>Directory Name</dependsOn>
+                                </dependencies>
+                        </output>
+                </module>
+                <dataModule id="BLASTSearchWordSize_1" name="BLAST Search Word Size" description="dWordSize  = 11                     &#xA;# database index word size" posX="447" posY="96" type="Number" source="true" loopIndex="false">
+                        <tag>BLAST</tag>
+                        <tag>FASTA</tag>
+                        <tag>word size</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Mar 25 16:37:10 PDT 2008" />
+                        </metadata>
+                        <values>
+                                <value>11</value>
+                        </values>
+                        <output id="BLASTSearchWordSize_1.Output" name="Output" description="dWordSize  = 11                     &#xA;# database index word size" required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1" />
+                        </output>
+                </dataModule>
+                <dataModule id="ExecutionLocation_1" name="Execution Location" description="This is a temporary directory/folder where the execution of the miBLAST programs will be allowed (e.g., for saving intermediate files)." posX="602" posY="133" type="String" source="true" loopIndex="false">
+                        <tag>BLAST</tag>
+                        <tag>FASTA</tag>
+                        <tag>Query Instructions</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Mar 25 16:37:10 PDT 2008" />
+                        </metadata>
+                        <values>
+                                <value>/ifs/tmp/{$username}/blast</value>
+                        </values>
+                        <output id="ExecutionLocation_1.Output" name="Output" description="This is a temporary directory/folder where the execution of the miBLAST programs will be allowed (e.g., for saving intermediate files)." required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                </dataModule>
+                <module id="NCBIBLAST_1" name="NCBI BLAST" package="miBLAST" version="v.2.2.8" description="This tools Runs NCBIBLAST with $filteringoutput" location="pipeline://pws.loni.usc.edu//usr/local/loniWorkflows/blast/NCBI_BLAST.sh" sourceCode="" icon="R0lGODlhggAtAMT/AP////L1+fH1+OXs8uXr8tni7Nji68zZ5cjW47/P37vM3bLF2a3C1qW80qG4&#xA;0JmzzJGsyI2pxoSjwYCgv3eZu3OWuWmPtGaMs1mDrE15pkBwnzNmmQAAAAAAAAAAAAAAACwAAAAA&#xA;ggAtAEAF/+AmjmRpnmiqrmzrvvAIzFEsXsej2Xzv/zzN5RJ5HAaz5KwCbDqfm2RhB6ssJk8EBQnA&#xA;nBCAkiYQUF1KYEtpRjGloS7ho6AEJIIAiAky00P0JHwAEi9vJQwzaABqcI2Oj5AbDwF1lWGRmJkt&#xA;GQcBZz0ZMweapHAXXJaVAQkPXk4WlABtKIJ3JxYJlgWzG4IBCAiohCWCA1Q8nJ4+EQABrjYIjBt0&#xA;XSQMCGt5MGB1BQnSJIaRug3PPw0A2CgZlOAjGtyq5lEABeASAcMkMw2l/v/+KjRApQSgwUcHuj24&#xA;cOxEBiYHI/a4MAOLjwl2GkrcuGJCgk8vLsS6xLHkOo8jU//VGWDRpEtJdVZFYPiPm7oT7UwwKEBr&#xA;QImcIyT0MUEJkA0MlPpNDHAgw49oG4TaceOTRC6jLcT1cvZl0ROPIF88SNLD6wik9ahAYPBzaiGz&#xA;IxBpCwcXksokAR74sDDXzQwEWEXILeDUhAZ9G7SK4GNrhOKXADNQ+APBHQnJfyQUhsy5s4qHRrh4&#xA;Hm34AcFKpElroKbqAKsHelN7VrJgM4sMDyJolA2Qy+44CwK05P1PJFcfC9ISN1hhQGwbFBMtj3hh&#xA;wjyHExLinb4Rw4QGR+4mGXCdOyaP4lUtgGhSgwXKFGyTcC8hs3wo6FQeONDgwQSajmAwQwD3iaAB&#xA;Gyc0UIDzBFRoQAE3tiEoAiwz3DcUDyOx5IJ35fmAQCyBOUbSCHwgVoJSIoJzYF8p9qAdezBoMFBY&#xA;PUQjIADG+FWCUDdlVVcoPPll2QtoddgCUsfxANUGcgUGTAl0hKiCOPh0+JgNEzgHygxV2QCXBkgE&#xA;cAwEPdIjZQriPDgDW4oM6QMRNKaQQS5k8cDiBhSsuZiTzWxT1wZj4NhmJrA9kEAnqUzBA19SylVf&#xA;YKHg+FtXlgkyKCZ3OTepC3ywaRg1lq2WBAPSYAABeSQgYeI01aR6pyNc5lDBpjaA2UyBIiDlZlSn&#xA;DUKMEr8Eg8B1xeBq3rHIJqssaSEAADuz0LoQAgA7VmvtBLW0hAAAOw==" posX="127" posY="928">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website="" />
+                        </authors>
+                        <executableAuthors>
+                                <author fullName="Y.J Kim" email="" website="" />
+                        </executableAuthors>
+                        <citations>
+                                <citation>PMID: 16061938</citation>
+                        </citations>
+                        <license>http://www.eecs.umich.edu/~jignesh/miblast/download.html</license>
+                        <tag>bioinformatics</tag>
+                        <tag>BLAST</tag>
+                        <tag>DB</tag>
+                        <uri>http://www.eecs.umich.edu/miblast</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Oct 11 16:51:52 PDT 2007" />
+                        </metadata>
+                        <input id="NCBIBLAST_1.DatabaseReference" name="Database Reference" description="Enter the DB reference.&#xA;Example: &#xA;/ifs/ccb/CCB_SW_Tools/others/Bioinformatics/Blast/miBLAST/miblast/src/example/ecoli.nt" required="true" enabled="true" order="1" switch="-d" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NT" extension="nt" description="BLAST Database File .nt" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="NCBIBLAST_1.WordSize" name="Word Size" description="Enter Query Index word size&#xA;Example:&#xA;-W 11" required="true" enabled="true" order="23" switch="-W" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.DBIndexInstructions" name="DB Index Instructions" description="Enter a BLAST Instruction. Example:&#xA;-p blastn" required="true" enabled="true" order="0" switch="-p" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>blastn</value>
+                                </values>
+                        </input>
+                        <input id="NCBIBLAST_1.QueryInstructions" name="Query Instructions" description="Example:&#xA;-i /ifs/ccb/CCB_SW_Tools/others/Bioinformatics/Blast/miBLAST/miblast/src/example/query.fasta" required="true" enabled="true" order="2" switch="-i" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="NCBIBLAST_1.FilteringOutput" name="Filtering Output" description="Enter a name for the Filtering Output. Example:&#xA;/ifs/ccb/CCB_SW_Tools/others/Bioinformatics/Blast/miBLAST/miblast/src/example/hint.file" required="true" enabled="true" order="6" switch="-F" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="FILE" extension="file" description="BLAST Output Filtering File .file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="NCBIBLAST_1.FinalBLASTOutput" name="Final BLAST Output" description="Enter the Name of the Final BLAST Output. Example:&#xA;/ifs/ccb/CCB_SW_Tools/others/Bioinformatics/Blast/miBLAST/miblast/src/example/query.out" required="true" enabled="true" order="5" switch="-o " switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="OUT" extension="out" description="Output Text File" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="NCBIBLAST_1.OutputFlowControl" name="Output Flow Control" description="Dummy Ouput Parameter to keep the Pipleline Flowing" required="true" enabled="true" order="42">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="NCBIBLAST_1.ExpectationValue" name="Expectation Value" required="false" enabled="false" order="3" switch="-e" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.AlignmentViewOptions" name="Alignment View Options" description="0 = pairwise,&#xA;1 = query-anchored showing identities,&#xA;2 = query-anchored no identities,&#xA;3 = flat query-anchored, show identities,&#xA;4 = flat query-anchored, no identities,&#xA;5 = query-anchored no identities and blunt ends,&#xA;6 = flat query-anchored, no identities and blunt ends,&#xA;7 = XML Blast output,&#xA;8 = tabular, &#xA;9 tabular with comment lines&#xA;10 ASN, text&#xA;11 ASN, binary [Integer]&#xA;    default = 0" required="false" enabled="false" order="4" switch="-m" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.OpenGapPenalty" name="Open Gap Penalty" required="false" enabled="false" order="7" switch="-G" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.ExtendGapPenalty" name="Extend Gap Penalty" required="false" enabled="false" order="8" switch="-E" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.XDropoffValue" name="X Dropoff Value" description="X dropoff value for gapped alignment (in bits) (zero invokes default behavior) blastn 30, megablast 20, tblastx 0, all others 15 [Integer] default =0&#xA;" required="false" enabled="false" order="9" switch="-X" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.ShowGIsindeflines" name="Show GI's in deflines" required="false" enabled="false" order="10" switch="-I" switchSpaced="true">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="NCBIBLAST_1.NucleotideMismatchPenalty" name="Nucleotide Mismatch Penalty" required="false" enabled="false" order="11" switch="-q" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.NucleotideMatchReward" name="Nucleotide Match Reward" required="false" enabled="false" order="12" switch="-r" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.DisplayDatabaseSequenceDescriptions" name="Display Database Sequence Descriptions" description="Number of database sequences to show one-line descriptions for (V) [Integer]" required="false" enabled="false" order="13" switch="-v" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.DisplayDatabaseSequenceAlignments" name="Display Database Sequence Alignments" description="Number of database sequence to show alignments for (B) [Integer]" required="false" enabled="false" order="14" switch="-b" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.ThresholdforExtendingHits" name="Threshold for Extending Hits" description="Threshold for extending hits, default if zero blastp 11, blastn 0, blastx 12, tblastn 13 tblastx 13, megablast 0 [Integer]" required="false" enabled="false" order="15" switch="-f" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.PerformGappedAlignment" name="Perform Gapped Alignment" required="false" enabled="false" order="16" switch="-g" switchSpaced="true">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="NCBIBLAST_1.UseQueryGeneticCode" name="Use Query Genetic Code" required="false" enabled="false" order="17" switch="-Q" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.DBGeneticCode" name="DB Genetic Code" required="false" enabled="false" order="18" switch="-D" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.NumberofProcessorstoUse" name="Number of Processors to Use" required="false" enabled="false" order="19" switch="-a" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <output id="NCBIBLAST_1.SeqAlignFile" name="SeqAlign File" required="false" enabled="false" order="20" switch="-O" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="NCBIBLAST_1.BelievetheQueryDefline" name="Believe the Query Defline" required="false" enabled="false" order="21" switch="-J" switchSpaced="true">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="NCBIBLAST_1.Matrix" name="Matrix" description="default = BLOSUM62" required="false" enabled="false" order="22" switch="-M" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.EffectiveLengthDatabase" name="Effective Length Database" required="false" enabled="false" order="24" switch="-z" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.NumberofBestHits" name="Number of Best Hits" description="Number of best hits from a region to keep (off by default, if used a value of 100 is recommended) [Integer]" required="false" enabled="false" order="25" switch="-K" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.SingleorMultipleHit" name="Single or Multiple Hit" description="0 for multiple hit, 1 for single hit [Integer]" required="false" enabled="false" order="26" switch="-K" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.EffectiveLengthofSearchSpace" name="Effective Length of Search Space" description="0 for real size" required="false" enabled="false" order="27" switch="-Y" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.QueryStrandstoSearchAgainstDatabase" name="Query Strands to Search Against Database" description="(for blast[nx], and tblastx) 3 is both, 1 is top, 2 is bottom" required="false" enabled="false" order="28" switch="-S" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.ProduceHTMLOutput" name="Produce HTML Output" required="false" enabled="false" order="29" switch="-T" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.RestrictSearchofdatabasetoListofGIs" name="Restrict Search of database to List of GI's" required="false" enabled="false" order="30" switch="-l" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.UseLowerCaseFilteringofFASTASequence" name="Use Lower Case Filtering of FASTA Sequence" required="false" enabled="false" order="31" switch="-U" switchSpaced="true">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="NCBIBLAST_1.XDropoffValueforUngappedExtensions" name="X Dropoff Value for Ungapped Extensions" description="X dropoff value for ungapped extensions in bits (0.0 invokes default behavior) blastn 20, megablast 10, all others 7 [Real]" required="false" enabled="false" order="32" switch="-y" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.XDropoffValueforFinalGappedAlignment" name="X Dropoff Value for Final Gapped Alignment" description="X dropoff value for final gapped alignment in bits (0.0 invokes default behavior) blastn/megablast 50, tblastx 0, all others 25 [Integer]" required="false" enabled="false" order="33" switch="-Z" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.PSI-TBLASTNCheckpointfile" name="PSI-TBLASTN Checkpoint file" required="false" enabled="false" order="34" switch="-R" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="NCBIBLAST_1.MegaBlastsearch" name="MegaBlast search" required="false" enabled="false" order="35" switch="-n" switchSpaced="true">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="NCBIBLAST_1.LocationonQuerySequence" name="Location on Query Sequence" required="false" enabled="false" order="36" switch="-L" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.MultipleHitsWindowSize" name="Multiple Hits Window Size" description="Multiple Hits window size, default if zero (blastn/megablast 0, all others 40 [Integer]" required="false" enabled="false" order="37" switch="-A" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.FrameShiftPenalty" name="Frame Shift Penalty" description="Frame shift penalty (OOF algorithm for blastx) " required="false" enabled="false" order="38" switch="-w" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.LengthofLargestIntron" name="Length of Largest Intron" description="Length of the largest intron allowed in tblastn for linking HSPs (0 disables linking) [Integer]" required="false" enabled="false" order="39" switch="-t" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.NumberofConcatenatedQueries" name="Number of Concatenated Queries" required="false" enabled="false" order="40" switch="-B" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="NCBIBLAST_1.PassingQueryandDatabaseIndexInfo" name="Passing Query and Database Index Info" required="false" enabled="false" order="41" switch="-C" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                        </input>
+                </module>
+                <module id="BLASTClean-Up_1" name="BLAST Clean-Up" package="miBLAST" version="v.2.2.8" description="This tools Cleans up unnecessary BLAST calculation files" location="pipeline://pws.loni.usc.edu//usr/local/loniScripts-1.0-3_64bit/dinov/BLAST_CleanUp.sh" sourceCode="" icon="/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAPAAA/+4ADkFkb2JlAGTAAAAAAf/b&#xA;AIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoKDBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxsc&#xA;Hx8fHx8fHx8fHwEHBwcNDA0YEBAYGhURFRofHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f&#xA;Hx8fHx8fHx8fHx8fHx8fHx8f/8AAEQgANwDcAwERAAIRAQMRAf/EALQAAAMAAgMBAQAAAAAAAAAA&#xA;AAYHCAQFAAEDCQIBAAIDAQEAAAAAAAAAAAAAAAECAAQFAwYQAAIBAwIDAwYFDgoLAQAAAAECAxEE&#xA;BQAGIRIHMSITQWFxgRQIUWIjsxWRobEyQlJykrIzdHUWNoJTY3OT0zS0FzfB0aLCJMQlNYUmVkYR&#xA;AAIBAwIEAwYFBQEAAAAAAAABAhEDBCExQXESIlGRBYGxMkITI6HB0WJyYeFSFBWS/9oADAMBAAIR&#xA;AxEAPwCqdQhzUIc1CHNQhzUIc1CE07096DccG47q123a2gxVrI0Mct0jySTFDQyd10Cq1O6O2nb5&#xA;t+x6TBwTm3VkGVsXq6u7tpXl74K2OVht5yFQ8yeLDGWPLzV8zAGvDVDIwvpTS3jUWutCdf8AHXqx&#xA;/wDQzf0Vv/V63P8An2P8feMdf469WP8A6Gb+it/6vU/59n/H3kMzG+8N1XsphI+XW8j7WguYIWQ+&#xA;tERx6m0svTbL4UAPLpV15sd3k2GVtkx+WSnN4bEwuCacyhu8orwNSaax8v0529YuqBUDevvVHfe1&#xA;9+RWGCyrWVn7FDN4IihkUuzyAsfER6/ajVr07Et3LdZKrqEF9h9aOqGW3jY2t7nGmgk8UywmC3VG&#xA;EcDvSiRr97qxfwbMYNqPvBJ6FSYC/lv8Pa3cwAllSr04AkEqT66a8/dj0yaDF1Rn65hOahCYveL6&#xA;j7js9+R4jBZe8x0WNtoxdJaTywhp5vle+I2UNSNkpXz63vTcaLt9UknVgALbfVvflpuKyu7zcWQn&#xA;thIq3EU1zI8Xht3WJjYlOANezVy5iW3FpRXkBli7XyzZTDQ3MhBnFY56cO+vl9YodeavQ6ZUJF1R&#xA;tdchhAdZPeGucXf3G3dnuntVuTFfZYgOEkBo0cCmqkr2MzV48APLrWw8BSXVPyIJ3bXUbdMW7rTJ&#xA;ZLM3k4kk8O5eW4kI5JO5Xi1AFrXh8GtK5Yh0USQsthz9aupu5sPtjbFxg8k1ne3Ulwt46BGZjbqi&#xA;94OGFPleb1jWbiY0XOSkqokXVCvh94rq3GCHzCS17C9pain4sa6uPAs+H4sJ3L7xnVp05Vy8cZ++&#xA;W1tif9qNhof6Fnw/FkMfH9Zuql/mbKKTcVx8tPFGVURxoQ7gcVRAPL8GjLFtJPtIUd+1ua/Zbx/a&#xA;D7Z7X4Pjcq18Pw+enZStfNrM+hHrpwoc+p0GHqgdTmoQ847m2kkMccqPIteZFYEihoagaLTIemgQ&#xA;80ubZ5DEkqNKteZAwLCnA1A0aMh6aBCJd7dLt1YrdeQsYLKS6gNw/s06UIaN2JQsTTl7pFa69bYy&#xA;4SgnXgL1IbPSvZlzhsZHjrkq13MlzdZFYnDrGHiKeHzqeU0RVqVNKmms3LvqTqttKC7yJt1ujjJ2&#xA;T0qs9x4K1vvHuWu7ky/IW6hqLG5Ts5WYnuknVG/luEmtKCuQM762Tf7RysdldFmWaPxYWkjMT0qQ&#xA;QUavZrtYvq4qoKdTvpxczQbyx3hk/Ks8ci1pVWRq19HbqZOsGCWwV+8HcS3W7MVdSmrT4i3JatST&#xA;HNPExPpaM6renqkGv3foFPQ0HScD9s7diASsM/KT5C0ZUkepjrtlPsBLYtDbChdv48D+JU/VFdeW&#xA;vfGwx2NnrmMfmSSOKN5JGCxoCzsewACpJ1EQgXeGek3BunK5p6/8fdSzIp+5jZj4a/wUoNetsx6I&#xA;KPggGn09Qld9ANy/SW34opGrI8Klv5yA+FJ624NrA9Qt0dRI6Ogd7+zE+G2TncpbtyXNpYzyW79l&#xA;JRGQh9TU1TsR6ppPxHIKZizFmJLE1JPEknXqKgGfsPpJZ5vDW2RyU1y02R5/YLKz5VcIjtHzyM6y&#xA;15mRqKF7ONeOql3JadFwFcqG96kdM933jYi2BEdtaQmNHu3KsznlV3oit2hVqdc7N+OrQqdNxa7s&#xA;2NkNsw20l7dW87XTOqrbmQheQKeJkSP77VmF3qHUqmnw2POTzFjjRIITe3EVuJmBYJ4rhOYgcTTm&#xA;roylRNhDyy6Qbhtcha3Md9afIzLIWJkBARgwIARqnhrjK8mhOtDy8KT9kefkbk9urzUNPzVO306o&#xA;1+57BOBOGe6kdQ8oZ7TKZ+8mjLFJ4FlMcTUJBBSPkQj1a3LeLajrGKO50eom5YtrW227K8mtMfGj&#xA;rdLG7KZuaRnCkjsQBqUHb5dH/Wg59bVWLQHLS8urO4S5tJnt7iI80c0bFHU/CCOOuzSaowh/uDrn&#xA;vjLbatcEL17eJY+W+uENJpz2cpkHeCUFSB2kkHhTVK3gW4zcqAQvoLm4t50uIJXinjPNHKjFXVh5&#xA;Qw4g6utJ6MJVXQLqXlM7iY7HMzNczxu1utxIauWVQy1Pl5lNPSNed9RxYwdYip0dCes1vje4yd3B&#xA;cZu9laGaWKss7ysoVyOUM5Y0HkodbVuxboqJBaHP0Byecusckd3dyTLk55kkeYh2MQTlorMCwAZS&#xA;QK9usv1GMU9FsLsyb9bdRxi9POsl7s2C2hTGx3q2vi+GWlMfCUkmtFbsLHVHJxFdrrSoKa1NJ1E6&#xA;iZvfWaTJ5RY4RDGIbW1hBEcaVLH7YklmJqSfsa6Y2PGzGiCbbpDtme9y0mclUixxgKIx7HuZVKqg&#xA;/BQlz8FBXt0mVdounixZvQ2fvCWj2m5MDA4o4wkLsD2gyXd09D+NrlgTrGX8vyQYrQ0fSFiN2MB2&#xA;NayA+jmQ/wCjXXKfaCexZ231C4LHAdns0J+qgOvM3fifMaOxn6QIC9btxfQPTPNXCty3F3F7Db/C&#xA;WuT4bU86xlm9WrWHb6rq8yEUQQyzzRwQqXllYJGg7SzGgA9J16NyoA3O9dvpt/cl1i4nMkEPL4Mp&#xA;+7UqDzfjV1yt3OqNQJ1GT7um5PYsrJZyPRY5UnA/k5R4Uv1O6dVc2HVEWWjqUxvDDNmtqZjEJwkv&#xA;7Oe3iPZR5IyqH8YjWLan0yT8GdCA5o5IZXilUpLGxSRGFCrKaEEHyg69L1AHj7uW9raDIw4e+cKY&#xA;C/srN5Ipa8wH4LtU+Y+bVDMt1i2hXo6lO3NnaXSBLmCOdAahZFVwD6GB1jKTWw9Cf/ewxllbYTb0&#xA;1tDHbgXM6MsSKleZFNTy07OXWlgTbbqCgg9mt/7hgv1ha/PprRm+1kexbGxbS0n26hmhjlPiv9uo&#xA;by+caxMmTU9BYLQJ/Bi8PwuRfDpTkoOWno1XqOfP3cKqmfyaIAqrdzhVHYAJGoNeztvtXIAyumXT&#xA;DC57BxXV3FJf5HJNIlrbo5iSBI2KFiVI5nJUnieUDyGvCjlZUoSotEhXLghZZvGS4rNX+Ll/O2Fz&#xA;NayfhQyFD2eddXoT6op+KGGB006f4LLYKfL5dGuXlma2s7VXZFQRqrPK/JRiSX5UFfIa14ap5ORK&#xA;MumIkpUALcOMXF5u9x6MXjtpWSNj2la92tPLTt1bhPqimMmOL3ezS3hI4N9LICfNSHWb6hx/j+os&#xA;t0KPd0Ih3XmoQeYRX9ynN2V5ZmFdX7UqwXJDj893aLlscM9QQzXbn4tPFXj9TWT6i/i9gnzE262K&#xA;jhBiNhbry+PTIY+yWW0dmRJGngjJKmhoskiNSvlpTXGV+KdGwNpGsyuGymJuBb5G2e2lI5lD0oR2&#xA;VUioPq00Zp7BTqE/S3dd3h9yWdoz+JjrqYK9rISY/FagV+WtKkqqt8I9WuORbUovxFkgq95q/hyG&#xA;9MPeRcEmw0DU+A+1XIYeo8NVvT49MGv3fkhk6gv0i/e0/o0v2V13yH2iz2LQwP8A2PHfosPzY15y&#xA;58T5jR2M7SBJ197XcVFwW3UbgTJkblPRWGE/O61fTYby9hBLdPWx6byxk9/PHbW1tI1yZpmVEDwI&#xA;0kQJYgd6RVGtC830tIV7BN1n+gJ5MJkcZkba+ubmCaO9jtpo5jF4UtY+cIW5SwkNK65WJOrTQILQ&#xA;GenmW+jt3WMjNyxXDezS+QUl7q19D8p10uaoMloXFt6/9vwtpck1dowsh+Ondb6415+7Hpk0GLqi&#xA;aPea6cx4fMJurHx8lnlXK3qL2Lc0rzU+PTj59amFf6o9L3RBL4zJ3WNyFvf2rcs9u4dD5OHaD5iO&#xA;B1cepGXJ023KM5t6GRmLMkcbox7WilXmjJ89OGsTJt9MuYsGKz3u5kXBbdiNed7qdx8FEjUH8oa7&#xA;4G7HJ62Yf/ccF+sbT59NaM3oxWXB0/8A3dT+dk+zrGyvjBDYJNVxz5+bk/eLKfpk/wA62vZW32rk&#xA;Aob3dSBjsMD5RdgfjynWN6jx9gnzCL6kf5ibp/W9/wD3mTWpjP7Uf4r3Djj93P8As2P/AEqf8g6z&#xA;vUeIj+IVnWRVXqhuMKAoF43AcB9qNXMN/ajyHGF7uv5qL9aD8iLVXPe/ISW6FJvb988/+sbv599X&#xA;bL7I8kOPPoXIkW2bORzREtr9mPbQAyk9ms3N1b5oT5ictatRx7dC87tK3sLO0zeQs7eMS3HjR3k8&#xA;cIWqllPfZeBNPXrNzIy1cUI1qYPvG57YV9PiLLbE1vd3Fv4z3lxaP4kKq/IEQOpZCTyknl7NTBVx&#xA;VchqJCq2tC0+5sTCoLNJeW6gDzyrq5cl2sjC3rY7HceOBPBccgX0e0zn7J1xsbPmCGxq+mGTsMfu&#xA;bx764S2hNvIviSEKvMStBU+jTXdUSWxU2O6y9L7LD2UVxuK1EkUESSIheQhggBHcVuzWLPGuOTou&#xA;Iy2M3EdaOmWXya4zH5yOa9cEqhhuEUhRzH5R41j7PjaV4txKrRGyWOuW5Vz/AFNzNxFIJLW0kFjb&#xA;EGq8tsORipHaGk5m9etbFh020iADza71Ic5tSpDiSOjq6Eq6kFWHaCOIOhUhanR7dFvkNtiWWRY4&#xA;3iS85mICqGUCUEngAjDWRmW9UxYeAu/eS6rbUyW3V2rhbuLJ3ctwk13PARJDCkVSAJB3WdmP3JNB&#xA;WuumHZkn1PQYmyutGpCy+iNlNY42C0eoMOPtlnVuBWXlXmX+C3MNZmW6pcxI7sCffAlQWW1oie+8&#xA;l4wHmVYQfyho4HE6E+bX5v2mxHKxVvbbejLwIPirxB1fk9AMuTp3JzbfK/xc7r9ZW/3tZOUu8W3s&#xA;E+qw58/dyfvFlP0yf51teutvtXIBQXu8/wBhwXpu/szayvUPm9n5CfMI7qR/mJun9b3/APeZNaGO&#xA;/tx/ivcOOT3c/wCzY/8ASp/yDqhn7MR/EKzrN/mluT9Lb8ldW8R/ajyHGD7uv5qL9aD5uLVfNej5&#xA;CS3QnNzMzbkyrMSWN5cEk8SSZW1ctvtXIcdnRQ8u0uH3dvkub+hl/wBWqGXv5CfMICo1oVHOubQq&#xA;Q65tCpBmdINoXUl+NyXkTR2lurLjldSPHmcGMuvxIgSeb7+gHY1K16ddELN0R7e8Tjnx26cLbSCk&#xA;30NDJKPKGe6uWofR2aTFn1Jv+v5IMVRCq5tWahOq6FSBV05uFs8zd5NjwxthcXIFOBIARV81S+km&#xA;+AJbAtJI0js7nmdyWZj5SeJOmqEbvT7pJiM/t3HXU8VzNksiZZEjjkCKI0kaNRQj+TLFiew6rzu0&#xA;b8EI5OtEEl/7tJW1uPZrS7FyI2MHy0LLz8pK1p2ivn1zWXHxJ3E9moND2jVqp0GXtVJtw9MsphY2&#xA;Juse/iW6L5VJ8ZVp5eZlca5vepzejFnp6nQOul+w5c7kkyl/EVwNi4aVnBC3Mq8Vt0Plrw8T71fO&#xA;VrynPgtwSlQr7YeMltsZJeTj5e/bxDXt5BXlr6ak+vWZkzrKi4CwWglvfD//ACP/AJH/AJXXfCe/&#xA;sHJ+wLOM5jjGeVxdQlW+A+IKHV1vQjLi6ak/RN0K8PaDw/gLrNy/iXI529gu1VOhPm4di9JpM5eX&#xA;K5TAlpLiSVonyUcbKzMSyuhlA4E0prYt37nSlSXkI1INum+38LZ3VpLjL7HPYxCUWkFjcJPzM3Nz&#xA;8pUtWhLE8Tqvk3G000/aBLXUEt37J6W3G5sndy5TBC7muZJLqGfIRxSrOzHxVkjMgCsHrUa7Wb1x&#xA;QSpLyC0wk6bbbwdle20mJyGNeyjd2SKyuY7jnkKkELyM3r465ZF1uLTT8gJOuppeomyult/um9vb&#xA;vJ4aPISurXttc5BLaZZVUKQyCRKVAqa00+PemoJUlTkFp8DadPdt7bt7y3bD3+KFlFceIY7C6juC&#xA;81F7vdZ+NAvl0t+66Oql7UCjrqDW4Ni9IpM7e3S5TAM0k8krQyZNImV2YllZBKq8CTwOulu9PpSa&#xA;l5BaYV7C27tm28N7a+xbYeJJgILS5jmRwysJKsrNwHMxarfW1xv3G1SjqBLXUBb7pz0aFyzQZjAT&#xA;w17n/VliNK+VVnUV9erEb86aqXkSkjFOxukSKPlMFIfh+mxX++Lo/Vl+7/z/AGJ3GZjNpdLLe4V7&#xA;a523BIezx8lb3Qr+DNNcD6g0JXJfu8mTuGzt3b+37O5hnu8nbXl53fZ4lkTkFQOTlFat8X7GqVy7&#xA;JqiTSIoriDvWDbHT/K5e0uc7fYu3ysVuEWDIXiWsrW/iOUZQzpVecv2+fT4tyUU1R0GknwF8+w+k&#xA;c7873uAQgU5VzCID56JcU1a+rLwl5C9x5y9OekDL3clgkI41XNLU+bvXBGp9aXhLyJ3GTidi9Nrd&#xA;L1bPIYUxTweHfM2VglVYPERqtWZ+QeIqd4ejy6Duvwl5E7jz/wAPOjsUndyO3peQ1EhzPBvLxU3A&#xA;H1tT60vCXkTuG50+wuMs5Yp7e+sZoxbLFYW9lKkiCEKAGXl7RyqOIrXtrqpfnVUSYYrXUO9Uxydt&#xA;w9Pei02YurmHLYF1lkdzC2VWBkZmJZSiTKvAnWnbvSpqpeQjUjc7H2hs22nMeAyWGjhDxtdtaX0d&#xA;1IaFigaskrffcoJ1J3XTaXkK0+IG5bYHSO03ZfXv0zjsha3EzS21n9JWyQRljzMjhJFfutwALAae&#xA;E5OOtU+QzbG3tfAbfEFneXuRsDYqgNhZ20sPs/hg8OXkPh8ta8E4H4dV7lx7RTBTxGOKUFOzyU7K&#xA;aonQXPWXbuyM1ZY5dy3uPtJ4GmNgMhdLac6sE8YRsXjJpRK+rVnGm4t6NglXgLHFbI6V295C9pd4&#xA;D2oOphZ8tFMecHu0RriQE1+Lq47nPyE7h6bJx0VjinjW5hupHlLyPbuJEUlQAtR5hqjkS6pbUDBU&#xA;QQa4Dn//2Q==" posX="781" posY="977" rotation="1">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website="" />
+                        </authors>
+                        <executableAuthors>
+                                <author fullName="Y.J Kim" email="" website="" />
+                        </executableAuthors>
+                        <citations>
+                                <citation>PMID: 16061938</citation>
+                        </citations>
+                        <license>http://www.eecs.umich.edu/~jignesh/miblast/download.html</license>
+                        <tag>bioinformatics</tag>
+                        <tag>BLAST</tag>
+                        <tag>DB</tag>
+                        <uri>http://www.eecs.umich.edu/miblast</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Oct 11 16:51:52 PDT 2007" />
+                        </metadata>
+                        <input id="BLASTClean-Up_1.BLASTOutputFilteringFile" name="BLAST Output Filtering File" description="Enter a Filtering Output File.&#xA;Example: &#xA;/ifs/ccb/CCB_SW_Tools/others/Bioinformatics/Blast/miBLAST/miblast/src/example/hint.file" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="FILE" extension="file" description="BLAST Output Filtering File .file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="BLASTClean-Up_1.InputFlowControl" name="Input Flow Control" description="This is just a dummy variable prompting the Pipeline to wait until the previous module complete before cleaning up!" required="true" enabled="true" order="1">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                </module>
+                <dataModule id="SourceDirectory_1" name="Source Directory" description="This is source directory/folder where the all the BLAST/miBLAST resources reside." posX="203" posY="173" type="Directory" source="true" loopIndex="false">
+                        <tag>BLAST</tag>
+                        <tag>FASTA</tag>
+                        <tag>Query Instructions</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Mar 25 16:37:10 PDT 2008" />
+                        </metadata>
+                        <values>
+                                <value>pipeline://pws.loni.usc.edu//usr/local/loniWorkflows/blast/miblast/</value>
+                        </values>
+                        <output id="SourceDirectory_1.Output" name="Output" description="This is source directory/folder where the all the BLAST/miBLAST resources reside." required="true" enabled="true" order="-1">
+                                <format type="Directory" cardinality="1" />
+                        </output>
+                </dataModule>
+                <module id="InitializeBLAST_1" name="Initialize BLAST" description="copy all required tools and resources to the new directory generated in the previous step" location="pipeline://pws.loni.usc.edu//bin/cp" sourceCode="" icon="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&#xA;f/5HgAEAOLKDwvqWF5kAAAAASUVORK5CYII=" posX="277" posY="384">
+                        <authors>
+                                <author fullName="Petros Petrosyan" email="petros.petrosyan@loni.usc.edu" website="http://wiki.loni.usc.edu" />
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed May 12 17:07:35 PDT 2010" />
+                        </metadata>
+                        <input id="InitializeBLAST_1.SourceDirectoryName" name="Source Directory Name" required="true" enabled="true" order="0" switch="-rf" switchSpaced="true">
+                                <format type="Directory" cardinality="1" />
+                        </input>
+                        <input id="InitializeBLAST_1.DestinationDirectoryName" name="Destination Directory Name" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="InitializeBLAST_1.OutputFlowofControl" name="Output Flow of Control" required="true" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="InitializeBLAST_1.InputFlowofControl" name="Input Flow of Control" required="true" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                </module>
+                <dataModule id="BLASTFASTADBFile_1" name="BLAST FASTA DB File" description="database  = ./example/ecoli.nt              &#xA;# formatted database name without extensions (.nsq,..)" posX="130" posY="97" type="File" source="true" loopIndex="false">
+                        <tag>BLAST</tag>
+                        <tag>FASTA</tag>
+                        <tag>database file</tag>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file" />
+                                <filetype name="NT" extension="nt" description="BLAST Database File .nt" />
+                        </fileTypes>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Mar 25 16:37:10 PDT 2008" />
+                        </metadata>
+                        <values>
+                                <value>pipeline://pws.loni.usc.edu//usr/local/loniWorkflows/blast/miblast/src/example/ecoli.nt</value>
+                        </values>
+                        <output id="BLASTFASTADBFile_1.Output" name="Output" description="database  = ./example/ecoli.nt              &#xA;# formatted database name without extensions (.nsq,..)" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                                <filetype name="NT" extension="nt" description="BLAST Database File .nt" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                </dataModule>
+                <dataModule id="BLASTFASTAQueryInstructions_1" name="BLAST FASTA Query Instructions" description="queries   = ./example/query.fasta           &#xA;# input query file in FASTA format" posX="839" posY="99" type="File" source="true" loopIndex="false">
+                        <tag>BLAST</tag>
+                        <tag>FASTA</tag>
+                        <tag>Query Instructions</tag>
+                        <fileTypes>
+                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file" />
+                                <filetype name="File" extension="" description="Any type of data file" />
+                        </fileTypes>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Mar 25 16:37:10 PDT 2008" />
+                        </metadata>
+                        <values>
+                                <value>pipeline://pws.loni.usc.edu//usr/local/loniWorkflows/blast/miblast/src/example/query.fasta</value>
+                        </values>
+                        <output id="BLASTFASTAQueryInstructions_1.Output" name="Output" description="queries   = ./example/query.fasta           &#xA;# input query file in FASTA format" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file" />
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                </dataModule>
+                <module id="DBFormatting_1" name="DB Formatting" package="miBLAST" version="v.2.2.8" description="This tools formats NCIBI and NCBI Databases" location="pipeline://pws.loni.usc.edu//usr/local/loniWorkflows/blast/DB_Formatting.sh" sourceCode="" icon="R0lGODlhggAtAMT/AP////L1+fH1+OXs8uXr8tni7Nji68zZ5cjW47/P37vM3bLF2a3C1qW80qG4&#xA;0JmzzJGsyI2pxoSjwYCgv3eZu3OWuWmPtGaMs1mDrE15pkBwnzNmmQAAAAAAAAAAAAAAACwAAAAA&#xA;ggAtAEAF/+AmjmRpnmiqrmzrvvAIzFEsXsej2Xzv/zzN5RJ5HAaz5KwCbDqfm2RhB6ssJk8EBQnA&#xA;nBCAkiYQUF1KYEtpRjGloS7ho6AEJIIAiAky00P0JHwAEi9vJQwzaABqcI2Oj5AbDwF1lWGRmJkt&#xA;GQcBZz0ZMweapHAXXJaVAQkPXk4WlABtKIJ3JxYJlgWzG4IBCAiohCWCA1Q8nJ4+EQABrjYIjBt0&#xA;XSQMCGt5MGB1BQnSJIaRug3PPw0A2CgZlOAjGtyq5lEABeASAcMkMw2l/v/+KjRApQSgwUcHuj24&#xA;cOxEBiYHI/a4MAOLjwl2GkrcuGJCgk8vLsS6xLHkOo8jU//VGWDRpEtJdVZFYPiPm7oT7UwwKEBr&#xA;QImcIyT0MUEJkA0MlPpNDHAgw49oG4TaceOTRC6jLcT1cvZl0ROPIF88SNLD6wik9ahAYPBzaiGz&#xA;IxBpCwcXksokAR74sDDXzQwEWEXILeDUhAZ9G7SK4GNrhOKXADNQ+APBHQnJfyQUhsy5s4qHRrh4&#xA;Hm34AcFKpElroKbqAKsHelN7VrJgM4sMDyJolA2Qy+44CwK05P1PJFcfC9ISN1hhQGwbFBMtj3hh&#xA;wjyHExLinb4Rw4QGR+4mGXCdOyaP4lUtgGhSgwXKFGyTcC8hs3wo6FQeONDgwQSajmAwQwD3iaAB&#xA;Gyc0UIDzBFRoQAE3tiEoAiwz3DcUDyOx5IJ35fmAQCyBOUbSCHwgVoJSIoJzYF8p9qAdezBoMFBY&#xA;PUQjIADG+FWCUDdlVVcoPPll2QtoddgCUsfxANUGcgUGTAl0hKiCOPh0+JgNEzgHygxV2QCXBkgE&#xA;cAwEPdIjZQriPDgDW4oM6QMRNKaQQS5k8cDiBhSsuZiTzWxT1wZj4NhmJrA9kEAnqUzBA19SylVf&#xA;YKHg+FtXlgkyKCZ3OTepC3ywaRg1lq2WBAPSYAABeSQgYeI01aR6pyNc5lDBpjaA2UyBIiDlZlSn&#xA;DUKMEr8Eg8B1xeBq3rHIJqssaSEAADuz0LoQAgA7VmvtBLW0hAAAOw==" posX="67" posY="514">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website="" />
+                        </authors>
+                        <executableAuthors>
+                                <author fullName="Y.J Kim" email="" website="" />
+                        </executableAuthors>
+                        <citations>
+                                <citation>PMID: 16061938</citation>
+                        </citations>
+                        <license>http://www.eecs.umich.edu/~jignesh/miblast/download.html</license>
+                        <tag>bioinformatics</tag>
+                        <tag>BLAST</tag>
+                        <tag>DB</tag>
+                        <uri>http://www.eecs.umich.edu/~jignesh/miblast/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Oct 11 16:51:52 PDT 2007" />
+                        </metadata>
+                        <input id="DBFormatting_1.DatabaseReference" name="Database Reference" description="Enter the FASTA format DB reference.&#xA;Example: &#xA;/ifs/ccb/CCB_SW_Tools/others/Bioinformatics/Blast/miBLAST/miblast/src/example/ecoli.nt" required="true" enabled="true" order="1" switch="-i " switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NT" extension="nt" description="BLAST Database File .nt" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="DBFormatting_1.OutputFlowControl" name="Output Flow Control" description="Dummy Parameter to keep the flow of the Pipeline" required="true" enabled="true" order="4">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="DBFormatting_1.FormattingInstructions" name="Formatting Instructions" description="Enter DB Fortmatting Instructions. Example:&#xA;-p F" required="true" enabled="true" order="2" switch="-p" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>F</value>
+                                </values>
+                        </input>
+                        <input id="DBFormatting_1.InputFlowControl" name="Input Flow Control" required="true" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <input id="DBFormatting_1.ExecutableLocation" name="Executable Location" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                </module>
+                <module id="DBIndexKey_1" name="DB Index Key" package="miBLAST" version="v.2.2.8" description="This tools creates a Database Index" location="pipeline://pws.loni.usc.edu//usr/local/loniWorkflows/blast/DB_CreateIndex.sh" sourceCode="" icon="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&#xA;QQa4Dn//2Q==" posX="367" posY="644">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website="" />
+                        </authors>
+                        <executableAuthors>
+                                <author fullName="Y.J Kim" email="" website="" />
+                        </executableAuthors>
+                        <citations>
+                                <citation>PMID: 16061938</citation>
+                        </citations>
+                        <license>http://www.eecs.umich.edu/~jignesh/miblast/download.html</license>
+                        <tag>bioinformatics</tag>
+                        <tag>BLAST</tag>
+                        <tag>DB</tag>
+                        <uri>http://www.eecs.umich.edu/miblast</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Oct 11 16:51:52 PDT 2007" />
+                        </metadata>
+                        <input id="DBIndexKey_1.DatabaseReference" name="Database Reference" description="Enter the FASTA format DB reference.&#xA;Example: &#xA;/ifs/ccb/CCB_SW_Tools/others/Bioinformatics/Blast/miBLAST/miblast/src/example/ecoli.nt" required="true" enabled="true" order="2" switch="-i " switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NT" extension="nt" description="BLAST Database File .nt" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="DBIndexKey_1.WordSize" name="Word Size" description="Enter a word-size&#xA;Example:&#xA;-w 11" required="true" enabled="true" order="3" switch="-w" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="DBIndexKey_1.DBIndexInstructions" name="DB Index Instructions" description="Enter a DB Index Instruction. Example:&#xA;-p builddbindex" required="true" enabled="true" order="1" switch="-p" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>builddbindex</value>
+                                </values>
+                        </input>
+                        <input id="DBIndexKey_1.InputFlowControl" name="Input Flow Control" description="This is a dummy parameter to make the Pipeline flow." required="true" enabled="true" order="4">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <output id="DBIndexKey_1.OutputFlowControl" name="Output Flow Control" description="This is a dummy Output parameter to make the Pipeline flow." required="true" enabled="true" order="5">
+                                <format type="Flow Control" cardinality="1" />
+                        </output>
+                        <input id="DBIndexKey_1.ExecutableLocation" name="Executable Location" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                </module>
+                <module id="BLASTFiltering_1" name="BLAST Filtering" package="miBLAST" version="v.2.2.8" description="This tools creates a filtering file" location="pipeline://pws.loni.usc.edu//usr/local/loniWorkflows/blast/Create_FilteringFile.sh" sourceCode="" icon="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&#xA;QQa4Dn//2Q==" posX="649" posY="811" advancedOptions="h_stack=256;h_vmem=8">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website="" />
+                        </authors>
+                        <executableAuthors>
+                                <author fullName="Y.J Kim" email="" website="" />
+                        </executableAuthors>
+                        <citations>
+                                <citation>PMID: 16061938</citation>
+                        </citations>
+                        <license>http://www.eecs.umich.edu/~jignesh/miblast/download.html</license>
+                        <tag>bioinformatics</tag>
+                        <tag>BLAST</tag>
+                        <tag>DB</tag>
+                        <uri>http://www.eecs.umich.edu/miblast</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Oct 11 16:51:52 PDT 2007" />
+                        </metadata>
+                        <input id="BLASTFiltering_1.DatabaseReference" name="Database Reference" description="Enter the FASTA format DB reference.&#xA;Example: &#xA;/ifs/ccb/CCB_SW_Tools/others/Bioinformatics/Blast/miBLAST/miblast/src/example/ecoli.nt" required="true" enabled="true" order="2" switch="-d" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NT" extension="nt" description="BLAST Database File .nt" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="BLASTFiltering_1.WordSize" name="Word Size" description="Enter a word-size&#xA;Example:&#xA;-w 11" required="true" enabled="true" order="5" switch="-w" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="BLASTFiltering_1.DBIndexInstructions" name="DB Index Instructions" description="Enter a DB Filtering Instruction. Example:&#xA;-p makehintfile" required="true" enabled="true" order="1" switch="-p" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>makehintfile</value>
+                                </values>
+                        </input>
+                        <input id="BLASTFiltering_1.QueryInstructions" name="Query Instructions" description="Example:&#xA;-q /ifs/ccb/CCB_SW_Tools/others/Bioinformatics/Blast/miBLAST/miblast/src/example/query.fasta" required="true" enabled="true" order="3" switch="-q" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="BLASTFiltering_1.FilteringOutput" name="Filtering Output" description="Enter a name for the Filtering Output. Example:&#xA;/ifs/ccb/CCB_SW_Tools/others/Bioinformatics/Blast/miBLAST/miblast/src/example/hint.file" required="true" enabled="true" order="4" switch="-o" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="FILE" extension="file" description="BLAST Output Filtering File .file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="BLASTFiltering_1.InputFlowControl" name="Input Flow Control" description="Dummy Input Parameter to make the Pipeline flow" required="true" enabled="true" order="6">
+                                <format type="Flow Control" cardinality="1" />
+                        </input>
+                        <input id="BLASTFiltering_1.ExecutableLocation" name="Executable Location" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                </module>
+                <dataModule id="BLASTResults_1" name="BLAST Results" posX="123" posY="1086" type="File" source="false" loopIndex="false" dirDump="false">
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file" />
+                        </fileTypes>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Aug 30 18:26:28 PDT 2010" />
+                        </metadata>
+                        <values>
+                                <value>pipeline://pws.loni.usc.edu//ifs/tmp/{$username}/blast/blast_output.out</value>
+                        </values>
+                        <input id="BLASTResults_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                </dataModule>
+                <variables>
+                        <variable name="MMSCORE">//idaxs/project/subject/visit/assessment[@name='MMSE']/component[@name='MMSE Total Score']/assessmentScore[@attribute='MMSCORE']</variable>
+                        <variable name="SUID">//idaxs/project/subject/subjectIdentifier</variable>
+                        <variable name="y">//idaxs/project/subject/study/subjectAge</variable>
+                        <variable name="Var 1">Value</variable>
+                        <variable name="TestCDR">//idaxs/project/subject/study/weightKg</variable>
+                        <variable name="age">//idaxs/project/subject/study/subjectAge</variable>
+                        <variable name="Age">//idaxs/project/subject/study/subjectAge</variable>
+                        <variable name="CDRSCORE">//idaxs/project/subject/visit/assessment[@name='CDR']/component[@name='CDR Total Score']/assessmentScore[@attribute='CDGLOBAL']</variable>
+                        <variable name="Var sasasa2">Value</variable>
+                </variables>
+                <metadata>
+                        <data key="__creationDateKey" value="Mon Aug 30 18:29:25 PDT 2010" />
+                </metadata>
+                <annotations>
+                        <annotation name="Documentaiton: http://wiki.loni.usc.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoBLAST" width="1075" height="32" posX="38" posY="42" background="102,102,204,51" foreground="0,0,255,255">
+                                <styles>
+                                        <style name="http://wiki.loni.usc.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoBLAST$15" fontSize="20" isBold="true" />
+                                        <style name="Documentaiton: $0" fontSize="20" />
+                                </styles>
+                        </annotation>
+                </annotations>
+        </moduleGroup>
+</pipeline>
+

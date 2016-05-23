@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="FASTAIndexing_1.OutputIndexFile" sink="_1.Input"/>
+                <connection source="FASTAReadsMappingtoReferenceGenome_1.OutputMap" sink="_1.Input"/>
+                <connection source="FASTAReadsMappingtoReferenceGenome_1.OutputUnmapped" sink="_1.Input"/>
+                <connection source="FastaReferenceInput_1.Output" sink="FASTAReadsMappingtoReferenceGenome_1.FastaInputReferenceFile"/>
+                <connection source="FastaSequenceDataFile_1.Output" sink="FASTAReadsMappingtoReferenceGenome_1.DataFastaFile"/>
+                <connection source="OptimizationParameters_1.Output" sink="FASTAReadsMappingtoReferenceGenome_1.FlagsandControls"/>
+                <connection source="FASTAIndexing_1.FlowofControl" sink="FASTAReadsMappingtoReferenceGenome_1.FlowofControl"/>
+                <connection source="FastaReferenceInput_1.Output" sink="FASTAIndexing_1.FastaInputFile"/>
+        </connections>
+        <icons>
+                <icon id="0" value="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
+R8oAAAAASUVORK5CYII="/>
+        </icons>
+        <moduleGroup id="mrFASTIndexingMapping_1" name="mrFAST Indexing Mapping" package="Bioinformatics" version="1.0" description="Overview
+This page contains a number of bioinformatics workflows based on the mrFAST sequence analysis package. This page describes Pipeline bioinformatics modules from the mrFAST suite.
+
+Problems addressed by mrFAST workflows
+
+Detailed Workflow Usage &amp; Specifications
+mrFAST (micro-read Fast Alignment Search Tool) is mapper designed to map short reads to reference genome with a special emphasis on the discovery of structural variation and segmental duplications. mrFAST maps short reads with respect to user defined error threshold, including indels up to 6 bp. This manual, describes how to choose the parameters and tune mrFAST with respect to the library settings. mrFAST is designed to find 'all' mappings for a given set of reads, however it can return one &quot;best&quot; map location if the relevant parameter is invoked. " posX="0" posY="0" sourceCode="">
+                <tag>genomics</tag>
+                <tag>bioinformatics</tag>
+                <uri>http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoMRFAST</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Thu Mar 17 09:24:36 PDT 2011"/>
+                </metadata>
+                <dataModule id="OptimizationParameters_1" name="Optimization Parameters" description="These are the mrFAST Mapper optimization parameters" posX="20" posY="305" rotation="1" sourceCode="" type="String" source="true" loopIndex="false">
+                        <uri>http://mrfast.sourceforge.net/manual.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Nov 02 11:41:40 PDT 2010"/>
+                        </metadata>
+                        <output id="OptimizationParameters_1.Output" name="Output" description="These are the mrFAST Mapper optimization parameters" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>-e 3 --best</value>
+                        </values>
+                </dataModule>
+                <dataModule id="FastaReferenceInput_1" name="Fasta Reference Input" package="LONI" version="1.0" description="Input FASTA file" posX="29" posY="49" rotation="1" sourceCode="" type="File" source="true" loopIndex="false">
+                        <uri>http://mrfast.sourceforge.net/manual.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="FastaReferenceInput_1.Output" name="Output" description="Input FASTA file" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/workflows/Bioinformatics/data/query.fasta</value>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/workflows/Bioinformatics/data/dna.fasta</value>
+                        </values>
+                </dataModule>
+                <dataModule id="FastaSequenceDataFile_1" name="Fasta Sequence Data File" package="LONI" version="1.0" description="Input FASTA data file" posX="20" posY="185" rotation="1" sourceCode="" type="File" source="true" loopIndex="false">
+                        <uri>http://mrfast.sourceforge.net/manual.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="FastaSequenceDataFile_1.Output" name="Output" description="Input FASTA data file" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/workflows/Bioinformatics/data/cofold-blue.fasta</value>
+                        </values>
+                </dataModule>
+                <dataModule id="_1" posX="751" posY="185" rotation="1" sourceCode="" type="File" source="false" loopIndex="false" dirDump="true">
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Nov 02 11:47:47 PDT 2010"/>
+                        </metadata>
+                        <input id="_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/{$tempdir}/pipelineTraining/{$username}/mrfast/results/</value>
+                        </values>
+                </dataModule>
+                <module id="FASTAReadsMappingtoReferenceGenome_1" name="FASTA Reads Mapping to Reference Genome" package="mrFAST" version="v2.0.0.5" description="Mapping
+mrFAST can map single-end reads and paired-end reads to a reference genome. mrFAST can map in either single or batch mode. In single mode, it only maps to one index. In batch mode, it maps to a list of indices. mrFAST supports both fasta and fastq formats.
+
+Single-end Reads - Single Mode
+To map single reads to a reference genome in single mode, run the following command. Use &quot;--seq&quot; to specify the input file. refgen.fa and refgen.fa.index should be in the same folder.
+
+$&gt;./mrFAST --search refgen.fa --seq reads.fastq
+
+The reported locations will be saved into &quot;output&quot; by default. If you want to save it somewhere else, use &quot;-o&quot; to specify another file. mrFAST can report the unmapped reads in fasta/fastq format.
+
+$&gt;./mrFAST --search refgen.fasta --seq reads.fastq -o my.map 
+
+By default, mrFAST reports all the locations per read. If you need one &quot;best&quot; mapping add the &quot;--best&quot; parameter to the command line:
+
+$&gt;./mrFAST --search refgen.fasta --seq reads.fastq -e 3 --best
+
+Single-end Reads - Batch Mode
+In batch mode, mrFAST uses a list of indices to find the mappings of the reads. &quot;index.list&quot; should contain the list of fasta files.
+
+$&gt;./mrFAST -b --search index.list --seq reads.fastq 
+
+Paired-end Reads
+To map paired-end reads, use &quot;--pe&quot; option. The mapping can be done in single/batch mode. If the reads are in two different files, you have to use &quot;--seq1/--seq2&quot; to indicate the files. If the reads are interleaved, use &quot;--seq&quot; to indicated the file. The distance allowed between the paired-end reads should be specified with &quot;--min&quot; and &quot;--max&quot;. &quot;--min&quot; and &quot;--max&quot; specify the minmum and maximum of the inferred size (the distance between outer edges of the mapping mates).
+
+$&gt;./mrFAST --search refgen.fasta --pe --seq reads.fastq --min 150 --max 250 
+
+$&gt;./mrFAST -b --search index.list --pe --seq1 reads1.fastq --seq2 reads2.fastq --min 50 --max 75
+
+Discordant Mapping
+mrFAST can report the discordant mapping for use of Variation Hunter. The --min and --max optiopns will define the minimum and maximum inferred size for concordant mapping.
+
+$&gt;./mrFAST --search refgen.fasta --pe --discordant-vh --seq reads.fastq --min 50 --max 75
+" icon="0" posX="555" posY="340" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu/mrfast">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website="http://www.loni.ucla.edu/~dinov"/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 2875196</citation>
+                                <citation>PMID: 20676076</citation>
+                        </citations>
+                        <tag>informatics</tag>
+                        <tag>fasta</tag>
+                        <tag>sequence</tag>
+                        <tag>alignment</tag>
+                        <uri>http://mrfast.sourceforge.net/manual.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Aug 30 12:20:56 PDT 2010"/>
+                        </metadata>
+                        <input id="FASTAReadsMappingtoReferenceGenome_1.FastaInputReferenceFile" name="Fasta Input Reference File" description="The refgen.fasta and refgen.fasta.index should be paired and present in the same folder. " required="true" enabled="true" order="0" prefix="--search" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="fasta.index" extension="fasta.index" description="fasta index file">
+                                                        <need>fasta</need>
+                                                </filetype>
+                                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file"/>
+                                        </fileTypes>
+                                </format>
+                                <dependencies>
+                                        <dependent>Data Fasta File</dependent>
+                                </dependencies>
+                        </input>
+                        <input id="FASTAReadsMappingtoReferenceGenome_1.DataFastaFile" name="Data Fasta File" description="Specify the input FASTA (data) file. 
+" required="true" enabled="true" order="1" prefix="--seq" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file"/>
+                                        </fileTypes>
+                                </format>
+                                <dependencies>
+                                        <dependsOn>Fasta Input Reference File</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="FASTAReadsMappingtoReferenceGenome_1.FlagsandControls" name="Flags and Controls" description="-e 3 --best
+See: http://mrfast.sourceforge.net/manual.html" required="false" enabled="true" order="2">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <output id="FASTAReadsMappingtoReferenceGenome_1.OutputMap" name="Output Map" description="The reported locations will be saved into &quot;output&quot; by default. If you want to save it somewhere else, use &quot;-o&quot; to specify another file. mrFAST can report the unmapped reads in fasta/fastq format. 
+
+Output file (&quot;-o&quot;):  Contains the map locations of the sequences in the specified genome in SAM format. mrFAST returns all possible map locations within the given edit distance (&quot;-e&quot;) by default. If the &quot;--best&quot; parameter is invoked, then it will select one &quot;best&quot; location that has the minimum edit distance to the genome." required="false" enabled="true" order="3" prefix="-o" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="map" extension="map" description="fasta mapping file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="FASTAReadsMappingtoReferenceGenome_1.FlowofControl" name="Flow of Control" required="false" enabled="true" order="5">
+                                <format type="Flow Control" cardinality="1"/>
+                        </input>
+                        <output id="FASTAReadsMappingtoReferenceGenome_1.OutputUnmapped" name="Output Unmapped" description="-u [file]
+	FASTA/FASTQ file for the unmapped sequences. The default is &quot;unmapped&quot;.
+
+Unmappped file (&quot;-u&quot;): Contains the unmapped reads in FASTQ or FASTA format, depending on the format of the input sequences." required="false" enabled="true" order="4" prefix="-u" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="map" extension="map" description="fasta mapping file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Farhad Hormozdiari" email="" website="http://eichlerlab.gs.washington.edu/"/>
+                                <author fullName="Faraz Hach" email="" website="http://eichlerlab.gs.washington.edu/"/>
+                        </executableAuthors>
+                        <license>LGPL</license>
+                </module>
+                <module id="FASTAIndexing_1" name="FASTA Indexing" package="mrFAST" version="v2.0.0.5" description="Indexing
+mrFAST's indices can be generated in two modes (single, batch). In single mode, mrFAST indexes a fasta file (which may contain one or more reference genomes) while in batch mode it indexes a set of fasta files.
+
+By default mrFAST uses the window size of 12 characters to generate its index. Please be advised that if you do not choose the window size carefully, you will lose sensitivity.
+
+How to choose the right window size: For a given read length (l) and error threshold (e), the window size is floor(l/(e+1)). For example if the reads length is 36 and the maximum number of mismatches allowed is 2, the window size is 12. if your calculated window size is greater than default, you can use the default window size without losing the sensitivity. For example, for the read length of 64 and error threshold of 2, the windows size should be 21. You can use the default window size 12. However you cannot use 12 as window size for read length of 30 and error threshold of 2.
+Single Genome Mode:
+To index a reference genome like &quot;refgen.fasta&quot; run the following command:
+
+$&gt;./mrFAST --index refgen.fasta
+
+Upon the completion of the indexing phase, you can find &quot;refgen.fasta.index&quot; in the same directory as &quot;refgen.fasta&quot;. mrFAST uses a window size of 12 (default) to make the index of the genome, this windows size can be modified with &quot;--ws&quot;. There is a restriction on the maximum of the window size as the window size directly affects the memory usage.
+
+$&gt;./mrFAST --index refgen.fasta --ws 13
+
+Batch Mode
+In batch mode, mrFAST gets a list of reference files and generates the index for each one of them. Similar to single mode, you can specify a different window size for indexing.
+
+$&gt;./mrFAST -b --index fasts.list --ws 13" icon="0" posX="361" posY="66" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu/mrfast">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website="http://www.loni.ucla.edu/~dinov"/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 2875196</citation>
+                                <citation>PMID: 20676076</citation>
+                        </citations>
+                        <tag>informatics</tag>
+                        <tag>fasta</tag>
+                        <tag>sequence</tag>
+                        <tag>alignment</tag>
+                        <uri>http://mrfast.sourceforge.net/manual.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Aug 30 12:20:56 PDT 2010"/>
+                        </metadata>
+                        <input id="FASTAIndexing_1.FastaInputFile" name="Fasta Input File" description="Upon the completion of the indexing phase, you can find &quot;refgen.fasta.index&quot; in the same directory as &quot;refgen.fasta&quot;. mrFAST uses a window size of 12 (default) to make the index of the genome, this windows size can be modified with &quot;--ws&quot;. There is a restriction on the maximum of the window size as the window size directly affects the memory usage. " required="true" enabled="true" order="0" prefix="--index" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Fasta" extension="fasta" description="BLAST input query FASTA file"/>
+                                        </fileTypes>
+                                </format>
+                                <dependencies>
+                                        <dependent>Output Index File</dependent>
+                                </dependencies>
+                        </input>
+                        <output id="FASTAIndexing_1.OutputIndexFile" name="Output Index File" description="Upon the completion of the indexing phase, you can find &quot;refgen.fasta.index&quot; in the same directory as &quot;refgen.fasta&quot;. mrFAST uses a window size of 12 (default) to make the index of the genome, this windows size can be modified with &quot;--ws&quot;. There is a restriction on the maximum of the window size as the window size directly affects the memory usage. " required="true" enabled="true" order="1" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="Fasta Input File">
+                                        <fileTypes>
+                                                <filetype name="fasta.index" extension="fasta.index" description="fasta index file">
+                                                        <need>fasta</need>
+                                                </filetype>
+                                        </fileTypes>
+                                        <transform order="0" operation="Append">.index</transform>
+                                </format>
+                                <dependencies>
+                                        <dependsOn>Fasta Input File</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="FASTAIndexing_1.FlowofControl" name="Flow of Control" required="false" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1"/>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Farhad Hormozdiari" email="" website="http://eichlerlab.gs.washington.edu/"/>
+                                <author fullName="Faraz Hach" email="" website="http://eichlerlab.gs.washington.edu/"/>
+                        </executableAuthors>
+                        <license>LGPL</license>
+                </module>
+                <annotations visible="true">
+                        <annotation width="631" height="22" posX="116" posY="19" background="102,102,204,51" foreground="0,0,255,255" expanded="true" type="text" name="Documentation: http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoMRFAST ">
+                                <styles>
+                                        <style name="http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoMRFAST $15" fontSize="12" isBold="true"/>
+                                        <style name="Documentation: $0" fontSize="12"/>
+                                </styles>
+                        </annotation>
+                        <annotation width="472" height="112" posX="19" posY="412" background="102,102,204,51" foreground="0,0,0,255" expanded="true" type="text" name="mrFAST (micro-read Fast Alignment Search Tool) is mapper designed to map short reads to reference genome with a special emphasis on the discovery of structural variation and segmental duplications. mrFAST maps short reads with respect to user defined error threshold, including indels up to 6 bp. This manual, describes how to choose the parameters and tune mrFAST with respect to the library settings. mrFAST is designed to find 'all' mappings for a given set of reads, however it can return one &quot;best&quot; map location if the relevant parameter is invoked.">
+                                <styles>
+                                        <style name="mrFAST (micro-read Fast Alignment Search Tool) is mapper designed to map short reads to reference genome with a special emphasis on the discovery of structural variation and segmental duplications. mrFAST maps short reads with respect to user defined error threshold, including indels up to 6 bp. This manual, describes how to choose the parameters and tune mrFAST with respect to the library settings. mrFAST is designed to find 'all' mappings for a given set of reads, however it can return one &quot;best&quot; map location if the relevant parameter is invoked.$0" fontSize="12"/>
+                                </styles>
+                        </annotation>
+                </annotations>
+        </moduleGroup>
+</pipeline>

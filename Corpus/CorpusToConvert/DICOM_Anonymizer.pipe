@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".1">
+        <moduleGroup id="DICOM_Anonymizer_0" name="DICOM_Anonymizer" posX="0" posY="0">
+                <module id="DICOMAnonymizer_0" name="DICOM Anonymizer" package="Utilities" version="1.0" description="Change the fields in DICOM header" location="pipeline://cranium.loni.usc.edu//usr/local/loniApps-1.0-4_64bit/wustl/DicomBrowser/bin/DicomRemap" sourceCode="" icon="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" posX="100" posY="183" executableVersion="1.0">
+                        <authors>
+                                <author fullName="Alen Zamanyan" email="" website="" />
+                        </authors>
+                        <executableAuthors>
+                                <author fullName="Neuroinformatics Research Group" email="" website="" />
+                        </executableAuthors>
+                        <tag>dicom</tag>
+                        <tag>anonymize</tag>
+                        <tag>anonymous</tag>
+                        <tag>de-identify</tag>
+                        <uri>http://wiki.loni.usc.edu/twiki/bin/view/CCB/DicomAnonymizer</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu May 27 19:02:09 PDT 2010" />
+                        </metadata>
+                        <input id="DICOMAnonymizer_0.config" name="config" description="configuration XML file" required="false" enabled="false" order="0" switch="-c" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="XML File" extension="xml" description="XML File" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="DICOMAnonymizer_0.scriptfile" name="script file" description=".das script file(s) to be applied" required="false" enabled="true" order="1" switch="-d" switchSpaced="true">
+                                <format type="File" cardinality="-1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/loniApps-1.0-4_64bit/wustl/DicomAnonymizer.das</value>
+                                </values>
+                        </input>
+                        <input id="DICOMAnonymizer_0.help" name="help" description="show help" required="false" enabled="false" order="2" switch="-h" switchSpaced="true">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="DICOMAnonymizer_0.newuidroot" name="new uid root" description="obtain a new UID root from server, even if a&#xA;root is already available (requires -s option)" required="false" enabled="false" order="3" switch="-n" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <output id="DICOMAnonymizer_0.output" name="output" description="target location for modified files (file path or dicom: URI)&#xA;" required="false" enabled="true" order="4" switch="-o" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="DICOMAnonymizer_0.rootid" name="root id" description="root UID from which new UIDs are constructed&#xA;" required="false" enabled="true" order="5" switch="-r" switchSpaced="true">
+                                <format type="Number" cardinality="1" />
+                                <values>
+                                        <value>1</value>
+                                </values>
+                        </input>
+                        <input id="DICOMAnonymizer_0.server" name="server" description="server from which new root UID can be obtained" required="false" enabled="false" order="6" switch="-s" switchSpaced="true">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="DICOMAnonymizer_0.values" name="values" description="CSV spreadsheet file specifying remapped values" required="false" enabled="false" order="7" switch="-v" switchSpaced="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="csv file" extension="csv" description="excel delimited file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="DICOMAnonymizer_0.errors" name="errors" description="Display long info about errors" required="false" enabled="false" order="8" switch="-x" switchSpaced="true">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="DICOMAnonymizer_0.inputDICOMfiles" name="input DICOM files" required="true" enabled="true" order="9">
+                                <format type="Directory" cardinality="1" />
+                        </input>
+                </module>
+                <metadata>
+                        <data key="__creationDateKey" value="" />
+                </metadata>
+        </moduleGroup>
+</pipeline>
+

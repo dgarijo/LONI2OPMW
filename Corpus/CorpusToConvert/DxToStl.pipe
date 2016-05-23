@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".1">
+        <connections>
+                <connection source="TranslateTo_2.-output" sink="MRISConvert_1.InputVolume" />
+                <connection source="TranslateTo_1.-output" sink="QEMmeshsimplification_1.InputMeshShape" />
+                <connection source="SurfaceSimplificationParameter_1.Output" sink="QEMmeshsimplification_1.Finaltrianglecount" />
+                <connection source="Inputdxfiles_1.Output" sink="TranslateTo_1.-input" />
+                <connection source="QEMmeshsimplification_1.OutputDirectoryforSimplifiedMeshShapes" sink="TranslateTo_2.-input" />
+                <connection source="MRISConvert_1.OutputVolume" sink="OutputSTLShapes_1.Input" />
+        </connections>
+        <moduleGroup id="DxToStl_1" name="DxToStl" description="This workflow converts between different shape/mesh file formats and allows optional QEM shape simplification. " posX="0" posY="0" sourceCode="" recordsWorkflow="true">
+                <tag />
+                <uri>http://wiki.loni.usc.edu/twiki/bin/view/CCB/PipelineWorkflows_ShapeTranslationSimplificationPipe</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Wed Jul 25 22:51:36 PDT 2012" />
+                </metadata>
+                <dataModule id="Inputdxfiles_1" name="Input dx files" posX="24" posY="126" rotation="1" sourceCode="" type="File" source="true" loopIndex="false">
+                        <authors>
+                                <author fullName="Zhizhong Liu" email="zliu@loni.usc.edu" website="loni.usc.edu" />
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Jul 24 14:47:06 PDT 2012" />
+                        </metadata>
+                        <output id="Inputdxfiles_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="DX file" extension="dx" description="A type of DX file." />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="DX file" extension="dx" description="A type of DX file." />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/101_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/102_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/121_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/122_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/161_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/162_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/163_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/164_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/165_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/166_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/181_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/182_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/21_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/22_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/23_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/24_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/25_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/26_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/27_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/28_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/29_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/30_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/31_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/32_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/33_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/34_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/41_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/42_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/43_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/44_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/45_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/46_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/47_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/48_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/49_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/50_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/61_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/62_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/63_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/64_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/65_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/66_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/67_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/68_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/81_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/82_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/83_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/84_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/85_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/86_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/87_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/88_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/89_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/90_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/91_QEM_SubDiv.dx</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/92_QEM_SubDiv.dx</value>
+                        </values>
+                </dataModule>
+                <module id="MRISConvert_1" name="MRIS Convert" package="FreeSurfer" version="5.0.0" description="mri_convert is a general purpose utility for converting between different file formats. mri_convert will try to figure out the file format on its own from the format of the file name (eg, files that end in .img are assumed to be in spm analyze format). " icon="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" posX="224" posY="395" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu//usr/local/freesurfer-5.0.0_64bit/bin/mris_convert" executableVersion="1.121.2.1">
+                        <authors>
+                                <author fullName="Stephen Tabaquin" email="tabaquin@ucla.edu" website="http://loni.usc.edu " />
+                        </authors>
+                        <citations>
+                                <citation>DOI: 10.1006/nimg.1998.0395</citation>
+                        </citations>
+                        <tag>convert</tag>
+                        <tag>file formats</tag>
+                        <uri>https://surfer.nmr.mgh.harvard.edu/fswiki/mri_convert</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jan 19 13:46:03 PST 2007" />
+                        </metadata>
+                        <input id="MRISConvert_1.InputVolume" name="Input Volume" description="The name of the input volume." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="MRISConvert_1.OutputVolume" name="Output Volume" description="The name of the output volume." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="STL file" extension="stl" description="Stereolithography file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="MRISConvert_1.MetadataOutput_Predefined" name="MetadataOutput_Predefined" required="true" enabled="true" predefined="true" isMetadata="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="XML File" extension="xml" description="XML File" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Yasunari Tosa" email="tosa@nmr.mgh.harvard.edu" website="http://www.martinos.org/~tosa" />
+                                <author fullName="Doug Greve" email="greve@nmr.mgh.harvard.edu" website="http://www.martinos.org/~greve" />
+                                <author fullName="Bruce Fischl" email="fischl@nmr.mgh.harvard.edu" website="http://www.martinos.org/~fischl" />
+                        </executableAuthors>
+                        <license>http://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferLicense
+End-User Licensing Agreement ("EULA") for FreeSurfer
+
+IMPORTANT- READ CAREFULLY: This End-User License Agreement ("EULA") is a legal agreement between you, the "licensee" (either an individual or a single entity), and CorTechs Labs, Inc.. For the purposes of this EULA, FreeSurfer includes computer software, documentation and sample datasets, the associated media, any printed materials, and any online or electronic documentation. By installing, copying, or otherwise using FreeSurfer, the licensee agrees to be bound by the terms of this EULA. If you do not agree to the terms of this EULA, then you may not install, copy or otherwise use FreeSurfer, and you are required to destroy the CD and remove any files that you may have already installed.
+
+1. GRANT OF LICENSE. This EULA grants the licensee the following rights: Software. The licensee may install one copy of FreeSurfer on a single computer. Network Use. The licensee may use FreeSurfer over an internal network, and the licensee may distribute FreeSurfer to other computers over an internal network. Documentation. The licensee may make a copy of the documentation for internal use only. This EULA grants the licensee a nonexclusive, nontransferable, no-cost, royalty free right to use the FreeSurfer for licensee's internal, non-commercial, non-clinical, academic research purposes only, under the terms of this agreement.
+
+2. LIMITATIONS Academic Version.
+
+FreeSurfer can only be used by Colleges, Universities, and other Non-Profit Research Organizations for research only. Colleges, Universities, and other Non-Profit Research Organizations may not use FreeSurfer in any commercial arrangement to any third-parties when payments are made for services rendered, either directly, or indirectly, when the functionality contained within FreeSurfer has been used.
+
+For-profit organizations and companies are explicitly prohibited from using this software for any purposes.
+
+Rental. The licensee may not rent or lease FreeSurfer.
+
+Commercial Use. The licensee may not charge anyone for any activity that uses FreeSurfer. For example, the licensee may not charge for segmentation, quantification, and/or corticalsurface reconstruction using FreeSurfer. The licensee cannot charge others for installation of the software, nor can they pay any entity, other than a full-time employee, to install and operate the software. The licensee may not incorporate FreeSurfer or any of its parts into any commercial code or product of any kind.
+
+Software Transfer. The licensee may not transfer FreeSurfer to any third party.
+
+Clinical Use: This software may not and should never be used for clinical purposes. Software used for clinical purposes may require regulatory documentation and associated filings.
+
+Termination. Without prejudice to any other rights, CorTechs Labs, Inc. may terminate this EULA if the licensee fails to comply with the terms and conditions of this EULA. In such an event, the licensee must destroy all copies of FreeSurfer and all of its component parts.
+
+3. COPYRIGHT and TRADEMARKS. FreeSurfer. All title and copyrights in and to FreeSurfer (including but not limited to any code, documentation, images, text or data) are owned by CorTechs Labs, Inc. and The General Hospital Corporation doing business as Massachusetts General Hospital. FreeSurfer is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. FreeSurfer is licensed, not given away or sold. Trademarks. This License does not grant any rights to use the trade names "FreeSurfer", "CorTechs Labs, Inc.", "CorTechs", "CSurf," Massachusetts General Hospital or any other trademarks or trade names belonging to CorTechs Labs, Inc. or The General Hospital Corporation unless explicitly permitted in writing by CorTechs Labs, Inc. or The General Hospital Corporation, respectively.
+
+Tck/Tk. Parts of this software are based on the Tcl/Tk software copyrighted by the Regents of the University of California, Sun Microsystems, Inc., and other parties. The original license terms of the Tcl/Tk software distribution is included in the file docs/license.tcltk. (Please see Appendix 1)
+
+Tix. Parts of this software are based on the Tix software copyrighted by the Ioi Kim Lam, and Expert Interface Technologies. The original license terms of the Tix software distribution is included in the file docs/license.tix. (Please see Appendix 2)
+
+HTML. Parts of this software are based on the HTML Library software copyrighted by Sun Microsystems, Inc. The original license terms of the HTML Library software distribution is included in the file docs/license.html_lib. (Please see Appendix 2)
+
+Mesa. Parts of this software link to the Mesa library software copyrighted by Brian Paul. This software is covered under the GNU LIBRARY GENERAL PUBLIC LICENSE, Version 2, which is included in the file docs/license.gnu. (Please see Appendix 3)
+
+4. NO SUPPORT OR WARRANTY. FreeSurfer is provided with no support whatsoever. CorTechs Labs, Inc. and/or The General Hospital Corporation may, at their sole discretion, provide bug reports or upgrades at www.nmr.mgh.harvard.edu, but CorTechs and/or The General Hospital Corporation do not have any obligation to notify users of this occurring. FreeSurfer may contain in whole or in part pre-release, untested, or not fully tested works. FreeSurfer may contain errors that could cause failures or loss of data, and may be incomplete or contain inaccuracies. LICENSEE expressly acknowledges and agrees that use of FreeSurfer, or any portion thereof, is at LICENSEE's sole and entire risk, and that FreeSurfer is an experimental program. FreeSurfer is provided "AS IS" and without warranty, upgrades or support of any kind. CORTECHS LABS, INC. and THE GENERAL HOSPITAL CORPORATION EXPRESSLY DISCLAIMS ALL WARRANTIES AND/OR CONDITIONS, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY OR SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. CORTECHS LABS, INC. AND THE GENERAL HOSPITAL CORPORATIN DO NOT WARRANT THAT THE FUNCTIONS CONTAINED IN FREESURFER WILL MEET LICENSEE'S REQUIREMENTS, OR THAT THE OPERATION OF FREESURFER WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN FREESURFER WILL BE CORRECTED. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY CORTECHS LABS, INC.OR THE GENERAL HOSPITAL CORPORATION OR A CORTECHS LABS, INC. AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY OR IN ANY WAY INCREASE THE SCOPE OF THIS WARRANTY. LICENSEE ACKNOWLEDGES THAT FREESURFER IS NOT INTENDED FOR CLINICAL USE AND SHOULD NOT BE USED FOR DIAGNOSIS, TREATMENT PLANNING, OR ANY OTHER CLINICAL PURPOSE.
+
+5. INFRINGEMENT. If any portion of, or functionality implemented by, FreeSurfer becomes the subject of a claim of infringement, CorTechs Labs, Inc. may, at its option: (a) attempt to procure the rights necessary for CorTechs Labs, Inc. and LICENSEE to continue using the Affected Code; (b) modify the Affected Code so that it is no longer infringing; or (c) suspend LICENSEE's rights to use, reproduce, modify, sublicense and distribute the Affected Code until a final determination of the claim is made by a court or governmental administrative agency of competent jurisdiction and CorTechs Labs, Inc. lifts the suspension as set forth below. Such suspension of rights will be effective immediately upon CorTechs Labs, Inc.'s posting of an email notice to such effect to the LICENSEE. Upon such final determination being made, if CorTechs Labs, Inc. is legally able, without the payment of a fee or royalty, to resume use, reproduction, modification, sublicensing and distribution of the Affected Code, CorTechs Labs, Inc. may, it CorTechs' sole discretion, lift the suspension of rights to the Affected Code by posting of an email notice to such effect to the LICENSEE.
+
+LICENSEE: agrees to release and to indemnify CorTechs Labs, Inc. and The General Hospital Corporation and any of their trusties, directors, employees, professional staff or agents from any and all claims and damages in any way arising from the use of FreeSurfer by you, your Institution, or any other individual or entity obtaining access to FreeSurfer from you or your institution.
+
+6. LIMITATION OF LIABILITY. UNDER NO CIRCUMSTANCES SHALL CORTECHS LABS, INC AND THE GENERAL HSOPITAL CORPORATION BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO THIS LICENSE OR LICENSEE'S USE OR INABILITY TO USE FREESURFER, OR ANY PORTION THEREOF, whether under a theory of contract, warranty, tort (including negligence), products liability or otherwise, even if CorTechs Labs, Inc. has been advised of the possibility of such damages AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY REMEDY. In no event shall CorTechs Labs, Inc.'s total liability to LICENSEE for all damages under this License exceed the amount of fifty dollars ($50.00).
+
+7. MISCELLANEOUS. U.S. Government End Users. The Covered Code is a "commercial item" as defined in FAR 2.101. Government software and technical data rights in the Covered Code include only those rights customarily provided to the public as defined in this License. This customary commercial license in technical data and software is provided in accordance with FAR 12.211 (Technical Data) and 12.212 (Computer Software) and, for Department of Defense purchases, DFAR 252.227-7015 (Technical Data -- Commercial Items) and 227.7202-3 (Rights in Commercial Computer Software or Computer Software Documentation). Accordingly, all U.S. Government End Users acquire Covered Code with only those rights set forth herein. Waiver; Construction. Failure by CorTechs Labs, Inc. to enforce any provision of this License will not be deemed a waiver of future enforcement of that or any other provision. Any law or regulation which provides that the language of a contract shall be construed against the drafter will not apply to this License. Dispute Resolution. Any litigation or other dispute resolution between LICENSEE and CorTechs Labs, Inc. relating to this License shall take place in the Commonwealth of Massachusetts, and LICENSEE and CorTechs Labs, Inc. hereby consent to the personal jurisdiction of, and venue in, the state and federal courts within that Commonwealth with respect to this License. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Entire Agreement; Governing Law. This License constitutes the entire agreement between the parties with respect to the subject matter hereof. This License shall be governed by the laws of the United States and the Commonwealth of Massachusetts, except that body of Massachusetts law concerning conflicts of law.
+
+Quebec. Where LICENSEEs are located in the province of Quebec, Canada, the following clause applies: The parties hereby confirm that they have requested that this License and all related documents be drafted in English. Les parties ont exigé que le présent contrat et tous les documents connexes soient rédigés en anglais. Authority. The person submitting this registration warrants that he/she has the authority to bind to this Agreement the party which he/she represents.</license>
+                </module>
+                <module id="QEMmeshsimplification_1" name="QEM mesh simplification" package="SPH surface analysis" version="1.0" description="Reduces the number of triangular faces of a mesh while preserving shape &amp; volume" icon="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&#xA;4aN/91hkH6daKKK//9k=" posX="373" posY="147" sourceCode="" location="pipeline://cranium.loni.usc.edu//usr/local/loniWorkflows/LocalShapeAnalysis/ccbbm">
+                        <authors>
+                                <author fullName="Boris Gutman" email="bgutman@uca.edu" website="" />
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Apr 25 17:20:23 PDT 2007" />
+                        </metadata>
+                        <input id="QEMmeshsimplification_1.InputMeshShape" name="Input Mesh Shape" description="original mesh file, in .m  format" required="true" enabled="true" order="0" prefix="-simplify" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MESH M" extension="m" description="Triangulation Mesh" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="QEMmeshsimplification_1.Finaltrianglecount" name="Final triangle count" description="Desired number of faces in output mesh" required="true" enabled="true" order="1">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <output id="QEMmeshsimplification_1.OutputDirectoryforSimplifiedMeshShapes" name="Output Directory for Simplified Mesh Shapes" description="Output Mesh in .m format" required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MESH M" extension="m" description="Triangulation Mesh" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="QEMmeshsimplification_1.MetadataOutput_Predefined" name="MetadataOutput_Predefined" required="true" enabled="true" predefined="true" isMetadata="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="XML File" extension="xml" description="XML File" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Yalin Wang" email="ylwang@math.ucla.edu" website="" />
+                        </executableAuthors>
+                </module>
+                <module id="TranslateTo_1" name="TranslateTo" package="ShapeTools" version="1.3.3" description="TranslateTo provides an automatic file format translation service for file formats read by the ShapeToolsIO library. TranslateTo uses the file format properties descriptions and the ShapePreparer classes contained in the ShapeToolsIO library file readers and writsr to map common geometry file compoenents to an output file format, if supported by the output format.&#xA;&#xA;Where possible, per-vertex attributes are written to the output format; however, because each output format varies in the number and data type of allowed per-vertex attributes, lossless copying of vertex attributes cannot be guaranteed.&#xA;&#xA;Each file format writer is reqauired to supply the means to prepare an arbitary input Shape for writing; This may include creating requried components (e.g. vertex normals). Thus, TranslateTo is essenially a wrapper for the various ShapePreparer classes provided by the ShapeToolsIO library file format writers. The sophistication and completeness of the preparation process varies with the output file format. " icon="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" posX="196" posY="86" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu//usr/local/java/default/bin/java" executableVersion="1.3.3">
+                        <authors>
+                                <author fullName="ShapeTools Group" email="shapetls@loni.usc.edu" website="http://wiki.loni.usc.edu/twiki/bin/view/CCB/ShapeToolLibraryProgram" />
+                        </authors>
+                        <tag>shape</tag>
+                        <tag>translate</tag>
+                        <tag>convert</tag>
+                        <tag>conversion</tag>
+                        <uri>http://wiki.loni.usc.edu/twiki/bin/view/MAST/TranslateTo</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Nov 01 10:32:07 PDT 2010" />
+                        </metadata>
+                        <input id="TranslateTo_1.Jar" name="Jar" description="Application_Jar " required="true" enabled="true" order="0" prefix="-jar" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="JAR" extension="jar" description="Sun JAR file" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/ShapeTools-20100331/TranslateTo.jar</value>
+                                </values>
+                        </input>
+                        <input id="TranslateTo_1.-list" name="-list" description="Lists supported file types." required="false" enabled="false" order="1" prefix="-list" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_1.-check" name="-check" description="checks to see if translation is possible." required="false" enabled="false" order="2" prefix="-check" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_1.-o" name="-o" description="Enables replacing of output file, if it already exists.." required="false" enabled="false" order="3" prefix="-o" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_1.inputType" name="inputType" description="Input file type used to check whether translation is possible." required="false" enabled="false" order="4" prefix="inputType" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>asc</value>
+                                </values>
+                        </input>
+                        <input id="TranslateTo_1.-type" name="-type" description="Set output file type." required="true" enabled="true" order="5" prefix="-type" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>BrainVisaAsciiMesh</enumeration>
+                                        <enumeration>CCBBM</enumeration>
+                                        <enumeration>DFS2</enumeration>
+                                        <enumeration>FreeSurferBinaryTriangle</enumeration>
+                                        <enumeration>GeomviewOFF</enumeration>
+                                        <enumeration>LoniTM</enumeration>
+                                        <enumeration>LoniUCF</enumeration>
+                                        <enumeration>MincAsciiObj</enumeration>
+                                        <enumeration>MincBinaryObj</enumeration>
+                                        <enumeration>MincLinesObj</enumeration>
+                                        <enumeration>OpenDxNative</enumeration>
+                                        <enumeration>PlyAsciiMesh</enumeration>
+                                        <enumeration>PlyBigEndianBinaryMesh</enumeration>
+                                        <enumeration>PlyLittleEndianBinaryMesh</enumeration>
+                                        <enumeration>VTKAsciiXmlPolyData</enumeration>
+                                        <enumeration>VTKBigEndianXmlPolyDataAppended</enumeration>
+                                        <enumeration>VTKBigEndianXmlPolyDataInline</enumeration>
+                                        <enumeration>VTKLittleEndianXmlPolyDataAppended</enumeration>
+                                        <enumeration>VTKLittleEndianXmlPolyDataInline</enumeration>
+                                        <enumeration>VTKUnstructuredGrid</enumeration>
+                                </format>
+                                <values>
+                                        <value>CCBBM</value>
+                                </values>
+                        </input>
+                        <input id="TranslateTo_1.-input" name="-input" description="input file" required="true" enabled="true" order="6" prefix="-input" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="DX file" extension="dx" description="A type of DX file." />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="TranslateTo_1.-output" name="-output" description="output file" required="false" enabled="true" order="7" prefix="-output" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MESH M" extension="m" description="Triangulation Mesh" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="TranslateTo_1.-triangulate" name="-triangulate" description="Attempt to triangulate surface before translations" required="false" enabled="false" order="8" prefix="-triangulate" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_1.-orient" name="-orient" description="Attempt to triangulate and consistently orient surface before translations" required="false" enabled="false" order="9" prefix="-orient" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_1.-options" name="-options" description="Set format specific translation options" required="false" enabled="false" order="10" prefix="-options" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="TranslateTo_1.-canPrepareValue" name="-canPrepareValue" description="String printed checking indicates a translation is possible." required="false" enabled="false" order="11" prefix="-canPrepareValue" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="TranslateTo_1.-cannotPrepareValue" name="-cannotPrepareValue" description="String printed checking indicates a translation is not possible." required="false" enabled="false" order="12" prefix="-cannotPrepareValue" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="TranslateTo_1.-help" name="-help" description="Prints help and usage information." required="false" enabled="false" order="13" prefix="-help" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_1.-version" name="-version" description="Prints version number of this application." required="false" enabled="false" order="14" prefix="-version" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_1.-verbose" name="-verbose" description="Enables detailed status messages." required="false" enabled="false" order="15" prefix="-verbose" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_1.-license" name="-license" description="Prints license details, and exits." required="false" enabled="false" order="16" prefix="-license" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_1.-twiki" name="-twiki" description="Writes command line arguments as a TWiki format table to output and exit." required="false" enabled="false" order="17" prefix="-twiki" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <executableAuthors>
+                                <author fullName="ShapeTools Group" email="shapetls@loni.usc.edu" website="http://wiki.loni.usc.edu/twiki/bin/view/CCB/ShapeToolLibraryProgram" />
+                        </executableAuthors>
+                        <license>http://wiki.loni.usc.edu/Software/license.php
+By registering for downloads from the UCLA Laboratory of Neuro Imaging, you are agreeing to the following terms and conditions as well as to the Terms of Use of the LONI website. To view the LONI website's Terms of Use go to, http://wiki.loni.usc.edu/software/termsofuse.php.
+
+  * Permission is granted to use this software without charge for non-commercial research purposes only.
+  * Other than the rights granted herein, LONI retains all rights, title, and interest in LONI software and Technology, and You retain all rights, title, and interest in Your Modifications and associated specifications, subject to the terms of this License.
+  * You may make verbatim copies of this software for personal use, or for use within your organization, provided that you duplicate all of the original copyright notices and associated disclaimers. If you provide the use of the software to other users within your organization, they also must comply with all the terms of this Software Distribution Agreement.
+  * YOU MAY NOT DISTRIBUTE COPIES of this software, or copies of software derived from this software, to others outside your organization without specific prior written permission from the UCLA Laboratory of Neuro Imaging, except where noted for specific software products.
+  * You must not remove or alter any copyright or other proprietary notices in the software.
+  * Software has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, IRB-approved Research Use Only. In no event shall data or images generated through the use of the Software be used in the provision of patient care.
+  * THE SOFTWARE IS PROVIDED "AS IS," AND THE UNIVERSITY OF CALIFORNIA AND ITS COLLABORATORS DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR RESPONSIBILITY FOR THE USE OF THIS SOFTWARE.
+  * This software is for research purposes only and has not been approved for clinical use.
+  * You may publish papers and books using results produced using software provided by this site provided that you reference the appropriate citations. A list of citations is available here.
+  * You agree to comply with LONI's Trademark Usage Requirements, as modified from time to time, described in the "Use of Materials Limitations" section of the LONI Terms of Use Agreement. Except as expressly provided in this License, you are granted no rights in or to any LONI trademarks now or hereafter used or licensed by LONI.
+  * All Technology and technical data delivered under this Agreement are subject to US export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with all such laws and regulations and acknowledge that you have the responsibility to obtain such licenses to export, re-export, or import as may be required after delivery to you.</license>
+                </module>
+                <dataModule id="SurfaceSimplificationParameter_1" name="Surface Simplification Parameter" description="Final triangular count&#xA;Desired number of faces in output mesh&#xA;E.g., 10000" posX="22" posY="1" rotation="1" sourceCode="" type="Number" source="true" loopIndex="false">
+                        <authors>
+                                <author fullName="Ivo D. Dinov" email="" website="http://wiki.loni.usc.edu/~dinov" />
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Jul 25 22:25:20 PDT 2012" />
+                        </metadata>
+                        <output id="SurfaceSimplificationParameter_1.Output" name="Output" description="Final triangular count&#xA;Desired number of faces in output mesh&#xA;E.g., 10000" required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1" />
+                        </output>
+                        <values>
+                                <value>10000</value>
+                        </values>
+                </dataModule>
+                <module id="TranslateTo_2" name="TranslateTo" package="ShapeTools" version="1.3.3" description="TranslateTo provides an automatic file format translation service for file formats read by the ShapeToolsIO library. TranslateTo uses the file format properties descriptions and the ShapePreparer classes contained in the ShapeToolsIO library file readers and writsr to map common geometry file compoenents to an output file format, if supported by the output format.&#xA;&#xA;Where possible, per-vertex attributes are written to the output format; however, because each output format varies in the number and data type of allowed per-vertex attributes, lossless copying of vertex attributes cannot be guaranteed.&#xA;&#xA;Each file format writer is reqauired to supply the means to prepare an arbitary input Shape for writing; This may include creating requried components (e.g. vertex normals). Thus, TranslateTo is essenially a wrapper for the various ShapePreparer classes provided by the ShapeToolsIO library file format writers. The sophistication and completeness of the preparation process varies with the output file format. " icon="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" posX="80" posY="293" sourceCode="" location="pipeline://cranium.loni.usc.edu//usr/local/java/default/bin/java" executableVersion="1.3.3">
+                        <authors>
+                                <author fullName="ShapeTools Group" email="shapetls@loni.usc.edu" website="http://wiki.loni.usc.edu/twiki/bin/view/CCB/ShapeToolLibraryProgram" />
+                        </authors>
+                        <tag>shape</tag>
+                        <tag>translate</tag>
+                        <tag>convert</tag>
+                        <tag>conversion</tag>
+                        <uri>http://wiki.loni.usc.edu/twiki/bin/view/MAST/TranslateTo</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Nov 01 10:32:07 PDT 2010" />
+                        </metadata>
+                        <input id="TranslateTo_2.Jar" name="Jar" description="Application_Jar " required="true" enabled="true" order="0" prefix="-jar" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="JAR" extension="jar" description="Sun JAR file" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/ShapeTools-20100331/TranslateTo.jar</value>
+                                </values>
+                        </input>
+                        <input id="TranslateTo_2.-list" name="-list" description="Lists supported file types." required="false" enabled="false" order="1" prefix="-list" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_2.-check" name="-check" description="checks to see if translation is possible." required="false" enabled="false" order="2" prefix="-check" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_2.-o" name="-o" description="Enables replacing of output file, if it already exists.." required="false" enabled="false" order="3" prefix="-o" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_2.inputType" name="inputType" description="Input file type used to check whether translation is possible." required="false" enabled="false" order="4" prefix="inputType" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                                <values>
+                                        <value>asc</value>
+                                </values>
+                        </input>
+                        <input id="TranslateTo_2.-type" name="-type" description="Set output file type." required="true" enabled="true" order="5" prefix="-type" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>BrainVisaAsciiMesh</enumeration>
+                                        <enumeration>CCBBM</enumeration>
+                                        <enumeration>DFS2</enumeration>
+                                        <enumeration>FreeSurferBinaryTriangle</enumeration>
+                                        <enumeration>GeomviewOFF</enumeration>
+                                        <enumeration>LoniTM</enumeration>
+                                        <enumeration>LoniUCF</enumeration>
+                                        <enumeration>MincAsciiObj</enumeration>
+                                        <enumeration>MincBinaryObj</enumeration>
+                                        <enumeration>MincLinesObj</enumeration>
+                                        <enumeration>OpenDxNative</enumeration>
+                                        <enumeration>PlyAsciiMesh</enumeration>
+                                        <enumeration>PlyBigEndianBinaryMesh</enumeration>
+                                        <enumeration>PlyLittleEndianBinaryMesh</enumeration>
+                                        <enumeration>VTKAsciiXmlPolyData</enumeration>
+                                        <enumeration>VTKBigEndianXmlPolyDataAppended</enumeration>
+                                        <enumeration>VTKBigEndianXmlPolyDataInline</enumeration>
+                                        <enumeration>VTKLittleEndianXmlPolyDataAppended</enumeration>
+                                        <enumeration>VTKLittleEndianXmlPolyDataInline</enumeration>
+                                        <enumeration>VTKUnstructuredGrid</enumeration>
+                                </format>
+                                <values>
+                                        <value>FreeSurferBinaryTriangle</value>
+                                </values>
+                        </input>
+                        <input id="TranslateTo_2.-input" name="-input" description="input file" required="true" enabled="true" order="6" prefix="-input" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="DX file" extension="dx" description="A type of DX file." />
+                                                <filetype name="MESH M" extension="m" description="Triangulation Mesh" />
+                                                <filetype name="mesh m" extension="m" description="triangulation mesh" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="TranslateTo_2.-output" name="-output" description="output file" required="false" enabled="true" order="7" prefix="-output" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="TranslateTo_2.-triangulate" name="-triangulate" description="Attempt to triangulate surface before translations" required="false" enabled="false" order="8" prefix="-triangulate" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_2.-orient" name="-orient" description="Attempt to triangulate and consistently orient surface before translations" required="false" enabled="false" order="9" prefix="-orient" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_2.-options" name="-options" description="Set format specific translation options" required="false" enabled="false" order="10" prefix="-options" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="TranslateTo_2.-canPrepareValue" name="-canPrepareValue" description="String printed checking indicates a translation is possible." required="false" enabled="false" order="11" prefix="-canPrepareValue" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="TranslateTo_2.-cannotPrepareValue" name="-cannotPrepareValue" description="String printed checking indicates a translation is not possible." required="false" enabled="false" order="12" prefix="-cannotPrepareValue" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <input id="TranslateTo_2.-help" name="-help" description="Prints help and usage information." required="false" enabled="false" order="13" prefix="-help" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_2.-version" name="-version" description="Prints version number of this application." required="false" enabled="false" order="14" prefix="-version" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_2.-verbose" name="-verbose" description="Enables detailed status messages." required="false" enabled="false" order="15" prefix="-verbose" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_2.-license" name="-license" description="Prints license details, and exits." required="false" enabled="false" order="16" prefix="-license" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <input id="TranslateTo_2.-twiki" name="-twiki" description="Writes command line arguments as a TWiki format table to output and exit." required="false" enabled="false" order="17" prefix="-twiki" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0" />
+                        </input>
+                        <output id="TranslateTo_2.MetadataOutput_Predefined" name="MetadataOutput_Predefined" required="true" enabled="true" predefined="true" isMetadata="true" order="18">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="XML File" extension="xml" description="XML File" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="ShapeTools Group" email="shapetls@loni.usc.edu" website="http://wiki.loni.usc.edu/twiki/bin/view/CCB/ShapeToolLibraryProgram" />
+                        </executableAuthors>
+                        <license>http://wiki.loni.usc.edu/Software/license.php
+By registering for downloads from the UCLA Laboratory of Neuro Imaging, you are agreeing to the following terms and conditions as well as to the Terms of Use of the LONI website. To view the LONI website's Terms of Use go to, http://wiki.loni.usc.edu/software/termsofuse.php.
+
+  * Permission is granted to use this software without charge for non-commercial research purposes only.
+  * Other than the rights granted herein, LONI retains all rights, title, and interest in LONI software and Technology, and You retain all rights, title, and interest in Your Modifications and associated specifications, subject to the terms of this License.
+  * You may make verbatim copies of this software for personal use, or for use within your organization, provided that you duplicate all of the original copyright notices and associated disclaimers. If you provide the use of the software to other users within your organization, they also must comply with all the terms of this Software Distribution Agreement.
+  * YOU MAY NOT DISTRIBUTE COPIES of this software, or copies of software derived from this software, to others outside your organization without specific prior written permission from the UCLA Laboratory of Neuro Imaging, except where noted for specific software products.
+  * You must not remove or alter any copyright or other proprietary notices in the software.
+  * Software has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, IRB-approved Research Use Only. In no event shall data or images generated through the use of the Software be used in the provision of patient care.
+  * THE SOFTWARE IS PROVIDED "AS IS," AND THE UNIVERSITY OF CALIFORNIA AND ITS COLLABORATORS DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR RESPONSIBILITY FOR THE USE OF THIS SOFTWARE.
+  * This software is for research purposes only and has not been approved for clinical use.
+  * You may publish papers and books using results produced using software provided by this site provided that you reference the appropriate citations. A list of citations is available here.
+  * You agree to comply with LONI's Trademark Usage Requirements, as modified from time to time, described in the "Use of Materials Limitations" section of the LONI Terms of Use Agreement. Except as expressly provided in this License, you are granted no rights in or to any LONI trademarks now or hereafter used or licensed by LONI.
+  * All Technology and technical data delivered under this Agreement are subject to US export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with all such laws and regulations and acknowledge that you have the responsibility to obtain such licenses to export, re-export, or import as may be required after delivery to you.</license>
+                </module>
+                <dataModule id="OutputSTLShapes_1" name="Output STL Shapes" posX="518" posY="324" rotation="1" sourceCode="" type="File" source="false" loopIndex="false" dirDump="false">
+                        <authors>
+                                <author fullName="Ivo D. Dinov" email="" website="http://wiki.loni.usc.edu/~dinov" />
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Jul 25 22:29:53 PDT 2012" />
+                        </metadata>
+                        <input id="OutputSTLShapes_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="STL file" extension="stl" description="Stereolithography file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="STL file" extension="stl" description="Stereolithography file" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/101_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/102_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/121_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/122_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/161_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/162_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/163_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/164_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/165_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/166_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/181_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/182_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/21_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/22_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/23_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/24_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/25_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/26_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/27_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/28_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/29_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/30_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/31_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/32_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/33_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/34_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/41_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/42_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/43_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/44_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/45_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/46_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/47_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/48_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/49_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/50_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/61_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/62_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/63_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/64_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/65_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/66_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/67_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/68_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/81_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/82_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/83_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/84_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/85_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/86_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/87_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/88_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/89_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/90_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/91_QEM_SubDiv.stl</value>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/ccb/data/Others/LONI_HTML5_Viewer_Data/shapes/92_QEM_SubDiv.stl</value>
+                        </values>
+                </dataModule>
+                <variables>
+                        <variable name="sex">//idaxs/project/subject/subjectSex</variable>
+                        <variable name="Var 1">Value</variable>
+                        <variable name="CDRSCORE">//idaxs/project/subject/visit/assessment[@name='CDR']/component[@name='CDR Total Score']/assessmentScore[@attribute='CDGLOBAL']</variable>
+                        <variable name="Var sasasa2">Value</variable>
+                        <variable name="SUID">//idaxs/project/subject/subjectIdentifier</variable>
+                        <variable name="TestCDR">//idaxs/project/subject/study/weightKg</variable>
+                        <variable name="label">21</variable>
+                        <variable name="MMSCORE">//idaxs/project/subject/visit/assessment[@name='MMSE']/component[@name='MMSE Total Score']/assessmentScore[@attribute='MMSCORE']</variable>
+                </variables>
+        </moduleGroup>
+</pipeline>
+

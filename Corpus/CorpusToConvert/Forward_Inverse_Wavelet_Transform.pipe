@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="RawHyper-Volume_1.Output" sink="Wavelet_Transform_ND_1.InputFileName"/>
+                <connection source="Wavelet_Transform_ND_1.OutputFileName" sink="Wavelet_Transform_ND_2.InputFileName"/>
+                <connection source="Wavelet_Transform_ND_2.OutputFileName" sink="Output_1.Input"/>
+        </connections>
+        <icons>
+                <icon id="0" value="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
+nvhkHfgAAAAASUVORK5CYII="/>
+        </icons>
+        <moduleGroup id="ForwardandInverseWaveletTransform_1" name="Forward and Inverse Wavelet Transform" package="WAIR" version="2.0" description="Forward and inverse wavelet transform on nD hyper-volumes." posX="0" posY="0" sourceCode="">
+                <citations>
+                        <citation>PMID: 16284415</citation>
+                        <citation>PMID: 11936599</citation>
+                </citations>
+                <tag>wavelets</tag>
+                <tag>nD</tag>
+                <tag>transform</tag>
+                <tag>forward</tag>
+                <tag>inverse</tag>
+                <metadata>
+                        <data key="__creationDateKey" value="Thu Apr 03 15:49:11 PDT 2008"/>
+                </metadata>
+                <module id="Wavelet_Transform_ND_1" name="Wavelet_Transform_ND" package="WAIR" version="2.0" description="The WAIR software is a tool for quantitative analysis of various n-dimensional (n-D) image registration techniques. In particular, its applications include, but are not limited to, analyzing warp performance for stereotactic Human Brain anatomical and functional data. Using the Discrete Wavelet Transform (WT) we develop several image registration (warp) classification schemes. The first one, called &quot;wavelet-space triangle analysis&quot;, is applicable for studying a family of warps on a single or multiple n-D data sets. For each data set the WAIR routine assigns a positive real number to every warp alignment in the family, and the best warp, for the given data, will be the one having the smallest value associated with it. The second classification method, called &quot;cluster group classification&quot;, is applicable for analyzing the overall performance of a family of warps of a groups of data sets. Here, there is a single number assigned to each registration alignment, based on its group-clustering characteristics. Third goodness of warp approach, called SGC (spread group classification), is applicable for analyzing functional brain data. It gives preference to registration techniques that spread apart baseline versus activation functional signal for group data." icon="0" posX="252" posY="255" sourceCode="" location="pipeline://cranium.loni.usc.edu/WT_IWT" executableVersion="2.0">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website="dinov@loni.ucla.edu"/>
+                        </authors>
+                        <tag>wavelets</tag>
+                        <tag>transform</tag>
+                        <tag>spectral</tag>
+                        <tag>registration</tag>
+                        <tag>evaluation</tag>
+                        <tag>volumetric</tag>
+                        <tag>frequency</tag>
+                        <tag>space</tag>
+                        <uri>http://www.loni.ucla.edu/Software/Software_Detail.jsp?software_id=6</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Mar 19 15:35:38 PDT 2008"/>
+                        </metadata>
+                        <input id="Wavelet_Transform_ND_1.DataType" name="Data Type" description="Data Type: unsigned char (1Byte) or Float (4Byte):
+4==Floating point Input (4Bytes), 
+1==1Byte Unsigned Char input" required="false" enabled="true" order="0" prefix="-data_type" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>1</value>
+                                </values>
+                        </input>
+                        <input id="Wavelet_Transform_ND_1.WaveletFilter" name="Wavelet Filter" description="Wavelet Filter. See: http://www.loni.ucla.edu/~dinov/WAIR.dir/WAIR_Usage.pdf
+WaveletBasis==1 , Spline_3_7; WaveletBasis==2 , Spline_3_3; WaveletBasis==3 , Spline_2_4; WaveletBasis==4 , Spline_2_2; WaveletBasis==5 , Pseudocoiflet_4_4; WaveletBasis==6 , Haar; WaveletBasis==7 , Daubechies_20; WaveletBasis==8 , Daubechies_12; WaveletBasis==9 , Daubechies_10; WaveletBasis==10 , Daubechies_8; WaveletBasis==11 , Daubechies_6; WaveletBasis==12 , Daubechies_4; WaveletBasis==13 , Coiflet_6; WaveletBasis==14 , Coiflet_4; WaveletBasis==15 , Coiflet_2; WaveletBasis==16 ,BurtAdelson;
+WaveletBasis==17 , BattleLemarie;" required="true" enabled="true" order="1">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>7</value>
+                                </values>
+                        </input>
+                        <input id="Wavelet_Transform_ND_1.ForwardorInverseWaveletTransform" name="Forward or Inverse Wavelet Transform" description="WhichTransform Choose:
+&quot;1&quot; for (forward) WT, or 
+&quot;0&quot; for (inverse) IWT" required="true" enabled="true" order="2">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>1</value>
+                                </values>
+                        </input>
+                        <input id="Wavelet_Transform_ND_1.NumberofDimensions" name="Number of Dimensions" description="Choose the Number of dimensions
+Num_Dim = integer representing the number of dimensions of the data set" required="true" enabled="true" order="3">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>3</value>
+                                </values>
+                        </input>
+                        <input id="Wavelet_Transform_ND_1.DataDimensionSizes" name="Data Dimension Sizes" description="Dimension Sizes. Enter a string of space-separated Integers representing the size of the first (fastest varying index), second, third, ..., last-dimension-size (slowest-varying index:
+x_1_Dim_Size x_2_Dim_Size ....  x_N_Dim_Size" required="true" enabled="true" order="4">
+                                <format type="Number" cardinality="3"/>
+                                <values>
+                                        <value>181</value>
+                                        <value>217</value>
+                                        <value>181</value>
+                                </values>
+                        </input>
+                        <input id="Wavelet_Transform_ND_1.InputFileName" name="Input File Name" description="Input File Name (Raw data)" required="true" enabled="true" order="5">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Wavelet_Transform_ND_1.OutputFileName" name="Output File Name" description="Name of the output file that will contain the floating-point array of the WT of the input data" required="true" enabled="true" order="6">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Raw file" extension="raw" description=""/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Ivo Dinov" email="" website="dinov@loni.ucla.edu"/>
+                                <author fullName="Arthur W. Toga" email="" website="toga@loni.ucla.edu"/>
+                        </executableAuthors>
+                        <license>http://www.loni.ucla.edu/Software/license.php
+
+By registering for downloads from the UCLA Laboratory of Neuro Imaging, you are agreeing to the following terms and conditions as well as to the Terms of Use of the LONI website. To view the LONI website's Terms of Use go to, http://www.loni.ucla.edu/software/termsofuse.php.
+
+    * Permission is granted to use this software without charge for non-commercial research purposes only.
+    * Other than the rights granted herein, LONI retains all rights, title, and interest in LONI software and Technology, and You retain all rights, title, and interest in Your Modifications and associated specifications, subject to the terms of this License.
+    * You may make verbatim copies of this software for personal use, or for use within your organization, provided that you duplicate all of the original copyright notices and associated disclaimers. If you provide the use of the software to other users within your organization, they also must comply with all the terms of this Software Distribution Agreement.
+    * YOU MAY NOT DISTRIBUTE COPIES of this software, or copies of software derived from this software, to others outside your organization without specific prior written permission from the UCLA Laboratory of Neuro Imaging, except where noted for specific software products.
+    * You must not remove or alter any copyright or other proprietary notices in the software.
+    * Software has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, IRB-approved Research Use Only. In no event shall data or images generated through the use of the Software be used in the provision of patient care.
+    * THE SOFTWARE IS PROVIDED "AS IS," AND THE UNIVERSITY OF CALIFORNIA AND ITS COLLABORATORS DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR RESPONSIBILITY FOR THE USE OF THIS SOFTWARE.
+    * This software is for research purposes only and has not been approved for clinical use.
+    * You may publish papers and books using results produced using software provided by this site provided that you reference the appropriate citations. A list of citations is available here.
+    * You agree to comply with LONI's Trademark Usage Requirements, as modified from time to time, described in the "Use of Materials Limitations" section of the LONI Terms of Use Agreement. Except as expressly provided in this License, you are granted no rights in or to any LONI trademarks now or hereafter used or licensed by LONI.
+    * All Technology and technical data delivered under this Agreement are subject to US export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with all such laws and regulations and acknowledge that you have the responsibility to obtain such licenses to export, re-export, or import as may be required after delivery to you.</license>
+                </module>
+                <dataModule id="RawHyper-Volume_1" name="Raw Hyper-Volume" package="LONI" version="1.0" description="Raw file representing an N-Dimentional array of floats or bytes." posX="348" posY="106" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Feb 11 17:31:47 PST 2008"/>
+                        </metadata>
+                        <output id="RawHyper-Volume_1.Output" name="Output" description="Raw file representing an N-Dimentional array of floats or bytes." required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                        <need>hdr</need>
+                                </filetype>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/data/Pipeline_Workflow_Test_Data/WAIR/avgedit.img</value>
+                        </values>
+                </dataModule>
+                <module id="Wavelet_Transform_ND_2" name="Wavelet_Transform_ND" package="WAIR" version="2.0" description="The WAIR software is a tool for quantitative analysis of various n-dimensional (n-D) image registration techniques. In particular, its applications include, but are not limited to, analyzing warp performance for stereotactic Human Brain anatomical and functional data. Using the Discrete Wavelet Transform (WT) we develop several image registration (warp) classification schemes. The first one, called &quot;wavelet-space triangle analysis&quot;, is applicable for studying a family of warps on a single or multiple n-D data sets. For each data set the WAIR routine assigns a positive real number to every warp alignment in the family, and the best warp, for the given data, will be the one having the smallest value associated with it. The second classification method, called &quot;cluster group classification&quot;, is applicable for analyzing the overall performance of a family of warps of a groups of data sets. Here, there is a single number assigned to each registration alignment, based on its group-clustering characteristics. Third goodness of warp approach, called SGC (spread group classification), is applicable for analyzing functional brain data. It gives preference to registration techniques that spread apart baseline versus activation functional signal for group data." icon="0" posX="198" posY="422" sourceCode="" location="pipeline://cranium.loni.usc.edu/WT_IWT" executableVersion="2.0">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website="dinov@loni.ucla.edu"/>
+                        </authors>
+                        <tag>wavelets</tag>
+                        <tag>transform</tag>
+                        <tag>spectral</tag>
+                        <tag>registration</tag>
+                        <tag>evaluation</tag>
+                        <tag>volumetric</tag>
+                        <tag>frequency</tag>
+                        <tag>space</tag>
+                        <uri>http://www.loni.ucla.edu/Software/Software_Detail.jsp?software_id=6</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Mar 19 15:35:38 PDT 2008"/>
+                        </metadata>
+                        <input id="Wavelet_Transform_ND_2.DataType" name="Data Type" description="Data Type: unsigned char (1Byte) or Float (4Byte):
+4==Floating point Input (4Bytes), 
+1==1Byte Unsigned Char input" required="false" enabled="true" order="0" prefix="-data_type" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>4</value>
+                                </values>
+                        </input>
+                        <input id="Wavelet_Transform_ND_2.WaveletFilter" name="Wavelet Filter" description="Wavelet Filter. See: http://www.loni.ucla.edu/~dinov/WAIR.dir/WAIR_Usage.pdf
+WaveletBasis==1 , Spline_3_7; WaveletBasis==2 , Spline_3_3; WaveletBasis==3 , Spline_2_4; WaveletBasis==4 , Spline_2_2; WaveletBasis==5 , Pseudocoiflet_4_4; WaveletBasis==6 , Haar; WaveletBasis==7 , Daubechies_20; WaveletBasis==8 , Daubechies_12; WaveletBasis==9 , Daubechies_10; WaveletBasis==10 , Daubechies_8; WaveletBasis==11 , Daubechies_6; WaveletBasis==12 , Daubechies_4; WaveletBasis==13 , Coiflet_6; WaveletBasis==14 , Coiflet_4; WaveletBasis==15 , Coiflet_2; WaveletBasis==16 ,BurtAdelson;
+WaveletBasis==17 , BattleLemarie;" required="true" enabled="true" order="1">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>7</value>
+                                </values>
+                        </input>
+                        <input id="Wavelet_Transform_ND_2.ForwardorInverseWaveletTransform" name="Forward or Inverse Wavelet Transform" description="WhichTransform Choose:
+&quot;1&quot; for (forward) WT, or 
+&quot;0&quot; for (inverse) IWT" required="true" enabled="true" order="2">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>0</value>
+                                </values>
+                        </input>
+                        <input id="Wavelet_Transform_ND_2.NumberofDimensions" name="Number of Dimensions" description="Choose the Number of dimensions
+Num_Dim = integer representing the number of dimensions of the data set" required="true" enabled="true" order="3">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>3</value>
+                                </values>
+                        </input>
+                        <input id="Wavelet_Transform_ND_2.DataDimensionSizes" name="Data Dimension Sizes" description="Dimension Sizes. Enter a string of space-separated Integers representing the size of the first (fastest varying index), second, third, ..., last-dimension-size (slowest-varying index:
+x_1_Dim_Size x_2_Dim_Size ....  x_N_Dim_Size" required="true" enabled="true" order="4">
+                                <format type="Number" cardinality="3"/>
+                                <values>
+                                        <value>256</value>
+                                        <value>256</value>
+                                        <value>256</value>
+                                </values>
+                        </input>
+                        <input id="Wavelet_Transform_ND_2.InputFileName" name="Input File Name" description="Input File Name (Raw data)" required="true" enabled="true" order="5">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Raw file" extension="raw" description=""/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Wavelet_Transform_ND_2.OutputFileName" name="Output File Name" description="Name of the output file that will contain the floating-point array of the WT of the input data" required="true" enabled="true" order="6">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Raw file" extension="raw" description=""/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Ivo Dinov" email="" website="dinov@loni.ucla.edu"/>
+                                <author fullName="Arthur W. Toga" email="" website="toga@loni.ucla.edu"/>
+                        </executableAuthors>
+                        <license>http://www.loni.ucla.edu/Software/license.php
+
+By registering for downloads from the UCLA Laboratory of Neuro Imaging, you are agreeing to the following terms and conditions as well as to the Terms of Use of the LONI website. To view the LONI website's Terms of Use go to, http://www.loni.ucla.edu/software/termsofuse.php.
+
+    * Permission is granted to use this software without charge for non-commercial research purposes only.
+    * Other than the rights granted herein, LONI retains all rights, title, and interest in LONI software and Technology, and You retain all rights, title, and interest in Your Modifications and associated specifications, subject to the terms of this License.
+    * You may make verbatim copies of this software for personal use, or for use within your organization, provided that you duplicate all of the original copyright notices and associated disclaimers. If you provide the use of the software to other users within your organization, they also must comply with all the terms of this Software Distribution Agreement.
+    * YOU MAY NOT DISTRIBUTE COPIES of this software, or copies of software derived from this software, to others outside your organization without specific prior written permission from the UCLA Laboratory of Neuro Imaging, except where noted for specific software products.
+    * You must not remove or alter any copyright or other proprietary notices in the software.
+    * Software has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, IRB-approved Research Use Only. In no event shall data or images generated through the use of the Software be used in the provision of patient care.
+    * THE SOFTWARE IS PROVIDED "AS IS," AND THE UNIVERSITY OF CALIFORNIA AND ITS COLLABORATORS DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR RESPONSIBILITY FOR THE USE OF THIS SOFTWARE.
+    * This software is for research purposes only and has not been approved for clinical use.
+    * You may publish papers and books using results produced using software provided by this site provided that you reference the appropriate citations. A list of citations is available here.
+    * You agree to comply with LONI's Trademark Usage Requirements, as modified from time to time, described in the "Use of Materials Limitations" section of the LONI Terms of Use Agreement. Except as expressly provided in this License, you are granted no rights in or to any LONI trademarks now or hereafter used or licensed by LONI.
+    * All Technology and technical data delivered under this Agreement are subject to US export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with all such laws and regulations and acknowledge that you have the responsibility to obtain such licenses to export, re-export, or import as may be required after delivery to you.</license>
+                </module>
+                <dataModule id="Output_1" name="Output" posX="216" posY="610" sourceCode="" type="File" source="false" loopIndex="false" dirDump="true">
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 24 15:56:46 PDT 2008"/>
+                        </metadata>
+                        <input id="Output_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/{$tempdir}/{$username}/WAIR/</value>
+                        </values>
+                </dataModule>
+        </moduleGroup>
+</pipeline>

@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="PercentileTest_1.Output" sink="gRed_1.InputAdjacencyMatrix"/>
+                <connection source="gVtkToTxt_1.OutputAdj." sink="gTxtToVtk_1.InputAdj."/>
+                <connection source="micor_1.Output" sink="gVtkToTxt_1.InputAdj."/>
+                <connection source="PointsTest_1.Output" sink="gCalcAdj_1.PointList"/>
+                <connection source="functionaladjacencyTest_1.Output" sink="gCalcAdj_1.AdjacencyMatrix"/>
+                <connection source="fMRITest_1.Output" sink="micor_1.fMRIImage"/>
+                <connection source="LabelmapTest_1.Output" sink="micor_1.Labelmap"/>
+                <connection source="gVtkToTxt_1.OutputAdj." sink="TestTextoutput_1.Input"/>
+                <connection source="gTxtToVtk_1.OuptutAdj." sink="VtkOut_1.Input"/>
+                <connection source="gCalcAdj_1.OutputAdjacencyMatrix" sink="TestTextoutput_2.Input"/>
+                <connection source="gRed_1.OutputAdjacencyMatrix" sink="Percentileoutput_1.Input"/>
+        </connections>
+        <icons>
+                <icon id="0" value="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"/>
+        </icons>
+        <moduleGroup id="Pluto_example_1" name="Pluto_example" package="Pluto" icon="0" posX="0" posY="0" sourceCode="">
+                <metadata>
+                        <data key="__creationDateKey" value="Wed Apr 18 17:40:34 PDT 2012"/>
+                </metadata>
+                <module id="gRed_1" name="gRed" package="pluto" version="0.5" description="Reduces the complexity of graphs either through graph-theoretric metrics or averaging over physical regions." icon="0" posX="1007" posY="172" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifs/loni/students/mchambers/pluto-0.5/bin/gRed.sh" gridVariables="h_vmem=4G">
+                        <authors>
+                                <author fullName="Micah C. Chambers" email="micahcc@ucla.edu" website=""/>
+                        </authors>
+                        <tag>Graph Theory</tag>
+                        <tag>VTK</tag>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/TWiki/pluto</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Jan 30 07:33:05 PST 2012"/>
+                        </metadata>
+                        <input id="gRed_1.Region-PairedAverage" name="Region-Paired Average" description="For each pair of regions, compute the average of the connection strength. Use -z to include zeros in this calculation" required="false" enabled="false" order="0" prefix="-a" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="gRed_1.Region-PairedStandardDeviation" name="Region-Paired Standard Deviation" description="For each pair of regions, compute the standard deviation of the connection strength. Use -z to include zeros in this calculation" required="false" enabled="false" order="1" prefix="-s" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="gRed_1.KeepLabels" name="Keep Labels" description="Comma separated list of labels to keep in output. E.g &quot;1,2,3&quot;" required="false" enabled="false" order="2" prefix="-k" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="gRed_1.RemoveLabels" name="Remove Labels" description="Comma separated list of labels to remove in output. E.g &quot;1,2,3&quot;" required="false" enabled="false" order="3" prefix="-r" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <values>
+                                        <value>0,1,2,4,5,6,7,8,14,15,21,22,23,24,25,29,30,31,32,33,34,35,36,37,38,39,40,41,43,44,45,46,47,57,61,62,63,64,65,66,67,68,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87</value>
+                                </values>
+                        </input>
+                        <input id="gRed_1.IncludeZerosinSummaryStats" name="Include Zeros in Summary Stats" required="false" enabled="false" order="4" prefix="-z" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="gRed_1.Region-PairedPercentile" name="Region-Paired Percentile" description="For each pair of regions, saves the given percentile of the connection strength. Use -z to include zeros in this calculation. So if there are 9 connections, 5 of them 0 between A and B, without -z this would given rank 2, with -z it would give a 0" required="false" enabled="true" order="5" prefix="-p" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>11.1</value>
+                                </values>
+                        </input>
+                        <input id="gRed_1.InputAdjacencyMatrix" name="Input Adjacency Matrix" required="true" enabled="true" order="6">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="gRed_1.OutputAdjacencyMatrix" name="Output Adjacency Matrix" required="true" enabled="true" order="7">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="gRed_1.NormalizetoSelfConnections" name="Normalize to Self Connections" description="Divide connections by the sum of the two self connections (entropy)" required="false" enabled="false" order="8" prefix="-N" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes/>
+                                </format>
+                        </input>
+                        <input id="gRed_1.Saveinasciiformathugefile" name="Save in ascii format (huge file)" required="false" enabled="true" order="9" prefix="-T" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="gRed_1.ComputeStatistic" name="Compute Statistic" description="Compute the given graph statistic on the adjacency (or distance) matrix " required="false" enabled="false" order="10" prefix="-S" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>betweenness_centrality_d</enumeration>
+                                        <enumeration>betweenness_centrality_n</enumeration>
+                                        <enumeration>clustering_coef</enumeration>
+                                        <enumeration>degrees</enumeration>
+                                        <enumeration>eccentricity</enumeration>
+                                        <enumeration>efficiency_local_d</enumeration>
+                                        <enumeration>eigenvector_centrality</enumeration>
+                                        <enumeration>strengths</enumeration>
+                                        <enumeration>distance</enumeration>
+                                        <enumeration>edge_betweenness_d</enumeration>
+                                        <enumeration>edge_betweenness_n</enumeration>
+                                        <enumeration>erange_t</enumeration>
+                                        <enumeration>invert_elements</enumeration>
+                                        <enumeration>invert_elements_nz</enumeration>
+                                        <enumeration>jdegree</enumeration>
+                                        <enumeration>matching_ind</enumeration>
+                                        <enumeration>matching_ind_in</enumeration>
+                                        <enumeration>matching_ind_out</enumeration>
+                                        <enumeration>remove_loops</enumeration>
+                                        <enumeration>to_binary</enumeration>
+                                        <enumeration>to_positive</enumeration>
+                                        <enumeration>to_undirected_bi</enumeration>
+                                        <enumeration>to_undirected_wei</enumeration>
+                                        <enumeration>assortativity</enumeration>
+                                        <enumeration>charpath_d</enumeration>
+                                        <enumeration>charpath_s</enumeration>
+                                        <enumeration>connectivity_length</enumeration>
+                                        <enumeration>degree</enumeration>
+                                        <enumeration>density</enumeration>
+                                        <enumeration>diameter</enumeration>
+                                        <enumeration>efficiency_global_d</enumeration>
+                                        <enumeration>efficiency_global_s</enumeration>
+                                        <enumeration>jdegree_bl</enumeration>
+                                        <enumeration>jdegree_id</enumeration>
+                                        <enumeration>jdegree_od</enumeration>
+                                        <enumeration>modularity_louvain_single</enumeration>
+                                        <enumeration>radius</enumeration>
+                                        <enumeration>strength</enumeration>
+                                </format>
+                                <values>
+                                        <value>invert_elements</value>
+                                </values>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Micah C. Chambers" email="micahcc@ucla.edu" website=""/>
+                        </executableAuthors>
+                        <license>GNU General Public License 
+(http://www.gnu.org/licenses/gpl-3.0.txt)</license>
+                </module>
+                <module id="gTxtToVtk_1" name="gTxtToVtk" package="Pluto" version="0.5" description="Converts txt/csv adjacency matrix into vtk image format which is more efficient." icon="0" posX="581" posY="595" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifs/loni/students/mchambers/pluto-0.5/bin/gTxtToVtk.sh">
+                        <authors>
+                                <author fullName="Micah C. Chambers" email="micahcc@ucla.edu" website=""/>
+                        </authors>
+                        <tag>Graph Theory</tag>
+                        <tag>Connectivity</tag>
+                        <tag>VTK</tag>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/TWiki/pluto</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Mar 05 13:10:18 PST 2012"/>
+                        </metadata>
+                        <input id="gTxtToVtk_1.InputAdj." name="Input Adj." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file"/>
+                                                <filetype name="csv file" extension="csv" description="excel delimited file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="gTxtToVtk_1.OuptutAdj." name="Ouptut Adj." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Micah C. Chambers" email="micahcc@ucla.edu" website=""/>
+                        </executableAuthors>
+                        <license>GNU General Public License 
+(http://www.gnu.org/licenses/gpl-3.0.txt)</license>
+                </module>
+                <module id="gVtkToTxt_1" name="gVtkToTxt" package="Pluto" version="0.5" description="Converts adjacency matrix vtk image format which is more efficient to more readable txt/csv format." icon="0" posX="581" posY="359" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifs/loni/students/mchambers/pluto-0.5/bin/gVtkToTxt.sh">
+                        <authors>
+                                <author fullName="Micah C. Chambers" email="micahcc@ucla.edu" website=""/>
+                        </authors>
+                        <tag>Graph Theory</tag>
+                        <tag>Connectivity</tag>
+                        <tag>VTK</tag>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/TWiki/pluto</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Mar 05 13:10:18 PST 2012"/>
+                        </metadata>
+                        <output id="gVtkToTxt_1.OutputAdj." name="Output Adj." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file"/>
+                                                <filetype name="csv file" extension="csv" description="excel delimited file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="gVtkToTxt_1.InputAdj." name="Input Adj." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Micah C. Chambers" email="micahcc@ucla.edu" website=""/>
+                        </executableAuthors>
+                        <license>GNU General Public License 
+(http://www.gnu.org/licenses/gpl-3.0.txt)</license>
+                </module>
+                <module id="gCalcAdj_1" name="gCalcAdj" package="Pluto" version="0.5" description="This program takes a set of tracts or existing adjacency matrix and produces a new adjacency matrix based on the input labels/points. So an existing adjacency matrix can be re-sampled based on a set of points (finding the nearest point on either end of the edge), or a set of tracts can be counted to produce a count matrix." icon="0" posX="209" posY="373" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifs/loni/students/mchambers/pluto-0.5/bin/gCalcAdj.sh">
+                        <authors>
+                                <author fullName="Micah C. Chambers" email="micahcc@ucla.edu" website=""/>
+                        </authors>
+                        <tag>Graph Theory</tag>
+                        <tag>Connectivity</tag>
+                        <tag>VTK</tag>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/TWiki/pluto</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Apr 12 16:39:36 PDT 2012"/>
+                        </metadata>
+                        <input id="gCalcAdj_1.PointList" name="Point List" description="VTK Point List, or CSV File listing points to calculate connectivity at." required="false" enabled="true" order="0" prefix="-p" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="csv file" extension="csv" description="excel delimited file"/>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                                <filetype name="Text file" extension="txt" description="Text file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="gCalcAdj_1.Tracts" name="Tracts" description="Tracts to count based on points or labels." required="false" enabled="false" order="2" prefix="-t" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="gCalcAdj_1.AdjacencyMatrix" name="Adjacency Matrix" description="As an alternative to tracts, an adjacency matrix may be given which can be resampled into the space of the given points (requires point list)" required="false" enabled="true" order="3" prefix="-a" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="gCalcAdj_1.Labelmap" name="Labelmap" description="Calculate connectivity on a per-label basis rather than a per-point basis (only works for tracts)." required="false" enabled="false" order="1" prefix="-L" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NIFTI GZ" extension="nii.gz" description="Gzipped NIFTI file."/>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)"/>
+                                                <filetype name="Nii Gz" extension="nii.gz" description="Compressed Nifti"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="gCalcAdj_1.OutputAdjacencyMatrix" name="Output Adjacency Matrix" description="Output Adjacency Matrix in VTK ImageData format." required="true" enabled="true" order="4">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="gCalcAdj_1.VTKText" name="VTK Text" description="Output in VTK text format at the cost of much more space and loss of efficiency." required="false" enabled="true" order="5" prefix="-T" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="gCalcAdj_1.LogFile" name="Log File" required="false" enabled="false" order="6" prefix="-l" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="gCalcAdj_1.MinimumTrackLengthtoCount" name="Minimum Track Length to Count" description="Shortest track length that will be tabulated (ignore shorter)." required="false" enabled="false" order="7" prefix="-m" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Micah C. Chambers" email="micahcc@ucla.edu" website=""/>
+                        </executableAuthors>
+                        <license>GNU General Public License 
+(http://www.gnu.org/licenses/gpl-3.0.txt)</license>
+                </module>
+                <module id="micor_1" name="micor" package="Pluto" version="0.5" description="Calculates connectivity based on every pair of timeseries in an fMRI. The data should be preprocessed before this is run. Options include correlation, mutual information or a copmlex mutual information." icon="0" posX="581" posY="197" sourceCode="" location="pipeline://cranium.loni.usc.edu//ifs/loni/students/mchambers/pluto-0.5/bin/micor.sh">
+                        <authors>
+                                <author fullName="Micah C. Chambers" email="micahcc@ucla.edu" website=""/>
+                        </authors>
+                        <tag>Graph Theory</tag>
+                        <tag>fMRI</tag>
+                        <tag>Resting State</tag>
+                        <tag>Connectivity</tag>
+                        <tag>VTK</tag>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/TWiki/pluto</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Apr 12 16:18:58 PDT 2012"/>
+                        </metadata>
+                        <input id="micor_1.fMRIImage" name="fMRI Image" description="Input fMRI Image, should be preprocessed including motion correction or any frequency filtering." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NIFTI GZ" extension="nii.gz" description="Gzipped NIFTI file."/>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)"/>
+                                                <filetype name="Nii Gz" extension="nii.gz" description="Compressed Nifti"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="micor_1.Labelmap" name="Labelmap" description="Labelmap used to only process the necessary voxels rather than the entire image. Also needed for pre-averaging option." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NIFTI GZ" extension="nii.gz" description="Gzipped NIFTI file."/>
+                                                <filetype name="Nii Gz" extension="nii.gz" description="Compressed Nifti"/>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="micor_1.Output" name="Output" description="VTK ImageData Output. Includes location of and labels of each voxel. " required="true" enabled="true" order="2" prefix="-o" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="micor_1.AdvancedMutualInformation" name="Advanced Mutual Information" description="During the mutual information bin process, perform linear interpolation between time points." required="false" enabled="false" order="3" prefix="-C" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="micor_1.Correlation" name="Correlation" description="Use correlation as opossed to mutual information for timeseries similarity." required="false" enabled="true" order="4" prefix="-c" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="micor_1.Threshold" name="Threshold" description="Threshold of connectivity (everything below this is set to 0) (default .2)" required="false" enabled="false" order="5" prefix="-t" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="micor_1.NumberofLags" name="Number of Lags" description="Number of TR lags to consider during similarity, computation scales with 2*lags + 1 (default 0)." required="false" enabled="false" order="6" prefix="-l" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="micor_1.DontIgnoreNon-GMVoxels" name="Don't Ignore Non-GM Voxels" required="false" enabled="false" order="7" prefix="-I" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="micor_1.Pre-AverageEachRegion" name="Pre-Average Each Region" description="Vastly reduces computation time by averaging the signal over each region before computing connectivity." required="false" enabled="false" order="8" prefix="-A" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="micor_1.VTKTextOutput" name="VTK Text Output" description="Output in .vtk text format rather than binary. This makes the output human readible at the cost of precision and file size." required="false" enabled="false" order="9" prefix="-T" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Micah C. Chambers" email="micahcc@ucla.ed" website=""/>
+                        </executableAuthors>
+                        <license>GNU General Public License 
+(http://www.gnu.org/licenses/gpl-3.0.txt)</license>
+                </module>
+                <dataModule id="TestTextoutput_1" name="Test Text output" posX="408" posY="531" sourceCode="" type="File" source="false" loopIndex="false" dirDump="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 16 12:21:19 PDT 2012"/>
+                        </metadata>
+                        <input id="TestTextoutput_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="Text file" extension="txt" description="Text file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/~/testout/vtk_to_txt.txt</value>
+                        </values>
+                </dataModule>
+                <dataModule id="fMRITest_1" name="fMRI Test" posX="443" posY="25" sourceCode="" type="File" source="true" loopIndex="false">
+                        <tag/>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 16 12:19:36 PDT 2012"/>
+                        </metadata>
+                        <output id="fMRITest_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/loni/students/mchambers/testdata/fmri_test.nii.gz</value>
+                        </values>
+                </dataModule>
+                <dataModule id="LabelmapTest_1" name="Labelmap Test" posX="731" posY="26" sourceCode="" type="File" source="true" loopIndex="false">
+                        <tag/>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 16 12:19:36 PDT 2012"/>
+                        </metadata>
+                        <output id="LabelmapTest_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/loni/students/mchambers/testdata/label_test.nii.gz</value>
+                        </values>
+                </dataModule>
+                <dataModule id="PercentileTest_1" name="Percentile Test" posX="1023" posY="28" sourceCode="" type="File" source="true" loopIndex="false">
+                        <tag/>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 16 12:19:36 PDT 2012"/>
+                        </metadata>
+                        <output id="PercentileTest_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/loni/students/mchambers/testdata/percentile_test.vtk</value>
+                        </values>
+                </dataModule>
+                <dataModule id="VtkOut_1" name="Vtk Out" posX="592" posY="812" sourceCode="" type="File" source="false" loopIndex="false" dirDump="false">
+                        <tag/>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 16 12:26:17 PDT 2012"/>
+                        </metadata>
+                        <input id="VtkOut_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/~/testout/txt_to_vtk.vtk</value>
+                        </values>
+                </dataModule>
+                <dataModule id="functionaladjacencyTest_1" name="functional adjacency Test" posX="315" posY="116" sourceCode="" type="File" source="true" loopIndex="false">
+                        <tag/>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 16 12:19:36 PDT 2012"/>
+                        </metadata>
+                        <output id="functionaladjacencyTest_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/loni/students/mchambers/testdata/fgraph_corr.vtk</value>
+                        </values>
+                </dataModule>
+                <dataModule id="PointsTest_1" name="Points Test" posX="127" posY="119" sourceCode="" type="File" source="true" loopIndex="false">
+                        <tag/>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 16 12:19:36 PDT 2012"/>
+                        </metadata>
+                        <output id="PointsTest_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Text file" extension="txt" description="Text file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//ifs/loni/students/mchambers/testdata/graph_points.txt</value>
+                        </values>
+                </dataModule>
+                <dataModule id="TestTextoutput_2" name="Test Text output" posX="221" posY="585" sourceCode="" type="File" source="false" loopIndex="false" dirDump="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 16 12:21:19 PDT 2012"/>
+                        </metadata>
+                        <input id="TestTextoutput_2.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/~/testout/adjacency.vtk</value>
+                        </values>
+                </dataModule>
+                <dataModule id="Percentileoutput_1" name="Percentile output" posX="1020" posY="395" sourceCode="" type="File" source="false" loopIndex="false" dirDump="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 16 12:21:19 PDT 2012"/>
+                        </metadata>
+                        <input id="Percentileoutput_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/~/testout/percentile_out.vtk</value>
+                        </values>
+                </dataModule>
+        </moduleGroup>
+</pipeline>

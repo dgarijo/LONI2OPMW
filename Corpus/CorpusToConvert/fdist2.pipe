@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".1">
+        <connections>
+                <connection source="ExecutionDirectory_1.Output" sink="Fdist2_1.ExecutionDirectory" />
+        </connections>
+        <moduleGroup id="fdist2_1" name="fdist2" posX="0" posY="0">
+                <module id="Fdist2_1" name="Fdist2" description="A program to detect loci that might be under selection in samples from structured populations. &#xA;&#xA;Consists of 6 lines:&#xA;-Total number of demes (100 max)&#xA;-No of populations sampled (must be less than or equal to total number of demes)&#xA;-Expected Fst for infinite allele, infinite island model&#xA;-Sample size (assumed the same in all populations)&#xA;-Indicator - 1 for stepwise mutations; 0 for infinite alleles&#xA;-No of realizations (loci)&#xA;&#xA;" location="pipeline://cranium.loni.usc.edu//usr/local/Bioinformatics/fdist2/fdist2.sh" sourceCode="" icon="/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAx&#xA;NDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy&#xA;MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAUCABWAFYEASIAAhEBAxEBBCIA/8QAHwAAAQUB&#xA;AQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEG&#xA;E1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW&#xA;V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLD&#xA;xMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAA&#xA;AAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKR&#xA;obHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hp&#xA;anN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU&#xA;1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADgQBAAIRAxEEAAA/ANGnCkFOFe0cp7/RRRQKWilo&#xA;GFFFFFLSU6gAoooopwpBS0gCiiiinCkFLSGFFFFLRRRQAUUUU/TNKudUnMduo+UZZj0FWNX0SbRx&#xA;D5sqP5u7G3PGMf41raTI1j4QvbuE7ZS2A3pyB/Wucnuri52/aJ5ZdvTe5bH0zXBSq162Ik00oRdr&#xA;dW7f8EpqKj5hRRRUNaUukSw6PFqRkQxyNtCDOR1/wrOrqLz/AJEWy/66f1atcXWnTlTUftSSfpZh&#xA;FJ3CiiishdIlOitqfmJ5Ybbs5z1xVCtFdWkGiNpnlLsLbt+eeuazxWlD2vve17u3p0E7aWCiiilF&#xA;FFbvhSCG41SRJokkUQk4dQRnI9aMRWVClKq1ewRV3YKKKKxKWpLgBbqYAAAOQAPrRFBNNnyonk2j&#xA;J2qTitOZcvMxBRRRTKKXBBweDRVAFFFFd1Ha6ONCkhSZfsBbLP5nGcjv9cVymp2Ni2qW9tpUgkWR&#xA;QCQ+7DZP9Kvwf8iBc/8AXQf+hrVPwpCsuuIWGfLQt+P+TXz+FhLDxrVudvlctOjdlq/M2k+aytuF&#xA;FFFbUulaDaLHYXDgXLj7+TnJ7+gqHWLZ7Pwjb2z/AHo5tufXlua53Vpzc6tcyk9ZCB9BwK6TW5zc&#xA;+ELOZvvMyZ+uCDRKhVpSoOc3Lmkm79HboF01KyCiiistdMtj4VbUCrfaA+Ad3GNwHSl8P6RHqEks&#xA;1ycW8I+bnGTVtP8AkQ5P+un/ALOKk0GJp/DOoQxf61mOAPoP/r1pUxFRUKr5re/a/ZaAormXoFFF&#xA;FWPs3hu9Jt4WVZOgKkgk/j1pPCUVmIzKrj7YQwZd3O3I7flXJFWjcqwKsp5B4INb/hD/AJC8n/XA&#xA;/wDoS0YzBypYSpapJrR6v+tGEZ3ktAoooqzqdnoaW1zJDOpueSF83PzZ9KrJrX9l2Vvb2KJvKB5n&#xA;YZyx5xWNc/8AH3N/10b+dRCuulgYumo1ZOa319CHPW60CiiitbWPLuBBfxoE89TvUdmHWim3Y2aJ&#xA;YKerM7/gcf4UV0YTSlyrZNr5JtIUtwoooq3b/wDIg3P/AF0H/oa1F4NIGryZ6mE4/MVLb/8AIg3P&#xA;/XQf+hrVDwxcC31yHd0kBT8681wc8NiUv5pfki72lEKKKKzbkEXcwPXef510l8CPA9ln++P/AGas&#xA;vWrCWDW5oljY+Y+6PA6g1v6/ALbwtbQcfu2RTj1wc/rWmJrRm8Pbq0/w/wCCEU1zBRRRVRP+RDk/&#xA;66f+zisvR9Xl0q4Z1XfG/Dp61qJ/yIcn/XT/ANnFYSWU72f2pIy0IcoSOcHAP9arDQpzhWhV2c2v&#xA;yFJtNNdgooorsJI9N8SWjvCAtyo64wyn39RWT4SUprMysMEQsCP+BLS+EopP7QllwRGsZDHtmneH&#xA;JVPiS4I6SK+3/voH+lcU6bo08Rh4u8Uk15X6Fp3cZBRRRWFdf8fc3/XRv50kMTTTJEgyzkKB71Yv&#xA;7WaC9nDxuAHJzjjGau6Ki20c+pSD5YBiMHu56V7E66hQ5466K3q9jJK7sFFFFM1x0F4ltGcpbIIx&#xA;9e9FZzu0kjOxyzHJPqaK0oU/Z01DsJu7uFFFFTx6xs0CXS/Izvbd5m/pyD0x7etZ0btHIrocMpyD&#xA;TaWrhRhT5uVfE7v1E22FFFFdWvi9DaqXs910owG4259fWsy71t7zSUspIvmV95l3/eOSemPesgUt&#xA;ctPLsNTfNGPW/Ut1JPcKKKK011cjQm0zyOrbvM3e+emKs6Lr39lwPbvbiSNnL5BwQcAf0rEFOrSe&#xA;DoThKEo6Sd3vv3EptO4UUUV0l94oWW1eCytzDvGGY4HHfAFYVrcy2lyk8LYdDkVDSiihg6NGDhBa&#xA;PfrcHNt3YUUUV0F14oe8sJbZ7VQZF2lw/T8MUll4his7GO1/s9XVeSWk+8fXpWDS1j/ZuG5PZqOl&#xA;77vf7x+0le4UUUV0f/CTw/8AQKi/77H/AMTRXPUVH9l4X+X8X/mP2kgoooqmKcKKK9MyCiiilpaK&#xA;KBhRRRS0tFFIAooopaUUUUAFFFFOpRRRSAKKKKWiiikMKKKK/9k=" posX="237" posY="358">
+                        <authors>
+                                <author fullName="Alex Genco" email="alexgenco@gmail.com" website="" />
+                        </authors>
+                        <executableAuthors>
+                                <author fullName="Heidi Lischer Masterarbeit" email="" website="" />
+                        </executableAuthors>
+                        <tag />
+                        <uri>http://www.rubic.rdg.ac.uk/~mab/software.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Mar 31 14:03:53 PDT 2011" />
+                        </metadata>
+                        <input id="Fdist2_1.NumberofDemes" name="Number of Demes" description="100 max" required="true" enabled="true" order="2">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="Fdist2_1.NumberofPopulations" name="Number of Populations" description="No of populations sampled (must be less than or equal to total number of demes)" required="true" enabled="true" order="3">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="Fdist2_1.Expectedfstforinfiniteallele,infiniteislandmodel" name="Expected fst for infinite allele, infinite island model" description="Expected Fst for infinite allele, infinite island model" required="true" enabled="true" order="4">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="Fdist2_1.SampleSize" name="Sample Size" description="Sample size (assumed the same in all populations)" required="true" enabled="true" order="5">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="Fdist2_1.Indicator-StepwiseMutationsvs.InfiniteAlleles" name="Indicator - Stepwise Mutations vs. Infinite Alleles" description="Indicator - 1 for stepwise mutations; 0 for infinite alleles" required="true" enabled="true" order="6">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>0</enumeration>
+                                        <enumeration>1</enumeration>
+                                </format>
+                                <values>
+                                        <value />
+                                </values>
+                        </input>
+                        <input id="Fdist2_1.Noofrealizationsloci" name="No of realizations (loci) " description="No of realizations (loci) " required="true" enabled="true" order="7">
+                                <format type="Number" cardinality="1" />
+                        </input>
+                        <input id="Fdist2_1.ExecutionDirectory" name="Execution Directory" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1" />
+                        </input>
+                        <output id="Fdist2_1.OutputFile" name="Output File" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="DAT file" extension="dat" description="A DAT type file" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                </module>
+                <dataModule id="ExecutionDirectory_1" name="Execution Directory" posX="181" posY="158" type="String" source="true" loopIndex="false">
+                        <authors>
+                                <author fullName="Alex Genco" email="alexgenco@gmail.com" website="" />
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Mar 31 15:20:22 PDT 2011" />
+                        </metadata>
+                        <values>
+                                <value>/ifs/tmp/{$username}/fdist2</value>
+                        </values>
+                        <output id="ExecutionDirectory_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1" />
+                        </output>
+                </dataModule>
+        </moduleGroup>
+</pipeline>
+

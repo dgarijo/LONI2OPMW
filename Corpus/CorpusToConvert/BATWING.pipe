@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="DataFile_1.Output" sink="BATWING-PrepareInput_1.DataFile"/>
+                <connection source="BATWING-PrepareInput_1.BATWINGInputFile" sink="BATWING_2.InputFile"/>
+        </connections>
+        <icons>
+                <icon id="0" value="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"/>
+        </icons>
+        <moduleGroup id="BATWING_1" name="BATWING" package="Bioinformatics" version="1.0" description="Batwing reads in multi-locus haplotype data, and model and prior distri- bution specifications, and uses a Markov chain Monte Carlo (MCMC) method based on coalescent theory to generate approximate random samples from the posterior distributions of parameters such as mutation rates, effective population sizes and growth rates, and times of population splitting events. It also generates approximate posterior samples of the entire genealogical tree underly- ing the sample, including the tree height, which corresponds to the Time since the Most Recent Common Ancestor (TMRCA). Batwing does not model the effects of either recombination or selection, and hence implicitly assumes that these effects are negligible. Note also that Batwing is intended for within- species data, and not between-species data for which many phylogenetic soft- ware packages are available. Batwing is a direct descendant of MICSAT, described in Wilson &amp; Balding (Genetics 150, pp 499-510, 1998). The principal differences are: (1) in addition to the stepwise mutation model (SMM) for microsatellite loci, there are mu- tation models for unique event polymorphisms (UEP); and (2) the population demography is extended from constant size, random mating, populations (the standard coalescent model), to include population growth and subdivision. " posX="0" posY="0" sourceCode="">
+                <authors>
+                        <author fullName="Alex Genco" email="" website=""/>
+                </authors>
+                <uri>http://www.loni.ucla.edu/twiki/bin/view/LONI/Pipeline_GenomicsInformatics_BATWING</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Fri Apr 22 14:48:33 PDT 2011"/>
+                </metadata>
+                <module id="BATWING-PrepareInput_1" name="BATWING - Prepare Input" package="BATWING" version="0.1" description="Write user-specified parameters into a BATWING readable format." icon="0" posX="154" posY="243" sourceCode="" location="pipeline://cranium.loni.usc.edu/prepare_batwing.py" executableVersion="0.1">
+                        <authors>
+                                <author fullName="Alex Genco" email="alexgenco@gmail.com" website=""/>
+                        </authors>
+                        <uri>http://www.mas.ncl.ac.uk/~nijw/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Apr 06 10:01:20 PDT 2011"/>
+                        </metadata>
+                        <output id="BATWING-PrepareInput_1.BATWINGInputFile" name="BATWING Input File" required="true" enabled="true" order="31">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="BATWING-PrepareInput_1.PriorforAlpha" name="Prior for Alpha" description="The prior for alpha, the population growth rate, per generation. Currently, only positive values of alpha are allowed. If migmodel = 1, all subpopulations continue to grow at the same rate.
+example– alphaprior: gamma(1,100)" required="false" enabled="false" order="1" prefix="alphaprior:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.Ancestralinf" name="Ancestralinf" description="If set, constrains the root node to have the UEP haplotype specified; value should be a list of space-separated 0/1 characters, with length = infsites. example– ancestralinf: 0 1 0 0 0 #5 UEP loci" required="false" enabled="false" order="2" prefix="ancestralinf:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="-1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.Badness" name="Badness" description="A real number used to obtain the initial genealogical tree of the MCMC chain. A value &gt;= 1 means the initial tree joins the data sample nodes at random, without regard to their haplotype. A 0 value means that the first coalescence (going back in time) happens between the two most similar nodes, and so on. A value between 0 and 1 gives a compromise between these two extremes. See Wilson &amp; Balding (1998) for more details. example– badness: 0.1" required="false" enabled="false" order="3" prefix="basness:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.BetaPrior" name="Beta Prior" description="The prior for beta, the time at which population growth starts. example– betaprior: gamma(2,1)" required="false" enabled="false" order="4" prefix="betaprior:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.CountCoalesences" name="Count Coalesences" description="This is a tool for investigating the convergence behaviour of the chain. If set to “1”, the number of coalescences more recent than the start of growth is included in each output.
+example– countcoals: 1" required="false" enabled="false" order="5" prefix="countcoals:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.NumberofUEPLoci" name="Number of UEP Loci" description="The number of UEP loci. example– infsites:" required="false" enabled="false" order="6" prefix="infsites:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.TreatmentofUEPLoci" name="Treatment of UEP Loci" description="Code for treatment of UEP loci. 0 = Use UEP data to condition permissible genealogical trees, but not to affect the tree likelihood or posterior density in any other way. 1 = assume the same UEP mutation rate for all UEP loci, with a uniform prior. UEP positions within the tree contribute to the tree likelihood and posterior density. example– inftype: 0" required="false" enabled="false" order="7" prefix="inftype:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>0</enumeration>
+                                        <enumeration>1</enumeration>
+                                </format>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.InitialFile" name="Initial File" description="The name of a .iit file containing complete information on an instance of a tree from a previous MCMC run. Used to set up all information on the data, model settings and prior setting as specified in the file, and it sets the random number seed to the same value that it was when the .iit file was saved. MCMC settings still can be specified in the infile (e.g. samples, Nbetsamp, treebetN, warmup, seed). If seed is specified in the infile, it takes precedence over the initialfile settings. If seed is specified in the command line, it takes precedence over the infile settings. All other set- tings in the infile (e.g. priors etc.) are over-ruled by the settings specified in the initialfile.
+example– initialfile:" required="false" enabled="false" order="8" prefix="initialfile:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.KAlleles" name="K Alleles" description="Determines whether a k-alleles model is used for mutations of the STR loci. Value is a list of the numbers of alleles permissible at each locus. Under the k-alleles model, a mutation causes a change to any of the k alleles (including the original allele) with equal probability. If not set, the SMM is used, in which a mutation causes the allele repeat number to increase or decrease by one unit with equal probability.
+example– kalleles: 4 4 4 4 # for 4 STR loci" required="false" enabled="false" order="9" prefix="kalleles:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="-1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.KappaPrior" name="Kappa Prior" description="The prior for kappa=N0×alpha×beta). kappa is the natural log of the ratio of current population size to initial population size. example– kappaprior: gamma(5,1)" required="false" enabled="false" order="10" prefix="kappaprior:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.LocusTypes" name="Locus Types" description="If = 1, all STR loci have the same mutation rate. If = # STR loci, each STR locus has a distinct mutation rate. If = a list of integers whose sum = # STR loci, e.g. “3 6 2”, then the first 3 STR loci have the same mutation rate, then the next 6 have their own mutation rate, and then the final 2 have theirs.
+example– locustypes: 3 6 2" required="false" enabled="false" order="11" prefix="locustypes:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="-1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.OutputMeanTime" name="Output Mean Time" description="If set to 1 the mean pairwise coalescence times between individuals in the sample is output. example– meantime: 1" required="false" enabled="false" order="12" prefix="meantime:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>0</enumeration>
+                                        <enumeration>1</enumeration>
+                                </format>
+                                <values>
+                                        <value/>
+                                </values>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.MuPrior" name="Mu Prior" description="The prior distribution(s) for the STR mutation rate. Value is a list of dis- tributions, of length according to value of locustypes. example– muprior: gamma(1,1000)" required="false" enabled="false" order="14" prefix="muprior:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.AttemptHyperparameters" name="Attempt Hyperparameters" description="The number of times that changes to hyperparameters are attempted be- tween outputs. example– Nbetsamp: 10" required="true" enabled="true" order="15" prefix="Nbetsamp:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>10</value>
+                                </values>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.SubPopulations" name="Sub Populations" description="Specifies the number of sub-populations. Normally, this is assigned automatically to the number of distinct calues in locationfile. example– npopulations: 3" required="false" enabled="false" order="16" prefix="npopulations:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.NPrior" name="N Prior" description="The prior for N, the effective population size (Nc if sizemodel=1, Na if sizemodel=2). example– Nprior: lognormal(9,1)" required="false" enabled="false" order="17" prefix="Nprior:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.OmegaPrior" name="Omega Prior" description="The prior for N × alpha. example– omegaprior: uniform" required="false" enabled="false" order="18" prefix="omegaprior:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.OutRoot" name="Out Root" description="if this is set then the root haplotype is output. example– outroot: 0" required="false" enabled="false" order="19" prefix="outroot:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.PicGap" name="Pic Gap" description="The number of BATWING parameter outputs between each output of the tree to a outfile.x file. example– picgap: 1000" required="true" enabled="true" order="20" prefix="picgap:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>1000</value>
+                                </values>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.PopConsensus" name="Pop Consensus" description="If this is set then an additional output file outfile.pcsn is output, giving a list of the population tree shapes in newick format. This can be used as input to a program like CONSENSE from Phylip to produce a consensus tree. example– pop consensus: 1" required="false" enabled="false" order="21" prefix="pop_consensus:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.PropPrior" name="Prop Prior" description="The prior for proportion of the total population size taken up by each geo- graphic group. Must be Dirichlet. example– propprior: dirichlet(4,4,4)" required="false" enabled="false" order="22" prefix="propprior:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.Samples" name="Samples" description="The number of outputs from a BATWING run (beyond any specified by warmup). Each output is written on a separate line in the outfile. N.B. samples has nothing to do with data sample size.
+example– samples: 2000" required="true" enabled="true" order="23" prefix="samples:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>2000</value>
+                                </values>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.Seed" name="Seed" description="A long unsigned integer specifying the random number generator seed. The order of precedence for seed assignment is: Command Line &gt; infile &gt; initialfile &gt; default.
+example– seed: 123" required="true" enabled="true" order="24" prefix="seed:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>123</value>
+                                </values>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.SizeModel" name="Size Model" description="Code for the population growth model: 0, constant population size; 1, ex- ponential growth at rate alpha at all times; 2, exponential growth at rate alpha from a constant-size population, with growth starting at time beta. example– sizemodel: 2" required="false" enabled="false" order="25" prefix="sizemodel:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>0</enumeration>
+                                        <enumeration>1</enumeration>
+                                        <enumeration>2</enumeration>
+                                </format>
+                                <values>
+                                        <value/>
+                                </values>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.SplitPrior" name="Split Prior" description="The prior for the time of the first population split. example– splitprior: gamma(1,1)" required="false" enabled="false" order="26" prefix="splitprior:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.ThetaPrior" name="Theta Prior" description="The prior for 2N × mu. example– thetaprior: uniform" required="false" enabled="false" order="27" prefix="thetaprior:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.TreebetN" name="TreebetN" description="The number of times that changes to the genealogical tree are attempted before any changes to the hyperparameters are attempted. Thus BATWING outputs are separated by treebetN×Nbetsamp attempted tree updates. example– treebetN: 10" required="true" enabled="true" order="28" prefix="treebetN:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>10</value>
+                                </values>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.TreeConsensus" name="Tree Consensus" description="If this is set then an additional output file outfile.tcsn is generated, listing the shapes of the subpopulation tree in newick format. This can be used as input to a program like CONSENSE from Phylip to produce a consensus tree.
+example– tree consensus: 1" required="false" enabled="false" order="29" prefix="tree_consensus:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.WarmUp" name="Warm Up" description="The number of additional outputs to be generated to allow for burn-in of the MCMC algorithm. However, the additional outputs are not automati- cally discarded: this must be done explicitly by the user (and the number eventually discarded need bear no relation to the value of warmup). example– warmup: 200" required="true" enabled="true" order="30" prefix="warmup:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>200</value>
+                                </values>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.MigModel" name="Mig Model" description="0 = No population substructure; 1 = samples drawn from subpopulations specified in locationfile example– migmodel: ." required="false" enabled="false" order="13" prefix="migmodel:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>0</enumeration>
+                                        <enumeration>1</enumeration>
+                                </format>
+                                <values>
+                                        <value/>
+                                </values>
+                        </input>
+                        <input id="BATWING-PrepareInput_1.DataFile" name="Data File" required="true" enabled="true" order="0" prefix="datafile:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                </module>
+                <module id="BATWING_2" name="BATWING" package="BATWING" version="0.1" description="Batwing reads in multi-locus haplotype data, and model and prior distri- bution specifications, and uses a Markov chain Monte Carlo (MCMC) method based on coalescent theory to generate approximate random samples from the posterior distributions of parameters such as mutation rates, effective population sizes and growth rates, and times of population splitting events. It also generates approximate posterior samples of the entire genealogical tree underly- ing the sample, including the tree height, which corresponds to the Time since the Most Recent Common Ancestor (TMRCA). Batwing does not model the effects of either recombination or selection, and hence implicitly assumes that these effects are negligible. Note also that Batwing is intended for within- species data, and not between-species data for which many phylogenetic soft- ware packages are available. Batwing is a direct descendant of MICSAT, described in Wilson &amp; Balding (Genetics 150, pp 499-510, 1998). The principal differences are: (1) in addition to the stepwise mutation model (SMM) for microsatellite loci, there are mu- tation models for unique event polymorphisms (UEP); and (2) the population demography is extended from constant size, random mating, populations (the standard coalescent model), to include population growth and subdivision." icon="0" posX="278" posY="412" sourceCode="" location="pipeline://cranium.loni.usc.edu/batwing.sh" executableVersion="0.1" gridVariables="h_vmem=8">
+                        <authors>
+                                <author fullName="Alex Genco" email="alexgenco@gmail.com" website=""/>
+                        </authors>
+                        <uri>http://www.mas.ncl.ac.uk/~nijw/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Apr 06 10:01:20 PDT 2011"/>
+                        </metadata>
+                        <input id="BATWING_2.InputFile" name="Input File" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="BATWING_2.OutputDirectory" name="Output Directory" required="true" enabled="true" order="1">
+                                <format type="Directory" cardinality="1"/>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Ian J. Wilson" email="" website=""/>
+                        </executableAuthors>
+                </module>
+                <dataModule id="DataFile_1" name="Data File" package="BATWING" version="0.1" posX="51" posY="47" sourceCode="" type="File" source="true" loopIndex="false">
+                        <authors>
+                                <author fullName="Alex Genco" email="alexgenco@gmail.com" website=""/>
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Apr 06 13:27:49 PDT 2011"/>
+                        </metadata>
+                        <output id="DataFile_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/examples/session1/sampout</value>
+                        </values>
+                </dataModule>
+        </moduleGroup>
+</pipeline>

@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="ReconAll_1.RightHemispherePialSurface" sink="OctahedralResample_1.input"/>
+                <connection source="ReconAll_1.LeftHemispherePialSurface" sink="OctahedralResample_2.input"/>
+                <connection source="OutputDirectory_1.Output" sink="MakeDir_1.DirectoryName"/>
+                <connection source="Input_1.Output" sink="ReconAll_1.InputVolume"/>
+                <connection source="InputIDs_1.Output" sink="ReconAll_1.SubjectID"/>
+                <connection source="OutputDirectory_1.Output" sink="ReconAll_1.SubjectDirectory"/>
+                <connection source="MakeDir_1.OutputDirectoryName" sink="ReconAll_1.InputFlowControl"/>
+                <connection source="OctahedralResample_1.output" sink="RightHemisphereSurface_1.Input"/>
+                <connection source="OctahedralResample_2.output" sink="LeftHemisphereSurface_1.Input"/>
+        </connections>
+        <icons>
+                <icon id="1" value="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"/>
+                <icon id="0" value="iVBORw0KGgoAAAANSUhEUgAAADgAAAAyCAYAAAAJHRh4AAAdYUlEQVR42t16Z3Qc15Xmq9g5NxoN
+dAIauQE00ACRM0BEIpKIRE5EzgRAZJAUKTFLojQK1FiyKMkaj8fyzMhBxzs+Xsv2aiesz1jrmdHu
+2lrbxyPJCvZKFkmkvnurukCBtD37Q/61RV5Ud73qqvfd+N1XRShiJISoCOFxp0CRE8IyRDxqQTET
+QiuJihKP0CYUA+EIzxrwNCuOWwPnyDS4l6FwLOHkSo6wLEsYwuIl5SoD0RAdUcr1eIaB8LRwHkMR
+OSvcE6+Mm5IENlYScnfk8248UQeQyQI4xVvxgY8IAifG4JCAXE0TWisjlIpGGDhOETPFED2OGxkl
+McgVnIynKUILsxenp0Vt4GxlqDMlikInx9/JCUULwwfOk/8HYLjPDVCDU6AEpSlRdILgnZUoNC1a
+AEUhKpVDDfCInOEYFJawMhmKltC4F46xIm4adaEQdEHUODclryYU7ik5L9kXP4suwIoew+E/6i44
+c8B/UKefbbLPDTBo/ypyvLkWsWjRokoUWrIs4ShR3YzoPBT6FqJGNCJgHDegnVXygIvzOK4QfyaY
+TiU6m6glWispSCkqQiaeIxfHAza/3yV58qfaXCQQb4RGgDJ0TDQKYfV4QI/3V6MxNThHmkF8clZS
+BsKhOA5nLJdxRMYKTib6ngAFvwlwKcEUKg5/iiqRlMOjEv8KAf4WPwMeu4PQFgPuI0YEf8AlOenY
+599CpFgTFUmzggviF5kYeTwK/kWTscKIOAOl6NaERzUwAgheSEpoOcHewShhKJE45gpcm4kwMAFz
+0KSeVvH/B/dPoJuOoiN8GxXnR7NVH5jO/m3oA98/38YeuOq+oBUk7xKEDvgmxxMW7aSgCW8KgCAJ
+aB8bDiIYOh4NW4HYF8IU5Y9kuL73cG7kOxuZ7hvdSbZMR8Ackxo5DXjdYR6viVlVhv76Kl7/1IFo
+2d8UfzIXFTxfJpUEO4pN+ixEulZyXyOehBPk0HKc8D0Zc+l4DGm9XhTy7UuF4a9fzHZ95/FUS9wX
+k40JX/WZPv6blKD3Xk6xPPhEWuhPHiqO+743kEEi8ffvosFBTui3dETGqwjHswFj5aMASskBF6X+
+JElGEwBlEO5QjHIu0+54pD752fmy2DG0Ei1MLgtvmIo3nEv39a4Vxv/tQ1nW6BcT5fBqsuK3L6Wo
+nnwhWfH3X/Wwb7wWQ9zfiyaf/ucY5plXPfxf3fRq3riW7bg94rOmxSmJFu9lQNP8UEPLAcG9riSc
+5CHotoT8SgIlTOk2ytck51L/Eauq/oAz7icr9d1khXHCp6OeLnnt1md8jsevJpthPUX/3vgh3auZ
+eMbVzPio81Gu127kZ1z5s/zk209WJP7keppp+OUIsv0dr+LiK172ib9J4d75Oy8Nr3vIhR9EEvhu
+JHnr6x7qBy+mar99Ldv29SYHfRjjsw9npOdF96c2MK7/HSNcgbEveLsfpUea1Ison6AkSd+rUL6M
+YpLKCJGiZ39THziuPhC/AZcX3HGhytH5eH7YrYcTzHtPlsZ8a6PAnhiH80CR1aJGLnt033wu1w0P
+xMhhOYEnGGvaF9OtP34ev7+QxP7upoc8/6UYMvJKLFF+y0se/GYK98GX05Tzf5alv3K5PHopP4hU
+o8tvy1jyT7ScnMXpvYbyMGEYoQp+BafwL9KkZiTrnZYsckxy3Z+jrEvHnSiCY11D+SeUtvtcWXFP
+AM4fDX1ts9p+62yi+r2nMpz1QqLIkK6wVmLrvJQb5P1Cod1+I8v89hNZQT9/ojTMIwTK5ZTQqYse
+w/uPpepvPp2h2Xg2U/P1Z9MV799I4fjHfLKHL2fo3zxbYH9vJMP+eLTAfwgZlCvJ99BpfoXyJako
+CJVVAPBjlJsoWygvSxOOQPkQ5SOUFyT5nQT415I8K33/B6kY7EfdZ7V0uchSfLHM9dvLPsvtRxMs
+Wd2oucd8oeWPF0e+uXlIDw+k679/GF3ikk/rfTLHDufiTbMYr0waTu/plvLolayIfzxfGvfC+dKY
+N8YT1YUlODUPai5SyrQxSsJo91Us5CpGAqbG6sOJDjWIf7+D8jrKb1DCpdM/QHlTYjj7200J0I6k
+jBqUcZTrUn5kfy+FYgLRzCWakh8rjH3j+YJYeCxc+7c3oo1bTyYH3X6+LvHkuSq3ASfM5uHZE27N
+wFPlubCZnpgbGbii1haod1HWgNPzxgMZWBugDshUhcoq3J2WU4EcySODV+MBgR7oDlC1ZOmzAPjv
+JS4vF1lH4JgArgMFo4d8UQKkPABIfh/FU4haTse7rubHxF7Ndr5yM9740WuZto9uJhssuThHgQjI
+aWIUZpFhVJK5jIyvjKWlnkxzmzRYL2mjXKaW7RNKoTVRUBStZmWBAwICFdHTJuw+DAY91j4k5gYt
+ywTzgUzBS/xMe2BSwqSr74upH6H8FCVKcr10IUpQbqG8gyLEcfR9CSjgslLt4+ySWp7MC5t7yqOD
+p73m7z5aHKN0yogGnYkoeMKjcytdki/gzBiBzgS6Al6n0OksrE6VhNPLQQsVELXcYbRaNciIDFpa
+HaElbLKR0CNumXophKVq0LJhKsSPSrJgqlHirAy8ZAIUGSOwfQpBsxhnDHlDKNc4zuFYNUtEqvcJ
+jv13POe0FI//80D80XfVgzA5ASrHEY0MD0fhlSZ99tanynN+8mB28s8Xy3NK7JKKLXiOWVKNEYEj
+QeWQwqrxZukmA7sY5tB+LdhA/ZdDPuc3wyK0jyT4bHPOCM1Moif4SmZU8Ldzneb/5TPwPw5jyUtW
+BVmPDmcn4mPJRKSLzDssZMGlIp1RhPeGYpuiFAxJ06yY+FEbAr3HjG8OJeQXiOK7aNfvEr0M8LQN
+PGMWZVcqNep73FUe8AlaDHhOvJbShx7fG+uyzR1Kemk4zdcXw5EgVYA8C9RTjWBjolWkOlpP6nMy
+Qy7nFTlfPlaf9M/VJe6Pq/JscKTIsVNXE/lhT3/mL0anD7/beiz+/c4S962hwgiYLUu803845t3u
+trRfDo/lv9tQbX7vcAb9frFX8c6RpJAfHbYFPxdOqG6lQGsFB9bhP5XYIKsFY2DI/Az3/4ZxE4Wd
+wHWRuAcSzi8PtFrqu1lUaO0ooQBL9hU6ddQUK8RmspLowrGv1QQSgx5/Vqg2kmm3kTxXF6z8QW+s
++Z/r8k3vdPbEfTw1lQVDA4mwPp8PA23hMD2eBKcWM6CvNxzaj+jhdFMknK6wwfn6SJiqs++N4VjH
+jBd6WuywcDwW1tt9cKo1BSaaMz5prvb9MMFrXcJGJlMiyIZ9SonKbcKG8mNkxgiIzpJKxZxEDFak
+kiNYszzAalikz5TQvFEs/lirk1wQXVEdFCACcqeGZDkj1CvxyEpKahPebiqL+2TS59pbzHFBfZkK
++sfc0NVugeH2YLgwm7Qz3mS4M9Ju3O7v0O5NDodu9dXztx5oNG8PxBAY8RE4cZjdm91I2jraH7R9
+osYMi3V2/+Ix1/ZCZ8zexkIebK5VQUdL0o/joxXP8QzJYGgsKpycZlkhewnrAzI7NpsFSkK3Y+xe
+xWn+DynDHpSvB1IMo6UJjeWJ4oV0JayX8EbUmp0naszR1XkG+elmr/u1ppLEd9ubM3cnpqpguCsb
+OtLMu3XJNBwfc/jHznigqZzAaDGBpWIKpnMIdOPnzgYC58/EQW8LgcVjnH84k8DpBgWstOlgadEN
+NYdx/GgYjGdw0FxCYHLctXV20wcrE9FwqiUSVlvT308L07xsUvMR2M6oCa2lOUqv4tEcyGMxjBlA
+gG9JMZgu8dMUFKFD2QtQPhmyRFprxUrFsaguihLj0uqWk8Yiu/qVxjDTLwZSI7d7siOgr9KzO92X
+4x/pSILmQh1U5FNQN2jyD845d3tLyc5KAdnbRAudL0CQ1cQ/N27eHV0KhZp2AicH9TtXhkO3X5qJ
+37nQot9daNP427NRIQWaT6dL1P7uITNMnInYPrVkvzPbwu9tlqrgam0sjB+Ofzs9LOgvOEJhAlEE
+yyghJHUiQOxK9sn6ftY0kc/KDvITMk8oBu1EaYXOVVhbEtaQhHKQkmPlvng8PsTf5w2BoVQbDKQG
+wYns4K3JatedyZZw/2hfuH9q2nO7vSsYuho0MHtYAaczOXg0TQHPVIf4T3eF7s0uR/nrzrp2ah5w
+7Y0vR8FytxUePmKGRwo08FiD3f9oe8Ru/yECE10h0HMhDtoecsLQmBKWjtHbF7LI9mYc2TlTGg19
+WVEfZzuCXw9lZZ16bD+x2CJEOZEAMvctd5ju4zJGvZheVEohinUaNSnIizc9M1AQ9W5fesin/bm2
+ve4ss7/Tp4SORAo6E8lOL2p+7LgRVhcS4Pqlqu2RZhucrLHAiWgCV31y/7OHrTsXmuz+sf5QyB7R
+7DZf9sLIySjoLaZhPZn4n6t0wrVjLpip1MK1qRT/mVPJ25MPJW5PX0qAjWUXXO41wRcxMb1cYYWl
+ZA42amJh5EjSVkqY+gU0RSrOlBMW8MQVzXs627sbc7cmoi4oYWlPGFbKSYbXzr9UkxL06+58252u
+Egt0HHVAd5sLKjB+6pJQ29kUnMwnsH5UBZsDNpgcdMPMdDL0tIbCaLkBNr08fLUqGm5WhcHZajN0
+dppgZtULZ8Zi4XQVWi/PAGfydTDQGQLL53NhYcgNI9VK6C8k8MhkAlydiYcrg2FwpUgGz1Wa4DlU
+1NVON6zMpcH0YtF7UVHUs4wcs6tSJGk04RmawriiceN5XtzvsxmWRRrBE07kiTat3JPqNj5Ue8j2
+r50lzp3OihBoLNdDc1MQjAxHwVRvGKyhPNBigVMlFMxjUhgpRemwwOhQJEyeiILxWrRqpgwupsvh
+iXILXMMSMNcXCguTEbDaGQoP1FvgdI4MThbJYXwuGsZOxcESuudamQbOlxtho1ADl1rDYbVSD2fL
+VTCfS2CtjobzEyH+9c0EWHowG6paHT+LztVeJw6Si8SQFVc2f38NVfzMMAzyL44hFo1ckxikGstx
+Kf+twqfba0Zw7W1O6O5ybJeg5TorcFII9OJQDJzptcNMgxxm6hnoKMCsOBUFo806dFE1TKNlr7Za
+4UwTWmnYBnNDJuhsZ6GjlYKhVnS1QSssNKtg+bgBrix4YKlRC2ezGbiUo4RLdQ5YyFXD+RwTzPto
+mKlVQ287ByVHCUydDrq9vGzdHRo1QMOIDaqnkn5pSuHPoAXN+1nmYCeBwGiGYSRXZYjcrOdKs8NM
+r1QnW7ePloTCsaOh/spGPZRXcTtNhRR0I8ixXBbWG61wst0K033BsDQbjm6mhotnU2GqSQVjmD0n
+vQQe6rLAAyddMLvihPYRObQ2EmiuxhJyQgVLyw5Y2oyA85ux8GBPEJzC624kE7hYooPTLQ64PpkB
+G2j5hVINjLTrYeN6CtRvqPbKZ8nt1l4EOqyFlfk4OHkyfa+sMvQbJisppjApCo8J0DPvdvn4fR+g
+yBLM5iDu4qEI3XuHMVNWV4VCXZsdSpv1/gJ0wZnGUDh12AgreVpYqwyGnmoNNLUboGs5GupnQuHE
+fBjM9VtgKQtTfiqBAax/U5NmGFgNheHlYNiYxLFeFayuhUHfajCMPZ0MZ29kIWXDOMZktVqnhfVe
+F6zPeuD6I2UwcyoWTkzjb/F3Zx9PgdGnPf6uhx0wfs4FU13q7YcKlL+72RAH6w0xb8eayTks2VYB
+jAASY5G+r23C5GlgjDa78kaiW/3pIY9sL79QCzVtyCd7Q3Yrjmmho94Mc5hoVqudsNYQCb21FjjS
+aIK6+VioW4qBhm69GGdrGDOrlUpoPYKJaNkNQkY8fz0Dbqwnw8NTblhERVQOyaDpWiycfCoLJuvl
+cKUlBDb7w+HkcBhsbiTB7EYMzF2Lh9ZFPfTOaKFpjIfKRRU0bFpg6mI8THQaty5mK7a/VBUOXziR
+dqezKOTvdNi5oPW4P/RMQ0g+guPKrEZ6MjUx6M3iXOtObZUNGprtewVH9btxJWQvv80M9T3h0FiD
+9a7aDgN1YdBUh3GASeXocAy0VxtguNIIA1UG5JUWaBoOge6VGJhY98LptVS4MhQL57ocqCg5VDRx
+UD6B5yyGw9gYEu9OO0w1mOBEjRKmRy0wOWuC5dMY/0ME2qcINM3ycPXVOhg8Hw/DJ2P3HtzM3X7m
+TCm0ZBCoSCS7I62Rv4px604rlcqIA/H3Wd0QAKKJaVuQLD/JY34lNdmwl52m8xeVmO/kVOghvoSD
+rE4HZDSFgBNrXJSdQGGCDLLjWYhKJBARhQko1wBth+RwvCoYahosUNPngvRKGVShK7dXGWEC3Xr8
+iAUK0wnUNJsgt1kDmbUcAoyHaozBbozdNnTtY0jrVi/HwciKDo6OEmiYo+HSS3kwMh7knxt1QWsl
+769GhV+4VgrjU+7d1gqyNXncBeV57u+EWjTlCEvDiHSFuXcpUXzewJFQs5Hpc4erX/MmmG6lHjJD
+SroJkjN129nFIdtp2cY7KV6V3xfJQoqTgRQHveN1srspDgIFNnKnIpJAfiwFXjfZTool/pwUxW5R
+PH8n3U52k60ESjJVkJavgEgE5CuiIb+AgUpMLt0JBPpDCZYdDfSM2aHsVBCUnA2Cqit2aHkkHFYu
+xcEGxvQZVObT/RHQXYlx/mAydI0HwdgxBfTmMbDcn/1RXVH0ayY56dAiUVEESjr2t8zdks8LHxUK
+YjGauG6Mx1fdkdoPYmPRgvE6yEqzQloygo1W+ROc7B2Pld5NtLDgC5ZDWqhsKy+S96eFE4hBsOE2
+shuNVk5ESQ0iu0l6Apl4/BAqIBqt7cEsm5vDQQEShupYTEbpCngw1whjmQykYdLxDsqg+JwTas+H
+Q+epEDg/5YLrqIibaTQ8OxIB65idlx89BIPrbhjuNcBgvQa6Ks3bDYVBH+b7dF8O0pISLO2cUPdZ
+TloCwQMK8VkEmlIuJ8EaLTkSFEw/YHPIvhEervgXtOgvvR7DVmKU1h/vUvwmPlT+myS7CjLdZnRV
+y3a4m4A9joDzEL8TnaXejvbJIC6GgvwY2XYTKuZohAyao2TQGMdDZ7YR49UBfSVB0FdohKU6F4xl
+yKC/RA41XXpoWnLD2DkvzE244GK9Hl5C3vqgDRlOAQcTvTqYOB8L7WtOaF6xQdOyDXpXIuFEfxh0
+1WI2b/d+kBQnu4qdf5wssEgUWCjiheeW2DAhalYQBMorlCREpyfFpiAyZLfJVl0O+fMRTuU3Imzy
+l6JDFH/udepey4lzvJ2fEfmJM0Gx58zQgLc0xJ9X696tqMPkUxXh76mK2po4Eg1NHhkMZ1tgvDAE
+BrL1cKLADLM1YbDSjO7X5oG5KgucG4qHU0jReruDoLdeCSeRWDxerIYvVQfDYhqymR4z9E4HwfRV
+L/RNW6Fp0ggt1zzQ/0QaPHApD/pbLbtdLWF71ZXON10uZoSTYzdBiz2GTHqCFPBbap+y4iAllBaO
+qDisk8hRPVoVydArSbxRSdwhOq4gOkS/4omxfCUp1/nzlGLHTkGuDSqzMYOWYok4mgBDdRH+Y0U6
+KM/lob8zAubHU6G7PgTKMO6O+RjYbPLAs3NlcL7LA1f64uFcrRXmsLOYxYQznyVwXgKtGH9NJy3Q
+fiEaJi8kwOq6Bza6LdB3FNnR1XiouxwJp87FwUC7+nf1R2T+3h7PXmGx4695JSkQH8GKTyzFluMe
+gLQkn4GlAsJQ+w96MWXxxIbunBMao3o6JTf0XyvznVCWqIWKWBqaMtX+1iNmf0ODAcYXfFDVqIGy
+Uhq6G8xwshk57bEIWKpwwGiOBuYR9GwFkohsHi5jDX4Uu5Llcjl0YTNciY1y2w0f1D4cDYunPTDW
+wMNcGQ19WGvHH0uFtquRMDSng9VFO4wMhcLcfDo0dyT/b6uTXVOoKZuEQXiAJTyTZniGYhmBjNO0
+1EIGtMCLT2kDe5W4lEdJyhCzE8m3RzPPF2QFfXw4XefP9pKtgmyyV3PcvNc5G7Fb0sxCXbMcTg2F
+w0MDsTCZw8NxjNsBLw2juSoYrlDBSJUSZiqwD6w3wjJSwSnsQKZGsdt4yAfTj6dB74INro67YRQt
+24PJaGwsCM5+oQCmkTSMzii2L5xzw9pqHEzNJu32nEjf8mXYXpKpSLKIgQpYcj8E95FRn1mQ+sy8
+1IG3I2gRPo9dF82ayKY7jLxXnK32N9Vad1pxkkcHLdA4bvGPrURgO+WEsyfCYB1Z0SjG1Gy+Ghaq
+Q6GnSAlHBHrXoIbZ7lCYPuGE2cUYmFmOgbFJB5wYNMHQgEm02FMtoTCLAOtrsbSs2YXuH+o60ZJT
+/K2ZKSUMjZq2GloMu8f7fJBbGi083MnnlKzmwDPe+yVgQooW3rIQ/FR4xI06YOjAIiMtvXSgJjH6
+GPKXhSWWD9sbwrbbqkxQX8rtNDTI/N0DRuxIVNBYSfY6C8je7BGlf77OAP1lSiTgSAPbrXtjA044
+dTJ+d2kzFYbW4qF2wQGVoyZoPCrzH88jn46gQtYR2CP5crjQbIaRM9HQ+0j8Xud88G5tE9muwNpY
+jWS+up5AVYN2q6TaASl5rm+ZbOpDCFJxFwiRHlX/nlAcJ30OrA4wlHQqJThsiNJNVpOLgn7a1Za0
+O97i2ek5bIbWfM7fe1R3e2Ys/PYYUrcOdNHWKgq6amTQWauBY9gK1bdhMz0SCQ2NOmhq0u00Nhm2
+q9sMOwUjwXeqph0wOBwOC11O6MIiP4u1cC2dhonDLDQM6qEWS0T7bCi09SuhvYNASwvZa+3Q+1t7
+ovwltZG3HDHaG0i37YFO8aD73QOSOyBipeRFgPu6kNFyuZ7JifUZv3WkMmJ37JgPxkrCbvUkK6HT
+x0JvmQ76j4fA0EzsTutE2Fb9oPVOdY91q6bLulPf7dxrG/H4B2YP+Tt6oqC1JuhOZ45mr6NQD/Wt
+9t36kZi941NeGJzx3W7CzmawPQxmjtr9QxWGvdYazW5bd/Bu+6x7t/dU9O7wuOt2T491e2AwDoYm
+8qC8Iemnert8EiFwjFpG3WvAPwCSCgBEZCxHCe9aBLISoeWsSmeUHclMd/yousAFjXlOqPHqtmqx
+LjZlGLYaCo07xUWqO4W1BshHEp7bFgxZx5Ac1JqgCEtCRYPdX13v3GlsiYXaouC95jgltCVooCLb
+BBkFevBiRk0s0+2WdET5qztj0GXDoS5fDzUpHBxB2lfShtfAuC6r0++VFCuhtCwUymviPvQcsv8l
+Wi9fdD4llvy7hZA+uGyzXykC75vhHiOPETOsmE2FnZyidQY+M8MT8mJRashbSOl+He/T3fKkG+HQ
+YQeklTq3EnNN77q9/AfedM0HqdmGD32p6g99icr30xMU/54TK//ZoSj+rZRU03+Lj5b/p8wQ7muF
+NsVXspyqr8aFMt93OKi3Q6O4d8N8mh+6M/T/GJmu/UlsguxnmeH0O5ke7oOoQs1HMRWG38Qmcbfj
+Y9hPYmNUPwqP1P25LljZjVO2Bp5DBl6/ujevSElz/xUStDTWfBoFaz8trV5RAc9Vqqkgi4bkRjhk
+A2Eew7o5Vv2iOlrxX43x2n9wes3fiEq0POoKV69EuLWrYW71msMuW7MHUythZjIfoyfjbh05YTaR
+Zq2BFAepSKpTSSVE8UxymIyushpko0E2zYLSRB9TBjNtCgfbb3Kwk9HB7GJ0KL1miKJPq6OpM65w
+xZcjHaonbCHqdo1elkSreAtRKhgi4ynR8e6+X8R+Rmn2AYqdBsXREhlgxIoRcGdxJURsMwXkCqLH
+UhHMGEgSrSSH5RwptrCszylX6kwMY5CxxCC+aKgUnh8S4V01HbbcSmGhElOVRnR66fUf6dEB1lrG
+hLo1MuILjDiKGVF4kiVniQ67A2G5ySyIRkGytBxJ5qT6LE5KeJmJYZGmseT/YUEk4MxdOscJAKVl
+VqUIkpEWBzhhcS6gLOGNQ5X4xh1RGvEkjcSU7r6cpaOFV7+EgkPzEkkS35NT86JLKcWZC2/lKGhh
+ojzhcaaBBRdqX8GU+K4gQcXRgSfHQhYUc4cc/wsvCgovD7JELrsvi1L3rqL+kaE/fNKBGGYOvjV1
+kOMejPeD19wfo2kpLKSsRwVyAfNH7v/7c6PvFYr8/7/9X/7jMMHLKz2HAAAAAElFTkSuQmCC"/>
+        </icons>
+        <moduleGroup id="FreeSurferAutoSurfaceExtractor_1" name="FreeSurfer Auto Surface Extractor" package="FreeSurfer" icon="0" posX="0" posY="0" sourceCode="">
+                <metadata>
+                        <data key="__creationDateKey" value="Fri Jan 22 17:45:53 PST 2010"/>
+                </metadata>
+                <dataModule id="Input_1" name="Input" package="LONI" version="1.0" posX="96" posY="55" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jul 18 10:34:47 PDT 2008"/>
+                        </metadata>
+                        <output id="Input_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                        <need>hdr</need>
+                                </filetype>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/data/Pipeline_Workflow_Test_Data/Training/raw_data.img</value>
+                        </values>
+                </dataModule>
+                <dataModule id="InputIDs_1" name="Input IDs" description="This list contains Inpurt Data Identifiers (IDs)" posX="92" posY="208" rotation="1" sourceCode="" type="String" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jul 18 10:34:47 PDT 2008"/>
+                        </metadata>
+                        <output id="InputIDs_1.Output" name="Output" description="This list contains Inpurt Data Identifiers (IDs)" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>testdata</value>
+                        </values>
+                </dataModule>
+                <dataModule id="OutputDirectory_1" name="Output Directory" posX="92" posY="299" rotation="1" sourceCode="" type="String" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jul 18 10:34:47 PDT 2008"/>
+                        </metadata>
+                        <output id="OutputDirectory_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>{$tempdir}/{$username}</value>
+                        </values>
+                </dataModule>
+                <module id="OctahedralResample_1" name="OctahedralResample" package="LONI" version="1.0" description="This module resamples an arbitrary closed surface to have an octahedral triangulation.  The input and output file formats may be any supported by the ShapeTools library." icon="1" posX="514" posY="308" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu/python">
+                        <authors>
+                                <author fullName="Ryan Cabeen" email="rcabeen@loni.ucla.edu" website=""/>
+                        </authors>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/Main/BorisGutman</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Dec 19 16:21:49 GMT-08:00 2008"/>
+                        </metadata>
+                        <input id="OctahedralResample_1.input" name="input" description="This is the input shape.  This must be closed and in a format supported by the ShapeTools library." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="OctahedralResample_1.resolution" name="resolution" description="This specifies the image resolution used when resampling.  Larger values allow the algorithm to capture more anatomic detail.  A reasonable choice is the resolution of the image from which the original surface was constructred.	 " required="false" enabled="false" order="2" prefix="--res" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="3"/>
+                                <values>
+                                        <value>384</value>
+                                        <value>384</value>
+                                        <value>384</value>
+                                </values>
+                        </input>
+                        <input id="OctahedralResample_1.overwrite" name="overwrite" description="Enables output overwriting" required="false" enabled="true" order="3" prefix="--overwrite" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="OctahedralResample_1.verbose" name="verbose" description="Enables verbose reporting" required="false" enabled="true" order="6" prefix="--verbose" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <output id="OctahedralResample_1.output" name="output" description="This is the output shape." required="true" enabled="true" order="7">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MNI obj ascii" extension="obj" description="MNI obj ascii file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="OctahedralResample_1.executable" name="executable" description="The path to the python executable" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu/LONI/apps/rcabeen/ResampleSurfaceToOctahedral.py</value>
+                                </values>
+                        </input>
+                        <input id="OctahedralResample_1.fixtopology" name="fix topology" description="Fix the surface topology.  This will ensure that the surface will be spherical, but some fine detail may be lost in the process" required="false" enabled="false" order="4" prefix="-t" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="OctahedralResample_1.simplify" name="simplify" description="Simplify the surface before resampling" required="false" enabled="true" order="5" prefix="-s" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Boris Gutman, Ilya Eckstein, Ryan Cabeen" email="" website=""/>
+                        </executableAuthors>
+                        <license>http://www.loni.ucla.edu/Software/license.php
+By registering for downloads from the UCLA Laboratory of Neuro Imaging, you are agreeing to the following terms and conditions as well as to the Terms of Use of the LONI website. To view the LONI website's Terms of Use go to, http://www.loni.ucla.edu/software/termsofuse.php.
+
+    * Permission is granted to use this software without charge for non-commercial research purposes only.
+    * Other than the rights granted herein, LONI retains all rights, title, and interest in LONI software and Technology, and You retain all rights, title, and interest in Your Modifications and associated specifications, subject to the terms of this License.
+    * You may make verbatim copies of this software for personal use, or for use within your organization, provided that you duplicate all of the original copyright notices and associated disclaimers. If you provide the use of the software to other users within your organization, they also must comply with all the terms of this Software Distribution Agreement.
+    * YOU MAY NOT DISTRIBUTE COPIES of this software, or copies of software derived from this software, to others outside your organization without specific prior written permission from the UCLA Laboratory of Neuro Imaging, except where noted for specific software products.
+    * You must not remove or alter any copyright or other proprietary notices in the software.
+    * Software has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, IRB-approved Research Use Only. In no event shall data or images generated through the use of the Software be used in the provision of patient care.
+    * THE SOFTWARE IS PROVIDED "AS IS," AND THE UNIVERSITY OF CALIFORNIA AND ITS COLLABORATORS DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR RESPONSIBILITY FOR THE USE OF THIS SOFTWARE.
+    * This software is for research purposes only and has not been approved for clinical use.
+    * You may publish papers and books using results produced using software provided by this site provided that you reference the appropriate citations. A list of citations is available here.
+    * You agree to comply with LONI's Trademark Usage Requirements, as modified from time to time, described in the "Use of Materials Limitations" section of the LONI Terms of Use Agreement. Except as expressly provided in this License, you are granted no rights in or to any LONI trademarks now or hereafter used or licensed by LONI.
+    * All Technology and technical data delivered under this Agreement are subject to US export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with all such laws and regulations and acknowledge that you have the responsibility to obtain such licenses to export, re-export, or import as may be required after delivery to you.</license>
+                </module>
+                <module id="OctahedralResample_2" name="OctahedralResample" package="LONI" version="1.0" description="This module resamples an arbitrary closed surface to have an octahedral triangulation.  The input and output file formats may be any supported by the ShapeTools library." icon="1" posX="513" posY="136" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu/python">
+                        <authors>
+                                <author fullName="Ryan Cabeen" email="rcabeen@loni.ucla.edu" website=""/>
+                        </authors>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/Main/BorisGutman</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Dec 19 16:21:49 GMT-08:00 2008"/>
+                        </metadata>
+                        <input id="OctahedralResample_2.input" name="input" description="This is the input shape.  This must be closed and in a format supported by the ShapeTools library." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="OctahedralResample_2.resolution" name="resolution" description="This specifies the image resolution used when resampling.  Larger values allow the algorithm to capture more anatomic detail.  A reasonable choice is the resolution of the image from which the original surface was constructred.	 " required="false" enabled="false" order="2" prefix="--res" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="3"/>
+                                <values>
+                                        <value>384</value>
+                                        <value>384</value>
+                                        <value>384</value>
+                                </values>
+                        </input>
+                        <input id="OctahedralResample_2.overwrite" name="overwrite" description="Enables output overwriting" required="false" enabled="true" order="3" prefix="--overwrite" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="OctahedralResample_2.verbose" name="verbose" description="Enables verbose reporting" required="false" enabled="true" order="6" prefix="--verbose" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <output id="OctahedralResample_2.output" name="output" description="This is the output shape." required="true" enabled="true" order="7">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MNI obj ascii" extension="obj" description="MNI obj ascii file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="OctahedralResample_2.executable" name="executable" description="The path to the python executable" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu/LONI/apps/rcabeen/ResampleSurfaceToOctahedral.py</value>
+                                </values>
+                        </input>
+                        <input id="OctahedralResample_2.fixtopology" name="fix topology" description="Fix the surface topology.  This will ensure that the surface will be spherical, but some fine detail may be lost in the process" required="false" enabled="false" order="4" prefix="-t" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="OctahedralResample_2.simplify" name="simplify" description="Simplify the surface before resampling" required="false" enabled="true" order="5" prefix="-s" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Boris Gutman, Ilya Eckstein, Ryan Cabeen" email="" website=""/>
+                        </executableAuthors>
+                        <license>http://www.loni.ucla.edu/Software/license.php
+By registering for downloads from the UCLA Laboratory of Neuro Imaging, you are agreeing to the following terms and conditions as well as to the Terms of Use of the LONI website. To view the LONI website's Terms of Use go to, http://www.loni.ucla.edu/software/termsofuse.php.
+
+    * Permission is granted to use this software without charge for non-commercial research purposes only.
+    * Other than the rights granted herein, LONI retains all rights, title, and interest in LONI software and Technology, and You retain all rights, title, and interest in Your Modifications and associated specifications, subject to the terms of this License.
+    * You may make verbatim copies of this software for personal use, or for use within your organization, provided that you duplicate all of the original copyright notices and associated disclaimers. If you provide the use of the software to other users within your organization, they also must comply with all the terms of this Software Distribution Agreement.
+    * YOU MAY NOT DISTRIBUTE COPIES of this software, or copies of software derived from this software, to others outside your organization without specific prior written permission from the UCLA Laboratory of Neuro Imaging, except where noted for specific software products.
+    * You must not remove or alter any copyright or other proprietary notices in the software.
+    * Software has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, IRB-approved Research Use Only. In no event shall data or images generated through the use of the Software be used in the provision of patient care.
+    * THE SOFTWARE IS PROVIDED "AS IS," AND THE UNIVERSITY OF CALIFORNIA AND ITS COLLABORATORS DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR RESPONSIBILITY FOR THE USE OF THIS SOFTWARE.
+    * This software is for research purposes only and has not been approved for clinical use.
+    * You may publish papers and books using results produced using software provided by this site provided that you reference the appropriate citations. A list of citations is available here.
+    * You agree to comply with LONI's Trademark Usage Requirements, as modified from time to time, described in the "Use of Materials Limitations" section of the LONI Terms of Use Agreement. Except as expressly provided in this License, you are granted no rights in or to any LONI trademarks now or hereafter used or licensed by LONI.
+    * All Technology and technical data delivered under this Agreement are subject to US export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with all such laws and regulations and acknowledge that you have the responsibility to obtain such licenses to export, re-export, or import as may be required after delivery to you.</license>
+                </module>
+                <module id="MakeDir_1" name="MakeDir" icon="1" posX="220" posY="396" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu//bin/mkdir">
+                        <authors>
+                                <author fullName="Petros Petrosyan" email="petros.petrosyan@loni.ucla.edu" website="http://www.loni.ucla.edu"/>
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed May 12 17:07:35 PDT 2010"/>
+                        </metadata>
+                        <input id="MakeDir_1.DirectoryName" name="Directory Name" required="true" enabled="true" order="0" prefix="-p" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <output id="MakeDir_1.OutputDirectoryName" name="Output Directory Name" required="true" enabled="true" order="1" includeTransformedParameter="false">
+                                <format type="Flow Control" cardinality="1">
+                                        <transform order="0" operation="Append">.</transform>
+                                        <transform order="1" operation="Subtract">.</transform>
+                                </format>
+                        </output>
+                </module>
+                <module id="ReconAll_1" name="ReconAll" package="FreeSurfer" version="5.0.0" description="Performs all steps of the ReconAll process:
+    1.  Motion Correction and Conform
+    2.  NU (Non-Uniform intensity normalization)
+    3.  Talairach transform computation
+    4.  Intensity Normalization 1
+    5.  Skull Strip
+    6.  EM Register (linear volumetric registration)
+    7.  CA Intensity Normalization
+    8.  CA Non-linear Volumetric Registration 
+    9.  Remove neck
+    10. EM Register, with skull
+    11. CA Label (Aseg: Volumetric Labeling) and Statistics
+    12. Intensity Normalization 2 (start here for control points)
+    13. White matter segmentation
+    14. Edit WM With ASeg
+    15. Fill (start here for wm edits)
+    16. Tessellation (begins per-hemisphere operations)
+    17. Smooth1
+    18. Inflate1
+    19. QSphere
+    20. Automatic Topology Fixer
+    21. Final Surfs (start here for brain edits for pial surf)
+    22. Smooth2
+    23. Inflate2
+    24. Cortical Ribbon Mask
+    25. Spherical Mapping
+    26. Spherical Registration 
+    27. Spherical Registration, Contralater hemisphere
+    28. Map average curvature to subject
+    29. Cortical Parcellation (Labeling)
+    30. Cortical Parcellation Statistics
+    31. Cortical Parcellation mapped to ASeg" icon="0" posX="348" posY="182" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu/recon-all.sh">
+                        <authors>
+                                <author fullName="Edward Lau" email="eplau@ucla.edu" website="http://www.loni.ucla.edu"/>
+                        </authors>
+                        <uri>http://surfer.nmr.mgh.harvard.edu/fswiki/ReconAllDevTable</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Apr 09 14:21:17 PDT 2008"/>
+                        </metadata>
+                        <input id="ReconAll_1.InputVolume" name="Input Volume" description="Original MR file to be processed by FreeSurfer." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="ReconAll_1.SubjectID" name="Subject ID" description="Name or identification of the subject whose MR is being processed.
+A directory will be made with this name in the specified Subject Directory." required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="ReconAll_1.SubjectDirectory" name="Subject Directory" description="The absolute file path to the directory in which FreeSurfer should do its work.
+A directory with the Subject ID as its name will be created in this directory.
+There, FreeSurfer will establish its necessary directory structure." required="true" enabled="true" order="2">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <output id="ReconAll_1.LeftHemispherePialSurface" name="Left Hemisphere Pial Surface" required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Pial" extension="pial" description=""/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="ReconAll_1.RightHemispherePialSurface" name="Right Hemisphere Pial Surface" required="true" enabled="true" order="4">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Pial" extension="pial" description=""/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="ReconAll_1.InputFlowControl" name="Input Flow Control" description="Input to force order of execution" required="false" enabled="true" order="6">
+                                <format type="Flow Control" cardinality="1"/>
+                        </input>
+                        <input id="ReconAll_1.Overwrite" name="Overwrite" description="overwrite files in output directory" required="false" enabled="true" order="5" prefix="-no-isrunning" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Edward Lau" email="eplau@ucla.edu" website="http://www.loni.ucla.edu"/>
+                        </executableAuthors>
+                        <license>http://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferLicense
+End-User Licensing Agreement ("EULA") for FreeSurfer
+
+IMPORTANT- READ CAREFULLY: This End-User License Agreement ("EULA") is a legal agreement between you, the "licensee" (either an individual or a single entity), and CorTechs Labs, Inc.. For the purposes of this EULA, FreeSurfer includes computer software, documentation and sample datasets, the associated media, any printed materials, and any online or electronic documentation. By installing, copying, or otherwise using FreeSurfer, the licensee agrees to be bound by the terms of this EULA. If you do not agree to the terms of this EULA, then you may not install, copy or otherwise use FreeSurfer, and you are required to destroy the CD and remove any files that you may have already installed.
+
+1. GRANT OF LICENSE. This EULA grants the licensee the following rights: Software. The licensee may install one copy of FreeSurfer on a single computer. Network Use. The licensee may use FreeSurfer over an internal network, and the licensee may distribute FreeSurfer to other computers over an internal network. Documentation. The licensee may make a copy of the documentation for internal use only. This EULA grants the licensee a nonexclusive, nontransferable, no-cost, royalty free right to use the FreeSurfer for licensee's internal, non-commercial, non-clinical, academic research purposes only, under the terms of this agreement.
+
+2. LIMITATIONS Academic Version.
+
+FreeSurfer can only be used by Colleges, Universities, and other Non-Profit Research Organizations for research only. Colleges, Universities, and other Non-Profit Research Organizations may not use FreeSurfer in any commercial arrangement to any third-parties when payments are made for services rendered, either directly, or indirectly, when the functionality contained within FreeSurfer has been used.
+
+For-profit organizations and companies are explicitly prohibited from using this software for any purposes.
+
+Rental. The licensee may not rent or lease FreeSurfer.
+
+Commercial Use. The licensee may not charge anyone for any activity that uses FreeSurfer. For example, the licensee may not charge for segmentation, quantification, and/or corticalsurface reconstruction using FreeSurfer. The licensee cannot charge others for installation of the software, nor can they pay any entity, other than a full-time employee, to install and operate the software. The licensee may not incorporate FreeSurfer or any of its parts into any commercial code or product of any kind.
+
+Software Transfer. The licensee may not transfer FreeSurfer to any third party.
+
+Clinical Use: This software may not and should never be used for clinical purposes. Software used for clinical purposes may require regulatory documentation and associated filings.
+
+Termination. Without prejudice to any other rights, CorTechs Labs, Inc. may terminate this EULA if the licensee fails to comply with the terms and conditions of this EULA. In such an event, the licensee must destroy all copies of FreeSurfer and all of its component parts.
+
+3. COPYRIGHT and TRADEMARKS. FreeSurfer. All title and copyrights in and to FreeSurfer (including but not limited to any code, documentation, images, text or data) are owned by CorTechs Labs, Inc. and The General Hospital Corporation doing business as Massachusetts General Hospital. FreeSurfer is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. FreeSurfer is licensed, not given away or sold. Trademarks. This License does not grant any rights to use the trade names "FreeSurfer", "CorTechs Labs, Inc.", "CorTechs", "CSurf," “Massachusetts General Hospital” or any other trademarks or trade names belonging to CorTechs Labs, Inc. or The General Hospital Corporation unless explicitly permitted in writing by CorTechs Labs, Inc. or The General Hospital Corporation, respectively.
+
+Tck/Tk. Parts of this software are based on the Tcl/Tk software copyrighted by the Regents of the University of California, Sun Microsystems, Inc., and other parties. The original license terms of the Tcl/Tk software distribution is included in the file docs/license.tcltk. (Please see Appendix 1)
+
+Tix. Parts of this software are based on the Tix software copyrighted by the Ioi Kim Lam, and Expert Interface Technologies. The original license terms of the Tix software distribution is included in the file docs/license.tix. (Please see Appendix 2)
+
+HTML. Parts of this software are based on the HTML Library software copyrighted by Sun Microsystems, Inc. The original license terms of the HTML Library software distribution is included in the file docs/license.html_lib. (Please see Appendix 2)
+
+Mesa. Parts of this software link to the Mesa library software copyrighted by Brian Paul. This software is covered under the GNU LIBRARY GENERAL PUBLIC LICENSE, Version 2, which is included in the file docs/license.gnu. (Please see Appendix 3)
+
+4. NO SUPPORT OR WARRANTY. FreeSurfer is provided with no support whatsoever. CorTechs Labs, Inc. and/or The General Hospital Corporation may, at their sole discretion, provide bug reports or upgrades at www.nmr.mgh.harvard.edu, but CorTechs and/or The General Hospital Corporation do not have any obligation to notify users of this occurring. FreeSurfer may contain in whole or in part pre-release, untested, or not fully tested works. FreeSurfer may contain errors that could cause failures or loss of data, and may be incomplete or contain inaccuracies. LICENSEE expressly acknowledges and agrees that use of FreeSurfer, or any portion thereof, is at LICENSEE's sole and entire risk, and that FreeSurfer is an experimental program. FreeSurfer is provided "AS IS" and without warranty, upgrades or support of any kind. CORTECHS LABS, INC. and THE GENERAL HOSPITAL CORPORATION EXPRESSLY DISCLAIMS ALL WARRANTIES AND/OR CONDITIONS, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY OR SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. CORTECHS LABS, INC. AND THE GENERAL HOSPITAL CORPORATIN DO NOT WARRANT THAT THE FUNCTIONS CONTAINED IN FREESURFER WILL MEET LICENSEE'S REQUIREMENTS, OR THAT THE OPERATION OF FREESURFER WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN FREESURFER WILL BE CORRECTED. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY CORTECHS LABS, INC.OR THE GENERAL HOSPITAL CORPORATION OR A CORTECHS LABS, INC. AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY OR IN ANY WAY INCREASE THE SCOPE OF THIS WARRANTY. LICENSEE ACKNOWLEDGES THAT FREESURFER IS NOT INTENDED FOR CLINICAL USE AND SHOULD NOT BE USED FOR DIAGNOSIS, TREATMENT PLANNING, OR ANY OTHER CLINICAL PURPOSE.
+
+5. INFRINGEMENT. If any portion of, or functionality implemented by, FreeSurfer becomes the subject of a claim of infringement, CorTechs Labs, Inc. may, at its option: (a) attempt to procure the rights necessary for CorTechs Labs, Inc. and LICENSEE to continue using the Affected Code; (b) modify the Affected Code so that it is no longer infringing; or (c) suspend LICENSEE's rights to use, reproduce, modify, sublicense and distribute the Affected Code until a final determination of the claim is made by a court or governmental administrative agency of competent jurisdiction and CorTechs Labs, Inc. lifts the suspension as set forth below. Such suspension of rights will be effective immediately upon CorTechs Labs, Inc.'s posting of an email notice to such effect to the LICENSEE. Upon such final determination being made, if CorTechs Labs, Inc. is legally able, without the payment of a fee or royalty, to resume use, reproduction, modification, sublicensing and distribution of the Affected Code, CorTechs Labs, Inc. may, it CorTechs' sole discretion, lift the suspension of rights to the Affected Code by posting of an email notice to such effect to the LICENSEE.
+
+LICENSEE: agrees to release and to indemnify CorTechs Labs, Inc. and The General Hospital Corporation and any of their trusties, directors, employees, professional staff or agents from any and all claims and damages in any way arising from the use of FreeSurfer by you, your Institution, or any other individual or entity obtaining access to FreeSurfer from you or your institution.
+
+6. LIMITATION OF LIABILITY. UNDER NO CIRCUMSTANCES SHALL CORTECHS LABS, INC AND THE GENERAL HSOPITAL CORPORATION BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO THIS LICENSE OR LICENSEE'S USE OR INABILITY TO USE FREESURFER, OR ANY PORTION THEREOF, whether under a theory of contract, warranty, tort (including negligence), products liability or otherwise, even if CorTechs Labs, Inc. has been advised of the possibility of such damages AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY REMEDY. In no event shall CorTechs Labs, Inc.'s total liability to LICENSEE for all damages under this License exceed the amount of fifty dollars ($50.00).
+
+7. MISCELLANEOUS. U.S. Government End Users. The Covered Code is a "commercial item" as defined in FAR 2.101. Government software and technical data rights in the Covered Code include only those rights customarily provided to the public as defined in this License. This customary commercial license in technical data and software is provided in accordance with FAR 12.211 (Technical Data) and 12.212 (Computer Software) and, for Department of Defense purchases, DFAR 252.227-7015 (Technical Data -- Commercial Items) and 227.7202-3 (Rights in Commercial Computer Software or Computer Software Documentation). Accordingly, all U.S. Government End Users acquire Covered Code with only those rights set forth herein. Waiver; Construction. Failure by CorTechs Labs, Inc. to enforce any provision of this License will not be deemed a waiver of future enforcement of that or any other provision. Any law or regulation which provides that the language of a contract shall be construed against the drafter will not apply to this License. Dispute Resolution. Any litigation or other dispute resolution between LICENSEE and CorTechs Labs, Inc. relating to this License shall take place in the Commonwealth of Massachusetts, and LICENSEE and CorTechs Labs, Inc. hereby consent to the personal jurisdiction of, and venue in, the state and federal courts within that Commonwealth with respect to this License. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Entire Agreement; Governing Law. This License constitutes the entire agreement between the parties with respect to the subject matter hereof. This License shall be governed by the laws of the United States and the Commonwealth of Massachusetts, except that body of Massachusetts law concerning conflicts of law.
+
+Quebec. Where LICENSEEs are located in the province of Quebec, Canada, the following clause applies: The parties hereby confirm that they have requested that this License and all related documents be drafted in English. Les parties ont exigé que le présent contrat et tous les documents connexes soient rédigés en anglais. Authority. The person submitting this registration warrants that he/she has the authority to bind to this Agreement the party which he/she represents.</license>
+                </module>
+                <dataModule id="RightHemisphereSurface_1" name="Right Hemisphere Surface" posX="731" posY="300" rotation="1" sourceCode="" type="File" source="false" loopIndex="false" dirDump="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Jan 19 15:53:48 PST 2010"/>
+                        </metadata>
+                        <input id="RightHemisphereSurface_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MNI obj ascii" extension="obj" description="MNI obj ascii file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="MNI obj ascii" extension="obj" description="MNI obj ascii file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/{$tempdir}/{$username}/freesurfer/right_corticalsurface.obj</value>
+                        </values>
+                </dataModule>
+                <dataModule id="LeftHemisphereSurface_1" name="Left Hemisphere Surface" posX="728" posY="169" rotation="1" sourceCode="" type="File" source="false" loopIndex="false" dirDump="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Jan 19 15:53:48 PST 2010"/>
+                        </metadata>
+                        <input id="LeftHemisphereSurface_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MNI obj ascii" extension="obj" description="MNI obj ascii file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="MNI obj ascii" extension="obj" description="MNI obj ascii file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/{$tempdir}/{$username}/freesurfer/left_corticalsurface.obj</value>
+                        </values>
+                </dataModule>
+                <variables>
+                        <variable name="Age">//idaxs/project/subject/study/subjectAge</variable>
+                        <variable name="Var 1">Value</variable>
+                        <variable name="CDRSCORE">//idaxs/project/subject/visit/assessment[@name='CDR']/component[@name='CDR Total Score']/assessmentScore[@attribute='CDGLOBAL']</variable>
+                        <variable name="SUID">//idaxs/project/subject/subjectIdentifier</variable>
+                        <variable name="Var sasasa2">Value</variable>
+                        <variable name="age">//idaxs/project/subject/study/subjectAge</variable>
+                        <variable name="TestCDR">//idaxs/project/subject/study/weightKg</variable>
+                        <variable name="MMSCORE">//idaxs/project/subject/visit/assessment[@name='MMSE']/component[@name='MMSE Total Score']/assessmentScore[@attribute='MMSCORE']</variable>
+                        <variable name="y">//idaxs/project/subject/study/subjectAge</variable>
+                </variables>
+        </moduleGroup>
+</pipeline>

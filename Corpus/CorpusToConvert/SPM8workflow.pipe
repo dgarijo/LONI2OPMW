@@ -1,0 +1,1339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="SPMSmooth_1.Outfile" sink="SPMfMRIModelSpecification_1.inputscans"/>
+                <connection source="SPMRealignestimateandreslice_1.meanimage" sink="SPMCoregister_1.referenceimage"/>
+                <connection source="Structuralimagedata_1.Output" sink="SPMCoregister_1.sourceimage"/>
+                <connection source="Functionalimagedata_1.Output" sink="SPMRealignestimateandreslice_1.data"/>
+                <connection source="Referenceimage_1.Output" sink="SPMRealignestimateandreslice_1.Reference"/>
+                <connection source="SPMCoregister_1.outfile" sink="SPMSegment_1.Inputdata"/>
+                <connection source="SPMNormalise_1.outfile" sink="SPMSmooth_1.data"/>
+                <connection source="SPMRealignestimateandreslice_1.realigneddata" sink="SPMNormalise_1.warpingimage"/>
+                <connection source="SPMSegment_1.flowcontrol" sink="SPMNormalise_1.flowcontrol"/>
+                <connection source="SPMfMRIModelSpecification_1.outdir" sink="SPMModelEstimation_1.SPM.matdir"/>
+                <connection source="SPMSegment_1.biascoroutput" sink="SPMNormalise_2.warpingimage"/>
+                <connection source="SPMfMRIModelSpecification_1.outdir" sink="StatisticalOutput_1.Input"/>
+        </connections>
+        <icons>
+                <icon id="0" value="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
+RK5CYII="/>
+        </icons>
+        <moduleGroup id="SPM8Workflow_1" name="SPM8 Workflow" package="SPM8" description="Sample SPM workflow" posX="0" posY="0" sourceCode="" recordsWorkflow="true">
+                <authors>
+                        <author fullName="Sam Hobel" email="" website=""/>
+                </authors>
+                <uri>http://www.fil.ion.ucl.ac.uk/spm/</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Mon Apr 29 16:07:07 PDT 2013"/>
+                </metadata>
+                <dataModule id="Referenceimage_1" name="Reference image" package="SPM8" posX="231" posY="79" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jan 18 14:28:44 PST 2013"/>
+                        </metadata>
+                        <output id="Referenceimage_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                        <need>hdr</need>
+                                </filetype>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/spm8_data/blockauditory_fmri/fM00223/fM00223_004.img</value>
+                        </values>
+                </dataModule>
+                <dataModule id="Functionalimagedata_1" name="Functional image data" package="SPM8" posX="463" posY="78" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jan 18 14:28:44 PST 2013"/>
+                        </metadata>
+                        <output id="Functionalimagedata_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                        <need>hdr</need>
+                                </filetype>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/spm8_data/blockauditory_fmri/fM00223/fM00223_004.img</value>
+                                <value>pipeline://cranium.loni.usc.edu/spm8_data/blockauditory_fmri/fM00223/fM00223_005.img</value>
+                                <value>pipeline://cranium.loni.usc.edu/spm8_data/blockauditory_fmri/fM00223/fM00223_006.img</value>
+                        </values>
+                </dataModule>
+                <module id="SPMfMRIModelSpecification_1" name="SPM fMRI Model Specification" package="SPM8" description="Statistical analysis of fMRI data uses a mass-univariate approach based on General Linear Models (GLMs).
+Step1: specification of GLM matrix, fMRI data files and filtering.
+
+The design matrix defines the experimental design and the nature of hypothesis testing to be implemented. The design matrix has one row for each scan and one column for each effect or explanatory variable. (eg. regressor or stimulus function). You can build design matrices with separable session-specific partitions. Each partition may be the same (in which case it is only necessary to specify it once) or different.
+
+Responses can be either event- or epoch related, the only distinction is the duration of the underlying input or stimulus function. Mathematically they are both modeled by convolving a series of delta (stick) or box functions (u), indicating the onset of an event or epoch with a set of basis functions. These basis functions model the hemodynamic convolution, applied by the brain, to the inputs. This convolution can be first-order or a generalized convolution modeled to second order (if you specify the Volterra option). The same inputs are used by the Hemodynamic model or Dynamic Causal Models which model the convolution explicitly in terms of hidden state variables.
+
+Basis functions can be used to plot estimated responses to single events once the parameters (i.e. basis function coefficients) have been estimated. The importance of basis functions is that they provide a graceful transition between simple fixed response models (like the box-car) and finite impulse response (FIR) models, where there is one basis function for each scan following an event or epoch onset. The nice thing about basis functions, compared to FIR models, is that data sampling and stimulus presentation does not have to be synchronized thereby allowing a uniform and unbiased sampling of peri-stimulus time. 
+
+Event-related designs may be stochastic or deterministic. Stochastic designs involve one of a number of trial-types occurring with a specified probability at successive intervals in time.  These probabilities can be fixed (stationary designs) or time-dependent (modulated or non-stationary designs). The most efficient designs obtain when the probabilities of every trial type are equal. A critical issue in stochastic designs is whether to include null events If you wish to estimate the evoked response to a specific event type (as opposed to differential responses) then a null event must be included (even if it is not modeled explicitly).
+
+In SPM, analysis of data from multiple subjects typically proceeds in two stages using models at two 'levels'. The 'first level' models are used to implement a within-subject analysis. Typically there will be as many first level models as there are subjects. Analysis proceeds as described using the 'Specify first level' and 'Estimate' options. The results of these analyses can then be presented as 'case studies'. More often, however, one wishes to make inferences about the population from which the subjects were drawn. This is an example of a 'Random-Effects (RFX) analysis' (or, more properly, a mixed-effects analysis). In SPM, RFX analysis is implemented using the 'summary-statistic' approach where contrast images from each subject are used as summary measures of subject responses. These are then entered as data into a 'second level' model.
+" icon="0" posX="711" posY="781" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu/spm8_batches/model_spec.sh" gridVariables="h_stack=256">
+                        <authors>
+                                <author fullName="Sam Hobel" email="shobel87@gmail.com" website=""/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 23423504</citation>
+                                <citation>PMID: 23322456</citation>
+                        </citations>
+                        <uri>http://www.fil.ion.ucl.ac.uk/spm/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jan 04 13:33:24 PST 2013"/>
+                        </metadata>
+                        <input id="SPMfMRIModelSpecification_1.timingRT" name="timing RT" description="Interscan interval, TR, (specified in seconds). This is the time between acquiring a plane of one volume and the same plane in the next volume. It is assumed to be constant throughout." required="true" enabled="true" order="4">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>7</value>
+                                </values>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.timingunits" name="timing units" description="The onsets of events or blocks can be specified in either scans or seconds." required="true" enabled="true" order="3">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>scans</enumeration>
+                                        <enumeration>seconds</enumeration>
+                                </format>
+                                <values>
+                                        <value>scans</value>
+                                </values>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.spmpath" name="spm path" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu/spm_exec/run_spm8.sh</value>
+                                </values>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.MCRROOT" name="MCRROOT" required="true" enabled="true" order="1">
+                                <format type="Directory" cardinality="1"/>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/MATLAB/R2012a</value>
+                                </values>
+                        </input>
+                        <output id="SPMfMRIModelSpecification_1.outdir" name="outdir" description="where the SPM.mat and classical result will be written" required="true" enabled="true" order="2">
+                                <format type="Directory" cardinality="1"/>
+                        </output>
+                        <input id="SPMfMRIModelSpecification_1.inputscans" name="input scans" description="fmri scans for this session, they must have all the same image dimensions, orientation, voxel size etc" required="true" enabled="true" order="26">
+                                <format type="File" cardinality="-1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.fmri_t" name="fmri_t" description="Microtime resolution, t, is the number of time-bins per scan used when building regressors.
+default 16" required="false" enabled="false" order="5" prefix="fmri_t" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.fmri_t0" name="fmri_t0" description="Microtime onset, t0, is the first time-bin at which the regressors are resampled to coincide with the data acquistion
+t0=1 means regressors will be appropriate for the first slice (default value)
+t0=1/2 if yu want regressors to match responses from middle slice" required="false" enabled="false" order="6" prefix="fmri_t0" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.cond_name" name="cond_name" description="condition name (string must be entered if enabled)" required="false" enabled="false" order="7" prefix="cond_name" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <dependencies>
+                                        <dependent>cond_onset</dependent>
+                                        <dependent>cond_dur</dependent>
+                                        <dependsOn>cond_onset</dependsOn>
+                                        <dependsOn>cond_dur</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.cond_onset" name="cond_onset" description="condition onsets (vector of onset times)
+or hr:min:sec format (ex 6:12:84)" required="false" enabled="false" order="8">
+                                <format type="String" cardinality="1"/>
+                                <dependencies>
+                                        <dependent>cond_name</dependent>
+                                        <dependsOn>cond_name</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.cond_dur" name="cond_dur" description="even durations. epoch and event-related responses are modeled in exactly the same way but specifying 0 for events. If a single number is entered, all trials will be assumed to conform to this duration. If multiple durations, the number must match the number of onset times. " required="false" enabled="false" order="9">
+                                <format type="String" cardinality="1"/>
+                                <dependencies>
+                                        <dependent>cond_name</dependent>
+                                        <dependsOn>cond_name</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.tmod" name="tmod" description="Time modulation number allows for the characterization of linear or nonlinear time effects. 
+no time modulation = 0 (default)
+1st order time modulation = 1 . This will model the stick functions and a linear change of the stick function heights over time. 
+2nd order = 2
+3rd order = 3 etc...to 6" required="false" enabled="false" order="10" prefix="tmod" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.pmod_name" name="pmod_name" description="Parametrics modulations: the stick function itself can be modulated by some parametric variate (can be time or trial specific like reaction time) modeling the interaction between trial and variate.
+Parameter name (a string must be entered)" required="false" enabled="false" order="11" prefix="pmod_name" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <dependencies>
+                                        <dependent>pmod_param</dependent>
+                                        <dependent>pmod_poly</dependent>
+                                        <dependsOn>pmod_param</dependsOn>
+                                        <dependsOn>pmod_poly</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.pmod_param" name="pmod_param" description="Parameter values: enter  vector of values, one for each occurrence of the event." required="false" enabled="false" order="12">
+                                <format type="String" cardinality="1"/>
+                                <dependencies>
+                                        <dependent>pmod_name</dependent>
+                                        <dependsOn>pmod_name</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.pmod_poly" name="pmod_poly" description="Polynomial expansion number: 1st order modulation models the stick functions and a linear change of the stick functions heights over different values of the parameter. Higher orders introduce additional columns that contain the stick functions scaled by parameter squared, cubed, etc.
+1st order = 1
+2nd order = 2
+3rd order = 3 etc...to 6" required="false" enabled="false" order="13">
+                                <format type="Number" cardinality="1"/>
+                                <dependencies>
+                                        <dependent>pmod_name</dependent>
+                                        <dependsOn>pmod_name</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.multi" name="multi" description="select the .mat file containing details of your multiple experimental conditions
+This mat file must include the following cell arrays: names, onsets, and durations" required="false" enabled="false" order="14" prefix="multi" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)."/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.regress_name" name="regress_name" description="Regressors are additional columns in the design matrix, which may model effects that would not be convolved with the haemodynamic response. One such example would be the estimated movement parameters which may confound the data. 
+Enter regressor name as a string" required="false" enabled="false" order="15" prefix="regress_name" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <dependencies>
+                                        <dependent>regress_val</dependent>
+                                        <dependsOn>regress_val</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.regress_val" name="regress_val" description="Regressor value " required="false" enabled="false" order="16">
+                                <format type="Number" cardinality="1"/>
+                                <dependencies>
+                                        <dependent>regress_name</dependent>
+                                        <dependsOn>regress_name</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.multi_reg" name="multi_reg" description=".mat file containing details of your multiple regressors" required="false" enabled="false" order="17" prefix="multi_reg" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)."/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.hpf" name="hpf" description="High pass filter: default cutoff is 128 seconds. Slow signal drifts with a period longer than this will be removed. " required="false" enabled="false" order="18" prefix="hpf" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.fact_name" name="fact_name" description="Factorial design: spm can automatically generate the contrasts necessary to test for the main effects and interactions.
+Factorial name: enter a string (eg. Repetitions)" required="false" enabled="false" order="19" prefix="fact_name" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <dependencies>
+                                        <dependent>fact_levels</dependent>
+                                        <dependsOn>fact_levels</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.fact_levels" name="fact_levels" description="Factorial levels: enter number of levels for this factor, eg. 2" required="false" enabled="false" order="20">
+                                <format type="Number" cardinality="1"/>
+                                <dependencies>
+                                        <dependent>fact_name</dependent>
+                                        <dependsOn>fact_name</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.hrf_derivs" name="hrf_derivs" description="Canonical Hemodynamic Response function (HRF) model derivatives: 
+no derivatives = [0 0] (default)
+time derivatives = [1 0]
+time and dispersion derivatives = [1 1] " required="false" enabled="false" order="21" prefix="hrf_derivs" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.volt" name="volt" description="Model interactions (volterra): 
+Generalized convolution of inputs (U)
+Basis set (bf)
+For first order expansions, the causes are simply convolved in U.u by the basis functions in bf to create a design matrix. For second order, new entries appear in ind, bf, and name 
+OPTIONS:
+Do not model interactions = 1 (default)
+Model interactions = 2 " required="false" enabled="false" order="22" prefix="volt" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.global" name="global" description="Global normalisation of intensity
+Default is none" required="false" enabled="false" order="23" prefix="global" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>None</enumeration>
+                                        <enumeration>Scaling</enumeration>
+                                </format>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.mask" name="mask" description="Explicit mask: specify image for masking the analysis. A sensible option here is to use a segmentation of structurl images to specify a within brain mask. " required="false" enabled="false" order="24" prefix="mask" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMfMRIModelSpecification_1.cvi" name="cvi" description="Serial correlations in fMRI times series due to aliased biorhythms and unmodelled neuronal activity can be accounted for using an autoregessive AR(1) model during Classical parameter estimation.
+AR(1) is default value" required="false" enabled="false" order="25" prefix="cvi" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>none</enumeration>
+                                        <enumeration>AR(1)</enumeration>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="FIL Methods Group" email="spm@jiscmail.ac.uk" website="http://www.fil.ion.ucl.ac.uk/spm/"/>
+                        </executableAuthors>
+                        <license>SPM is free but copyright software, distributed
+under the terms of the GNU General Public
+Licence as published by the Free Software
+Foundation (either version 2, as given in file
+spm_LICENCE.man, or at your option, any later
+version). Further details on "copyleft" can be 
+found at http://www.gnu.org/copyleft/. In 
+particular, SPM is supplied as is. No formal
+support or maintenance is provided or implied.</license>
+                </module>
+                <dataModule id="Structuralimagedata_1" name="Structural image data" package="SPM8" posX="752" posY="76" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jan 18 14:28:44 PST 2013"/>
+                        </metadata>
+                        <output id="Structuralimagedata_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                        <need>hdr</need>
+                                </filetype>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/spm8_data/blockauditory_fmri/sM00223/sM00223_002.img</value>
+                        </values>
+                </dataModule>
+                <module id="SPMCoregister_1" name="SPM Coregister" package="SPM8" description="The registration method used here is based on work by Collignon et al. The original interpolation method described in this paper has been changed in order to give a smoother cost function. The images are also smoothed slightly, as is the histogram. This is all in order to make the cost function as smooth as possible, to give faster convergence and less chance of local minima. At the end of coregistration, the voxel-to-voxel affine transformation matrix is displayed, along with the histograms for the images in the original orientations, and the final orientations. The registered images are displayed at the bottom. 
+
+Registration parameters are stored in the headers of the &quot;source&quot; and the &quot;other&quot; images.
+" icon="0" posX="411" posY="364" sourceCode="" location="pipeline://cranium.loni.usc.edu/spm8_batches/coregister.sh" gridVariables="h_stack=256M">
+                        <authors>
+                                <author fullName="Sam Hobel" email="shobel87@gmail.com" website=""/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 23423504</citation>
+                                <citation>PMID: 23322456</citation>
+                        </citations>
+                        <uri>http://www.fil.ion.ucl.ac.uk/spm/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Sat Feb 09 17:16:51 PST 2013"/>
+                        </metadata>
+                        <input id="SPMCoregister_1.MCRROOT" name="MCRROOT" required="true" enabled="true" order="1">
+                                <format type="Directory" cardinality="1"/>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/MATLAB/R2012a</value>
+                                </values>
+                        </input>
+                        <input id="SPMCoregister_1.spm_path" name="spm_path" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu/spm_exec/run_spm8.sh</value>
+                                </values>
+                        </input>
+                        <input id="SPMCoregister_1.referenceimage" name="reference image" required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMCoregister_1.sourceimage" name="source image" required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="SPMCoregister_1.outfile" name="outfile" required="true" enabled="true" order="4">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="SPMCoregister_1.cost_fun" name="cost_fun" description="Objective function: Registration involves finding parameters that max or min an objective function. For inter-modal registration, use mutual information, normalised mutual, or entropy correlation coefficient. For within modality, use normalised cross correlation.
+Mutual Information = mi
+Normalised Mutual Information = nmi (default)
+Entropy Correlation Coefficient = ecc
+Normalised cross correlation = ncc" required="false" enabled="false" order="5" prefix="cost_fun" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMCoregister_1.sep" name="sep" description="Separation: the average distance between sampled points (in mm)
+[4 2] default" required="false" enabled="false" order="6" prefix="sep" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMCoregister_1.tol" name="tol" description="Tolerances: the accuracy for each parameter. Iterations stop when differences between successive estimates are less than required tolerance.
+1x12 double format
+[0.02 0.02 0.02 0.001 0.001 0.001 0.01 0.01 0.01 0.001 0.001 0.001] (default)" required="false" enabled="false" order="7" prefix="tol" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMCoregister_1.fwhm" name="fwhm" description="Histogram smoothing: gaussian smoothing applied to 256x256 join histogram
+[7 7] default" required="false" enabled="false" order="8" prefix="fwhm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMCoregister_1.other" name="other" required="false" enabled="false" order="9" prefix="other" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="-1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="FIL Methods Group" email="spm@jiscmail.ac.uk" website="http://www.fil.ion.ucl.ac.uk/spm/"/>
+                        </executableAuthors>
+                        <license>SPM is free but copyright software, distributed
+under the terms of the GNU General Public
+Licence as published by the Free Software
+Foundation (either version 2, as given in file
+spm_LICENCE.man, or at your option, any later
+version). Further details on "copyleft" can be 
+found at http://www.gnu.org/copyleft/. In 
+particular, SPM is supplied as is. No formal
+support or maintenance is provided or implied.</license>
+                </module>
+                <module id="SPMRealignestimateandreslice_1" name="SPM Realign (estimate and reslice)" package="SPM8" description="This routine realigns a time-series of images acquired from the same subject using a least squares approach and a 6 parameter (rigid body) spatial transformation. The first image in the list specified by the user is used as a reference to which all subsequent scans are realigned. The reference scan does not have to be the first chronologically and it may be wise to chose a &quot;representative scan&quot; in this role. The aim is primarily to remove movement artefact in fMRI and PET time-series (or more generally longitudinal studies) . The headers are modified for each of the input images, such that. they reflect the relative orientations of the data. The details of the transformation are displayed in the results window as plots of translation and rotation. A set of realignment parameters are saved for each session, named rp_*.txt. After realignment, the images are resliced such that they match the first image selected voxel-for-voxel. The resliced images are named the same as the originals, except that they are prefixed by 'r'." icon="0" posX="322" posY="216" sourceCode="" location="pipeline://cranium.loni.usc.edu/spm8_batches/realignER.sh" gridVariables="h_stack=256">
+                        <authors>
+                                <author fullName="Sam Hobel" email="shobel87@gmail.com" website=""/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 23423504</citation>
+                                <citation>PMID: 23322456</citation>
+                        </citations>
+                        <uri>http://www.fil.ion.ucl.ac.uk/spm/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jan 04 13:33:24 PST 2013"/>
+                        </metadata>
+                        <input id="SPMRealignestimateandreslice_1.sep" name="sep" description="Separation: The   separation  (in  mm)  between  the  points  sampled  in  the  reference  image.    Smaller  sampling distances gives more accurate results, but will be slower.
+Default 4" required="false" enabled="false" order="9" prefix="sep" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>4</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.fwhm" name="fwhm" description="full width half maximum smoothing kernel: 
+The  FWHM  of  the  Gaussian  smoothing  kernel  (mm)  applied  to  the  images  before  estimating the realignment parameters. 
+    * PET images typically use a 7 mm kernel.
+    * MRI images typically use a 5 mm kernel.
+
+Default = 5" required="false" enabled="false" order="10" prefix="fwhm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>5</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.rtm" name="rtm" description="Num passes: 
+Register to first = 0 
+Register to mean = 1 (default)
+
+Register  to  first:  Images  are registered to the first image in the series. Register to mean:   A two pass procedure is used in order to register the images to the mean of the images after the first realignment. PET  images  are  typically registered to the mean. This is because PET data are more noisy than fMRI and there are fewer of them, so time is less of an issue. MRI  images  are  typically  registered  to the first image.  The more accurate way would be to use a two pass  procedure, but this probably wouldn't improve the results so much and would take twice as long to run. " required="false" enabled="false" order="11" prefix="rtm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>1</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.interp" name="interp" description="Estimate Interpolation: The  method  by  which  the  images  are  sampled when estimating the optimum transformation. Higher degree  interpolation  methods  provide  the  better  interpolation,  but they are slower because they use more neighbouring voxels.
+
+Trilinear (1st degree) = 1 
+2nd Degree B-Spline = 2 (default)
+3rd Degree B-Spline = 3
+...7th Degree = 7" required="false" enabled="false" order="12" prefix="interp" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>2</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.quality" name="quality" description="Quality  versus  speed  trade-off.  Highest quality (1) gives most precise results, whereas lower qualities gives   faster   realignment.   The   idea  is  that  some  voxels  contribute  little  to  the  estimation  of  the gives   faster   realignment. This parameter is involved in selecting the number of voxels that are used.
+Default = 0.9" required="false" enabled="false" order="8" prefix="quality" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>0.9</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.spmpath" name="spm path" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu/spm_exec/run_spm8.sh</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.MCRROOT" name="MCRROOT" required="true" enabled="true" order="1">
+                                <format type="Directory" cardinality="1"/>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/MATLAB/R2012a</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.wrap" name="wrap" description="Estimate Wrapping: This  indicates  which  directions  in the volumes the values should wrap around in.  For example, in MRI scans,  the  images  wrap  around  in the phase encode direction, so (e.g.) the subject's nose may poke into the back of the subject's head. These are typically: 
+    No  wrapping  -  for  PET  or images that have already been spatially transformed. Also the    recommended option if you are not really sure. 
+    Wrap in Y - for (un-resliced) MRI where phase encoding is in the Y direction (voxel space).
+
+No wrap = [0 0 0] (default)
+Wrap X = [1 0 0]
+Wrap Y = [0 1 0]
+Wrap X &amp; Y = [1 1 0]
+Wrap Z = [0 0 1]
+Wrap X &amp; Z = [1 0 1]
+Wrap Y &amp; Z = [0 1 1]
+Wrap X, Y &amp; Z = [1 1 1]
+" required="false" enabled="false" order="13" prefix="wrap" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <values>
+                                        <value>[0 0 0]</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.weight" name="weight" description="Weighting: The  option of providing a weighting image to weight each voxel of the reference image differently when estimating  the  realignment  parameters.    The weights are proportional to the inverses of the standard deviations.  This  would  be  used,  for  example,  when  there  is  a lot of extra-brain motion - e.g., during speech, or when there are serious artifacts in a particular region of the images." required="false" enabled="false" order="14" prefix="weight" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.which" name="which" description="Resliced images: enter a vector
+All  Images = [2 0]
+  - (1..n)  :   This reslices all the images - including the first image selected   - which will remain in its original position. 
+
+Images = [1 0 ]
+  - 2..n  :    Reslices images 2..n only. Useful for if you wish to reslice (for example) a PET image to fit a structural MRI, without creating a second identical MRI volume.
+
+All  Images + Mean Image = [2 1] (default) 
+   - In addition to reslicing the images, it also creates a mean of the resliced image.
+
+Mean Image Only = [0 1]
+  - creates the mean resliced image only." required="false" enabled="false" order="15" prefix="which" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <values>
+                                        <value>[2 1]</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.interp2" name="interp2" description="Reslice Interpolation: The  method  by  which  the  images  are  sampled  when  being  written  in  a  different  space.  Nearest Neighbour is fastest, but not recommended for image realignment. Bilinear Interpolation is probably OK for  PET,  but not so suitable for fMRI because higher degree interpolation generally gives better results. Although  higher  degree  methods  provide  better  interpolation,  but  they are slower because they use more neighbouring voxels. Fourier Interpolation is another option, but note that it is only implemented for purely rigid body transformations.  Voxel sizes must all be identical and isotropic. 
+
+Nearest neighbor = 0
+Trilinear (1st degree) = 1 
+2nd Degree B-Spline = 2 
+3rd Degree B-Spline = 3
+4th Degree B-Spline = 4 (default)
+...7th Degree = 7" required="false" enabled="false" order="16" prefix="interp2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>4</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.wrap2" name="wrap2" description="Reslice Wrapping: This  indicates  which  directions  in the volumes the values should wrap around in.  For example, in MRI scans,  the  images  wrap  around  in the phase encode direction, so (e.g.) the subject's nose may poke into the back of the subject's head. These are typically: 
+    No  wrapping  -  for  PET  or images that have already been spatially transformed. Also the    recommended option if you are not really sure. 
+    Wrap in Y - for (un-resliced) MRI where phase encoding is in the Y direction (voxel space).
+
+No wrap = [0 0 0] (default)
+Wrap X = [1 0 0]
+Wrap Y = [0 1 0]
+Wrap X &amp; Y = [1 1 0]
+Wrap Z = [0 0 1]
+Wrap X &amp; Z = [1 0 1]
+Wrap Y &amp; Z = [0 1 1]
+Wrap X, Y &amp; Z = [1 1 1]
+" required="false" enabled="false" order="17" prefix="wrap2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <values>
+                                        <value>[0 0 0]</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.mask" name="mask" description="Masking: Because  of  subject  motion, different images are likely to have different patterns of zeros from where it was  not possible to sample data. With masking enabled, the program searches through the whole time series  looking  for  voxels  which  need  to  be  sampled  from  outside  the  original images. Where this occurs,  that  voxel  is  set  to  zero  for  the  whole set of images (unless the image format can represent NaN, in which case NaNs are used where possible).
+
+Mask images = 1 (default)
+Don't mask images = 2 " required="false" enabled="false" order="18" prefix="mask" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>1</value>
+                                </values>
+                        </input>
+                        <input id="SPMRealignestimateandreslice_1.data" name="data" description="These images will be aligned to the reference image." required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="SPMRealignestimateandreslice_1.realignedreference" name="realigned reference" description="Realigned reference output" required="true" enabled="true" order="4">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="SPMRealignestimateandreslice_1.Reference" name="Reference" description="Reference image to which the subjects will be realigned to." required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="SPMRealignestimateandreslice_1.realigneddata" name="realigned data" description="Realigned image output" required="true" enabled="true" order="5">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="SPMRealignestimateandreslice_1.meanimage" name="mean image" description="Mean image" required="true" enabled="true" order="6">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="SPMRealignestimateandreslice_1.realignmentparameters" name="realignment parameters" description="realignment parameters text file" required="true" enabled="true" order="7">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="FIL Methods Group" email="spm@jiscmail.ac.uk" website="http://www.fil.ion.ucl.ac.uk/spm/"/>
+                        </executableAuthors>
+                        <license>SPM is free but copyright software, distributed
+under the terms of the GNU General Public
+Licence as published by the Free Software
+Foundation (either version 2, as given in file
+spm_LICENCE.man, or at your option, any later
+version). Further details on "copyleft" can be 
+found at http://www.gnu.org/copyleft/. In 
+particular, SPM is supplied as is. No formal
+support or maintenance is provided or implied.</license>
+                </module>
+                <module id="SPMSegment_1" name="SPM Segment" package="SPM8" description="Segment, bias, corect, and spatially normalise. This function can be used for bias correcting, spatially normalising or segmenting your data. Note that this module needs images t be roughly aligned with the tissue probability maps before you begin. If strange results are obtained, then this is usually because the images were poorly aligned beforehand. The Display option can be used to manually reposition the images so that the AC is close to coordinate 0,0,0 (within a couple of cm) and the orientation is within a few degrees of the tissue probability map data.
+
+Many investigators use tools within older versions of SPM for a technique that has become known as &quot;optimised&quot; voxel-based morphometry (VBM). VBM performs region-wise volumetric comparisons among populations of subjects. It requires the images to be spatially normalised, segmented into different tissue classes, and smoothed, prior to performing statistical tests. The &quot;optimised&quot; pre-processing strategy involved spatially normalising subjects' brain images to a standard space, by matching grey matter in these images, to a grey matter reference. The historical motivation behind this approach was to reduce the confounding effects of non-brain (e.g. scalp) structural variability on the registration. Tissue classification in older versions of SPM required the images to be registered with tissue probability maps. After registration, these maps represented the prior probability of different tissue classes being found at each location in an image. Bayes rule can then be used to combine these priors with tissue type probabilities derived from voxel intensities, to provide the posterior probability. 
+
+This procedure was inherently circular, because the registration required an initial tissue classification, and the tissue classification requires an initial registration. This circularity is resolved here by combining both components into a single generative model. This model also includes parameters that account for image intensity non-uniformity. Estimating the model parameters (for a maximum a posteriori solution) involves alternating among classification, bias correction and registration steps. This approach provides better results than simple serial applications of each component.
+
+Note that multi-spectral segmentation (e.g. from a registered T1 and T2 image) is not yet implemented, but is planned for a future SPM version.
+" icon="0" posX="482" posY="510" sourceCode="" location="pipeline://cranium.loni.usc.edu/spm8_batches/segment.sh" gridVariables="h_stack=256M;h_vmem=6G">
+                        <authors>
+                                <author fullName="Sam Hobel" email="shobel87@gmail.com" website=""/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 23423504</citation>
+                                <citation>PMID: 23322456</citation>
+                        </citations>
+                        <uri>http://www.fil.ion.ucl.ac.uk/spm/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Jan 23 15:05:24 PST 2013"/>
+                        </metadata>
+                        <input id="SPMSegment_1.Inputdata" name="Input data" required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMSegment_1.spmpath" name="spm path" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu/spm_exec/run_spm8.sh</value>
+                                </values>
+                        </input>
+                        <input id="SPMSegment_1.mcrroot" name="mcrroot" required="true" enabled="true" order="1">
+                                <format type="Directory" cardinality="1"/>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/MATLAB/R2012a</value>
+                                </values>
+                        </input>
+                        <output id="SPMSegment_1.biascoroutput" name="biascor output" description="If your biascor input parameter is set to 2, no bias cor output will be created" required="true" enabled="true" order="8">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="SPMSegment_1.GM" name="GM" description="[x y z]
+Options to produce grey matter images: c1*.img,  wc1*.img  and mwc1*.img.
+None=[0 0 0]
+Native Space=[0 0 1] (default)
+Unmodulated normalised=[0 1 0]
+Modulated normalised=[1 0 0]
+Native + Unmodulated normalised=[0 1 1]
+Native + Modulated normalised=[1 0 1]
+Native + Modulated + Unmodulated=[1 1 1]
+Modulated + Unmodulated normalised=[1 1 0]
+" required="false" enabled="false" order="9" prefix="GM" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.WM" name="WM" description="[x y z]
+OPtions to produce white matter images: c2*.img, wc2*.img and mwc2*.img
+None=[0 0 0]
+Native Space=[0 0 1] (default)
+Unmodulated normalised=[0 1 0]
+Modulated normalised=[1 0 0]
+Native + Unmodulated normalised=[0 1 1]
+Native + Modulated normalised=[1 0 1]
+Native + Modulated + Unmodulated=[1 1 1]
+Modulated + Unmodulated normalised=[1 1 0]" required="false" enabled="false" order="10" prefix="WM" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.CSF" name="CSF" description="[x y z]
+Optios to produce CSF images: c3*.img, wc3*.img and mwc*.img
+None=[0 0 0] (default)
+Native Space=[0 0 1] 
+Unmodulated normalised=[0 1 0]
+Modulated normalised=[1 0 0]
+Native + Unmodulated normalised=[0 1 1]
+Native + Modulated normalised=[1 0 1]
+Native + Modulated + Unmodulated=[1 1 1]
+Modulated + Unmodulated normalised=[1 1 0]" required="false" enabled="false" order="11" prefix="CSF" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.biascor" name="biascor" description="Bias Corrected: This is the option to produce a bias corrected version of your image. MR images are usually corrupted by a smooth, spatially varying artifact that modulates the intensity of the image (bias). These artifacts can impede automated processing. The bias corrected version should have more uniform intensities within different types of tissues.
+1=Save Bias Corrected (Default)
+2=Dont Save " required="false" enabled="false" order="12" prefix="biascor" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.cleanup" name="cleanup" description="Clean up partitions: Crude routine for extracting brain from segmented images. 
+Don't clean=0 (default)
+Light clean=1
+Thorough clean=2" required="false" enabled="false" order="13" prefix="cleanup" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.ngaus" name="ngaus" description="Number of gaussians used to represent the intensity distribution for each tissue class. 
+[grey white csf other]
+Default= [2 2 2 4]" required="false" enabled="false" order="14" prefix="ngaus" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.regtype" name="regtype" description="ex: mni
+Affine regularisation: procedure is a local optimisation. A mutual information affine registration with the tissue probability aps is used to achieve approximate alignment
+No Affine=
+ICBM European brains=mni (default)
+ICBM East Asian brains=eastern
+Average sized template=subj
+No regularisation=none" required="false" enabled="false" order="15" prefix="regtype" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.warpreg" name="warpreg" description="Warping regularisation: more regularisation gives smoother deformations where the smoothness measure is determined by the bending energy of the deformations
+Default=1" required="false" enabled="false" order="16" prefix="warpreg" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.warpco" name="warpco" description="Warp frequency cutoff: Cutoff of DCT bases (only DCT bases of periods longer than the cutoff are used to describe the warps)
+Default=25" required="false" enabled="false" order="17" prefix="warpco" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.biasreg" name="biasreg" description="Bias regularisation: 
+none=0
+extremely light=0.00001
+very light=0.0001 (default)
+light=0.001
+medium=0.01
+heavy=0.1
+very heavy=1
+extremely heavy=10" required="false" enabled="false" order="18" prefix="biasreg" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.biasfwhm" name="biasfwhm" description="FWHM of Gaussian smoothness of bias. If your intensity nonuniformity is very smooth, choose large FWHM.
+50mm cutoff=50
+60mm cutoff=60 (default)
+70mm=70...etc up to 150mm
+No correction=Inf" required="false" enabled="false" order="19" prefix="biasfwhm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.samp" name="samp" description="Sampling distance: the approximate distance between sampled points when estimating the model parameters. Smaller values use more data but slower.
+Default=3" required="false" enabled="false" order="20" prefix="samp" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMSegment_1.msk" name="msk" description="Masking image: the segmentation can be asked by an image that conforms to the same space as the images to be segmented. If an image is selected, it must match the images voxel for voxel with the same voxel to world mapping. Zero value regions do not contribute." required="false" enabled="false" order="21" prefix="msk" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMSegment_1.tpm" name="tpm" description="Tissue probability maps: These should be maps of grey matter, white matter, and CSF probability. Defaults to the tpms in the spm8/tpm folder." required="false" enabled="false" order="22" prefix="tpm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="-1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="SPMSegment_1.segout" name="seg out" required="true" enabled="true" order="6">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)."/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="SPMSegment_1.invsegout" name="inv seg out" required="true" enabled="true" order="7">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)."/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="SPMSegment_1.Greymatteroutput" name="Grey matter output" description="If GM is set to 0, no output will be created" required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="SPMSegment_1.Whitematteroutput" name="White matter output" description="If WM is set to 0, no output will be created" required="true" enabled="true" order="4">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="SPMSegment_1.CSFoutput" name="CSF output" description="If CSF input parameter is set to 0 or left disabled, no output will be created" required="true" enabled="true" order="5">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="SPMSegment_1.flowcontrol" name="flow control" required="true" enabled="true" order="23">
+                                <format type="Flow Control" cardinality="1"/>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="FIL Methods Group" email="spm@jiscmail.ac.uk" website="http://www.fil.ion.ucl.ac.uk/spm/"/>
+                        </executableAuthors>
+                        <license>SPM is free but copyright software, distributed
+under the terms of the GNU General Public
+Licence as published by the Free Software
+Foundation (either version 2, as given in file
+spm_LICENCE.man, or at your option, any later
+version). Further details on "copyleft" can be 
+found at http://www.gnu.org/copyleft/. In 
+particular, SPM is supplied as is. No formal
+support or maintenance is provided or implied.</license>
+                </module>
+                <module id="SPMSmooth_1" name="SPM Smooth" package="SPM8" description="This is for smoothing (or convolving) image volumes with a Gaussian kernel of a specified width. It is used as a preprocessing step to suppress noise and effects due to residual differences in functional and gyral anatomy during inter-subject averaging." icon="0" posX="475" posY="801" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu/spm8_batches/smooth.sh" gridVariables="h_stack=256">
+                        <authors>
+                                <author fullName="Sam Hobel" email="shobel87@gmail.com" website=""/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 23423504</citation>
+                                <citation>PMID: 23322456</citation>
+                        </citations>
+                        <uri>http://www.fil.ion.ucl.ac.uk/spm/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jan 04 13:33:24 PST 2013"/>
+                        </metadata>
+                        <input id="SPMSmooth_1.data" name="data " required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMSmooth_1.fwhm" name="fwhm" description="full width half maximum smoothing kernel
+enter in the form of [x y z]
+default is [8 8 8]" required="false" enabled="false" order="4" prefix="fwhm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <values>
+                                        <value>[6 6 6]</value>
+                                </values>
+                        </input>
+                        <input id="SPMSmooth_1.datatype" name="data type" description="select data type number
+SAME (as original images)    = 0
+UINT8   - unsigned char      = 2
+INT16   - signed short       = 4
+INT32   - signed int         = 16
+FLOAT32 - single prec. float = 32
+FLOAT32 - single prec. float = 64" required="false" enabled="false" order="5" prefix="dtype" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>0</value>
+                                </values>
+                        </input>
+                        <input id="SPMSmooth_1.implicitmask" name="implicit mask" description="Enter 0 or 1
+1=YES
+0=NO
+An  &quot;implicit  mask&quot;  is  a mask implied by a particular voxel value (0 for images with integer type, NaN for float images). 
+If set to 'Yes', the implicit masking of the input image is preserved in the sooothed image" required="false" enabled="false" order="6" prefix="im" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>0</value>
+                                </values>
+                        </input>
+                        <input id="SPMSmooth_1.spmpath" name="spm path" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu/spm_exec/run_spm8.sh</value>
+                                </values>
+                        </input>
+                        <input id="SPMSmooth_1.MCRROOT" name="MCRROOT" required="true" enabled="true" order="1">
+                                <format type="Directory" cardinality="1"/>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/MATLAB/R2012a</value>
+                                </values>
+                        </input>
+                        <output id="SPMSmooth_1.Outfile" name="Out file" required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="FIL Methods Group" email="spm@jiscmail.ac.uk" website="http://www.fil.ion.ucl.ac.uk/spm/"/>
+                        </executableAuthors>
+                        <license>SPM is free but copyright software, distributed
+under the terms of the GNU General Public
+Licence as published by the Free Software
+Foundation (either version 2, as given in file
+spm_LICENCE.man, or at your option, any later
+version). Further details on "copyleft" can be 
+found at http://www.gnu.org/copyleft/. In 
+particular, SPM is supplied as is. No formal
+support or maintenance is provided or implied.</license>
+                </module>
+                <module id="SPMNormalise_1" name="SPM Normalise" package="SPM8" description="Allows previously estimated warps (stored in  imagename'_sn.mat' files) to be applied to series of images." icon="0" posX="359" posY="651" sourceCode="" location="pipeline://cranium.loni.usc.edu/spm8_batches/normalise.sh" gridVariables="h_stack=256M">
+                        <authors>
+                                <author fullName="Sam Hobel" email="shobel87@gmail.com" website=""/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 23423504</citation>
+                                <citation>PMID: 23322456</citation>
+                        </citations>
+                        <uri>http://www.fil.ion.ucl.ac.uk/spm/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Jan 23 15:05:24 PST 2013"/>
+                        </metadata>
+                        <input id="SPMNormalise_1.mcrroot" name="mcrroot" required="true" enabled="true" order="1">
+                                <format type="Directory" cardinality="1"/>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/MATLAB/R2012a</value>
+                                </values>
+                        </input>
+                        <output id="SPMNormalise_1.outfile" name="outfile" required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="SPMNormalise_1.spmpath" name="spm path" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu/spm_exec/run_spm8.sh</value>
+                                </values>
+                        </input>
+                        <input id="SPMNormalise_1.warpingimage" name="warping image" description="Images to write: images for warping according to the estimated parameters" required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMNormalise_1.vox" name="vox" description="voxel sizes (x y z) in mm of the written normalised images.
+Default= [2 2 2]" required="false" enabled="false" order="6" prefix="vox" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <values>
+                                        <value>[1 1 3]</value>
+                                </values>
+                        </input>
+                        <input id="SPMNormalise_1.preserve" name="preserve" description="Preserve concentrations=0 (default) :
+- Spatially normalised images are not modulated. Warped images preserve original intensities
+Preserve total=1 : 
+- Spatially normalised images are modulated to preserve the total amount of signal in the images" required="false" enabled="false" order="4" prefix="preserve" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMNormalise_1.bb" name="bb" description="bounding box: volume in mm which is to be written (2x3 double)
+default= [-78 -112 -50 78 76 85]" required="false" enabled="false" order="5" prefix="bb" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMNormalise_1.interp" name="interp" description="Interpolation: method by which the images are sampled when being written in a different space. 
+Nearest Neighbour=0 
+- fastest
+Trilinear=1 (default)
+- Ok for PET, realigned fMRI, or segmentations
+B-spline interpolations: better quality but slower 
+- 2nd degree B-spline=2
+- 3rd degree B-spline=3...etc up to 7th degree=7" required="false" enabled="false" order="7" prefix="interp" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMNormalise_1.wrap" name="wrap" description="Wrapping [x y z]
+Options:
+No wrapping= [0 0 0] (default)
+- for images that have been spatially transformed
+Wrap X= [1 0 0] 
+- for MRI where phase encoding is in the X direction
+Wrap Y= [0 1 0]
+- for MRI where phase encoding is in the Y direction
+Wrap X and Y= [1 1 0]
+Wrap Z= [0 0 1]
+Wrap X &amp; Z= [1 0 1]
+Wrap Y &amp; Z= [0 1 1]
+Wrap X, Y, &amp; Z= [1 1 1]" required="false" enabled="false" order="8">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMNormalise_1.flowcontrol" name="flow control" required="false" enabled="true" order="9">
+                                <format type="Flow Control" cardinality="1"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="FIL Methods Group" email="spm@jiscmail.ac.uk" website="http://www.fil.ion.ucl.ac.uk/spm/"/>
+                        </executableAuthors>
+                        <license>SPM is free but copyright software, distributed
+under the terms of the GNU General Public
+Licence as published by the Free Software
+Foundation (either version 2, as given in file
+spm_LICENCE.man, or at your option, any later
+version). Further details on "copyleft" can be 
+found at http://www.gnu.org/copyleft/. In 
+particular, SPM is supplied as is. No formal
+support or maintenance is provided or implied.</license>
+                </module>
+                <module id="SPMModelEstimation_1" name="SPM Model Estimation" package="SPM8" description="Model parameters can be estimated using classical (ReML - Restricted Maximum Likelihood) or Bayesian algorithms. After parameter estimation, the RESULTS button can be used to specify contrasts that will produce Statistical Parametric Maps (SPMs) or Posterior Probability Maps (PPMs) and tables of statistics." icon="0" posX="1010" posY="677" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu/spm8_batches/model_est.sh" gridVariables="h_stack=256">
+                        <authors>
+                                <author fullName="Sam Hobel" email="shobel87@gmail.com" website=""/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 23423504</citation>
+                                <citation>PMID: 23322456</citation>
+                        </citations>
+                        <uri>http://www.fil.ion.ucl.ac.uk/spm/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Jan 04 13:33:24 PST 2013"/>
+                        </metadata>
+                        <input id="SPMModelEstimation_1.spmpath" name="spm path" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu/spm_exec/run_spm8.sh</value>
+                                </values>
+                        </input>
+                        <input id="SPMModelEstimation_1.MCRROOT" name="MCRROOT" required="true" enabled="true" order="1">
+                                <format type="Directory" cardinality="1"/>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/MATLAB/R2012a</value>
+                                </values>
+                        </input>
+                        <input id="SPMModelEstimation_1.SPM.matdir" name="SPM.mat dir" description="directory containing SPM.mat file from model spec" required="true" enabled="true" order="2" includeTransformedParameter="true">
+                                <format type="Directory" cardinality="1">
+                                        <transform order="0" operation="Append">/SPM.mat</transform>
+                                </format>
+                        </input>
+                        <input id="SPMModelEstimation_1.classical" name="classical" required="false" enabled="true" order="4" prefix="classical" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="SPMModelEstimation_1.bayesian" name="bayesian" required="false" enabled="false" order="5" prefix="bayesian" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="SPMModelEstimation_1.volume" name="volume" required="false" enabled="false" order="6" prefix="volume" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="SPMModelEstimation_1.slicesnumbers" name="slices numbers" required="false" enabled="false" order="7" prefix="slices" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMModelEstimation_1.clustermask" name="cluster mask" required="false" enabled="false" order="8" prefix="cluster" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMModelEstimation_1.signal" name="signal" required="false" enabled="false" order="9" prefix="signal" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>UGL</enumeration>
+                                        <enumeration>GMRF</enumeration>
+                                        <enumeration>LORETA</enumeration>
+                                        <enumeration>WGL</enumeration>
+                                        <enumeration>Global</enumeration>
+                                        <enumeration>Uninformative</enumeration>
+                                </format>
+                        </input>
+                        <input id="SPMModelEstimation_1.ARP" name="ARP" required="false" enabled="false" order="10" prefix="ARP" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMModelEstimation_1.noise" name="noise" required="false" enabled="false" order="11" prefix="noise" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>UGL</enumeration>
+                                        <enumeration>GMRF</enumeration>
+                                        <enumeration>LORETA</enumeration>
+                                        <enumeration>tissue_type</enumeration>
+                                        <enumeration>Robust</enumeration>
+                                </format>
+                        </input>
+                        <input id="SPMModelEstimation_1.logev" name="logev" required="false" enabled="false" order="12" prefix="logev" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Yes</enumeration>
+                                        <enumeration>value 2</enumeration>
+                                </format>
+                        </input>
+                        <input id="SPMModelEstimation_1.first" name="first" required="false" enabled="false" order="13" prefix="first" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Yes</enumeration>
+                                        <enumeration>value 2</enumeration>
+                                </format>
+                        </input>
+                        <input id="SPMModelEstimation_1.second" name="second" required="false" enabled="false" order="14" prefix="second" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Yes</enumeration>
+                                        <enumeration>No</enumeration>
+                                </format>
+                        </input>
+                        <input id="SPMModelEstimation_1.gconname" name="gcon name" required="false" enabled="false" order="15" prefix="name" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMModelEstimation_1.gconconvec" name="gcon convec" required="false" enabled="false" order="16" prefix="convec" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <output id="SPMModelEstimation_1.outdir" name="outdir" required="true" enabled="true" order="3" includeTransformedParameter="true">
+                                <format type="Directory" cardinality="1" transformationBase="SPM.mat dir">
+                                        <transform order="0" operation="Subtract">SPMModelEstimation_outdir-1</transform>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="FIL Methods Group" email="spm@jiscmail.ac.u" website="http://www.fil.ion.ucl.ac.uk/spm/"/>
+                        </executableAuthors>
+                        <license>SPM is free but copyright software, distributed
+under the terms of the GNU General Public
+Licence as published by the Free Software
+Foundation (either version 2, as given in file
+spm_LICENCE.man, or at your option, any later
+version). Further details on "copyleft" can be 
+found at http://www.gnu.org/copyleft/. In 
+particular, SPM is supplied as is. No formal
+support or maintenance is provided or implied.</license>
+                </module>
+                <module id="SPMNormalise_2" name="SPM Normalise" package="SPM8" description="Allows previously estimated warps (stored in  imagename'_sn.mat' files) to be applied to series of images." icon="0" posX="621" posY="656" sourceCode="" location="pipeline://cranium.loni.usc.edu/spm8_batches/normalise.sh" gridVariables="h_stack=256M">
+                        <authors>
+                                <author fullName="Sam Hobel" email="shobel87@gmail.com" website=""/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 23423504</citation>
+                                <citation>PMID: 23322456</citation>
+                        </citations>
+                        <uri>http://www.fil.ion.ucl.ac.uk/spm/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Jan 23 15:05:24 PST 2013"/>
+                        </metadata>
+                        <input id="SPMNormalise_2.mcrroot" name="mcrroot" required="true" enabled="true" order="1">
+                                <format type="Directory" cardinality="1"/>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu//usr/local/MATLAB/R2012a</value>
+                                </values>
+                        </input>
+                        <output id="SPMNormalise_2.outfile" name="outfile" required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="SPMNormalise_2.spmpath" name="spm path" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://cranium.loni.usc.edu/spm_exec/run_spm8.sh</value>
+                                </values>
+                        </input>
+                        <input id="SPMNormalise_2.warpingimage" name="warping image" description="Images to write: images for warping according to the estimated parameters" required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="SPMNormalise_2.vox" name="vox" description="voxel sizes (x y z) in mm of the written normalised images.
+Default= [2 2 2]" required="false" enabled="false" order="6" prefix="vox" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <values>
+                                        <value>[1 1 3]</value>
+                                </values>
+                        </input>
+                        <input id="SPMNormalise_2.preserve" name="preserve" description="Preserve concentrations=0 (default) :
+- Spatially normalised images are not modulated. Warped images preserve original intensities
+Preserve total=1 : 
+- Spatially normalised images are modulated to preserve the total amount of signal in the images" required="false" enabled="false" order="4" prefix="preserve" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMNormalise_2.bb" name="bb" description="bounding box: volume in mm which is to be written (2x3 double)
+default= [-78 -112 -50 78 76 85]" required="false" enabled="false" order="5" prefix="bb" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMNormalise_2.interp" name="interp" description="Interpolation: method by which the images are sampled when being written in a different space. 
+Nearest Neighbour=0 
+- fastest
+Trilinear=1 (default)
+- Ok for PET, realigned fMRI, or segmentations
+B-spline interpolations: better quality but slower 
+- 2nd degree B-spline=2
+- 3rd degree B-spline=3...etc up to 7th degree=7" required="false" enabled="false" order="7" prefix="interp" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="SPMNormalise_2.wrap" name="wrap" description="Wrapping [x y z]
+Options:
+No wrapping= [0 0 0] (default)
+- for images that have been spatially transformed
+Wrap X= [1 0 0] 
+- for MRI where phase encoding is in the X direction
+Wrap Y= [0 1 0]
+- for MRI where phase encoding is in the Y direction
+Wrap X and Y= [1 1 0]
+Wrap Z= [0 0 1]
+Wrap X &amp; Z= [1 0 1]
+Wrap Y &amp; Z= [0 1 1]
+Wrap X, Y, &amp; Z= [1 1 1]" required="false" enabled="false" order="8">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="SPMNormalise_2.flowcontrol" name="flow control" required="false" enabled="false" order="9">
+                                <format type="Flow Control" cardinality="1"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="FIL Methods Group" email="spm@jiscmail.ac.uk" website="http://www.fil.ion.ucl.ac.uk/spm/"/>
+                        </executableAuthors>
+                        <license>SPM is free but copyright software, distributed
+under the terms of the GNU General Public
+Licence as published by the Free Software
+Foundation (either version 2, as given in file
+spm_LICENCE.man, or at your option, any later
+version). Further details on "copyleft" can be 
+found at http://www.gnu.org/copyleft/. In 
+particular, SPM is supplied as is. No formal
+support or maintenance is provided or implied.</license>
+                </module>
+                <dataModule id="StatisticalOutput_1" name="Statistical Output " posX="1309" posY="808" rotation="1" sourceCode="" type="Directory" source="false" loopIndex="false" dirDump="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Feb 28 13:35:08 PST 2013"/>
+                        </metadata>
+                        <input id="StatisticalOutput_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="Directory" cardinality="1"/>
+                        </input>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/${tempdir}/${username}/SPM8</value>
+                        </values>
+                </dataModule>
+        </moduleGroup>
+</pipeline>

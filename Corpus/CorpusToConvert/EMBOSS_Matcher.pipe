@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="FirstSequenceInput_1.Output" sink="Matcher_1.ASequence"/>
+                <connection source="SecondSequenceInput_1.Output" sink="Matcher_1.BSequence"/>
+        </connections>
+        <icons>
+                <icon id="0" value="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
+mNiLAAAAAElFTkSuQmCC"/>
+        </icons>
+        <moduleGroup id="EMBOSSMatcher_1" name="EMBOSS Matcher" package="Bioinformatics" version="1.0" description="This page contains a number of bioinformatics workflows based on the advanced EMBOSS informatics package. This page describes as Pipeline modules several bioinformatics tools from the EMBOSS suite and demonstrates the construction of a couple of integrated pipeline workflows (end-to-end bioinformatics solutions via the LONI Pipeline). " posX="0" posY="0" sourceCode="">
+                <authors>
+                        <author fullName="Ivo Dinov" email="" website=""/>
+                </authors>
+                <uri>http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoEMBOSS</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Wed Jul 13 18:13:36 PDT 2011"/>
+                </metadata>
+                <dataModule id="SecondSequenceInput_1" name="Second Sequence Input" posX="382" posY="123" sourceCode="" type="String" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="SecondSequenceInput_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>tsw:hbb_human</value>
+                        </values>
+                </dataModule>
+                <dataModule id="FirstSequenceInput_1" name="First Sequence Input" posX="48" posY="122" sourceCode="" type="String" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="FirstSequenceInput_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>tsw:hba_human</value>
+                        </values>
+                </dataModule>
+                <module id="Matcher_1" name="Matcher" package="EMBOSS" version="6.1.0" description="matcher compares two sequences looking for local sequence similarities using a rigorous algorithm.
+matcher is based on Bill Pearson's 'lalign' application, version 2.0u4 Feb. 1996
+
+Lalign uses code developed by X. Huang and W. Miller (Adv. Appl. Math. (1991) 12:337-357) for the &quot;sim&quot; program, which is a linear-space version of an algorithm described by M. S. Waterman and M. Eggert (J. Mol. Biol. 197:723-728).
+
+Like water, matcher is rigorous, but also very slow. The advantage of matcher is that it uses far less memory than water, so you are much less likely to run out of memory when aligning large sequences.
+
+matcher will also report a specified number of alignments between the two sequences showing the actual local alignments. (water will only report the single best match.) The default number of alignments output is 1, but can be increased to (for example) the 10 best alignments by using the '-alternatives 10' command-line qualifier. In some cases, for example multidomain proteins or cDNA and genomic DNA comparisons, there may be many interesting and significant alignments." icon="0" posX="190" posY="293" sourceCode="" location="pipeline://cranium.loni.usc.edu/matcher">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website=""/>
+                                <author fullName="Alen Zamanyan" email="" website=""/>
+                                <author fullName="Alex Genco" email="" website=""/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 10827456 PMID: 12002227</citation>
+                        </citations>
+                        <uri>http://emboss.sourceforge.net/apps/release/5.0/emboss/apps/matcher.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Aug 30 12:20:56 PDT 2010"/>
+                        </metadata>
+                        <input id="Matcher_1.ASequence" name="A Sequence" description="Sequence filename and optional format, or reference (input USA)" required="true" enabled="true" order="0" prefix="-asequence" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.BSequence" name="B Sequence" description="Sequence filename and optional format, or reference (input USA)" required="true" enabled="true" order="15" prefix="-bsequence" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <output id="Matcher_1.Output" name="Output" description="[*.matcher] Output alignment file name" required="true" enabled="true" order="30" prefix="-outfile" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="matcher" extension="matcher" description=""/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="Matcher_1.AStart" name="A Start" required="false" enabled="false" order="1" prefix="-sbegin1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.AEnd" name="A End" required="false" enabled="false" order="2" prefix="-send1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.AReverse" name="A Reverse" required="false" enabled="false" order="3" prefix="-sreverse1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.AAsk" name="A Ask" required="false" enabled="false" order="4" prefix="-sask1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.ANucleotide" name="A Nucleotide" required="false" enabled="false" order="5" prefix="-snucleotide1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.AProtein" name="A Protein" required="false" enabled="false" order="6" prefix="-sprotein1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.ALowerCase" name="A Lower Case" required="false" enabled="false" order="7" prefix="-slower1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.AUpperCase" name="A Upper Case" required="false" enabled="false" order="8" prefix="-supper1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.AFormat" name="A Format" required="false" enabled="false" order="9" prefix="-sformat1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.ADatabaseName" name="A Database Name" required="false" enabled="false" order="10" prefix="-sdbname1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.AEntryName" name="A Entry Name" required="false" enabled="false" order="11" prefix="-sid1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.AUFOFeatures" name="A UFO Features" required="false" enabled="false" order="12" prefix="-ufo1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.AFeaturesFormat" name="A Features Format" required="false" enabled="false" order="13" prefix="-fformat1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.AFeaturesFile" name="A Features File" required="false" enabled="false" order="14" prefix="-fopenfile1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.ScoringMatrixfile" name="Scoring Matrix file" description="[EBLOSUM62 for protein, EDNAFULL for DNA]
+                                  This is the scoring matrix file used when
+                                  comparing sequences. By default it is the
+                                  file 'EBLOSUM62' (for proteins) or the file
+                                  'EDNAFULL' (for nucleic sequences). These
+                                  files are found in the 'data' directory of" required="false" enabled="false" order="40" prefix="-datafile" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Matcher_1.Alternatives" name="Alternatives" description="[1] This sets the number of alternative
+                                  matches output. By default only the highest
+                                  scoring alignment is shown. A value of 2
+                                  gives you other reasonable alignments. In
+                                  some cases, for example multidomain proteins
+                                  of cDNA and genomic DNA comparisons, there
+                                  may be other interesting and significant
+                                  alignments. (Integer 1 or more)" required="false" enabled="false" order="41" prefix="-alternatives" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.GapOpeningPenalty" name="Gap Opening Penalty" description="[14 for protein, 16 for nucleic] The gap penalty is the score taken away when a gap is created. The best value depends on the choice of comparison matrix. The default value of 14 assumes you are using the EBLOSUM62 matrix for protein sequences, or a value of 16 and the EDNAFULL matrix for nucleotide sequences. (Positive integer)" required="false" enabled="false" order="42" prefix="-gapopen" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.GapExtensionPenalty" name="Gap Extension Penalty" description="[4 for any sequence] The gap length, or gap extension, penalty is added to the standard gap penalty for each base or residue in the gap. This is how long gaps are penalized. Usually you will expect a few long gaps rather than many short gaps, so the gap extension penalty should be lower than the gap penalty. An exception is where one or both sequences are single reads with possible sequencing errors in which case you would expect many single base gaps. You can get this result by setting the gap penalty to zero (or very low) and using the gap extension penalty to control gap scoring. (Positive integer)" required="false" enabled="false" order="43" prefix="-gapextend" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.BStart" name="B Start" required="false" enabled="false" order="16" prefix="-sbegin2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.BEnd" name="B End" required="false" enabled="false" order="17" prefix="-send2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.BReverse" name="B Reverse" required="false" enabled="false" order="18" prefix="-sreverse2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.BAsk" name="B Ask" required="false" enabled="false" order="19" prefix="-sask2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.BNucleotide" name="B Nucleotide" required="false" enabled="false" order="20" prefix="-snucleotide2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.BProtein" name="B Protein" required="false" enabled="false" order="21" prefix="-sprotein2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.BLowerCase" name="B Lower Case" required="false" enabled="false" order="22" prefix="-slower2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.BUpperCase" name="B Upper Case" required="false" enabled="false" order="23" prefix="-supper2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.BFormat" name="B Format" required="false" enabled="false" order="24" prefix="-sformat2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.BDatabaseName" name="B Database Name" required="false" enabled="false" order="25" prefix="-sdbname2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.BEntryName" name="B Entry Name" required="false" enabled="false" order="26" prefix="-sid2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.BUFOFeatures" name="B UFO Features" required="false" enabled="false" order="27" prefix="-ufo2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.BFeaturesFormat" name="B Features Format" required="false" enabled="false" order="28" prefix="-fformat2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.BFeaturesFile" name="B Features File" required="false" enabled="false" order="29" prefix="-fopenfile2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Matcher_1.Alignmentformat" name="Alignment format" required="false" enabled="false" order="31" prefix="-aformat3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.FileNameextension" name="File Name extension" required="false" enabled="false" order="32" prefix="-aextension3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.Outputdirectory" name="Output directory" required="false" enabled="false" order="33" prefix="-adirectory3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Directory" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.Basefilename" name="Base file name" required="false" enabled="false" order="34" prefix="-aname3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Matcher_1.Alignmentwidth" name="Alignment width" required="false" enabled="false" order="35" prefix="-awidth3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Matcher_1.ShowAccessionNumber" name="Show Accession Number" description="Show accession number in the header" required="false" enabled="false" order="36" prefix="-aaccshow3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.ShowDescription" name="Show Description" description="Show description in the header" required="false" enabled="false" order="37" prefix="-adesshow3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.ShowFullUSA" name="Show Full USA" description="Show the full USA in the alignment" required="false" enabled="false" order="38" prefix="-ausashow3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.ShowFullsequence" name="Show Full sequence" description="Show the full sequence in alignment" required="false" enabled="false" order="39" prefix="-aglobal3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.TurnOffPrompts" name="Turn Off Prompts" required="false" enabled="false" order="44" prefix="-auto" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.StandardOutput" name="Standard Output" required="false" enabled="false" order="45" prefix="-stdout" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.Filter" name="Filter" description="Read standard input, write standard output" required="false" enabled="false" order="46" prefix="-filter" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.Options" name="Options" description="Prompt for standard and additional values" required="false" enabled="false" order="47" prefix="-options" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.Debug" name="Debug" description="Write debug output to program.dbg" required="false" enabled="false" order="48" prefix="-debug" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.Verbose" name="Verbose" required="false" enabled="false" order="49" prefix="-verbose" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.Help" name="Help" required="false" enabled="false" order="50" prefix="-help" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.ReportWarnings" name="Report Warnings" required="false" enabled="false" order="51" prefix="-warning" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.ReportErrors" name="Report Errors" required="false" enabled="false" order="52" prefix="-error" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.ReportFatalErrors" name="Report Fatal Errors" required="false" enabled="false" order="53" prefix="-fatal" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="Matcher_1.ReportDyingProgramMessages" name="Report Dying Program Messages" required="false" enabled="false" order="54" prefix="-die" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Bill Pearson" email="" website=""/>
+                                <author fullName="Ian Longden" email="" website=""/>
+                        </executableAuthors>
+                        <license>http://emboss.sourceforge.net/what/#Licensing
+LGPL</license>
+                </module>
+                <annotations visible="true">
+                        <annotation width="764" height="26" posX="35" posY="59" background="102,102,204,51" foreground="0,0,255,255" expanded="true" type="text" name="Documentaiton: http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoEMBOSS">
+                                <styles>
+                                        <style name="http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoEMBOSS$15" fontSize="15" isBold="true"/>
+                                        <style name="Documentaiton: $0" fontSize="15"/>
+                                </styles>
+                        </annotation>
+                </annotations>
+        </moduleGroup>
+</pipeline>

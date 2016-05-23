@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="Infile_1.Output" sink="MigrateOptions_1.Infile"/>
+                <connection source="MigrateOptions_1.Parmfile" sink="Migrate_2.ParmFile"/>
+                <connection source="Infile_1.Output" sink="Migrate_2.Infile"/>
+                <connection source="Migrate_2.OutputDirectory" sink="Output_1.Input"/>
+        </connections>
+        <icons>
+                <icon id="0" value="iVBORw0KGgoAAAANSUhEUgAAAEIAAABECAYAAAA1DeP1AAAhpklEQVR42u16Z5gc5ZXu193VOc70
+5CRNHk1URMgCY7ANRkiIbJOeNV727rXXa4O567W9YINhwUJIKEuAMF4DNgaMDJgkZAlJVkA5jDTS
+aHLOoae7ZzpUv/t+1d26s/fu3mvvL3ge9fOcqequr6q+837vec85VSOEQwhhEUIxGYRdKCJfeIxF
+Il1kCy8tR6TpZgiTSOUQu0gTRlHE4Qto19FupN1GW0a7glYtbByTzfEz+a1AGI0zhI43cJvsOjt/
+cfNOZm6dFgfvKG9s15u4Q+M5wqITwsCZ8C/NYVbiv+h5VR1noOcMjAajN88m3F4hysqcIr9UiIy5
+QqQuEiJ9oRCZ84TImi1Edjl/5xy86dxP4w31QsgbG4V2eavV7OGNeDPptVFYDU4edfGI22w2mk10
+VqEjdn22cIk8AoF+RDvfb0XTW6fRte0oOl/5CEce/ld8dNc3sHP5V7B/6ZU4vOxqHFi2BPXf+RFG
+Nr6L4dfOoPm1JnTtHIXaDjh5LQKcahPx+fBuNvlXr3g0IIReJ+xO4kKfjdrHbFAsVruwGBWJDoca
+LA6n3WJ0mEZDUPf7IpPvAli+Z1/XPw5O4pv1w7jvlA/31vtw19kR3HluEPc29ODv6lvx/RMNeGnE
+h+3RME7wnDPREDpovBFRkGbhyjgUxSARN1uNQqfo5B0R5ehRFRhE3M4B4ecbVfXpwyqe3qvi0dfV
+wW98Rz20oE7dP8erHl7kUQ8sSlF3zs1ULyy9UcXDz6lYsVtVf3ZQxYvdKs5CJZhAL0YRCCM6FYja
+ncRBRx8taVnCnKITFqJDt4VZZ+OiS0pIsITFZhVTPNVHGwBinwaC/fu5/2+07wYQvXYgiJxjzf6i
+M4NqQcOQmt04pKY1DdL61ZzGXrXkTLc6+3iH+iDdWQn418WgbvGF/e/Rx3og1MPrCLNFb3S7nPK+
+XAiujjBZrTqHAO/cuvv8VM8fG8LqttYItpwMdd2zFS2Lf4LeuX+PyUX3YqR2EdqKMtBaZkbrbCPO
+zDNiX6kBZypnYvzqGzF6xf1onvMPGLp5PfDMEeDlc1NDvzuFwDEi4odqIEetjhSXxlObzSjSnNzq
+tK+uVK/dJBS71WBmJOhFW3ACe8b7R98Oj+Pp0X58s6MDNw76ozXtvvGqEcDcMBEzd0xB9AQh+mj9
+8a2+ewquljCyzodR1w71Zvp1xdmx6N8OqFgTBj4hCPsDkVCfBoYQepfeKBwWo1EywXdhtEuu3oUX
+jk72PfspsPoQ8JM/YODL30Nz0VVoyyqGb+YMBPPTMJFpxmSOBb4ZNvRVetBS5kBHqRu95VnoLMpH
+S3E1gtfcC3xnI/DELgz+ZDv6N54OoZl34vLK+5lTrA4tbiX9bZZU8oDKYOSyGHX9QxNDwxy2LzYV
+eovbh8KDmLF/x3BhayvMx1t9nlaoyimEjM10pDMG0Uu694Xi264wRGsMtvOA5wyQ3sgxu8b7ZrYB
+pSdGcP8gRn9JMA5PAuOSrFMjE44ce6pwcjboCAZArqjvNceafvhauP1bG9F07UN9wWXfU7tqr1Q7
+CwvVkeJ0NVyRok7mK2owQ6jIMqmRPJs6WOhUeytc6sAsi9pVrlPbioTaPcuj+hfNV2PX36Wqtz2C
+kTvXDg4/+AfgbaJwNBDAEEI6GRAEwZ3mcRjIyWxrmstNPSEvxBAnKGN6c8CPbw53TV4V6AsW+IdU
+68BIzMWQTeeANM5XnINf9EEVw7SRxLYfqqULqqcFakoT1NQOqG6OTeU5ltN+v2TH9/v9eMsXwYng
+5GgfwmgPDQbEDOYBxjAirxyPDj3yYqxh6X2xDzMKh/u/sBBd1TNxYaYbzTNt6K3yYLDajb5iA0aK
+dAgzHALFegwUK+ieZUJ7tQ6NVQL1FbRygcZyE5or0tFZVYPDOdU4VrcshDXvoe/pN4EDPaFSc6HX
+oomDopdBmi5sVEiPMLor3FxIbPLB9xCZU9XZDldPZ0x0dIf0YyrECb9fHEVEHMBUWhfBuEBrjUJ0
+TJIdExDt4xAtAVjORWE9y2OnAWM3t6fCQ4LjU1v6UXLkSOD+5nP+j3mfgxF/TNML7ODfV3umur+z
+Kdx/13dxsrpsom9uDmmunxooE6HhGhN6Ko3oqLKjtcKCphLiVm3AcA2JNENgoEqHDjreVEmbTZsr
+cK6WQPB7O623wo6OkrRAe10d+pfd5Rt+cEUMH56Db9u5MRkmMmXnONN0HuFUxnsQaFIRe2EQkz/0
+A5e1+iKp3WMx0TU6Kcal076QqxPwtiKWQqfMjZh0NfEarYCumyHSTzC42gZqhr09Aid/d0kQzmKU
+bIFmp5vUgoFeXD85jG/2XAg+PzaMj0KhmMBjx4Dv/R6t19yHo6UlaKtxoI9O9pYJTHA7SidHKgzo
+K7OhrcSMC+V6NNPR83PocLXgigt0zSIo3G+ntfF7G7c9PHeI47pKBfp4vGWWAydn5eHIoqsx9aO1
+XHJKVkMIJqnXRr2sFAxdAUT+EKA0jZIJh4djuS0x1SIdkUbQTNQw0l0zQUBEg4rUxrgWmDrkGDKm
+Z4RaMQJzzyQsLVPw8HcDs5+gnuh4DdEX4PFBmHtbkXf+FO7vG8LKCTIKtzyJ6NIfoHvOlWiYmYpu
+UruPk+8uIADFAn4C4avQEwy7trrtVQpauPLn5wtmBwLBsf1kSR+tk9bKc9oS+52FAmMEZpjM6CxX
+cKEiFSdrZ6Fz+d0YuP8RyvdpOG0GnUhjuaWkGnYMIPIDqv1XZP1xdDxmamPMdyTo38TJXojCcmwC
+zjPMDkMxbYWlKNpIf6U5AVhPPHuY+sOQGcXTLY9xbAuPyVCSIdTNEBr0wUXAFraP4I4BZp628hL0
+VJWQvhnoLHZgvNqBQJURPgIQrjZilI4NUxOGSgwYLDMQDK6+tEoZFmRNPsuPQgNCJXqM0vkhnjdW
+EwdgiCD5yowYK7ZgsCSF98lDY10pTi+qw8nrrmRa+BB6A8nglrWE1/CqD5Frm0dQyJXXdSBG1VTF
+qHSORrFzDMssEIa7YYyrOkoG0Gnqm0LgjATM2BlnhtxX2glcm8wgU/Etc6WeQmsYSrCJY0xtUXgv
++FDU6ed3OtBdbkRXuRmdZSYywob2EhOa8nVoztWjt5hMKDSjr8iIAQokdQM9tF7SfZRgTJA5U4VG
+TBQpGKBm9JAFAxWKNra7QIeeHD16cim2xV60zcpGfV0e9s/Jxa5FM4FP34ZJRyCcLCLcXsP6CUSK
+Tp+Hvm0QotEXE81RVdBJ0Rjhaqow0YkM0j3lPIHoIxCDdKApoNGeGQSmBmoC2ePgdz3P0/XJUGC4
+sK4Q7QStfojjyY76KGwc4yZDFJZLSjfTrhS77koKXh1Vfq4Z9bNtODnHzW06zlRn4kJljuZAb0UG
+BspTMDDLhv5qBT3VcWb0Ukx7q53orHShvdxDQNPQXZbGeiIFLfl2DFSmo2eWF93zsnGyJhX752Zh
+95Vl+PCqSuDIx0iXQJhYUDjTDav9oUj+2ZMwd3bC3TQcy++MqQV0yNFER7rpCOPednaUjBiHRdYM
+FEbdKCk+HqaAhpFBrcijfrilhrTEdUUMctxoEEaaaOxFPtnmPTOFDILmlrrRnQBrnNTvpJ2r0WNv
+nRWvlCrYWmbBb6rT8FaFG/srvWis9jJzOCl8FnQQiNZaBw4yDF5PE/gtQ+PlPIH3ZphwsooOz84l
+UFkstNIIVibPTcN2suLdQgteyBR4boYFf7yqCh9+dR4ZsQsZUiz11AhHuuG5SCxS03wa1mMHYHz1
+vVjWy3vUjF/9Gd4P62FsH4VheAr25iA8zVGN/qJhAGL7B7B9+D6Ulz+E9bdHkP9pBN7zUlOghYPo
+GIGhvQee0w0Qv9mGjPcOcewnsH/UxPuMQS/DpFemT9J5jKXEyVo7Xii1Y7leoE4IsJ/DEtobjPn6
+OtK9Ni6A58iCfbUpWJ9pxx08vjAx9tsGgd9TS5prGRLUhnZes7lGwbszdPifPH4r7as0ec6aWTOx
+bVENsPMD5GntFgspW7rhl8GpyLzDuyB+8SRE5TUxkX21KjKugfibx1gdHuGEx2FuD8PBVdSR1taD
+3RBfuBxidhVEGbdLv4eUl08h92xcAxSGUnr3OHL3HoH9sVUQhbMhqq6CuHwZxKpfIetUr5ZZNEGO
+ckXHOfHWhV78uiodXzAKsN5FJm0O7dd0/jyzhG+e0IRS1ge767Lwo5R0sNlldynARhd38bx3qq3o
+WUw94ZiumUyZdQq2L8zF9Tw+i1ZMu5K2oroU714zGzi0U/6mM+jTNLHc6g9Grjh6COKRRyE8xTFh
+mKkKQynsX/9npB1ohkXWAR0RDQQpeLY9LQSMIHjd7BkyIWqvR/qvdmvhIVqlheDtHEPJvuMo/Jcn
+INy5EI48iPRSiB+vQOaxNjibQ5qeiA4pegv0E+dyBXZWOnClIiIOkwDbQBQI4X+tMJe9hEurCfoI
+RD+dPFaTix97C0kmI9iwgQ017qHtq8vQaosejpNZp4W1x7aqAvUqIUJuHpe2QAj1x4XpkT8sr2NZ
+94dYkfZcIFUnUjINm6di4UWnuiCe3ASRSscs1qgwuyCW3If0g2Px9NjNbNA7pcW/5SDpPvcyUGPA
+2CIrFiLltbfhkhVmdyLbdIaQWt8M989/xmt6IKxeiJQiiJ9vQcbxQdgbo0yzHHe0VKi985k2S23Y
+na+EZwsRNOlFiP2PpC3eKChHR1EmBglED0Eboh2vycI/pRciV3ACOovm4DdpB2syUV8bT63j5To0
+EcB351Vo4cPCKcL2OsqwU9fNr8RbSyonsfd1tUYY9FbJCGeq2DQZw+VH+iC+9+SIyMrgSltiwqRA
++drdyNs7paVJXQdVv2tCa7Jc+85AzGNIGO1gTwtD8Wx4f/c67N0j8RSZAMN5pgO2xx4hEATL5IRw
+zYB4dAsZMcw6JARjm2TP7Pyx8zM8mCwr9J2rKcNysoERG+ZCRfLpwO8LWGMUedE3O149yorxELPK
+93MykcXjOp0B3gQQkhHHWGSdl+xhNjpDhr08Kyd0uQwf9nbpBk1Toi/PmYOPv1jdi0/elqEhLEqq
+VaSmiV9PRn1f3d8ZSnn8lxGRm0+QuSBknfPLd6PiT5OaCKY2xpDS6EdacwT5fyIQcwmE2Q6DoBXP
+RdarbyK9bRy6tnh4KLS8I53I+PFPCQCBUAiEMx+6n65D9rFOeNtYoPXLDPSl63A0rwTNmSWRD1Jy
+1S/GYz5q1xuis4UB2/JnoqPYowHRLgWT24PzLHgw10FGCBgTevIt2p9nZ+AogTjLMV0ce7raht9f
+VoSrhaY70RQCTGENrc4uxK4vXg7seh9l8jmMjukzI9X5y+FxXPPeCWQ/spkUdgUURQ+hN8LxFQlE
+AOkEwns+Rgsi+7yKmR83xIGw2uOhUTIfua+8hcyWccgWXSf7EFrRwQ5k/5BAOBhmMtRsmVB+/DR/
+P4v8+iYUd/Uzazz8XAj/uCIQvuE7eK/oisg8IQbTOXGH0MtJRt7Oz2fVyf5jThyIbmaQw/P0+GGO
+DkXaOKEB8rcJIE7MjjOil+w5U2XB7yozJRBRXjOUpmUiC9ZUzPEf+PrtwPZ3OgiQ0J5S5XkMvwn4
+Jm7bdTpc+MgGCLszzPBUqRPMBvciZx9rB66ykdWguTUIV2sM2bvOQ8wnEHYCoaOD5Zch81WmyNYJ
+GFlH6AiGjQVWwcF2ZP6ImcedmgDCC/c//xyLKaL39g3jf2nd5/O7gSe3TRy66n/gjQW3k7pupBAE
+mxAxxvPUtoJctJc60CuBYFj00Mljc/X4GWuCyvhKS1HVgNhXl4nTNQY0s7weZJHWyCr1naqs6G0E
+IofHyQhU055c/KXYO3//LYT3fwz5bEa4FIvMoG+P9OOfDjai5B8eiwgLV9ioC2tO3nQ30j8dgl5m
+iy5mjQ4/LNSKjE/IiHkUSxvHKHRw1kJ4f/s26T7O6pRj2+KhkXW4Fan/QiBSCYSFY60elDCL3H+8
+AY+2tOGlSYovDo6Pg6LS9MTrkZ0PrcXc1EJOTj9qlvWBQrGcmUvRY8UogaiKa0R9rQVPpQrMT4TF
+jERo7KvN1VjQSaEcZ7neWurCOyytl8dZE7aQFeVOx8T5jz/C8Y/evAB1GHZFWGUlYfHaFRZ9g4f8
+8P1k63ukujVgsdjiTt58JzI/7WbFKeuHAHSdZAfTaCabNjFnAR0ja0wEomYhHG9sg6trNN5gaVkm
+AvfJC7A8SiDSPNAYZnfhK/+6Es+19WBH/whYwUPk6cudo0fHxgd2nMe+F94N53tyYDSax8wEgdQP
+vlySj5Ok9/n5JpwhG1pqjThWl4qnUowyFWpAFCTS55/mFOFEdQqaK6zsN9xoLPdiW3l2+FoeIyPC
+ehZraSkO7Nm3M2pIESbtMZ180k6V0MlSW8+8Ysw1/2LzW6oiM5JQIsJOZtzyDeQdbIKjc4pN1Qir
+ykG42v3I33UMom4O6W6OA1G7EJ7X34S3YwBKBwWwU4XCbjTtZAMsP/1pHAgrxzqc+Jun12D3kA8d
+/imEZWgIkSliISDEFvjswYbAXJmOOGHauNSALTXF2M66YfeCFOxf6MaJRXnYMa8QP/G6MDfuILJp
+17Hm+O2c4tCf5uTg9MICNM4viB2oLYi8OCsPi5kysw1abRLx5Hqx48QBrgpvnULnST+aTnt0bSYy
+Bo/y1IZXojJbCEWJibQUiNtvi5QeqYersZON1YVo9sAIrKeaopW7WW3OXyAfz4eEK50aURfJeemV
+YMWFDqSe6BktZulc1ONH9o69gdyfSY3wTAqLaUKG28MbtqArGotMaY9Q2WuY7DM4lXRhMae7Wlp6
+Jmdfdpk2YcUmtLT47OI52H79Yuy4aT7e/ko5Pr52Lj5Yeg1+UFKkiSUry6kMvYjcPSMdr910DXbe
+etXUm/MKBt9fWIJdS7+A3399iQRMpd90TEScWanYfYoOWOWLDgMbrgQQ8lG+UaJhV9au+WXUIBQu
+BoFw2GPimi+Hlhw6rV7fM4qF51tilzc0B5d1T+Da9/cEREGRX5gsHGtXxay5+NLvtuH+oSl88VDn
++Ly9zeNfONY0sWTvkfGFDz+uhYTiISv01LgVK4ODgaCqPcqPP86XD0zlWyezGBz1RfPz80M8EDY7
+CYRBhM9t3QD86R3g6EfAnje1ZwjY8zE2fv+7yOAqc+pg7A/fMrt8fGzHNqbEbWM4tRM4/Qnw53cm
+zr3+Ahbme1SjTmNZxOtNwdHDxyAf2Bpkec1pyFbcphFEz9kYlZd/8Vw0jUA4hRJzp+Ziwc33hHdM
+Ar8ajLXJR/G7aO8G4NvB6jJzVk00JTVNasqIs3TO1LpTLXjZj+BH8ik47bcB4CS3Dzy1kbWR1c/b
+gZIU3bhxI8b8E1KQWRzr5GJYRbY3n5nNqPQMDIbraqvhsCqSFWO5XrbYO+l4C5v9carPCCXYz4J/
+sBdPP/awLHg0ozP4uzuWA30tIYaKnaEiing3pkxlvKse8+qKVXosH8JE0lwe1O87wrLcJJxCrzNJ
+IEQciFRSJpU0+M1TmwiEnhWrEjML8+SSpXeimw7psir5U7ZOGCi9xpmGc20BFBaVqWZWnw5mghmz
+5uGV/aeGRX6tQxgLSbGZzEhFpj+fHzj3/KZX4dLZWffo5Hz9W7dsxMhwf0xjg3yrZGeyNsm3KzpF
+dA0PobKkJCRXWW9hWcwqc8UD38XWnz6MTU89ilVPPIKtq1diwzMrsOS2pZLesLrtYQnGTcuXjSIW
+UWU6JOstLqtB6yu7htpRUDFDlb2LrFa9Nifqdx+gtliERxjkGza9MJITMkIICc9Xnlu9LsqI4YSV
+GGMn8rXrb4yN+yajkrVWc5rRak43SSb3UTgry0pjvFOQDEN55RzsZYEk9B7ZvyhplgKnzZpp9/tU
+/OqZLayY9UHqMkxmPV556QUMdLeP6IQWFvJFpHytYjLYMjKcbaNDmJGbNySBMLtMksphGdtpihF2
+mc9NJhgMRpgsZg0EYRJxYdXpsfzWO9DdMwirxWXQ3rjq5btLk2gZHkB+dbkGBNvMiNftwbE9+1l/
+GBmQRvmKS75o08l3kTqjTCNCWbt+TZQtSFwsrTZcd8MSjA32Rckas0V7Z60XOe50V1tDo3pZbZXq
+shol3cNzFlyOTw4fDQu9WScXmI5rGjw+OIxXnt1EzTNJBrOrFRPr16xkhghCMej0BoN806xYrJIN
+LPjFqcHe6OIrvigvKoVtXLErslmiSeFi/tXJlGbmcb0GgMlp1PoBg2KZvP0b96Gvzx/1Ogr4k3zB
+m2LUWzIMXcN+VM6/TNUcMxoinuwM7Dt8QLJD+sxbWfVC75RbAqG9DFae2bSaXSfHWwiEWR+57pYl
+ofBEf9RjEPLNqfaCLCPFbh/obUNNWUFMLhzPC5fUVUXf2bcrpHeTkLr4OE+GzT7g6w394vFH/Vyh
+kHBTWO06rF71C9U/xNBIMkLKtdFu1wmb2d4WnIgVlpZFhDzBwPLWqIPNaIVJAqCBYCUIFrbehv+t
+DwYDL6Zg2bLbQ7EYSGcXieK1aM8YhMvQ1DaIipp5KsHWxNKTl4V9pw5Di0udXk5Xr9PZtWn/ByAk
+2yz6mNwuuX0ZM5xPirLw0Lv0FEsm6w4xOtqNusoSGfNRh8uK4toK/ycnP4WMdItRC32d3O/z94U3
+bV4Xn7NJRIVFF1u75plwJDiBBAjxj93pcFMrRWtfb+B3b7yOVatWYf3GDdGNmzdhw7r10VUrV6vV
+NXWqdFivl6ZXv/zlq9XNmzdK9Y2sWLESf/zj+9HxsYDfrNhtVpNTxxCR/5CgHxmdQFV1LaRay4m4
+van47gPfx9r167Buw3qsXbseL279Nzz99DNYw/2XXnoJS2+8IR5yZkWyKHjDTUsxPjYktUC4bGaT
+2aSXEif6+rtQU12p0o+YwaBDSUU5Dhw9HJEJSfpmMrJOMwjdsG8kum7dGslCNR7KAvwe80+M4yIj
+6JSVw7XeJy0tzZPEh/v2BE4pIyMjkSVLlsjVD/J70GazQQIgj5lMJoN2LS5RBnUmcY4xrplCtLS0
+oKioSN6QLbtO2zqdTlavxou/SVMURV5f+226yXHXXnstEyDGrPwk78XdtJ6enqHq6moukATCgPLy
+chw9ejSSyAPaUPqnGxsbIxDr4kAkrsvvsYmJiUSIyihVFG3rdrudyZuIOEBKckw0GsXXvva1STnZ
+xIUmt2zZgmnjTdrbW368Xq+N5wpOTE7WNDw8rNbV1akcpxIAORGV11ETk1KnOzwdgJSUlORv4Tvu
+uGOKiyG/azczmzXNFG1tbZg1a5YGBO+pAXHs2LH/HhCccMq0fbt0ghM1JMAx8+bWwcHByJ133okk
+EBaLBStWrIhwa00ygPvC5dKwMCQYoc25s7MTs2fP/r9WOnkd6QBZpV1bbmV2ms4M+TuBQGNj44C8
+Lo+5PR6PBgQdDFdUVGhASFaVlpZqQBhkGohHz18OBB01pKenJ1dfn0BcKzX1iauFw2HfddddB65w
+VBJEXmjr1q0+jQomkyXpOIHQumqGjoMgahckENGHHnoounz58uitt94aveWWW6IEVft+8803R5ct
+WwaG1EXHeW9UVVVBhiKP4/rrr8fDDz8ckbFBRlmS8+bUMs6cOROprKy8GBolJSU4cuSIBkSC6X85
+EInwMCX+Y8dKx0TCQc0prpAtFAph8eLFATnJxIUCMjR4P1uCSSKhCfZpl5X7FunAwMAA5E0nJycx
+zq4/GAxqW2kdHR246aab4nUKr02w8cQTT0CGIx1AJBJhTYlwkmFkkTMBtpiamoJkhMxckl1lZWU4
+dOiQFhqJkP3LgeAEzNMmb5gGhMnhcGiOyRPuu+8+GYcy78YyMzNja9euTV7EJNFPnkdWGBLMUnjt
+ixeWOpfUo+RHTlZVVW3Vp4fMt7/9bTQ1NUmncPDgQXzwwQegHkQOHz4c3rdvn7bq27dvBy2Ym5ur
+MUICSFAuAvFXa8S0eJagWBOh4Zw2Wb3MGqRwLKkR/E0CEWFY6TlWjrEnmKH1ctxaEvQ1JssVXXyJ
+NOM52gTlvt/vx4033qhdN8kKeR86CC4EGLZBZjBVZioKsQyjaE5OjhwblN+51YCQbKVwallDJs2/
+WiP+fx85f0lRxncsoc7advXq1X/5Rf4fH5kNqBsX9SGZPeS+tAT4gSRIsthLhOiwFFr5G9ko0zqK
+i4slayLTWKgkNC6UAGJKzl1mJIp9UIbWZwYI6kbsnnvu0a75X9gEw03eSzo7yflIsVanZZYpmW3k
+vhRLCqjMRjJUbYn5e5jCYytXrowlstSUZNozzzwTkan9MwOETK8PPPAAWBihtrYWrDkwd+5cLFy4
+UKM6swIKCgq0cORwf5ItWVlZ41dcccW4PE4m+AsLC31333036uvrkUj9FgJoktrElQ9KRsjwSrAi
+Ip9HIP6I7rMBBOei9vb2qhRHta+vT2UW0YyZRiVI6ujoaPiNN97Q9EJWpKmpqTK1TuzZswfd3d1a
+5pFj+/v7tZinRROZRZ+UPvn7U0895U9oiSqZIbMeK9PPDhBJASXVdXT0oqhSG5L7yokTJ5AID5lG
+/TLdypQ+7Rr6aXVRspYx0GlbAmy8+OKL/6GS3bBhw8RnSiyTKVWqfELpxbTaRHD1dA0NDQHujkqR
+k/S+7bbbQLbIFU6T58geRGpC8pzs7Gxn8lo8P5NsC2/evFmrXBMCG1mzZs24zFifGSC4ghf7m+mf
+6aCwdojMmDEjmVFG2YTFGEYIBAI+uao+ny/C7xPMDirDReV3ldlIPqWXx+R/g+Oxxx6TwA1LNkih
+ff755yHHfJZCI1nAaTYdgCRQx48flxoxKJs1CYasI9gETsnynMWYyqyDG264IXLXXXdpNQlt8vbb
+b8fSpUtDnDeuvPLKSVlsyfCKPz8RE1IjqC+hzxwQ/9WH1Dbt378/lJ+fn0yXQQmGrCSnVaORBFui
+BCuayA6y59Ba/GS9kcw4crt+/XowfeJzA4T8EAhZWUZljCecDHBeEZlFZIGVqCN80mGZEeR+ogIO
+JTKFrCFiiS5V21IzYgyl2OcGCPlIQD53YK0gS+wJKZjSJAisNidlOpWltkyviawSTlal8nfWE1p3
+SwEF23ewT9Js06ZNYMr9fDHi3Llzo1L1pcA9++yz0VWrVgVl08fvquwZHn/88Rh7EiSrUcmaBx98
+MMbMIHsilXNVeY7KalJ97rnnVPnb6dOnVVa16ucGCNLeyAYsY1pjqHD1jYknYLJB1LMgi8qHMslH
+gWzScPLkSakXsim82OxJSzzl0uqW5BOvzw0j5IchoD0wStYKSZzkH4pehGBNyTBJPA+d4opHpvsg
+M5KsWf7PrPR5yhraqwzG9/THBSbOy5o4bm5vbw8tWLAAiV7En5eXhwMHDsgu1fyf1SsSTAmKbM4+
+N0AkVtCe3KdDtuSzBrnK0qnm5mbZsIWTLTxFMrx3717ZwmsOyzHTmZB8iPS5YsRf8pFVZllZ2cXW
+nSESk0+3/rOK9b/fEV0C4hIQl4C4BMQlIC4BcQmIS0BcAuISEJeA+CuA+HeADJA14xsgMQAAAABJ
+RU5ErkJggg=="/>
+        </icons>
+        <moduleGroup id="Migrate_1" name="Migrate" package="Bioinformatics" version="1.0" description="Migrate estimates effective population sizes and past migration rates between n population assuming a migration matrix model with asymmetric migration rates and different subpopulation sizes. Migrate uses maximum likelihood or Bayesian inference to jointly estimate all parameters. " posX="0" posY="0" sourceCode="">
+                <authors>
+                        <author fullName="Alex Genco" email="" website=""/>
+                </authors>
+                <uri>http://www.loni.ucla.edu/twiki/bin/view/LONI/Pipeline_GenomicsInformatics_Migrate</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Fri Apr 22 14:54:44 PDT 2011"/>
+                </metadata>
+                <module id="MigrateOptions_1" name="Migrate Options" package="Migrate" version="3.2.7" description="Generate a parmfile for Migrate" icon="0" posX="346" posY="196" sourceCode="" location="pipeline://cranium.loni.usc.edu/migrate_parmfile.sh" executableVersion="3.2.7">
+                        <authors>
+                                <author fullName="Alex Genco" email="alexgenco@gmail.com" website=""/>
+                        </authors>
+                        <uri>http://popgen.sc.fsu.edu/Migrate/Migrate-n.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Apr 01 13:41:06 PDT 2011"/>
+                        </metadata>
+                        <input id="MigrateOptions_1.BatchMode" name="Batch Mode" description="Turns off prompts" required="true" enabled="true" order="0" prefix="menu=No" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="MigrateOptions_1.MaximumNameLength" name="Maximum Name Length" description="defines the maximal length of the name of an individuum, if for a strange reason you need longer names than 10 characters (e.g. you need more than 10 chars to characterize an individual) and you do not need this very often then set it to a higher value, if you have no individual names you can set this to zero (0) and no Individual names are read. the default is nmlength=10, this is the same as in PHYLIP." required="false" enabled="false" order="1" prefix="nmlength=" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="MigrateOptions_1.LengthofPopulationName" name="Length of Population Name" description="Is the length of the name for the population. The default is popnmlength=100" required="false" enabled="false" order="2" prefix="popnmlength=" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="MigrateOptions_1.AlleleNameLength" name="Allele Name Length" description="This is only used in the infinite allele case. Length of an allele name, the default should cover even strange lab-jargons like Rvf or sahss (Rana ridibunda very fast, Rana saharica super slow) The default is allelenmlength=6" required="false" enabled="false" order="3" prefix="allelenmlength=" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <output id="MigrateOptions_1.Parmfile" name="Parmfile" required="true" enabled="true" order="31">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="MigrateOptions_1.Datatype" name="Datatype" description="datatype=&lt;Allele | Microsatellites | Brownian | Sequences | Nucleotide-polymorphisms | HapMap- SNP | Genealogies &gt;
+specifies the datatype used for the analyses, needless to say that if you have the wrong data for the chosen type the program will crash and will produce sometimes very cryptic error messages.
+
+Allele: infinite allele model, suitable for electrophoretic markers, perhaps the “best” guess for codom- inant markers of which we do not know the mutation model.
+Microsatellite: a simple electrophoretic ladder model is used for the change along the branches in genealogy.
+Brownian: a Brownian motion approximation to the stepwise mutation model for microsatellites us used (this is much faster than exact model, but is not a good approximation if population sizes Θi are small (say below 10).
+Sequences: Data are DNA or RNA sequences and the mutation model used is F84, first used by Felsenstein 1984 (actually the same as in dnaml (Phylip version 3.5; Felsenstein, 1993), a description of this model can be found in Swofford et al. (1996).
+Nucleotide-polymorphism:[SNP] the data likelihood is corrected for sampling only variable sites. We assume that the a sequence data set was used to find the SNP. It is more efficient to run the full sequence data set.
+HapMap-SNP:[SNP] the data likelihood is corrected for sampling only variable sites. We assume that the a sequence data set was used to find the SNP.
+Genealogies: MAXIMUM LIKELIHOOD: Reads the sumfile (see INPUT/OUTPUT section) of a previous run, with this options the genealogy sampling step will not be done and the genealogies provided in the sumfile are analyzed. This datatype makes it easy to rerun the program for different likelihood ratio test or different settings for the profile likelihood printouts.
+BAYESIAN INFERENCE: reads the bayesallfile (see INPUT/OUTPUT section) of a previous runs, currently this option simply recreates the histogram, this allows the readjust some of the printouts but its usability to create new plots is limited at the moment." required="false" enabled="false" order="4" prefix="datatype=" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Allele</enumeration>
+                                        <enumeration>Microsatellites</enumeration>
+                                        <enumeration>Brownian</enumeration>
+                                        <enumeration>Sequences</enumeration>
+                                        <enumeration>Nucleotide-polymorphisms</enumeration>
+                                        <enumeration>HapMap- SNP</enumeration>
+                                        <enumeration>Genealogies</enumeration>
+                                </format>
+                                <values>
+                                        <value/>
+                                </values>
+                        </input>
+                        <input id="MigrateOptions_1.TransitionTransversionRatios" name="Transition/Transversion Ratios" description="*ONLY IF datatype=Sequence*
+
+you need to specify a transition/transversion ratio, you can give it for each locus in the dataset, if you give fewer values than there are loci, the last ttratio is used for the remaining loci → if you specify just one ratio the same ttratio is used for all loci." required="false" enabled="false" order="5" prefix="ttratio=&lt;" prefixSpaced="true" prefixAllArgs="false" includeTransformedParameter="false">
+                                <format type="Number" cardinality="-1">
+                                        <transform order="0" operation="Append">&gt;</transform>
+                                </format>
+                        </input>
+                        <input id="MigrateOptions_1.FrequenciesfromData" name="Frequencies from Data" description="*ONLY IF datatype=Sequence*
+
+freq-from-data=Yes calculates the base frequencies from the infile data, this will crash the program if in your data a base is missing, e.g. you try to input only transitions. The frequencies must add up at least to 0.9999. 
+
+freq-from-data=No:0.2 0.2 0.3 0.3 Any arbitrary nucleotide frequency can be specified." required="false" enabled="false" order="6" prefix="-freq-from-data=&lt;" prefixSpaced="true" prefixAllArgs="false" includeTransformedParameter="false">
+                                <format type="String" cardinality="1">
+                                        <transform order="0" operation="Append">&gt;</transform>
+                                </format>
+                        </input>
+                        <input id="MigrateOptions_1.SequenceError" name="Sequence Error" description="*ONLY IF datatype=Sequence*
+
+The number has to be between 0.00 and 1.00, default is 0.00, which of course is rather far from the truth of about 0.001 (= 1 error in 1000 bases)." required="false" enabled="false" order="7" prefix="sequence-error=" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="MigrateOptions_1.Categories" name="Categories" description="*ONLY IF datatype=Sequence*
+
+If you specify Yes you need a file named ”catfile in the same directory with the following Syntax: number of categories cat1 cat2 cat3 .. categorylabel for each site for each locus, a # in the first column can be used to start a comment-line. Example is for a data set with 2 loci and 20 base pairs each
+# Example catfile for two loci # in migrate you can use # as comments 2 1 10	11111111112222222222 5 0.1 2 5 23 3 11111122223333445555" required="false" enabled="false" order="8" prefix="categories=Yes" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="MigrateOptions_1.NumberofRates" name="Number of Rates" description="*ONLY IF datatype=Sequence*
+
+by specifying rates a hidden Markov model or rates is used for the sequences Felsenstein and Churchill (1996), also see the Phylip documentation. In the Menu you can specify rates that follow a Gamma distribution, with the shape parameter alpha of that Gamma distribution, the program then calculates the rates and the rate probabilities (prob-rates)." required="false" enabled="false" order="9" prefix="rates=" prefixSpaced="false" prefixAllArgs="false" includeTransformedParameter="false">
+                                <format type="Number" cardinality="1">
+                                        <transform order="0" operation="Append">:</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>Rates</dependent>
+                                        <dependsOn>Rates</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="MigrateOptions_1.NumberofRateProbabilities" name="Number of Rate Probabilities" description="*ONLY IF datatype=Sequence*
+
+if you specify your own rates you need also to specify the probability of occurrence for each rate." required="false" enabled="false" order="11" prefix="prob-rates=" prefixSpaced="false" prefixAllArgs="false" includeTransformedParameter="false">
+                                <format type="Number" cardinality="1">
+                                        <transform order="0" operation="Append">:</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>Rate Probabilities</dependent>
+                                        <dependsOn>Rate Probabilities</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="MigrateOptions_1.Autocorrelation" name="Autocorrelation" description="*ONLY IF datatype=Sequence*
+
+autocorrelation=Yes:value
+
+if you assume hat the sites are correlated along the sequence, specify the block size, by assuming that only neighboring nucleotides are affected you would give a value=2." required="false" enabled="false" order="13" prefix="autocorrelation=YES:" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="MigrateOptions_1.Weights" name="Weights" description="*ONLY IF datatype=Sequence*
+
+If you specify Yes you need a file weightfile with weights for each site, the weights can be the following numbers 0-9 and letters A-Z, so you have 35 possible weights available.
+
+# Example weightfile for two loci 11111111112222222222 1111112222AAAA445XXXX5" required="false" enabled="false" order="14" prefix="weights=Yes" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="MigrateOptions_1.Interleaved" name="Interleaved" description="*ONLY IF datatype=Sequence*
+
+If your data is interleaved you need to specify this here, the default is interleaved=No. DO NOT USE THE INTERLEAVED FORMAT!" required="false" enabled="false" order="15" prefix="interleaved=YES" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="MigrateOptions_1.FastLikelihood" name="Fast Likelihood" description="*ONLY IF datatype=Sequence*
+
+With very large data sets the common scheme to keep conditional likelihood values in the tree breaks down and a scaling factor is needed to get correct results. If you specify “Yes” the scaling factor is used. This comes with a penalty: the program runs about 20-40% slower!" required="false" enabled="false" order="16" prefix="fast-likelihood=YES" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="MigrateOptions_1.InheritanceScalars" name="Inheritance Scalars" description="*ONLY IF datatype=Sequence*
+
+inheritance-scalars={value1, value2, ....} The inheritance scalar is relative to the first locus and is by default set to 1.0, meaning that all population sizes are scaled naturally. If your data are mtDNA from a vertebrate where each individual has a fixed sex and mtDNA is only transferred maternally, the mutation scaled effective female population size Θ = 2Nf μ and with nuclear loci it will be Θ = 4Neμ. If you have 3 loci, for example in this order: a nuclear marker, a mtDNA marker, and an X-linked marker then the input for this option is:
+inheritance-scalars={1.0, 0.5, 0.75 } [This options particular the mixing of different inheritance scalars needs more testing!]" required="false" enabled="false" order="17" prefix="inheritance-scalars={" prefixSpaced="false" prefixAllArgs="false" includeTransformedParameter="false">
+                                <format type="Number" cardinality="-1">
+                                        <transform order="0" operation="Append">}</transform>
+                                </format>
+                        </input>
+                        <input id="MigrateOptions_1.RandomSubset" name="Random Subset" description="random-subset=&lt;NO | number&gt; migrate can randomly subsample each population. Picking the number specified in the random-subset. If the population sample has fewer individuals than the specified number, all samples are taken for that population." required="false" enabled="false" order="23" prefix="random-subset=" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="MigrateOptions_1.TipdateFile" name="Tipdate File" description="IF YOU HAVE ONLY CONTEMPORARY DATA DO NOT USE THIS OPTION. The datefile contains sampling-dates for the individuals (the tips of the genealogy). An example is this: tipdate-file=YES:datefile.bison3 The datefile format is close to the infile format but for obvious content reasons not identical, in generalized form it looks like this:
+&lt;Number of populations&gt; &lt;Number of loci&gt; &lt;Title&gt; &lt;Number of individuals&gt; &lt;Population title&gt;
+&lt;individual1 1-10&gt; &lt;Date&gt;
+&lt;individual2 1-10&gt; &lt;Date&gt;
+&lt;individual3 1-10&gt; &lt;Date&gt;
+
+&lt;Number of individuals&gt; &lt;Population title&gt; 
+&lt;individual4 1-10&gt;&lt;Dual Date&gt;
+&lt;individual5 1-10&gt;&lt;Dual Date&gt; ....
+
+The individual names MUST match the individual names in the infile and all names MUST be unique, this is a stringent requirement that is only needed when you use a datefile to guarantee that the right dates and sequences are matched.
+The date must be given as a date measured backwards in time (dual time), so if a bison died 164 BC and you are able to extrac DNA from the bones then you should specify that the bison died 2172 years ago (in 2008), migrate will adjust so that the smallest date will be set to date zero.
+
+the dates are the years before present, but in principle they can be any units as lon as the mutation rate per ’year’ and the generation-per-year is on the same scale." required="false" enabled="false" order="24" prefix="tipdate-file=&lt;YES:" prefixSpaced="false" prefixAllArgs="false" includeTransformedParameter="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                        <transform order="0" operation="Append">&gt;</transform>
+                                </format>
+                        </input>
+                        <input id="MigrateOptions_1.MutationRatePerYear" name="Mutation Rate Per Year" description="IF YOU HAVE ONLY CONTEMPORARY DATA DO NOT USE THIS OPTION. If you do not know the mutation rate, guess and try out to estimate the mutation rate in the analysis but depending on your data this may be a taxing analysis. For the moment use the mutation rate per generation and not year." required="false" enabled="false" order="25" prefix="mutationrate-per-year={" prefixSpaced="false" prefixAllArgs="false" includeTransformedParameter="false">
+                                <format type="Number" cardinality="-1">
+                                        <transform order="0" operation="Append">}</transform>
+                                </format>
+                        </input>
+                        <input id="MigrateOptions_1.GenerationsPerYear" name="Generations Per Year" description="IF YOU HAVE ONLY CONTEMPORARY DATA DO NOT USE THIS OPTION. The datefile needs additional information about the spacing of the samples in time, the number of generations per year helps to get this spacing, but we also need the mutation rate (see above). Example: generation-per-year=1.000000. Currently the generation time setting needs further tests, a generation time of 1.0 works, but other settings may fail; for the moment just use 1.0, and translate the results in years if needed." required="false" enabled="false" order="26" prefix="generation-per-year=" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="MigrateOptions_1.IncludeUnknown-Microsatellite" name="Include Unknown - Microsatellite" description="*ONLY IF datatype=Microsatellite*
+
+The default is bfNO. Alleles that are marked with a ”?” are stripped from the analysis with include-unknown=NO. Using YES leaves the ”?” in the analysis, under some circumstances this might be the preferred way, but for most situations the unknowns can be safely stripped from the analysis." required="false" enabled="false" order="18" prefix="include-unknown=YES" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="MigrateOptions_1.MicroThreshold" name="Micro Threshold" description="*ONLY IF datatype=Microsatellite*
+
+specifies the window in which probabilities of change are calculated if we have allele 34 then only probabilities of a change from 34 to 35-44 and 24-34 are considered, the probability distribution is visualized in Figure 4 the higher this value is the longer you wait for your result, choosing it too small will produce wrong results. If you get -Infinity during runs of migrate then you need to check that all alleles have at least 1 neighbor fewer than 10 steps apart. If you have say alleles 8,9,11 and 35,36,39 then the default will produce a probability to reach 11 from 35 and as a result the likelihood of a genealogy will be -Infinity because we multiply over all different allele probabilities. Default is micro-threshold=10" required="false" enabled="false" order="19" prefix="micro-threshold=" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="MigrateOptions_1.IncludeUnknown-Brownian" name="Include Unknown - Brownian" description="*ONLY IF datatype=Brownian*
+
+The default is bfNO. Alleles that are marked with a ”?” are stripped from the analysis with include-unknown=NO. Using YES leaves the ”?” in the analysis, under some circumstances this might be the preferred way, but for most situations the unknowns can be safely stripped from the analysis." required="false" enabled="false" order="20" prefix="include-unknown=YES" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="MigrateOptions_1.Infile" name="Infile" required="true" enabled="true" order="27" prefix="infile=" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="MigrateOptions_1.IncludeUnknown-Allozyme" name="Include Unknown - Allozyme" description="*ONLY IF datatype=Allozyme*" required="false" enabled="false" order="21" prefix="include-unknown=YES" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="MigrateOptions_1.Usertree" name="Usertree" description="usertree=&lt;NO | UPGMA | AUTOMATIC | TREE:TREEFILE | DISTANCE:DISTFILE | RANDOM&gt;
+Default is RANDOM, NO delivers a UPGMA tree using the data
+with TREE and DISTANCE the user needs to give a usertreefile or a pairwise distance file, with RANDOM a random tree will be the starting tree
+" required="false" enabled="false" order="22" prefix="usertree=" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="MigrateOptions_1.Rates" name="Rates" required="false" enabled="false" order="10">
+                                <format type="Number" cardinality="-1"/>
+                                <dependencies>
+                                        <dependent>Number of Rates</dependent>
+                                        <dependsOn>Number of Rates</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="MigrateOptions_1.RateProbabilities" name="Rate Probabilities" required="false" enabled="false" order="12">
+                                <format type="Number" cardinality="-1"/>
+                                <dependencies>
+                                        <dependent>Number of Rate Probabilities</dependent>
+                                        <dependsOn>Number of Rate Probabilities</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="MigrateOptions_1.SeedFile" name="Seed File" required="false" enabled="false" order="28" prefix="random-seed=OWN:" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="MigrateOptions_1.SeedNumber" name="Seed Number" required="false" enabled="false" order="29" prefix="random-seed=OWN:" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="MigrateOptions_1.Title" name="Title" required="false" enabled="false" order="30" prefix="title=" prefixSpaced="false" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Peter Beerli" email="" website=""/>
+                        </executableAuthors>
+                </module>
+                <module id="Migrate_2" name="Migrate" package="Migrate" version="3.2.7" description="Migrate estimates effective population sizes and past migration rates between n population assuming a migration matrix model with asymmetric migration rates and different subpopulation sizes. Migrate uses maximum likelihood or Bayesian inference to jointly estimate all parameters. It can use the following data types:
+
+    •Sequence data using Felsenstein's 84 model with or without site rate variation,
+
+    •Single nucleotide polymorphism data (sequence-like data input, HAPMAP-like data input)
+
+    •Microsatellite data using a stepwise mutation model or a brownian motion mutation model (using the repeatlength input format or the fragment-length input format),
+
+    •Electrophoretic data using an 'infinite' allele model.
+
+The output can contain: Estimates of all migration rates and all population sizes, assuming constant mutation rates among loci or a gamma distributed mutation rate among loci. Profile likelihood tables, Percentiles, Likelihood-ratio tests, and simple plots of the log-likelihood surfaces for all populations and all loci.
+" icon="0" posX="305" posY="445" sourceCode="" location="pipeline://cranium.loni.usc.edu/migrate.sh" executableVersion="3.2.7">
+                        <authors>
+                                <author fullName="Alex Genco" email="alexgenco@gmail.com" website=""/>
+                        </authors>
+                        <uri>http://popgen.sc.fsu.edu/Migrate/Migrate-n.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 04 12:22:59 PDT 2011"/>
+                        </metadata>
+                        <input id="Migrate_2.ParmFile" name="Parm File" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Migrate_2.OutputDirectory" name="Output Directory" required="true" enabled="true" order="2">
+                                <format type="Directory" cardinality="1"/>
+                        </output>
+                        <input id="Migrate_2.Infile" name="Infile" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Migrate_2.Nomenu" name="No menu" required="true" enabled="true" order="3" prefix="-nomenu" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Peter Beerli" email="" website=""/>
+                        </executableAuthors>
+                </module>
+                <dataModule id="Infile_1" name="Infile" package="Migrate" version="3.2.7" posX="223" posY="28" sourceCode="" type="File" source="true" loopIndex="false">
+                        <authors>
+                                <author fullName="Alex Genco" email="alexgenco@gmail.com" website=""/>
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 04 12:52:15 PDT 2011"/>
+                        </metadata>
+                        <output id="Infile_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/example/infile.seq</value>
+                        </values>
+                </dataModule>
+                <dataModule id="Output_1" name="Output" posX="345" posY="621" sourceCode="" type="Directory" source="false" loopIndex="false" dirDump="false">
+                        <authors>
+                                <author fullName="Alex Genco" email="alexgenco@gmail.com" website=""/>
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 04 15:05:11 PDT 2011"/>
+                        </metadata>
+                        <input id="Output_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="Directory" cardinality="1"/>
+                        </input>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/{$tempdir}/{$username}/Migrate</value>
+                        </values>
+                </dataModule>
+        </moduleGroup>
+</pipeline>

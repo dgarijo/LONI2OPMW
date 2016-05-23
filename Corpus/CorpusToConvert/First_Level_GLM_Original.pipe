@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".1">
+        <connections>
+                <connection source="GLM_1.bold_z_output" sink="OutputDirectory_1.Input" />
+                <connection source="GLM_1.asl_z_output" sink="OutputDirectory_1.Input" />
+                <connection source="GLM_1.asl_z_output" sink="LONIViewer_1.Newparameter1" />
+                <connection source="GLM_1.bold_z_output" sink="LONIViewer_1.Newparameter1" />
+                <connection source="ASLInput_1.Output" sink="GLM_1.asl_file" />
+                <connection source="BOLDInput_1.Output" sink="GLM_1.bold_file" />
+                <connection source="ASLRegressorFile_1.Output" sink="GLM_1.asl_reg_file" />
+                <connection source="BOLDRegressorFile_1.Output" sink="GLM_1.bold_reg_file" />
+        </connections>
+        <moduleGroup id="FirstLevelGLM_1" name="First Level GLM" package="C-MIND" version="1.1" description="First Level_GLM : In this process, the General Linear Modeling is applied to the functional data." posX="0" posY="0" sourceCode="">
+                <tag />
+                <uri>http://wiki.loni.usc.edu/twiki/bin/view/CCB/PipelineWorkflows_ASL_Workflow</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Thu May 26 10:06:49 EDT 2011" />
+                </metadata>
+                <dataModule id="OutputDirectory_1" name="Output Directory" package="C-MIND" version="1.0" posX="467" posY="303" sourceCode="" type="File" source="false" loopIndex="false" dirDump="true">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu May 26 09:20:56 EDT 2011" />
+                        </metadata>
+                        <input id="OutputDirectory_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://loni.research.cchmc.org//cluster/loni/{$username}/glm/output</value>
+                        </values>
+                </dataModule>
+                <viewerModule id="LONIViewer_1" name="LONI Viewer" package="LONI Viewer" version="1.0" description="This is a general, versatile and light-weight viewer, which allows visualzaition of:&#xA;&#xA;1. Volumetric data parseable by the LONI Debabeler (http://wiki.loni.usc.edu/Software/Debabeler)&#xA;&#xA;2. Shape/Surface objects in any of the ShapeTools geometry shape formats (http://wiki.loni.usc.edu/Software/ShapeTools)." icon="/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAUCAA4ADgEASIAAhEBAxEBBCIA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADgQBAAIRAxEEAAA/APn+tvTUnuJYrCBogLjccYBJQj5gTzgfLkZGQQCMZzWJXoPgiws5Lq4uEDMyiPeobjyyA7emPutxjjHVutVFXdhSdlc+f6u6bp11rGpW+n2URlubiQRxoO5P8hVKvYP2fNIS78WX+qSKrCxtgqZGSryHAI9PlVx+NdB4Z8OWWn2plj8uW4kUJJO67gvBYj/Z6ds8e9b7aWuBmPMWQuCpXP1wOfrjNTSXtppREaQhRtPyIeFyd2fr2+lW5das7AuLtHjaNRmMjO/vwR9Afx/CupWSMLs9N8CfCfRvClks19DBqGquv7yeVNyJ0O1FPAxj72Mn26V3cllazQPBLbQvC4w0bRgq31HQ1PRXnnjTw2WZnt9NMYhQs06vhCWJzlfXkZ79+lcc6z2tyxuI3M7OgkRtjs+QN+WweSXUjIJBPPK8+t67q+l/2fJYXTvFHJGpMULbmYblIAPQZ29+wrzvWg0dxYXNu5g8uANNLCP3wVi8e84GSFCAHn+IDjNYVI9TSD6Hl/jP4LaDrOnzzaHax6bqgBaPyyRFIf7rL0UH1AGPevmi6tJ7G7mtLqJoriFzHJG4wVYHBBr7nr5d+O9hDZfEdpYk2m7tI55PdssmfyQVxdFFFZGh5lRRRRXpvgDEmnXtvI0HmeZvhRW+c7T82ecAZdQD9favMq7XwxcxaZ4rtfLWWZJZZLSRxJzIC+1ZCu7IyzAYIxgcZOSLpu002RUV4tBXtP7O+pRwa/rOmMMPdW6TIf8ArmxBH/kT9K8Wrpvh9qj6P4/0O7Rio+1pE5z/AAOdjfoxrqZb6a63TS5JJ69iOORUWpyyGKN1VWUDjdkrj3A71tXemImnSGGMoqSsgBOSAAD/AFrA8xvJMWe+BXXJLY5It7n2TRRRWTeQoIEvFETBpCuzYVXA6EgGmeLrqJLbRY1to3aGFpGb+DDSDDAHj+Ag5BHPuKsyxJAkkL+Y64z8mCC3ofQY7/pVHXLtU1CykEjxizsreOdSAfMJcv0OflAYHOGG4LxXPUasdFNBXzZ+0DdvJ43s7VkVUgsVKtjltztnn04/n619J18rfG7Vo9T+JN1FF92xhjtS394jLH8i5H4VxNFFFYmx5zRRRRXU6VLay6npBjhne6tidsULKomYS/ugGIIHLEEtxgDqeK5au68AaJ/a3i2K8nBW100rcTTI52syAeWMkHlmAODgEBsYxTje+gpOyuFTQSSRXMUkRPmI4ZMeoPFQ11/w68MXXijxjYW0ERa2glSe7kx8qRqQTk+pxgfX616BqN61nfzJjdGx+ZD0P/16wZVtrif/AEdgHJ+4xwc/1q/rMqyXEjDnca5W8UbyM5ruq72OKntc+wKKKK6G00OW1aW61ZGtNKUFp7h2ZQi/QHknoB3JAFefXGorqmpPKYmC3dxvYMVcxKxKbFLAnARkAOByo9BXXawktz8NThWNva36SzEAHC7GVcjIyNzoDjpnNeYVxSep1wWhmeINesPDWi3Gp6jOkUMKEgMwBkbHCr6k+lfF2o30+p6ldX9026e5laaRvVmOT/OvoX9oa3mk8JaZMkbNFFe/vGAyFyhxmvm+iiiipLCiiiu10LS9DmVr/XtSjSOGch7O23OZggXBYoPkXLAB8kvlgDkE1vN4902OwWysbS4trS3X5IVC4Ue53de5LclvfiiirhNx2JlBS3NnQbbQ5rhpdd1Ce3tYyCYbWAyTTeyk4VfqT+Br2PQvjJ4H8MaeunaP4f1KC2U5J2x7nb+8x35J+pooqn/wkFlMJTKzwyptIilTDyBsYKqM56jjrggjIzjL/tC1uJMLMMkZG75dw9s9ehooqvayk9SPZxS0NyH9oLwm7ASWWrxZ7tDGQPyfP6Vv2Hxe8DX8gjTXEhcjpcRPGP8AvojH60UV03hrXTp++3mRZbWdcNG4DI6kc5B4IIrQ1LwHoniHFzotwul3QG4Q4LQM2SeOcxckD5cgDoKKKckmZ8zWxuNrvhbW7KS2bVdIvbaYbHjNxHIrj0IzXlPif4HaVfNJdeFNUhgY5Is55N8ZPorjJX8QfqKKK4bxF4T17QnaXVraKO2YtGs8aoYTt5+TaDs3YGMqpOTn+KiiiudO6OlM8e1/wprXhe6EGr2EluWPyPw0b/7rDIP060UUV//Z" posX="167" posY="302" sourceCode="" location="pipeline://localhost/C:\Program Files (x86)\Java\jre6\bin\java">
+                        <tag>surface</tag>
+                        <tag>volume</tag>
+                        <tag>shape</tag>
+                        <tag>geometry</tag>
+                        <tag>visualization</tag>
+                        <input id="LONIViewer_1.predefinedParam" name="predefinedParam" required="false" enabled="true" predefined="true" order="-1" prefix="-Xmx800m -jar" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost/C:\Users\Ivo\AppData\Local\LONI\Pipeline\tools\LONIViewer\LONIViewer.jar</value>
+                                </values>
+                        </input>
+                        <input id="LONIViewer_1.Newparameter1" name="New parameter 1" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                                <filetype name="MNC file" extension="mnc" description="MNC file" />
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                </viewerModule>
+                <dataModule id="ASLInput_1" name="ASL Input" package="C-MIND" version="1.0" posX="16" posY="24" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 12 08:55:37 EDT 2011" />
+                        </metadata>
+                        <output id="ASLInput_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://loni.research.cchmc.org//cluster/loni/testing/glm/asl.nii</value>
+                        </values>
+                </dataModule>
+                <dataModule id="BOLDInput_1" name="BOLD Input" package="C-MIND" version="1.0" posX="207" posY="5" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 12 08:56:19 EDT 2011" />
+                        </metadata>
+                        <output id="BOLDInput_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://loni.research.cchmc.org//cluster/loni/testing/glm/bold.nii</value>
+                        </values>
+                </dataModule>
+                <module id="GLM_1" name="GLM" package="C-MIND" version="1.0" icon="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" posX="324" posY="167" sourceCode="" location="pipeline://loni.research.cchmc.org//cluster/loni/idl/c-mind/glm.sh" executableVersion="1.0">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu May 26 08:34:22 EDT 2011" />
+                        </metadata>
+                        <input id="GLM_1.asl_file" name="asl_file" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GLM_1.bold_file" name="bold_file" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="GLM_1.asl_z_output" name="asl_z_output" required="true" enabled="true" order="4" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="asl_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_Z.nii</transform>
+                                </format>
+                        </output>
+                        <output id="GLM_1.bold_z_output" name="bold_z_output" required="true" enabled="true" order="5" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="bold_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_Z.nii</transform>
+                                </format>
+                        </output>
+                        <input id="GLM_1.asl_reg_file" name="asl_reg_file" required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text File" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GLM_1.bold_reg_file" name="bold_reg_file" required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text File" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                </module>
+                <dataModule id="ASLRegressorFile_1" name="ASL Regressor File" package="C-MIND" version="1.0" posX="409" posY="4" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 26 12:45:24 EDT 2011" />
+                        </metadata>
+                        <output id="ASLRegressorFile_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text File" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Text File" extension="txt" description="" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://loni.research.cchmc.org//cluster/loni/testing/glm/asl_brf.txt</value>
+                        </values>
+                </dataModule>
+                <dataModule id="BOLDRegressorFile_1" name="BOLD Regressor File" package="C-MIND" version="1.0" posX="658" posY="31" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 26 12:46:10 EDT 2011" />
+                        </metadata>
+                        <output id="BOLDRegressorFile_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text File" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="Text File" extension="txt" description="" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://loni.research.cchmc.org//cluster/loni/testing/glm/bold_brf.txt</value>
+                        </values>
+                </dataModule>
+        </moduleGroup>
+</pipeline>
+

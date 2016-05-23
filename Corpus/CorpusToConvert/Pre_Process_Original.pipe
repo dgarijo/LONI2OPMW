@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".1">
+        <connections>
+                <connection source="coregistration_1.output_file" sink="writenormalized_1.file" />
+                <connection source="spm_normalize_1.mat_file" sink="writenormalized_1.mat_file" />
+                <connection source="coregistration_2.output_file" sink="writenormalized_2.file" />
+                <connection source="spm_normalize_1.mat_file" sink="writenormalized_2.mat_file" />
+                <connection source="convert2niifunctional_1.bold_file" sink="coregistration_1.input_file" />
+                <connection source="convert2niifunctional_1.asl_file" sink="coregistration_2.input_file" />
+                <connection source="writenormalized_2.output" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_1.output" sink="OutputDirectory_1.Input" />
+                <connection source="coregistration_1.ouput_motion_params" sink="OutputDirectory_1.Input" />
+                <connection source="coregistration_2.ouput_motion_params" sink="OutputDirectory_1.Input" />
+                <connection source="coregistration_1.output_file" sink="OutputDirectory_1.Input" />
+                <connection source="coregistration_2.output_file" sink="OutputDirectory_1.Input" />
+                <connection source="GLM_1.asl_z_output" sink="OutputDirectory_1.Input" />
+                <connection source="GLM_1.bold_z_output" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_3.output" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_3.seg_file" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_3.seg_inv_file" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_3.c1_file" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_3.c2_file" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_3.c3_file" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_3.normalized_c1_file" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_3.normalized_c2_file" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_3.normalized_c3_file" sink="OutputDirectory_1.Input" />
+                <connection source="convert2nii_1.output" sink="OutputDirectory_1.Input" />
+                <connection source="spm_normalize_1.mat_file" sink="OutputDirectory_1.Input" />
+                <connection source="convert2niifunctional_1.asl_file" sink="OutputDirectory_1.Input" />
+                <connection source="convert2niifunctional_1.bold_file" sink="OutputDirectory_1.Input" />
+                <connection source="writenormalized_2.output" sink="GLM_1.asl_file" />
+                <connection source="writenormalized_1.output" sink="GLM_1.bold_file" />
+                <connection source="coregistration_2.ouput_motion_params" sink="GLM_1.asl_reg_file" />
+                <connection source="coregistration_1.ouput_motion_params" sink="GLM_1.bold_reg_file" />
+                <connection source="GLM_1.bold_z_output" sink="LONIViewer_1.Newparameter1" />
+                <connection source="GLM_1.asl_z_output" sink="LONIViewer_1.Newparameter1" />
+                <connection source="convert2nii_1.output" sink="spm_normalize_1.image_file" />
+                <connection source="convert2nii_1.output" sink="writenormalized_3.file" />
+                <connection source="spm_normalize_1.mat_file" sink="writenormalized_3.mat_file" />
+                <connection source="AnatomicalFile_1.Output" sink="convert2nii_1.input" />
+                <connection source="FunctionalFiles_1.Output" sink="convert2niifunctional_1.input" />
+        </connections>
+        <moduleGroup id="PreProcess_1" name="Pre Process" package="C-MIND" version="1.3" description="Pre_Process_Original: In this process, the input required are T1W3D and Stories_Task/Sentences_Task" icon="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" posX="0" posY="0" sourceCode="">
+                <authors>
+                        <author fullName="Nick Felicelli" email="nicholas.felicelli@cchmc.org" website="https://bmi.cchmc.org" />
+                </authors>
+                <tag />
+                <uri>http://wiki.loni.usc.edu/twiki/bin/view/CCB/PipelineWorkflows_ASL_Workflow</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Thu Jul 28 09:03:21 EDT 2011" />
+                </metadata>
+                <module id="writenormalized_1" name="writenormalized" package="C-MIND" version="1.0" icon="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" posX="650" posY="373" sourceCode="" preserveInputFilename="true" location="pipeline://loni.research.cchmc.org//cluster/loni/idl/c-mind/writenormalized.sh" executableVersion="1.0" gridVariables="-W=1:00;-M=2000">
+                        <tag>writenormalized</tag>
+                        <tag>c-mind</tag>
+                        <tag>nifti</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 25 14:21:00 EDT 2011" />
+                        </metadata>
+                        <input id="writenormalized_1.file" name="file" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                                <dependencies>
+                                        <dependent>seg_file</dependent>
+                                </dependencies>
+                        </input>
+                        <input id="writenormalized_1.mat_file" name="mat_file" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="writenormalized_1.segment" name="segment" required="false" enabled="false" order="2">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>/SEGMENT</enumeration>
+                                </format>
+                                <dependencies>
+                                        <dependent>output</dependent>
+                                        <dependent>seg_file</dependent>
+                                        <dependent>seg_inv_file</dependent>
+                                        <dependent>c1_file</dependent>
+                                        <dependent>c2_file</dependent>
+                                        <dependent>c3_file</dependent>
+                                        <dependent>normalized_c1_file</dependent>
+                                        <dependent>normalized_c2_file</dependent>
+                                        <dependent>normalized_c3_file</dependent>
+                                        <dependsOn>c1_file</dependsOn>
+                                        <dependsOn>c2_file</dependsOn>
+                                        <dependsOn>c3_file</dependsOn>
+                                        <dependsOn>normalized_c2_file</dependsOn>
+                                        <dependsOn>normalized_c3_file</dependsOn>
+                                        <dependsOn>normalized_c1_file</dependsOn>
+                                        <dependsOn>seg_inv_file</dependsOn>
+                                        <dependsOn>seg_file</dependsOn>
+                                </dependencies>
+                                <values>
+                                        <value>/SEGMENT</value>
+                                </values>
+                        </input>
+                        <output id="writenormalized_1.output" name="output" required="true" enabled="true" order="3" includeTransformedParameter="false">
+                                <format type="File" cardinality="-2" cardinalityBase="file" transformationBase="file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_1.seg_file" name="seg_file" required="false" enabled="false" order="4" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_seg_sn.mat</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_1.seg_inv_file" name="seg_inv_file" required="false" enabled="false" order="5" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_seg_inv_sn.mat</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_1.c1_file" name="c1_file" required="false" enabled="false" order="6" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">c1</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_1.c2_file" name="c2_file" required="false" enabled="false" order="7" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">c2</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_1.c3_file" name="c3_file" required="false" enabled="false" order="8" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">c3</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_1.normalized_c1_file" name="normalized_c1_file" required="false" enabled="false" order="9" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="c1_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_1.normalized_c2_file" name="normalized_c2_file" required="false" enabled="false" order="10" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="c2_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_1.normalized_c3_file" name="normalized_c3_file" required="false" enabled="false" order="11" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="c3_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                </module>
+                <module id="writenormalized_2" name="writenormalized" package="C-MIND" version="1.0" icon="/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAx&#xA;NDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy&#xA;MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAUCABWAEgEASIAAhEBAxEBBCIA/8QAHwAAAQUB&#xA;AQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEG&#xA;E1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW&#xA;V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLD&#xA;xMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAA&#xA;AAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKR&#xA;obHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hp&#xA;anN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU&#xA;1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADgQBAAIRAxEEAAA/AN+iipIYZLiURxrljX5gk27I&#xA;+8bSV2e/0UUVHUkdvNL/AKuJ29wtdBZ6RFERuTzpfpwPw/xrXSykI+ZlQegGa9ahlM5q83Y4KuPh&#xA;HSIUUUVxp0+7Az9nf8qgeN4zh0ZT6MMV3f2MHgTDP0/+vUU1i5QhlSVfTH9DW08m091syjmKvqgo&#xA;oorh6K273RlIZ7YEMOsZ/pWKQQSCMEdQa8ivh50ZWmehTqxqK8QooopKKKKxNAoooorp9IsDFEoA&#xA;/eyDLE/wiuetIxLdxIehcZ+ldzZIvll2YKGJyxONqjqf517OUYdVJuTPOzGtyQsFFFFSEw2dv5jt&#xA;5cIbaX2lmZvQAdTTG1K2UARwMZGGVWWNndvovQD3yBVSfU4NRYpbzRooQiNiNxUdBtQcknrnoMDr&#xA;g0kd9aqqpbxkeYFaWeeVY2APYnOf04H4V9aoezdklofNyVSfvO6vsu/qwooopkVxcXOqAzX6JCkZ&#xA;YRoFVc9uo+bo3X/69apntwoPnQsuOHhcAj6pn+XNZ1rf8mc6pp8CyFsKHDMFGFUAnjoMj5e9RzTH&#xA;UN0NnJPcM56yMcAnrwuFA+o9eKVuebb0CcJ00lfVdv8Ag/m38woooq+6w3a5jkRmHAdDkH2P+B6V&#xA;y2uWwR1nC4LHa49xXaWGi2+l6UbWFRvOZHkxgs/r/ntXLeJCCgx0MgP/AI7Xk5xQjGi2z1MtrN1E&#xA;gooornaKKK+QPoQoooqezcR3kLnoHGa7dYIrrSriKVA6GCQMp7jNcDXXaBqSyxeXIecFX9wRj/A/&#xA;ga9vJa8YVHTl1PLzSjKVPmj0Ciiip10uw0yUw/ZYhvYR28wUAZ9HHQdeuOfr1ew/s+1ntLR43lMv&#xA;lhzEOrkc5GORuPAB6VYgsdQmRlvIvkYbSqOvzL6E+h78c1LY6RPb6ikjbBaxr+7QsWcNyBk45ADN&#xA;+npX2SnJJJLXz/rofKq1SfO7r79f8rhRRRT7XT7ksgmZVjQbUYZyB6KD9369a1o40iQJGoVR0Ap1&#xA;FVFWVgUUnfqFFFFNcFkYDqQRXI6rY/aoiDlQSCG/usBjBrsKxNXBDuThRlf+BD/9f8q4sfSjUp+9&#xA;sd2CqOFTQKKKK89ljMUrRtjKkg4opZlVZ3VX3qGOG9aK/PpKzaPr1sFFFFR1Lb3D20yyRnBH61FR&#xA;RGTi7obSaswooor0LQtbiuoVidsEcDPb2rerynTpJI72Py85Y4IHpXp9nvNnEX+8Vz+Havtsnx08&#xA;TTcZrVHy2Z4SNCfNHZhRRRU9FFUdVvGsbMyrjOepHSvWnNQi5S2R50IOclFdQoooq9XOa1MymV1R&#xA;cjc3J/ujFYEvi3UpMgOFXtgY/lWbc6nd3SlZJPlPUDivncZndCpBxppnt4XK6sJ807BRRRVRmLMW&#xA;PUnNFJRXyh74UUUV5DpesfEfWrc3Fg8skPaRoIUVuSPlLABuQQcZxVXVfFXjzRJxDqNzJbsfulra&#xA;Iq3AJ2sFwcZGcHiun8e+IdQ8KwaXp2jK9rD5eBM0QdSqAKI1ZsgkDBPGeV55qCK8n8f+F7LSbmwv&#xA;/t0jbzqH2Ui2QozbmyG5PlhhjAG4446j6qnOLjHETow9k321S7vp0Pn5xabpRqy5156Py/4c+S9H&#xA;8dfFnxAzjSL7VL3y/vmC1Rgv1O3AqtqXxJ+J2jXhtNT1bULO4AyY57dEbHrgr0rofiVr2peB7PQP&#xA;CHh27m060h06O5nltXMbzyuTliw5/hJ/H2Fc/feK9R8c+D9K0XVrQzXsF+sUWvXLkJGj8bJG2+4J&#xA;OegFczp/xD8ZvfQw2eqZuZXWOMfZ4eWJAA5XA5rd1X4p/FLQblLXUdZ8iVoxIqfZbVvlyQD8qHuD&#xA;VefwH/wi+q6Hff2l9p36pbw7PI2Yy2c53H+7+tdL8RvDsmuadYywSqk8FwsQEjEKRKyp2BOd2z8M&#xA;9eK6Y5jh6VanGgkoSvdpW1/D8jGWCrTpTlVbc49L30KsPxZ+IVxNHDD4gupJZGCIixRksScAAbeT&#xA;VjUfiX8TNIvGtNS1i/tLlQCYp7dEYA9DgrUqeAZ/CniDw9ey6/oWoLJq1vF5Wn3ZlkXL53EbR8vy&#xA;4z6kV3Px80JNaNnrmmRmW5tbr+yrtFHO4gNH/wChf+PCsj/hZfxY/sL+2/7X/wCJd/z2+zWv97Z9&#xA;3bn73HSpLjxj8XbrUDo899vufJ+0eV5NoPkztzkLjrxjOa2/HsENr8PL23t4xHBEkMcaAkhVEiAD&#xA;JJPA9TUn/NU/+4L/AO1651nFWpSc+VW97R9ly2vr56m39mwhUUbu/u/je/5aHCD4jfFE6QdWGqal&#xA;/ZwfYbr7MvlbumN23GasDxv8XG1IacLrVzfGLzhbizXzPL/vbdmce9eieP8AT7PQvgRc+HbVg0ul&#xA;SWsNyV6GZisjfnvz+NacUnk/tArLjOzw0Gx64NeeWfi7xxf6oumW94zXpZl8loIUIKgkg7lGCMHr&#xA;6VrxXHxPnknSN9zQSeXIMW3yttVsfkyn8a6UaLbaj4v0jxZpMizW8quLlw/B/dFUYA9D/CR1Bxx9&#xA;41cnuZbOx8W3UD7JoXaSNsA4YWsRBweOtc9TGUnJKlRhsrpx2lzWaN6eGqJN1Kkt+j3Vr3PGLf4q&#xA;fEa8u47S2129muZHCJFHAhZmPGAAuc1pWfjP4v6hPdQWdxrE81q/l3CR2QYxNzwwCcHg8Guol0Cx&#xA;1Hx74S+IHh2P/iU6rqEX2uFetrc7vmB9ATn8fqKuPqF5pejfF29sLmW2uotUQxzRMVZSZCOCPYmu&#xA;B1PXPiLoyl7954o1UM0otonRQTgZZVIBz2J7j1ord+H3i7UPEF7d6Xq4iu18kyh3jUArlVKMoG1g&#xA;d3ceuc54Kqti6WFm6WIw8XLySt+KMo4etXiqmHqu3m3f8DhNT+IHxW0Ur/al/qtlv4U3FosYb6ZT&#xA;miug+GfibVvHUmseEvEt5JqVjc6fLLG1z87wyLjDBuvfP1A96Kt2dvp/xO8PW11qEU9vcWkrRsYH&#xA;AG7ClsZB+U/KeRkEYz3NPx+sHhjwJYaFZRnybqRkDOdxAjKuxJ9Szr2x97gcUUVhRbWYxw1/cjJ2&#xA;XRWuzetb6m632pJXfcteHbLSfjVo1hYak13Y69o9utub2JVeOeIfd3AnOf6k+uBg/EnUNN8MaBD8&#xA;OtEiuPJtrj7VfXVxgNPKRgYA7Yx+Q9Mkorznw1/yNOkf9fsP/oYr2PSdW/4rvxBozJ/zyukYD/pl&#xA;GrAnP+5jj19qKK9DOoqUpX6Q/wDbonJlkmoq383/ALazgfDEgh8WaNKwJVL6BjjrgSCvedC8XW0P&#xA;xe8Y2F5bST6fP5d6kZUEpLCqENgnGehz6qKKK5m/1ca98PPFGpLGI0m1BAi4wdq+Qq55PJABPOM5&#xA;xxXTf81U/wC4L/7XoorgrxUYyjHZc/8A6TA66LcnFv8Au/nI4ibxI+t/CDxddXYc3V/riTnuqg7C&#xA;B+AGPyrt/wC27b/hdpu9kvlnw55eMDOevrRRXHfC/wASSw3/APYM5kkhny1vyMRMAWYeuCBn2I6c&#xA;k130FpHft4ks5SwjuLjynKHBAa2hBx780UUZxFU8VOUNG4p/O6DLZOeHipa6tfKzOA+C3jaXw94m&#xA;TR7iNrjTNSkUNFwfLmHKyAH6AH8D2Fdz4ehsPElz8S9HunuYYdQ1MHzIlUsoDse5x2oorHu4tJ+G&#xA;vhyW4sbeZ55yIRI7bzJJh2QuMgADkfKBxjqeaKKK7cpw1LF05Va65pN7s5sxrVMNNU6L5VbZGFqj&#xA;+HfhDp9/Doseo3mvanbNbJd3WxUgjP3ioXnPQ/UDnsSiiv/Z" posX="380" posY="373" sourceCode="" preserveInputFilename="true" location="pipeline://loni.research.cchmc.org//cluster/loni/idl/c-mind/writenormalized.sh" executableVersion="1.0" gridVariables="-W=1:00;-M=2000">
+                        <tag>writenormalized</tag>
+                        <tag>c-mind</tag>
+                        <tag>nifti</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 25 14:21:00 EDT 2011" />
+                        </metadata>
+                        <input id="writenormalized_2.file" name="file" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                                <dependencies>
+                                        <dependent>seg_file</dependent>
+                                </dependencies>
+                        </input>
+                        <input id="writenormalized_2.mat_file" name="mat_file" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="writenormalized_2.segment" name="segment" required="false" enabled="false" order="2">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>/SEGMENT</enumeration>
+                                </format>
+                                <dependencies>
+                                        <dependent>output</dependent>
+                                        <dependent>seg_file</dependent>
+                                        <dependent>seg_inv_file</dependent>
+                                        <dependent>c1_file</dependent>
+                                        <dependent>c2_file</dependent>
+                                        <dependent>c3_file</dependent>
+                                        <dependent>normalized_c1_file</dependent>
+                                        <dependent>normalized_c2_file</dependent>
+                                        <dependent>normalized_c3_file</dependent>
+                                        <dependsOn>c1_file</dependsOn>
+                                        <dependsOn>c2_file</dependsOn>
+                                        <dependsOn>c3_file</dependsOn>
+                                        <dependsOn>normalized_c2_file</dependsOn>
+                                        <dependsOn>normalized_c3_file</dependsOn>
+                                        <dependsOn>normalized_c1_file</dependsOn>
+                                        <dependsOn>seg_inv_file</dependsOn>
+                                        <dependsOn>seg_file</dependsOn>
+                                </dependencies>
+                                <values>
+                                        <value>/SEGMENT</value>
+                                </values>
+                        </input>
+                        <output id="writenormalized_2.output" name="output" required="true" enabled="true" order="3" includeTransformedParameter="false">
+                                <format type="File" cardinality="-2" cardinalityBase="file" transformationBase="file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_2.seg_file" name="seg_file" required="false" enabled="false" order="4" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_seg_sn.mat</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_2.seg_inv_file" name="seg_inv_file" required="false" enabled="false" order="5" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_seg_inv_sn.mat</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_2.c1_file" name="c1_file" required="false" enabled="false" order="6" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">c1</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_2.c2_file" name="c2_file" required="false" enabled="false" order="7" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">c2</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_2.c3_file" name="c3_file" required="false" enabled="false" order="8" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">c3</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_2.normalized_c1_file" name="normalized_c1_file" required="false" enabled="false" order="9" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="c1_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_2.normalized_c2_file" name="normalized_c2_file" required="false" enabled="false" order="10" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="c2_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_2.normalized_c3_file" name="normalized_c3_file" required="false" enabled="false" order="11" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="c3_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                </module>
+                <module id="coregistration_1" name="coregistration" package="C-MIND" version="1.0" description="Aligns the image to either the best reference frame or to the specified frame number." icon="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" posX="650" posY="232" sourceCode="" preserveInputFilename="true" location="pipeline://loni.research.cchmc.org//cluster/loni/idl/c-mind/coregistrationparallel.sh" executableVersion="1.0" gridVariables="-M=2000;-W=8:00">
+                        <tag>coregistraion</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Jun 22 14:23:56 EDT 2011" />
+                        </metadata>
+                        <input id="coregistration_1.input_file" name="input_file" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="coregistration_1.cost_type" name="cost_type" required="true" enabled="true" order="1">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Median</enumeration>
+                                </format>
+                                <values>
+                                        <value>Median</value>
+                                </values>
+                        </input>
+                        <input id="coregistration_1.n_volume" name="n_volume" required="true" enabled="true" order="2">
+                                <format type="Number" cardinality="1" />
+                                <values>
+                                        <value>1</value>
+                                </values>
+                        </input>
+                        <input id="coregistration_1.ref_frame" name="ref_frame" required="true" enabled="true" order="3">
+                                <format type="Number" cardinality="1" />
+                                <values>
+                                        <value>-1</value>
+                                </values>
+                        </input>
+                        <output id="coregistration_1.output_file" name="output_file" required="true" enabled="true" order="4" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="input_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_coreg.nii</transform>
+                                </format>
+                        </output>
+                        <output id="coregistration_1.ouput_motion_params" name="ouput_motion_params" required="true" enabled="true" order="5" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="input_file">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_motion_params_brf.txt</transform>
+                                </format>
+                        </output>
+                </module>
+                <module id="coregistration_2" name="coregistration" package="C-MIND" version="1.0" description="Aligns the image to either the best reference frame or to the specified frame number." icon="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" posX="380" posY="231" sourceCode="" preserveInputFilename="true" location="pipeline://loni.research.cchmc.org//cluster/loni/idl/c-mind/coregistrationparallel.sh" executableVersion="1.0" gridVariables="-M=2000;-W=8:00">
+                        <tag>coregistraion</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Jun 22 14:23:56 EDT 2011" />
+                        </metadata>
+                        <input id="coregistration_2.input_file" name="input_file" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="coregistration_2.cost_type" name="cost_type" required="true" enabled="true" order="1">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Median</enumeration>
+                                </format>
+                                <values>
+                                        <value>Median</value>
+                                </values>
+                        </input>
+                        <input id="coregistration_2.n_volume" name="n_volume" required="true" enabled="true" order="2">
+                                <format type="Number" cardinality="1" />
+                                <values>
+                                        <value>1</value>
+                                </values>
+                        </input>
+                        <input id="coregistration_2.ref_frame" name="ref_frame" required="true" enabled="true" order="3">
+                                <format type="Number" cardinality="1" />
+                                <values>
+                                        <value>-1</value>
+                                </values>
+                        </input>
+                        <output id="coregistration_2.output_file" name="output_file" required="true" enabled="true" order="4" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="input_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_coreg.nii</transform>
+                                </format>
+                        </output>
+                        <output id="coregistration_2.ouput_motion_params" name="ouput_motion_params" required="true" enabled="true" order="5" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="input_file">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_motion_params_brf.txt</transform>
+                                </format>
+                        </output>
+                </module>
+                <dataModule id="AnatomicalFile_1" name="Anatomical File" package="C-MIND" version="1.0" posX="29" posY="7" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Jul 14 12:36:30 EDT 2011" />
+                        </metadata>
+                        <output id="AnatomicalFile_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="PAR file header" extension="PAR" description="Philips native format">
+                                                        <need>REC</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="PAR file header" extension="PAR" description="Philips native format">
+                                        <need>REC</need>
+                                </filetype>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://loni.research.cchmc.org//cluster/loni/testing/pre-process/t1w_3d.PAR</value>
+                        </values>
+                </dataModule>
+                <dataModule id="FunctionalFiles_1" name="Functional Files" package="C-MIND" version="1.0" posX="515" posY="16" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Jul 14 12:41:20 EDT 2011" />
+                        </metadata>
+                        <output id="FunctionalFiles_1.Output" name="Output" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="PAR file header" extension="PAR" description="Philips native format">
+                                                        <need>REC</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="PAR file header" extension="PAR" description="Philips native format">
+                                        <need>REC</need>
+                                </filetype>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://loni.research.cchmc.org//cluster/loni/testing/pre-process/stories.PAR</value>
+                        </values>
+                </dataModule>
+                <dataModule id="OutputDirectory_1" name="Output Directory" package="C-MIND" version="1.0" posX="392" posY="664" sourceCode="" type="File" source="false" loopIndex="false" dirDump="true">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Jul 14 12:43:27 EDT 2011" />
+                        </metadata>
+                        <input id="OutputDirectory_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file" />
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://loni.research.cchmc.org//cluster/loni/{$username}/pre-process/output</value>
+                        </values>
+                </dataModule>
+                <module id="GLM_1" name="GLM" package="C-MIND" version="1.0" icon="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" posX="512" posY="511" sourceCode="" preserveInputFilename="true" location="pipeline://loni.research.cchmc.org//cluster/loni/idl/c-mind/glm.sh" executableVersion="1.0" gridVariables="-M=2000;-W=1:00">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu May 26 08:34:22 EDT 2011" />
+                        </metadata>
+                        <input id="GLM_1.asl_file" name="asl_file" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GLM_1.bold_file" name="bold_file" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="GLM_1.asl_z_output" name="asl_z_output" required="true" enabled="true" order="4" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="asl_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_Z.nii</transform>
+                                </format>
+                        </output>
+                        <output id="GLM_1.bold_z_output" name="bold_z_output" required="true" enabled="true" order="5" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="bold_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_Z.nii</transform>
+                                </format>
+                        </output>
+                        <input id="GLM_1.asl_reg_file" name="asl_reg_file" required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text File" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GLM_1.bold_reg_file" name="bold_reg_file" required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text File" extension="txt" description="" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                </module>
+                <viewerModule id="LONIViewer_1" name="LONI Viewer" package="LONI Viewer" version="1.0" description="This is a general, versatile and light-weight viewer, which allows visualzaition of:&#xA;&#xA;1. Volumetric data parseable by the LONI Debabeler (http://wiki.loni.usc.edu/Software/Debabeler)&#xA;&#xA;2. Shape/Surface objects in any of the ShapeTools geometry shape formats (http://wiki.loni.usc.edu/Software/ShapeTools)." icon="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" posX="125" posY="664" sourceCode="" location="pipeline://localhost/C:\Program Files (x86)\Java\jre6\bin\java">
+                        <tag>surface</tag>
+                        <tag>volume</tag>
+                        <tag>shape</tag>
+                        <tag>geometry</tag>
+                        <tag>visualization</tag>
+                        <input id="LONIViewer_1.predefinedParam" name="predefinedParam" required="false" enabled="true" predefined="true" order="-1" prefix="-Xmx800m -jar" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                </format>
+                                <values>
+                                        <value>pipeline://localhost/C:\Users\Ivo\AppData\Local\LONI\Pipeline\tools\LONIViewer\LONIViewer.jar</value>
+                                </values>
+                        </input>
+                        <input id="LONIViewer_1.Newparameter1" name="New parameter 1" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="GE file" extension="ge" description="GE Genesis format (input only)" />
+                                                <filetype name="FSF file" extension="fsf" description="FSL's feat input" />
+                                                <filetype name="BrainVisa Mesh" extension="mesh" description="BrainVisa Mesh file surfaces " />
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                                <filetype name="PLY" extension=".ply" description="" />
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="Nii Gz" extension="nii.gz" description="Compressed Nifti" />
+                                                <filetype name="mesh obj" extension=".obj" description="" />
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="NIFTI GZ" extension="nii.gz" description="Gzipped NIFTI file." />
+                                                <filetype name="UCF" extension="ucf" description="Universal Contour File" />
+                                                <filetype name="vtk file" extension="vtk" description="Visual Toolkit file" />
+                                                <filetype name="MESH obj" extension="obj" description="A type of MESH obj file." />
+                                                <filetype name="DX file" extension="dx" description="A type of DX file." />
+                                                <filetype name="mesh obj" extension="obj" description="" />
+                                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="Analyze Image 4D" extension="img" description="Analyze Image 4D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="dx" extension="dx" description="" />
+                                                <filetype name="UCF file" extension="ucf" description="" />
+                                                <filetype name="DICOM file" extension="dicom" description="A type of DICOM image." />
+                                                <filetype name="MNC file" extension="mnc" description="MNC file" />
+                                                <filetype name="Pial" extension="pial" description="" />
+                                                <filetype name="dfs" extension="dfs" description="" />
+                                                <filetype name="MESH M" extension="m" description="Triangulation Mesh" />
+                                                <filetype name="Scene" extension="scene" description="shapeviewer scene file" />
+                                                <filetype name="MNI obj ascii" extension="obj" description="MNI obj ascii file" />
+                                                <filetype name="OFF file" extension="off" description="A type of OFF file." />
+                                                <filetype name="mesh m" extension="m" description="triangulation mesh" />
+                                                <filetype name="off" extension="off" description="" />
+                                                <filetype name="BrainSuite2 surface file" extension="dfs" description="BrainSuite2 surface mesh" />
+                                                <filetype name="DICOM file" extension="dcm" description="A type of DICOM image." />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                </viewerModule>
+                <module id="spm_normalize_1" name="spm_normalize" package="C-MIND" version="1.1" icon="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" posX="65" posY="221" sourceCode="" preserveInputFilename="true" location="pipeline://loni.research.cchmc.org//cluster/loni/idl/c-mind/spm_normalize.sh" executableVersion="1.0">
+                        <tag>c-mind</tag>
+                        <tag>normalize</tag>
+                        <tag>spm</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 25 11:40:01 EDT 2011" />
+                        </metadata>
+                        <input id="spm_normalize_1.template_file" name="template_file" required="true" enabled="true" order="0">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>/cluster/loni/data/T1.nii</enumeration>
+                                        <enumeration>/cluster/loni/data/Infant_T1N.nii</enumeration>
+                                </format>
+                                <values>
+                                        <value>/cluster/loni/data/T1.nii</value>
+                                </values>
+                        </input>
+                        <input id="spm_normalize_1.image_file" name="image_file" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="spm_normalize_1.mat_file" name="mat_file" required="true" enabled="true" order="2" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="image_file">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:.mat</transform>
+                                </format>
+                        </output>
+                        <input id="spm_normalize_1.just_affine" name="just_affine" required="false" enabled="false" order="4">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>/JUST_AFFINE</enumeration>
+                                </format>
+                                <dependencies>
+                                        <dependent>inv_mat_file</dependent>
+                                        <dependsOn>inv_mat_file</dependsOn>
+                                </dependencies>
+                                <values>
+                                        <value>/JUST_AFFINE</value>
+                                </values>
+                        </input>
+                        <output id="spm_normalize_1.inv_mat_file" name="inv_mat_file" required="false" enabled="false" order="3" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="mat_file">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                        <transform order="1" operation="Replace">.mat:_inv.mat</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>just_affine</dependent>
+                                        <dependsOn>just_affine</dependsOn>
+                                </dependencies>
+                        </output>
+                </module>
+                <module id="writenormalized_3" name="writenormalized" package="C-MIND" version="1.0" icon="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" posX="9" posY="461" sourceCode="" preserveInputFilename="true" location="pipeline://loni.research.cchmc.org//cluster/loni/idl/c-mind/writenormalized.sh" executableVersion="1.0">
+                        <tag>writenormalized</tag>
+                        <tag>c-mind</tag>
+                        <tag>nifti</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Apr 25 14:21:00 EDT 2011" />
+                        </metadata>
+                        <input id="writenormalized_3.file" name="file" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                </format>
+                                <dependencies>
+                                        <dependent>seg_file</dependent>
+                                </dependencies>
+                        </input>
+                        <input id="writenormalized_3.mat_file" name="mat_file" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="writenormalized_3.segment" name="segment" required="false" enabled="true" order="2">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>/SEGMENT</enumeration>
+                                </format>
+                                <dependencies>
+                                        <dependent>output</dependent>
+                                        <dependent>seg_file</dependent>
+                                        <dependent>seg_inv_file</dependent>
+                                        <dependent>c1_file</dependent>
+                                        <dependent>c2_file</dependent>
+                                        <dependent>c3_file</dependent>
+                                        <dependent>normalized_c1_file</dependent>
+                                        <dependent>normalized_c2_file</dependent>
+                                        <dependent>normalized_c3_file</dependent>
+                                        <dependent>infant</dependent>
+                                        <dependsOn>c1_file</dependsOn>
+                                        <dependsOn>c2_file</dependsOn>
+                                        <dependsOn>c3_file</dependsOn>
+                                        <dependsOn>normalized_c2_file</dependsOn>
+                                        <dependsOn>normalized_c3_file</dependsOn>
+                                        <dependsOn>normalized_c1_file</dependsOn>
+                                        <dependsOn>seg_inv_file</dependsOn>
+                                        <dependsOn>seg_file</dependsOn>
+                                        <dependsOn>output</dependsOn>
+                                </dependencies>
+                                <values>
+                                        <value>/SEGMENT</value>
+                                </values>
+                        </input>
+                        <output id="writenormalized_3.output" name="output" required="true" enabled="true" order="4" includeTransformedParameter="false">
+                                <format type="File" cardinality="-2" cardinalityBase="file" transformationBase="file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_3.seg_file" name="seg_file" required="false" enabled="true" order="5" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_seg_sn.mat</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_3.seg_inv_file" name="seg_inv_file" required="false" enabled="true" order="6" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="MAT File" extension="mat" description="Matrix describing transformation of image into standard space (found by first_flirt)." />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_seg_inv_sn.mat</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_3.c1_file" name="c1_file" required="false" enabled="true" order="7" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">c1</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_3.c2_file" name="c2_file" required="false" enabled="true" order="8" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">c2</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_3.c3_file" name="c3_file" required="false" enabled="true" order="9" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">c3</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_3.normalized_c1_file" name="normalized_c1_file" required="false" enabled="true" order="10" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="c1_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_3.normalized_c2_file" name="normalized_c2_file" required="false" enabled="true" order="11" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="c2_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="writenormalized_3.normalized_c3_file" name="normalized_c3_file" required="false" enabled="true" order="12" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="c3_file">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Prepend">w</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>segment</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                        </output>
+                        <input id="writenormalized_3.infant" name="infant" required="false" enabled="true" order="3">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>/INFANT</enumeration>
+                                        <enumeration>/NOT_INFANT</enumeration>
+                                </format>
+                                <dependencies>
+                                        <dependent>output</dependent>
+                                        <dependent>seg_file</dependent>
+                                        <dependent>seg_inv_file</dependent>
+                                        <dependent>c1_file</dependent>
+                                        <dependent>c2_file</dependent>
+                                        <dependent>c3_file</dependent>
+                                        <dependent>normalized_c1_file</dependent>
+                                        <dependent>normalized_c2_file</dependent>
+                                        <dependent>normalized_c3_file</dependent>
+                                        <dependsOn>segment</dependsOn>
+                                </dependencies>
+                                <values>
+                                        <value>/NOT_INFANT</value>
+                                </values>
+                        </input>
+                </module>
+                <module id="convert2nii_1" name="convert2nii" package="C-MIND" version="1.2" description="This module will take any data file as input and convert it to a NIFTI file in the same directory of the input." icon="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" posX="13" posY="90" sourceCode="" preserveInputFilename="true" location="pipeline://loni.research.cchmc.org//cluster/loni/idl/c-mind/convert2nii.sh" executableVersion="1.0" gridVariables="-M=4000;-W=1:00">
+                        <tag>par/rec</tag>
+                        <tag>nii</tag>
+                        <tag>NIFTI</tag>
+                        <tag>anatomical</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Apr 28 15:42:31 EDT 2011" />
+                        </metadata>
+                        <input id="convert2nii_1.input" name="input" description="The input PAR/REC file to convert." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="PAR file header" extension="PAR" description="Philips native format">
+                                                        <need>REC</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                                <dependencies>
+                                        <dependent>output</dependent>
+                                </dependencies>
+                        </input>
+                        <output id="convert2nii_1.output" name="output" required="false" enabled="true" order="1" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="input">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.PAR:.nii</transform>
+                                </format>
+                                <dependencies>
+                                        <dependsOn>input</dependsOn>
+                                </dependencies>
+                        </output>
+                        <input id="convert2nii_1.is_asl_bold" name="is_asl_bold" required="false" enabled="false" order="2">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>ASL_BOLD</enumeration>
+                                </format>
+                                <dependencies>
+                                        <dependent>asl_out</dependent>
+                                        <dependent>bold_out</dependent>
+                                        <dependsOn>asl_out</dependsOn>
+                                        <dependsOn>bold_out</dependsOn>
+                                </dependencies>
+                        </input>
+                        <output id="convert2nii_1.asl_out" name="asl_out" required="false" enabled="false" order="3" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_ASL.nii</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>is_asl_bold</dependent>
+                                        <dependsOn>is_asl_bold</dependsOn>
+                                </dependencies>
+                        </output>
+                        <output id="convert2nii_1.bold_out" name="bold_out" required="false" enabled="false" order="4" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="output">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.nii:_BOLD.nii</transform>
+                                </format>
+                                <dependencies>
+                                        <dependent>is_asl_bold</dependent>
+                                        <dependsOn>is_asl_bold</dependsOn>
+                                </dependencies>
+                        </output>
+                </module>
+                <module id="convert2niifunctional_1" name="convert2niifunctional" package="C-MIND" version="1.1" description="This module will convert a data file to NIFTI format split into ASL and BOLD." icon="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" posX="499" posY="96" sourceCode="" preserveInputFilename="true" location="pipeline://loni.research.cchmc.org//cluster/loni/idl/c-mind/convert2niifunctional.sh" executableVersion="1.0" gridVariables="-M=8000;-W=1:00">
+                        <tag>par/rec</tag>
+                        <tag>nifti</tag>
+                        <tag>c-mind</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Jun 21 15:14:28 EDT 2011" />
+                        </metadata>
+                        <input id="convert2niifunctional_1.input" name="input" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="PAR file header" extension="PAR" description="Philips native format">
+                                                        <need>REC</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="convert2niifunctional_1.bold_file" name="bold_file" required="true" enabled="true" order="2" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="input">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.PAR:_BOLD.nii</transform>
+                                </format>
+                        </output>
+                        <output id="convert2niifunctional_1.asl_file" name="asl_file" required="true" enabled="true" order="1" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="input">
+                                        <fileTypes>
+                                                <filetype name="NII file" extension="nii" description="NIfTI-1 volume (single file)" />
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.PAR:_ASL.nii</transform>
+                                </format>
+                        </output>
+                </module>
+        </moduleGroup>
+</pipeline>
+

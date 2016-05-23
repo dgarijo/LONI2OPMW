@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="InputMapfile_1.Output" sink="GWASSImpute_2.FineScaleRecombuinationMap"/>
+                <connection source="InputHaplotypeFiles_1.Output" sink="GWASSImpute_2.KnownHaplotypesFile"/>
+                <connection source="InputLegendFiles_1.Output" sink="GWASSImpute_2.LegendfilesabouttheSNPsintheHaplotypesfile"/>
+                <connection source="InputFileofgenotypesforastudycohort_1.Output" sink="GWASSImpute_2.genotypesforastudycohortthatwewanttoimputeorphase"/>
+                <connection source="PopulationEffectiveSize_1.Output" sink="GWASSImpute_2.EffectivesizeofthepopulationdenotedasNe"/>
+                <connection source="InputStrandorientationoftheSNPallele_1.Output" sink="GWASSImpute_2.strandorientationoftheSNPallele"/>
+                <connection source="GenomicReferenceinterval_1.Output" sink="GWASSImpute_2.Genomicintervalinference"/>
+                <connection source="GWASSImpute_2.Impute2OutputFile" sink="Outputs_1.Input"/>
+        </connections>
+        <icons>
+                <icon id="0" value="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
+"/>
+        </icons>
+        <moduleGroup id="GWASSImpute_1" name="GWASS Impute" package="Bioinformatics" version="1.0" description="Genome-wide Association Study Software (GWASS) package provides genomics tools facilitating the analysis of genome-wide association studies. 
+
+IMPUTE2 is a GWASS program for phasing observed genotypes and imputing missing genotypes. It includes basic and advanced functions. " posX="0" posY="0" sourceCode="">
+                <tag>genomics</tag>
+                <tag>bioinformatics</tag>
+                <uri>http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoGWASS</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Fri Nov 05 12:48:36 PDT 2010"/>
+                </metadata>
+                <dataModule id="InputMapfile_1" name="Input Map file" package="LONI" version="1.0" description="Fine-scale recombination map for the region to be analyzed. This file should have three columns: physical position (in base pairs), recombination rate between current position and next position in map (in cM/Mb), and genetic map position (in cM). The file should also have a header line with an unbroken character string for each column (e.g., &quot;position COMBINED_rate(cM/Mb) Genetic_Map(cM)&quot;). " posX="399" posY="68" sourceCode="" type="File" source="true" loopIndex="false">
+                        <uri>https://mathgen.stats.ox.ac.uk/impute/impute_v2.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="InputMapfile_1.Output" name="Output" description="Fine-scale recombination map for the region to be analyzed. This file should have three columns: physical position (in base pairs), recombination rate between current position and next position in map (in cM/Mb), and genetic map position (in cM). The file should also have a header line with an unbroken character string for each column (e.g., &quot;position COMBINED_rate(cM/Mb) Genetic_Map(cM)&quot;). " required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="map" extension="map" description="fasta mapping file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="map" extension="map" description="fasta mapping file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/workflows/Bioinformatics/data/example.chr22.map</value>
+                        </values>
+                </dataModule>
+                <module id="GWASSImpute_2" name="GWASS Impute" package="GWASS" version="v2.0" description="IMPUTE is a program for estimating (&quot;imputing&quot;) unobserved genotypes in SNP association studies. The program is designed to work seamlessly with the output of the genotype calling program CHIAMO and the population genetic simulator HAPGEN, and it produces output that can be analyzed using the program SNPTEST. There are currently three different versions of the IMPUTE software available for download: version 0.5 implements the methodology described in Marchini et al. (2007); version 1 is essentially the same as version 0.5, with a couple of added features; and version 2 implements a major extension that was introduced in Howie et al. (2009). " icon="0" posX="495" posY="235" rotation="1" sourceCode="" location="pipeline://cranium.loni.usc.edu/impute2">
+                        <authors>
+                                <author fullName="Ivo Dinov" email="" website="http://www.loni.ucla.edu/~dinov"/>
+                        </authors>
+                        <citations>
+                                <citation>PMID: 17597769</citation>
+                                <citation>PMCID: PMC2689936</citation>
+                        </citations>
+                        <tag>informatics</tag>
+                        <tag>fasta</tag>
+                        <tag>sequence</tag>
+                        <tag>alignment</tag>
+                        <uri>https://mathgen.stats.ox.ac.uk/impute/impute.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Aug 30 12:20:56 PDT 2010"/>
+                        </metadata>
+                        <input id="GWASSImpute_2.FineScaleRecombuinationMap" name="Fine Scale Recombuination Map" description="\Fine-scale recombination map for the region to be analyzed. This file should have three columns: physical position (in base pairs), recombination rate between current position and next position in map (in cM/Mb), and genetic map position (in cM). The file should also have a header line with an unbroken character string for each column (e.g., &quot;position COMBINED_rate(cM/Mb) Genetic_Map(cM)&quot;). " required="true" enabled="true" order="0" prefix="-m" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="map" extension="map" description="fasta mapping file"/>
+                                        </fileTypes>
+                                </format>
+                                <dependencies>
+                                        <dependent>Known Haplotypes File</dependent>
+                                </dependencies>
+                        </input>
+                        <input id="GWASSImpute_2.KnownHaplotypesFile" name="Known Haplotypes File" description="File of known haplotypes, with one row per SNP and one column per haplotype. In IMPUTE2, it is possible to specify two known haplotypes files. In this case, the file with more SNPs should be provided first (in the &lt;file 1&gt; position) and the file with fewer SNPs should be provided second (in the &lt;file 2&gt; position), with a single space separating the file names. Every haplotype file needs a corresponding legend file (see below), and all alleles must be coded as 0 or 1 -- no other values are allowed. " required="true" enabled="true" order="1" prefix="-h" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="2">
+                                        <fileTypes>
+                                                <filetype name="haps" extension="haps" description="haplotypes file"/>
+                                        </fileTypes>
+                                </format>
+                                <dependencies>
+                                        <dependsOn>Fine Scale Recombuination Map</dependsOn>
+                                </dependencies>
+                        </input>
+                        <input id="GWASSImpute_2.LegendfilesabouttheSNPsintheHaplotypesfile" name="Legend files about the SNPs in the Haplotypes file" description="Legend file(s) with information about the SNPs in the -h file(s). Each file should have four columns: rsID, physical position (in base pairs), allele 0, and allele 1. The last two columns specify the alleles underlying the 0/1 coding in the corresponding -h file; these alleles can take values in {A,C,G,T}. Each legend file should also have a header line with an unbroken character string for each column (e.g., &quot;rsID position a0 a1&quot;). When using two known haplotypes files with IMPUTE2, you must supply the corresponding legend files in the same order -- i.e., the file with more SNPs comes first." required="true" enabled="true" order="2" prefix="-l" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="2">
+                                        <fileTypes>
+                                                <filetype name="legend" extension="legend" description="Legend file(s) with information about the SNPs in the -h file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GWASSImpute_2.genotypesforastudycohortthatwewanttoimputeorphase" name="genotypes for a study cohort that we want to impute or phase" description="File containing genotypes for a study cohort that we want to impute or phase. The format of this file is described on our file format webpage and is the same as the output format from our genotype calling program CHIAMO. " required="true" enabled="true" order="3" prefix="-g" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="gens" extension="gens" description="genotypes for a study cohort that we want to impute or phase"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GWASSImpute_2.EffectivesizeofthepopulationdenotedasNe" name="Effective size of the population denoted as Ne" description="&quot;Effective size&quot; of the population (commonly denoted as Ne in the population genetics literature) from which your dataset was sampled. This parameter scales the recombination rates that IMPUTE2 uses to train its population model. As a starting point, we suggest values of 11418 for imputation from HapMap CEU, 17469 for YRI, and 14269 for CHB+JPT.
+
+When combining reference panels, we suggest taking the average of the panel-specific Ne values, weighted by the number of chromosomes in each panel; e.g., for a CEU+YRI+CHB+JPT panel in HapMap Phase II data, the Ne would be (120 * 11418) + (120 * 17469) + (180 * 14269) / (120 + 120 + 180) = 14369.
+
+For larger and more complicated reference panels where this calculation would become tedious (e.g., datasets that include all HapMap 3 panels), setting Ne to 15000 should be fine. In our experience, imputation accuracy is quite insensitive to the exact Ne value when using a large reference panel with diverse ancestry. " required="true" enabled="true" order="19" prefix="-Ne" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <output id="GWASSImpute_2.Impute2OutputFile" name="Impute2 Output File" description="Name of main output file. Follows the same format as the -g file. " required="true" enabled="true" order="26" prefix="-o" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="inpute2" extension="inpute2" description="Name of main output file. Follows the same format as the -g file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="GWASSImpute_2.strandorientationoftheSNPallele" name="strand orientation of the SNP allele" description="File showing the strand orientation of the SNP allele codings in the -g file, relative to a fixed reference point. Each SNP occupies one line, and the file should have two columns: (i) the base pair position of the SNP, and (ii) the strand orientation ('+' or '-') of the alleles in the genotype file; the columns should be separated by a single space. The ordering of the SNPs in this file does not matter (by contrast to the -g file, which must be sorted by SNP position), and it is okay if some SNPs in the strand file are not present in the genotype file (e.g., due to filtering). Some model strand files are included in the Example/ directory that comes with the software download.
+
+NOTE: This flag replaces the -s flag from versions prior to v2.1.0." required="true" enabled="true" order="4" prefix="-strand_g" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="strand" extension="strand" description="strand orientation of the SNP allele"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GWASSImpute_2.Genomicintervalinference" name="Genomic interval inference" description="Genomic interval to use for inference, as specified by &lt;lower&gt; and &lt;upper&gt; boundaries in base pair position. The boundaries can be expressed either in long form (e.g., -int 5420000 10420000) or in exponential notation (e.g., -int 5.42e6 10.42e6). This option is particularly useful for restricting test jobs to small regions or splitting whole-chromosome analyses into manageable chunks, as discussed in the section on analyzing whole chromosomes. IMPUTE2 requires that you specify an analysis interval in order to prevent accidental whole-chromosome analyses." required="true" enabled="true" order="16" prefix="-int" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="2"/>
+                        </input>
+                        <input id="GWASSImpute_2.Apply-gRef" name="Apply -g Ref" description="Same as -strand_g, but applies to the -g_ref file. 
+
+NOTE: This flag replaces the -s_ref flag from versions prior to v2.1.0." required="false" enabled="false" order="5" prefix="-strand_g_ref" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GWASSImpute_2.FixStrand-g" name="Fix Strand -g" description="Activates the program's internal strand alignment procedure for the -g file (Panel 2). The strand is aligned to the alleles in Panel 0, if present, otherwise to Panel 1. The strand is aligned deterministically where possible (e.g., flipping A/C in Panel 2 to match G/T in the reference) and by allele frequency otherwise (at A/T and C/G SNPs, whose alignment cannot be resolved by labels alone); in the latter case, the program codes the alleles such that Panel 2 and the alignment reference (Panel 0 or 1) have the same minor allele. 
+
+NOTE: This flag can be used in conjunction with the -strand_g option. In that case, the information from the strand file takes precedence, i.e., the program will not try to &quot;fix&quot; the strand of SNPs that have explicit strand info already. This is useful if you have strand information for some SNPs but not others. 
+
+NOTE: You should take care when using this option. In particular, it can get the alignment wrong at A/T and C/G SNPs with minor allele frequencies near 50%, which can hurt the inference by distorting the local haplotype patterns. The only way to get the correct alignment at these kinds of SNPs is to track down the original assay and determine which strand was measured. 
+
+NOTE: This flag replaces the -fix_strand flag from versions prior to v2.1.0." required="false" enabled="false" order="6" prefix="-fix_strand_g" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.FixStrand-gRef" name="Fix Strand -g Ref" description="Similar to -fix_strand_g, but applies to the -g_ref file (Panel 1). In this case the strand is aligned to the alleles in Panel 0, so the flag does not work if this panel is not present. 
+
+NOTE: Just as -fix_strand_g can be used in conjunction with -strand_g, this flag can be used in conjunction with the -strand_g_ref option. As before, the strand file takes precedence over the internal strand-fixing procedure. 
+
+NOTE: As with -fix_strand_g, you should be careful about using this option to align A/T and C/G SNPs with minor allele frequencies near 50%. 
+
+NOTE: This flag replaces the -fix_strand_ref flag from versions prior to v2.1.0." required="false" enabled="false" order="7" prefix="-fix_strand_g_ref" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.ExcludeSNPs" name="Exclude SNPs" description="List of SNPs to exclude from the -g file. The list should take the form of a single column of identifiers in a text file. The SNPs can be identified by their SNP IDs (first column of -g file), their rsIDs (second column of -g file), or their base pair positions (third column of -g file). Excluded SNPs will be treated as if they had not been present in the genotypes file, and they will not be shown in the output unless you use the -impute_excluded option." required="false" enabled="false" order="8" prefix="-exclude_snps_g" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GWASSImpute_2.ExcludeSNPs-gRef" name="Exclude SNPs -g Ref" description="Same as -exclude_snps_g, but applies to the -g_ref file." required="false" enabled="false" order="9">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GWASSImpute_2.ImputeExcludedSNPs" name="Impute Excluded SNPs" description="Specifies that SNPs excluded from the study dataset via the -exclude_snps_g option should be imputed and included in the output file. When this flag is not activated, excluded SNPs are simply ignored." required="false" enabled="false" order="10" prefix="-impute_excluded" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.IncludeSNPs" name="Include SNPs" description="List of reference-panel-only SNPs to impute. If you do not want the program to impute all of the Type 0 and Type 1 SNPs in the region you are analyzing, you can use this list to specify a subset of SNPs to impute; all other SNPs will be ignored unless they have data in the -g file. The list should take the form of a single column of identifiers in a text file. The SNPs can be identified by their SNP IDs (first column of -g_ref file), their rsIDs (second column of -g_ref file or first column of -l file), or their base pair positions (third column of -g_ref file or second column of -l file). This option does not have any effect on Type 2 and Type 3 SNPs." required="false" enabled="false" order="11" prefix="-include_snps" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.SampleIDsin-gFile" name="Sample IDs in -g File" description="File of sample IDs for the individuals in the -g file; should follow the format described here. Only the first three columns are necessary, and only the first two columns are used by IMPUTE2 (i.e., the third column can have dummy values, and subsequent columns do not affect the algorithm). 
+
+NOTE: Currently, the only reason to provide a sample file is if you want to exclude some individuals via the -exclude_samples_g option." required="false" enabled="false" order="12" prefix="-sample_g" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GWASSImpute_2.SampleIDsin-gRef" name="Sample IDs in -g Ref" description="Same as -sample_g, but applies to the -g_ref file." required="false" enabled="false" order="13" prefix="-sample_g_ref" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GWASSImpute_2.ExcludeSamples" name="Exclude Samples" description="List of samples to exclude from the -g file. The list should take the form of a single column of identifiers in a text file. The samples can be identified by the IDs in either of the first two columns of the -sample_g file, which is REQUIRED if you want to use this option. Excluded samples will be treated as if they had not been present in the genotypes file, and the program will re-print the original sample list, minus the excluded samples, to a file named &quot;[-o]_samples&quot;.
+
+NOTE: Part of the IMPUTE2 algorithm involves pooling information across the individuals in your study dataset. Samples with systematically aberrant genotypes (due, e.g., to degraded assay DNA) can confuse this part of the model; you should take care to identify such samples ahead of time and exclude them either manually or with this option." required="false" enabled="false" order="14" prefix="-exclude_samples_g" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GWASSImpute_2.ExcludeSamples-gRef" name="Exclude Samples -g Ref" description="Same as -exclude_samples_g, but applies to the -g_ref file. One difference is that the program will not print a filtered list of -g_ref samples like the one that gets printed with -exclude_samples_g." required="false" enabled="false" order="15" prefix="-exclude_samples_g_ref" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GWASSImpute_2.LengthofBufferRegion" name="Length of Buffer Region" description="Length of buffer region (in kb) to include on each side of the analysis interval specified by the -int flag. SNPs in the buffer regions inform the inference but do not appear in output files. Using a buffer region helps prevent imputation quality from deteriorating near the edges of the analysis interval." required="false" enabled="false" order="17" prefix="-buffer" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="GWASSImpute_2.AllowAnalysisofLargeRegions" name="Allow Analysis of Large Regions" description="Allows the analysis of regions larger than 7 Mb. If this flag is not activated and the analysis interval plus buffer region exceeds 7 Mb, the program will quit with an error. " required="false" enabled="false" order="18" prefix="-allow_large_regions" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.ThresholdforCallingGenotypes" name="Threshold for Calling Genotypes" description="Threshold for calling genotypes in the -g file. For each individual at each SNP, the program will use the genotype with the maximum probability if that probability exceeds the threshold; otherwise, the genotype will be treated as missing. 
+
+NOTE: This threshold only applies to input genotypes. If you want to apply a calling threshold to IMPUTE2's output probabilities, you will have to do it yourself. However, it is usually not a good idea to treat imputation output this way; see the webpage of our association-testing software SNPTEST for better suggestions." required="false" enabled="false" order="20" prefix="-call_thresh" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="GWASSImpute_2.NumberofIndividuals" name="Number of Individuals" description="Number of individuals from the -g file to include in the analysis. For example, to impute only the first five individuals, set -nind 5. This option is useful for debugging and test runs." required="false" enabled="false" order="21" prefix="-nind" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="GWASSImpute_2.MCMCIterations" name="MCMC Iterations" description="Total number of MCMC iterations to perform, including burn-in. Increasing the number of iterations may improve accuracy slightly." required="false" enabled="false" order="22" prefix="-iter" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="GWASSImpute_2.MCMCIterationstoDiscardasBurn-In" name="MCMC Iterations to Discard as Burn-In" description="Number of MCMC iterations to discard as burn-in. The algorithm samples new haplotypes for the observed genotypes during each of the first [-burnin] iterations, but these iterations do not contribute to the final imputation probabilities. We have found that 10 burn-in iterations is enough to ensure good results in a variety of different datasets." required="false" enabled="false" order="23" prefix="-burnin" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="GWASSImpute_2.MaximumCopyingStatesForDiploidPhasingUpdates" name="Maximum Copying States For Diploid Phasing Updates" description="Maximum number of copying states to use for diploid phasing updates. Setting this value higher will lead to higher accuracy at the cost of longer running times. The default is a good starting point, but this can be increased if there is more time available to run the program. In our experience, the method reaches maximal accuracy near a -k value of 100, so we suggest that there is little point in using more intensive settings, even for very large datasets." required="false" enabled="false" order="24" prefix="-k" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="GWASSImpute_2.MaximumCopyingStatesForHaploidImputationUpdates" name="Maximum Copying States For Haploid Imputation Updates" description="Maximum number of copying states to use for haploid imputation updates. The default setting should be sufficient for most applications." required="false" enabled="false" order="25" prefix="-k_hap" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <output id="GWASSImpute_2.SNP-WiseInformationFile" name="SNP-Wise Information File" description="Name of SNP-wise information file with one line per SNP and a single header line at the beginning; versions of IMPUTE prior to v2.1.0 did not print the header. This file always contains the following columns (header tags shown in parentheses): 
+
+1. SNP identifier from -g file (snp_id) 
+2. rsID (rs_id) 
+3. base pair position (position) 
+4. expected frequency of allele coded '1' in the -o file (exp_freq_a1) 
+5. measure of the observed statistical information associated with the allele frequency estimate (info) 
+6. average certainty of best-guess genotypes (certainty) 
+7. internal &quot;type&quot; assigned to SNP (type) -- column did not exist prior to v2.1.0 
+
+Depending on the command-line options invoked, there may also be columns labeled info_typeX, concord_typeX, and r2_typeX, where X takes values in {0,1,2}. For SNPs that have genotypes in the -g file, concord_typeX is the concordance between the input genotypes (after applying the -call_thresh) and the best-guess imputed genotypes obtained by masking the input genotypes one SNP at a time and pretending the SNP is of type X; similarly, r2_typeX is the squared correlation between input and imputed genotypes. The info_typeX column is the same information metric used in column 5, but here is it applied to genotypes that have been imputed from pseudo-type X SNPs in the leave-one-out masking experiment. These columns did not exist prior to v2.1.0. They are useful for post-hoc quality control, as we explain in the section on QC and troubleshooting." required="false" enabled="false" order="27" prefix="-i" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="GWASSImpute_2.ScreenOutput" name="Screen Output" description="Name of file that records a summary of the screen output." required="false" enabled="false" order="28" prefix="-r" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="GWASSImpute_2.WarningsOutput" name="Warnings Output" description="Name of file that records warnings generated by IMPUTE2." required="false" enabled="false" order="29" prefix="-w" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="GWASSImpute_2.OutputSNPs" name="Output SNPs" description="&quot;Output SNPs&quot;: specifies the SNP types that will be printed to the output file (SNP labeling is discussed in the Overview). By default, all imputed and genotyped SNPs are included in the output, i.e., &quot;-os 0 1 2 3&quot;.
+" required="false" enabled="false" order="30" prefix="-os" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="-1"/>
+                        </input>
+                        <input id="GWASSImpute_2.CompressOutputFile" name="Compress Output File" description="Specifies that the main output file should be compressed by the gzip utility; this also applies to some non-standard output files that can become large." required="false" enabled="false" order="31" prefix="-o_gz" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.OutputDecimalPlaces" name="Output Decimal Places" description="Specifies the number of decimal places to use for reporting genotype probabilities in the main output file." required="false" enabled="false" order="32" prefix="-outdp" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="GWASSImpute_2.SupressPrinting" name="Supress Printing" description="Suppresses printing of info_typeX, concord_typeX, and r2_typeX columns in -i file." required="false" enabled="false" order="33" prefix="-no_snp_qc_info" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.SupressQualityControlPrinting" name="Supress Quality Control Printing" description="Suppresses printing of per-sample quality control metrics file. The default is to print a file named &quot;[-i]_by_sample&quot;." required="false" enabled="false" order="34" prefix="-no_sample_qc_info" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.Phase" name="Phase" description="IMPUTE2 always implicitly phases the study dataset (-g file), and this flag tells the program to print the best-guess haplotypes that result from the phasing process. In addition to the standard imputation output file, the program also prints a separate haplotypes file named &quot;[-o]_haps&quot;. This file contains the same five header columns as the standard output, along with two columns (haplotypes) per individual, in the same order they appear in the main output. 
+
+In addition to this &quot;best-guess&quot; haplotypes file, the program also prints the certainty that each successive pair of heterozygous SNPs is correctly phased. These certainties occur in a file named &quot;[-o]_haps_confidence&quot;. This file contains one line per individual and one column per SNP in the phased haplotypes file. Homozygotes are represented by * characters and heterozygotes are represented by numbers between 0.5 and 1.0; this is the estimated probability that the phasing between the current heterozygote and the previous heterozygote (to the left) is correct. By convention, the leftmost heterozygous SNP in each individual is assigned a phasing certainty of 1.0. 
+
+As shown in the examples section, it is possible to use the -phase option to produce haplotypes without the use of a reference panel; i.e., to perform a classical phasing analysis." required="false" enabled="false" order="35" prefix="-phase" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.PredictGenotypedSNPs" name="Predict Genotyped SNPs" description="&quot;Predict Genotyped SNPs&quot;: Tells the program to replace the input genotypes from the -g file with imputed genotypes at Type 2 SNPs in the output file." required="false" enabled="false" order="36" prefix="-pgs" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.ReplaceMissingGenotypeswithImputedGenotypes" name="Replace Missing Genotypes with Imputed Genotypes" description="Unlike -pgs, this option tells the program to replace only missing genotypes with imputed genotypes. That is, any input genotype whose maximum probability exceeds the -call_thresh will simply be reprinted in the output file, whereas input genotypes that fall below the calling threshold will be imputed in the output. 
+
+WARNING: This is an appealing option that promises to simply &quot;fill in&quot; sporadically missing genotypes in your input data. However, we think that following this procedure and then testing the SNPs for association could cause subtle problems. We are investigating these issues, but in the meantime we suggest that you only use this option with caution; using it naively may lead to bad results, and you do so at your own risk." required="false" enabled="false" order="37" prefix="-pgs_miss" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.InitialSeedforRandomNumberGenerator" name="Initial Seed for Random Number Generator" description="Initial seed for random number generator. The seed is set using the system clock unless it is manually overridden with this option." required="false" enabled="false" order="38" prefix="-seed" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="GWASSImpute_2.SupressWarnings" name="Supress Warnings" description="Turns warnings off, so that the -w file does not get printed." required="false" enabled="false" order="39" prefix="-no_warn" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.TurnOffHole-Filling" name="Turn Off Hole-Filling" description="Turns hole-filling off, so that SNPs included in the -g file but not in the lowest reference panel cannot contribute to the inference." required="false" enabled="false" order="40" prefix="-no_fill" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GWASSImpute_2.DontRemoveSNPs" name="Don't Remove SNPs" description="Prevents the program from discarding SNPs whose alleles cannot be aligned across panels." required="false" enabled="false" order="41" prefix="-no_remove" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Farhad Hormozdiari" email="" website="http://eichlerlab.gs.washington.edu/"/>
+                                <author fullName="Faraz Hach" email="" website="http://eichlerlab.gs.washington.edu/"/>
+                        </executableAuthors>
+                        <license>http://www.stats.ox.ac.uk/~marchini/software/gwas/gwas.html#licence</license>
+                </module>
+                <dataModule id="InputHaplotypeFiles_1" name="Input Haplotype Files" package="LONI" version="1.0" description="File of known haplotypes, with one row per SNP and one column per haplotype. In IMPUTE2, it is possible to specify two known haplotypes files. In this case, the file with more SNPs should be provided first (in the &lt;file 1&gt; position) and the file with fewer SNPs should be provided second (in the &lt;file 2&gt; position), with a single space separating the file names. Every haplotype file needs a corresponding legend file (see below), and all alleles must be coded as 0 or 1 -- no other values are allowed. " posX="133" posY="148" sourceCode="" type="File" source="true" loopIndex="false">
+                        <uri>https://mathgen.stats.ox.ac.uk/impute/impute_v2.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="InputHaplotypeFiles_1.Output" name="Output" description="File of known haplotypes, with one row per SNP and one column per haplotype. In IMPUTE2, it is possible to specify two known haplotypes files. In this case, the file with more SNPs should be provided first (in the &lt;file 1&gt; position) and the file with fewer SNPs should be provided second (in the &lt;file 2&gt; position), with a single space separating the file names. Every haplotype file needs a corresponding legend file (see below), and all alleles must be coded as 0 or 1 -- no other values are allowed. " required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="haps" extension="haps" description="haplotypes file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="haps" extension="haps" description="haplotypes file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/workflows/Bioinformatics/data/example.chr22.1kG.haps</value>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/workflows/Bioinformatics/data/example.chr22.hm3.haps</value>
+                        </values>
+                </dataModule>
+                <dataModule id="Outputs_1" name="Outputs" posX="719" posY="227" rotation="1" sourceCode="" type="File" source="false" loopIndex="false" dirDump="true">
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Nov 02 11:47:47 PDT 2010"/>
+                        </metadata>
+                        <input id="Outputs_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/{$tempdir}/{$username}</value>
+                        </values>
+                </dataModule>
+                <dataModule id="InputLegendFiles_1" name="Input Legend Files" package="LONI" version="1.0" description="Legend file(s) with information about the SNPs in the -h file(s). Each file should have four columns: rsID, physical position (in base pairs), allele 0, and allele 1. The last two columns specify the alleles underlying the 0/1 coding in the corresponding -h file; these alleles can take values in {A,C,G,T}. Each legend file should also have a header line with an unbroken character string for each column (e.g., &quot;rsID position a0 a1&quot;). When using two known haplotypes files with IMPUTE2, you must supply the corresponding legend files in the same order -- i.e., the file with more SNPs comes first." posX="36" posY="57" sourceCode="" type="File" source="true" loopIndex="false">
+                        <uri>https://mathgen.stats.ox.ac.uk/impute/impute_v2.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="InputLegendFiles_1.Output" name="Output" description="Legend file(s) with information about the SNPs in the -h file(s). Each file should have four columns: rsID, physical position (in base pairs), allele 0, and allele 1. The last two columns specify the alleles underlying the 0/1 coding in the corresponding -h file; these alleles can take values in {A,C,G,T}. Each legend file should also have a header line with an unbroken character string for each column (e.g., &quot;rsID position a0 a1&quot;). When using two known haplotypes files with IMPUTE2, you must supply the corresponding legend files in the same order -- i.e., the file with more SNPs comes first." required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="legend" extension="legend" description="Legend file(s) with information about the SNPs in the -h file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="legend" extension="legend" description="Legend file(s) with information about the SNPs in the -h file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/workflows/Bioinformatics/data/example.chr22.1kG.legend</value>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/workflows/Bioinformatics/data/example.chr22.hm3.legend</value>
+                        </values>
+                </dataModule>
+                <dataModule id="InputFileofgenotypesforastudycohort_1" name="Input File of genotypes for a study cohort" package="LONI" version="1.0" description="File containing genotypes for a study cohort that we want to impute or phase. The format of this file is described on our file format webpage and is the same as the output format from our genotype calling program CHIAMO. " posX="30" posY="278" rotation="1" sourceCode="" type="File" source="true" loopIndex="false">
+                        <uri>https://mathgen.stats.ox.ac.uk/impute/impute_v2.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="InputFileofgenotypesforastudycohort_1.Output" name="Output" description="File containing genotypes for a study cohort that we want to impute or phase. The format of this file is described on our file format webpage and is the same as the output format from our genotype calling program CHIAMO. " required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="gens" extension="gens" description="genotypes for a study cohort that we want to impute or phase"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="gens" extension="gens" description="genotypes for a study cohort that we want to impute or phase"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/workflows/Bioinformatics/data/example.chr22.study.gens</value>
+                        </values>
+                </dataModule>
+                <dataModule id="InputStrandorientationoftheSNPallele_1" name="Input Strand orientation of the SNP allele" package="LONI" version="1.0" description="File showing the strand orientation of the SNP allele codings in the -g file, relative to a fixed reference point. Each SNP occupies one line, and the file should have two columns: (i) the base pair position of the SNP, and (ii) the strand orientation ('+' or '-') of the alleles in the genotype file; the columns should be separated by a single space. The ordering of the SNPs in this file does not matter (by contrast to the -g file, which must be sorted by SNP position), and it is okay if some SNPs in the strand file are not present in the genotype file (e.g., due to filtering). Some model strand files are included in the Example/ directory that comes with the software download.
+
+NOTE: This flag replaces the -s flag from versions prior to v2.1.0." posX="32" posY="379" rotation="1" sourceCode="" type="File" source="true" loopIndex="false">
+                        <uri>https://mathgen.stats.ox.ac.uk/impute/impute_v2.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="InputStrandorientationoftheSNPallele_1.Output" name="Output" description="File showing the strand orientation of the SNP allele codings in the -g file, relative to a fixed reference point. Each SNP occupies one line, and the file should have two columns: (i) the base pair position of the SNP, and (ii) the strand orientation ('+' or '-') of the alleles in the genotype file; the columns should be separated by a single space. The ordering of the SNPs in this file does not matter (by contrast to the -g file, which must be sorted by SNP position), and it is okay if some SNPs in the strand file are not present in the genotype file (e.g., due to filtering). Some model strand files are included in the Example/ directory that comes with the software download.
+
+NOTE: This flag replaces the -s flag from versions prior to v2.1.0." required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="strand" extension="strand" description="strand orientation of the SNP allele"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="strand" extension="strand" description="strand orientation of the SNP allele"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/LONI/workflows/Bioinformatics/data/example.chr22.study.strand</value>
+                        </values>
+                </dataModule>
+                <dataModule id="GenomicReferenceinterval_1" name="Genomic Reference interval" description="Genomic interval to use for inference, as specified by &lt;lower&gt; and &lt;upper&gt; boundaries in base pair position. The boundaries can be expressed either in long form (e.g., -int 5420000 10420000) or in exponential notation (e.g., -int 5.42e6 10.42e6). This option is particularly useful for restricting test jobs to small regions or splitting whole-chromosome analyses into manageable chunks, as discussed in the section on analyzing whole chromosomes. IMPUTE2 requires that you specify an analysis interval in order to prevent accidental whole-chromosome analyses." posX="33" posY="478" rotation="1" sourceCode="" type="Number" source="true" loopIndex="false">
+                        <uri>https://mathgen.stats.ox.ac.uk/impute/impute_v2.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="GenomicReferenceinterval_1.Output" name="Output" description="Genomic interval to use for inference, as specified by &lt;lower&gt; and &lt;upper&gt; boundaries in base pair position. The boundaries can be expressed either in long form (e.g., -int 5420000 10420000) or in exponential notation (e.g., -int 5.42e6 10.42e6). This option is particularly useful for restricting test jobs to small regions or splitting whole-chromosome analyses into manageable chunks, as discussed in the section on analyzing whole chromosomes. IMPUTE2 requires that you specify an analysis interval in order to prevent accidental whole-chromosome analyses." required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>20.4e6</value>
+                                <value>20.5e6</value>
+                        </values>
+                </dataModule>
+                <dataModule id="PopulationEffectiveSize_1" name="Population Effective Size" description="&quot;Effective size&quot; of the population (commonly denoted as Ne in the population genetics literature) from which your dataset was sampled. This parameter scales the recombination rates that IMPUTE2 uses to train its population model. As a starting point, we suggest values of 11418 for imputation from HapMap CEU, 17469 for YRI, and 14269 for CHB+JPT.
+
+When combining reference panels, we suggest taking the average of the panel-specific Ne values, weighted by the number of chromosomes in each panel; e.g., for a CEU+YRI+CHB+JPT panel in HapMap Phase II data, the Ne would be (120 * 11418) + (120 * 17469) + (180 * 14269) / (120 + 120 + 180) = 14369.
+
+For larger and more complicated reference panels where this calculation would become tedious (e.g., datasets that include all HapMap 3 panels), setting Ne to 15000 should be fine. In our experience, imputation accuracy is quite insensitive to the exact Ne value when using a large reference panel with diverse ancestry. " posX="34" posY="569" rotation="1" sourceCode="" type="Number" source="true" loopIndex="false">
+                        <uri>https://mathgen.stats.ox.ac.uk/impute/impute_v2.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Sep 01 13:01:35 PDT 2010"/>
+                        </metadata>
+                        <output id="PopulationEffectiveSize_1.Output" name="Output" description="&quot;Effective size&quot; of the population (commonly denoted as Ne in the population genetics literature) from which your dataset was sampled. This parameter scales the recombination rates that IMPUTE2 uses to train its population model. As a starting point, we suggest values of 11418 for imputation from HapMap CEU, 17469 for YRI, and 14269 for CHB+JPT.
+
+When combining reference panels, we suggest taking the average of the panel-specific Ne values, weighted by the number of chromosomes in each panel; e.g., for a CEU+YRI+CHB+JPT panel in HapMap Phase II data, the Ne would be (120 * 11418) + (120 * 17469) + (180 * 14269) / (120 + 120 + 180) = 14369.
+
+For larger and more complicated reference panels where this calculation would become tedious (e.g., datasets that include all HapMap 3 panels), setting Ne to 15000 should be fine. In our experience, imputation accuracy is quite insensitive to the exact Ne value when using a large reference panel with diverse ancestry. " required="true" enabled="true" order="-1">
+                                <format type="Number" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>11418</value>
+                        </values>
+                </dataModule>
+                <annotations visible="true">
+                        <annotation width="764" height="26" posX="19" posY="9" background="102,102,204,51" foreground="0,0,255,255" expanded="true" type="text" name="Documentation: http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoGWASS">
+                                <styles>
+                                        <style name="http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoGWASS$15" fontSize="15" isBold="true"/>
+                                        <style name="Documentation: $0" fontSize="15"/>
+                                </styles>
+                        </annotation>
+                </annotations>
+        </moduleGroup>
+</pipeline>

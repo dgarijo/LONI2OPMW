@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="GammaFilelist_1.Outputfile" sink="GAMMARSI_1.filelist"/>
+                <connection source="GAMMAalgorithm_1.OutputDirectory" sink="GAMMARSI_1.roifile"/>
+                <connection source="ExecutionDir_1.Output" sink="GAMMARSI_1.ExecutionDirectory"/>
+                <connection source="GAMMARSI_1.OutputDirectory" sink="RSIOutputs_1.Input"/>
+                <connection source="ImageListFile_1.Output" sink="GammaFilelist_1.ImageListFile"/>
+                <connection source="ClinicalVariableFile_1.Output" sink="GammaFilelist_1.ClinicalVariableFile"/>
+                <connection source="GammaFilelist_1.Outputfile" sink="GAMMAalgorithm_1.filelist"/>
+                <connection source="ExecutionDir_1.Output" sink="GAMMAalgorithm_1.ExecutionDirectory"/>
+                <connection source="GAMMAConfiguration_1.FlowControl" sink="GAMMAalgorithm_1.InputFlowControl"/>
+                <connection source="GAMMAalgorithm_1.OutputDirectory" sink="GammaOutputs_1.Input"/>
+                <connection source="DataDirectory_1.Output" sink="Copy_1.SourceDirectoryName"/>
+                <connection source="ExecutionDir_1.Output" sink="Copy_1.DestinationDirectoryName"/>
+                <connection source="ExecutionDir_1.Output" sink="GAMMAConfiguration_1.ExecutionDirectory"/>
+                <connection source="Copy_1.OutputFlowofControl" sink="GAMMAConfiguration_1.InputFlowControl"/>
+        </connections>
+        <icons>
+                <icon id="1" value="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"/>
+                <icon id="0" value="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"/>
+        </icons>
+        <moduleGroup id="GAMMAAlgRSIWorkflow_1" name="GAMMA AlgRSI Workflow" package="GAMMA" version="1.1" description="The Graphical-Model-based Multivariate Analysis (GAMMA) workflow enables Bayesian data-mining and analysis of high-dimensional data. Specific applications include neuroimaging data analysis, primarily lesion-based studies, functional MR-based studies, and morphometric studies. " posX="0" posY="0" sourceCode="">
+                <authors>
+                        <author fullName="Sam Hobel" email="" website=""/>
+                </authors>
+                <citations>
+                        <citation>Chen R, Herskovits EH. Graphical-model based morphometric analysis. IEEE Transaction on Medical Imaging. 2005;24(10):1237-1248.
+
+10.1109/TMI.2005.854305</citation>
+                        <citation>Chen R, Herskovits EH. A Bayesian Network Classifier with Inverse Tree Structure for Voxelwise MR Image Analysis. Paper presented at: the eleventh conference of SIGKDD, 2005.
+
+10.1145/1081870.1081875</citation>
+                        <citation>Chen R, Herskovits EH. Graphical-model-based multivariate analysis of functional magnetic resonance data. NeuroImage. 2007;35:635-647.
+
+10.1016/j.neuroimage.2006.11.040</citation>
+                        <citation>Holmes CJ, Hoge R, Collins L, Woods R, Toga AW, Evans AC. Enhancement of MR images using registration for signal averaging. J Comput Assist Tomogr. Mar-Apr 1998;22(2):324-333.</citation>
+                        <citation>Smith SM, Matthews PM, Gurd JM, Slater A. Multi-subject statistic map combination. Paper presented at: HBM98, 1998.</citation>
+                        <citation>Larsen S, Kikinis R, Talos IF, Weinstein D, Wells W, Golby A. Quantitative comparison of functional MRI and direct electrocortical stimulation for functional mapping. Int J Med Robot. Sep 2007;3(3):262-270.</citation>
+                        <citation>Lashkari D, Sridharan R, Vul E, Hsieh P-J, Kanwisher N, Golland P. Nonparametric Hierarchical Bayesian Model for Functional Brain Parcellation. Paper presented at: MMBIA: IEEE Computer Society Workshop on Mathematical Methods in Biomedical Image Analysis, 2010.</citation>
+                </citations>
+                <tag>data mining</tag>
+                <tag>bayesian</tag>
+                <uri>http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_GAMMA</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Thu Jun 02 15:27:56 PDT 2011"/>
+                </metadata>
+                <module id="GAMMARSI_1" name="GAMMA RSI" package="GAMMA" version="1.1" description="Regional-state inference (RSI). Usage for this module is as follows:
+
+Command line: gammacorelatent gamma.prj.filelist roiFile method
+Parameters:
+gamma.prj.filelist: gamma file list
+roiFile: roi definition
+method: {lm, voting}. lm : Latent model; voting : Voting
+Output:
+roi_state_gamma.csv: regional state in csv format
+roi_state_gamma.arff: regional state in arff format
+Example:
+gammacorelatent gamma.prj.filelist roi.gamma lm
+This command tells RSI to perform latent model inference for ROI defined in file roi.gamma
+This program requires a ROI definition file. In this file, voxels are arranged as a column vector. The
+format of this file is as follows:
+_______
+number of ROIs, number of voxels
+label1, label2, ... labelN
+______
+Label is 1 for ROI 1, 2 for ROI 2, ..." icon="0" posX="186" posY="725" sourceCode="" location="pipeline://cranium.loni.usc.edu/scripts/gammacorelatent2.sh" executableVersion="1.1">
+                        <authors>
+                                <author fullName="Sam Hobel, Shina Halavi" email="" website=""/>
+                        </authors>
+                        <tag>GAMMA</tag>
+                        <uri>http://www.nitrc.org/projects/GAMMASuite</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Apr 27 14:08:07 PDT 2011"/>
+                        </metadata>
+                        <input id="GAMMARSI_1.filelist" name="filelist" description="gamma file list" required="true" enabled="true" order="1" includeTransformedParameter="true">
+                                <format type="Directory" cardinality="1">
+                                        <transform order="0" operation="Append">/gamma.prj.filelist</transform>
+                                </format>
+                        </input>
+                        <input id="GAMMARSI_1.roifile" name="roi file " description="roi definition file. In this file, voxels are arranged as a column vector. The
+format of this file is as follows:
+
+number of ROIs, number of voxels
+label1, label2, ... labelN
+
+Label is 1 for ROI 1, 2 for ROI 2, ...
+
+Users can use gammacoregamma or gammacoreel to generate ROI files." required="true" enabled="true" order="2" includeTransformedParameter="true">
+                                <format type="Directory" cardinality="1">
+                                        <transform order="0" operation="Append">/roi.gamma</transform>
+                                </format>
+                        </input>
+                        <input id="GAMMARSI_1.method" name="method" description="lm : Latent model; voting : Voting" required="true" enabled="true" order="3">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>lm</enumeration>
+                                        <enumeration>voting</enumeration>
+                                </format>
+                                <values>
+                                        <value>lm</value>
+                                </values>
+                        </input>
+                        <input id="GAMMARSI_1.ExecutionDirectory" name="Execution Directory" description="This is the directory where all of your subject image files are located." required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <output id="GAMMARSI_1.OutputDirectory" name="Output Directory" required="true" enabled="true" order="4">
+                                <format type="Directory" cardinality="1"/>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Rong Chen" email="" website=""/>
+                        </executableAuthors>
+                        <license>The GAMMA suite is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+The GAMMA suite is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. 
+You should have received a copy of the GNU General Public License along with the GAMMA suite.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</license>
+                </module>
+                <dataModule id="RSIOutputs_1" name="RSI Outputs" posX="101" posY="875" sourceCode="" type="Directory" source="false" loopIndex="false" dirDump="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri May 06 23:51:51 PDT 2011"/>
+                        </metadata>
+                        <input id="RSIOutputs_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="Directory" cardinality="1"/>
+                        </input>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/{$tempdir}/{$username}/Gammaworkflow1_outputs2</value>
+                        </values>
+                </dataModule>
+                <dataModule id="ImageListFile_1" name="Image List File" package="GAMMA" version="1.1" description="Path to image list text file (ex: image_list.txt). This file must be in the form: 
+
+1 subj_1.img
+2 subj_2.img
+3 subj_3.img
+4 subj_4.img
+5 subj_5.img
+6 subj_6.img
+7 subj_7.img
+8 subj_8.img
+9 subj_9.img
+
+The first column is the subject number. The second column is the image file for that subject. The GAMMA module is set up to run in the location of your image files so specifying the file path to each image file is not necessary." posX="150" posY="79" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu May 05 15:24:58 PDT 2011"/>
+                        </metadata>
+                        <output id="ImageListFile_1.Output" name="Output" description="Path to image list text file (ex: image_list.txt). This file must be in the form: 
+
+1 subj_1.img
+2 subj_2.img
+3 subj_3.img
+4 subj_4.img
+5 subj_5.img
+6 subj_6.img
+7 subj_7.img
+8 subj_8.img
+9 subj_9.img
+
+The first column is the subject number. The second column is the image file for that subject. The GAMMA module is set up to run in the location of your image files so specifying the file path to each image file is not necessary." required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/test_data/test_small/image_list.txt</value>
+                        </values>
+                </dataModule>
+                <dataModule id="ClinicalVariableFile_1" name="Clinical Variable File" package="GAMMA" version="1.1" description="Path to fv list file (ex: fv_list.txt). This file must be in the form:
+
+1,0 
+2,0 
+3,0 
+4,0 
+5,0 
+6,0 
+7,0 
+8,0 
+9,0 
+
+The first column is simply the line number/subject number. The second column is the fv number. The two colums are separated by a single comma with no spaces." posX="82" posY="29" sourceCode="" type="File" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu May 05 15:25:06 PDT 2011"/>
+                        </metadata>
+                        <output id="ClinicalVariableFile_1.Output" name="Output" description="Path to fv list file (ex: fv_list.txt). This file must be in the form:
+
+1,0 
+2,0 
+3,0 
+4,0 
+5,0 
+6,0 
+7,0 
+8,0 
+9,0 
+
+The first column is simply the line number/subject number. The second column is the fv number. The two colums are separated by a single comma with no spaces." required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/test_data/test_small/default_fv.txt</value>
+                        </values>
+                </dataModule>
+                <module id="GammaFilelist_1" name="Gamma Filelist " package="GAMMA" version="1.1" description="This module uses several parameters and two files, an Image List file and a Clinical Variable file, to create the gamma.prj.filelist file needed for all GAMMA modules.
+
+It is required that the Image List and Clinical Variable files are in the appropriate format (see parameter descriptions)." icon="0" posX="89" posY="243" sourceCode="" location="pipeline://cranium.loni.usc.edu/scripts/gammafilelist.sh">
+                        <authors>
+                                <author fullName="Sam Hobel" email="shobel87@gmail.co" website="www.loni.ucla.edu"/>
+                        </authors>
+                        <tag>GAMMA</tag>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu May 05 14:30:07 PDT 2011"/>
+                        </metadata>
+                        <input id="GammaFilelist_1.TotalCasenumber" name="Total Case number" description="The total number of cases in the study.
+
+Ex: 28" required="true" enabled="true" order="0" prefix="number_subj" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <values>
+                                        <value>28</value>
+                                </values>
+                        </input>
+                        <input id="GammaFilelist_1.TotalVariablenumber" name="Total Variable number" description="The total number of variables in the study. 
+
+Ex: 12289
+
+This number is equal to the total number of predictor variables plus 1 (this extra variable is the group-membership variable). For example, in a study with image size 64 * 64 * 3, we have 12288 voxels (predictor variables). Then number_var = (64 * 64 * 3) + 1 = 12289." required="true" enabled="true" order="1" prefix="number_var" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <values>
+                                        <value>12289</value>
+                                </values>
+                        </input>
+                        <input id="GammaFilelist_1.Imagedimensions" name="Image dimensions" description="Image dimensions. Use the form:  x y z
+
+Ex: 64 64 3" required="true" enabled="true" order="2" prefix="dim" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                                <values>
+                                        <value>64 64 3</value>
+                                </values>
+                        </input>
+                        <input id="GammaFilelist_1.Headerline" name="Header line" description="Header line (never edited). " required="true" enabled="true" order="3" prefix="id file_name fv" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="GammaFilelist_1.ImageListFile" name="Image List File" description="Path to image list text file (ex: image_list.txt). This file must be in the form: 
+
+1 subj_1.img
+2 subj_2.img
+3 subj_3.img
+4 subj_4.img
+5 subj_5.img
+6 subj_6.img
+7 subj_7.img
+8 subj_8.img
+9 subj_9.img
+
+The first column is the subject number. The second column is the image file for that subject. The GAMMA module is set up to run in the location of your image files so specifying the file path to each image file is not necessary." required="true" enabled="true" order="5">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="GammaFilelist_1.ClinicalVariableFile" name="Clinical Variable File" description="Path to fv list file (ex: fv_list.txt). This file must be in the form:
+
+1,0 
+2,0 
+3,0 
+4,0 
+5,0 
+6,0 
+7,0 
+8,0 
+9,0 
+
+The first column is simply the line number/subject number. The second column is the fv number. The two colums are separated by a single comma with no spaces." required="true" enabled="true" order="4">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="GammaFilelist_1.Outputfile" name="Output file" required="true" enabled="true" order="6">
+                                <format type="Directory" cardinality="1"/>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Sam Hobel" email="shobel8@gmail.com" website="www.loni.ucla.edu"/>
+                        </executableAuthors>
+                </module>
+                <module id="GAMMAalgorithm_1" name="GAMMA algorithm" package="GAMMA" version="1.1" description="GAMMA algorithm. Usage of these module is as follows:
+
+Command line: gammacoregamma gamma.prj.filelist
+Parameters:
+gamma.prj.filelist - gamma file list
+Output:
+label_field_gamma.{hdr, nii}: label field in analyze or nifti format
+belief_map_gamma.{hdr, nii}: belief map in analyze or nifti format
+bn.gamma: generated BN in plain-text format
+bn.gamma.xdsl: BN in xml format
+roi.gamma: label field in ROI format.
+log.gamma: run-time information
+Example:
+gammacoregamma gamma.prj.filelist
+This command tells GAMMA to analyze data provided in gamma.prj.filelist
+" icon="0" posX="288" posY="561" sourceCode="" location="pipeline://cranium.loni.usc.edu/scripts/gammacoregamma.sh" executableVersion="1.1">
+                        <authors>
+                                <author fullName="Sam Hobel, Shina Halavi" email="" website=""/>
+                        </authors>
+                        <tag>GAMMA</tag>
+                        <uri>http://www.nitrc.org/projects/GAMMASuite</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Apr 27 14:06:19 PDT 2011"/>
+                        </metadata>
+                        <input id="GAMMAalgorithm_1.filelist" name="filelist" description="gamma file list" required="true" enabled="true" order="1" includeTransformedParameter="true">
+                                <format type="Directory" cardinality="1">
+                                        <transform order="0" operation="Append">/gamma.prj.filelist</transform>
+                                </format>
+                        </input>
+                        <input id="GAMMAalgorithm_1.ExecutionDirectory" name="Execution Directory" description="This must be the directory where all of your subject image files are located. " required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="GAMMAalgorithm_1.InputFlowControl" name="Input Flow Control" required="true" enabled="true" order="3">
+                                <format type="Flow Control" cardinality="1"/>
+                        </input>
+                        <output id="GAMMAalgorithm_1.OutputDirectory" name="Output Directory" description="Output Directory where the output files will be written." required="true" enabled="true" order="2">
+                                <format type="Directory" cardinality="1"/>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Rong Chen" email="" website=""/>
+                        </executableAuthors>
+                        <license>The GAMMA suite is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+The GAMMA suite is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. 
+You should have received a copy of the GNU General Public License along with the GAMMA suite.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</license>
+                </module>
+                <dataModule id="GammaOutputs_1" name="Gamma Outputs" posX="400" posY="880" sourceCode="" type="Directory" source="false" loopIndex="false" dirDump="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri May 06 23:51:51 PDT 2011"/>
+                        </metadata>
+                        <input id="GammaOutputs_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="Directory" cardinality="1"/>
+                        </input>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/{$tempdir}/{$username}/Gammaworkflow1_outputs1</value>
+                        </values>
+                </dataModule>
+                <module id="Copy_1" name="Copy" package="GAMMA" version="1.1" description="Copies all required tools and resources from the data directory to the execution directory" icon="1" posX="530" posY="270" sourceCode="" location="pipeline://cranium.loni.usc.edu/scripts/makecopy.sh">
+                        <authors>
+                                <author fullName="Petros Petrosyan" email="petros.petrosyan@loni.ucla.edu" website="http://www.loni.ucla.edu"/>
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed May 12 17:07:35 PDT 2010"/>
+                        </metadata>
+                        <input id="Copy_1.SourceDirectoryName" name="Source Directory Name" required="true" enabled="true" order="1">
+                                <format type="Directory" cardinality="1"/>
+                        </input>
+                        <input id="Copy_1.DestinationDirectoryName" name="Destination Directory Name" required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <output id="Copy_1.OutputFlowofControl" name="Output Flow of Control" required="true" enabled="true" order="2">
+                                <format type="Flow Control" cardinality="1"/>
+                        </output>
+                </module>
+                <module id="GAMMAConfiguration_1" name="GAMMA Configuration" package="GAMMA" version="1.1" icon="0" posX="407" posY="428" sourceCode="" location="pipeline://cranium.loni.usc.edu/scripts/gammaconfig.sh">
+                        <authors>
+                                <author fullName="Sam Hobel" email="" website=""/>
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri May 06 19:08:45 PDT 2011"/>
+                        </metadata>
+                        <input id="GAMMAConfiguration_1.MaskType" name="Mask Type" description="The parameter mask_type is set when users want to filter non-relevant variables. For example, in a lesion-deficit study, users often start by excluding voxels that are lesioned for only a small proportion of subjects. The GAMMA suite provides three masking methods:
+
+• mask_type = -1: don't use masking.
+• mask_type = 0: remove voxels whose values are zero (e.g., background voxels).
+• mask_type = 1: remove voxels V for which norm(V) &lt; mask_th; norm(V) is the total
+number of subjects whose value is 1 at that voxel location.
+
+How to choose a masking method depends on the application. Removing background voxels is a reasonable default." required="true" enabled="true" order="1" prefix="mask_type" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>-1</value>
+                                </values>
+                        </input>
+                        <input id="GAMMAConfiguration_1.MaskThreshold" name="Mask Threshold" description="Threshold associated with mask. 
+
+Ex: 0.3" required="true" enabled="true" order="2" prefix="mask_th" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>0.3</value>
+                                </values>
+                        </input>
+                        <input id="GAMMAConfiguration_1.MarkovRandomFieldSmoothing" name="Markov Random Field Smoothing" description="Markov Random Field smoothing parameter. Default value is 1. Typical values are between 01. and 10" required="true" enabled="true" order="3" prefix="beta" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>1</value>
+                                </values>
+                        </input>
+                        <input id="GAMMAConfiguration_1.GEMIterationnumber" name="GEM Iteration number" description="Generalized Expectation Maximization iteration number. Default value is 5. Typical values are between 5 and 10. " required="true" enabled="true" order="4" prefix="T_gem" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>5</value>
+                                </values>
+                        </input>
+                        <input id="GAMMAConfiguration_1.LPBIterationnumber" name="LPB Iteration number" description="Loopy Belief Propagation iteration number. Default value is 5. Typical values are between 5 and 20." required="true" enabled="true" order="5" prefix="T_lpb" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>5</value>
+                                </values>
+                        </input>
+                        <input id="GAMMAConfiguration_1.MaxROIs" name="Max ROIs" description="The parameter max_roi is the maximum number of ROIs allowed; typically, users choose an integer in betwee 2 and 5. If a study is undersampled (the study with small sample size), GAMMA cannot support a more complicated model, so max_roi should be set to 1 or 2. Default value is 3." required="true" enabled="true" order="6" prefix="max_roi" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>3</value>
+                                </values>
+                        </input>
+                        <input id="GAMMAConfiguration_1.ModelOrder" name="Model Order" description="how to search the number of clusters. 
+
+Ex: -1" required="true" enabled="true" order="7" prefix="model_order" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>-1</value>
+                                </values>
+                        </input>
+                        <input id="GAMMAConfiguration_1.SurfFlag" name="Surf Flag" description="The parameter surf_flag determines the spatial model used for image voxels. If surf_flag = 0, GAMMA uses the default spatial model, a 3D lattice. If surf_flag = 1, GAMMA uses an external file to specify neighborhood structures." required="true" enabled="true" order="8" prefix="surf_flag" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>0</value>
+                                </values>
+                        </input>
+                        <input id="GAMMAConfiguration_1.Verbose" name="Verbose" description="0 = no
+1 = yes" required="true" enabled="true" order="9" prefix="ver" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>1</value>
+                                </values>
+                        </input>
+                        <input id="GAMMAConfiguration_1.ExecutionDirectory" name="Execution Directory" description="This must be the directory where all of your subject image files are located. " required="true" enabled="true" order="0">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <output id="GAMMAConfiguration_1.FlowControl" name="Flow Control" required="true" enabled="true" order="10">
+                                <format type="Flow Control" cardinality="1"/>
+                        </output>
+                        <input id="GAMMAConfiguration_1.InputFlowControl" name="Input Flow Control" required="true" enabled="true" order="11">
+                                <format type="Flow Control" cardinality="1"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Sam Hobel" email="" website=""/>
+                        </executableAuthors>
+                </module>
+                <dataModule id="ExecutionDir_1" name="Execution Dir" description="New directory where the program will be executed." posX="377" posY="101" sourceCode="" type="String" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu May 26 17:03:26 PDT 2011"/>
+                        </metadata>
+                        <output id="ExecutionDir_1.Output" name="Output" description="New directory where the program will be executed." required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>{$tempdir}/{$username}/Gamma</value>
+                        </values>
+                </dataModule>
+                <dataModule id="DataDirectory_1" name="Data Directory" package="GAMMA" version="1.1" description="This is the directory where all of your subject data is located. " posX="579" posY="106" sourceCode="" type="Directory" source="true" loopIndex="false">
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri May 06 14:57:27 PDT 2011"/>
+                        </metadata>
+                        <output id="DataDirectory_1.Output" name="Output" description="This is the directory where all of your subject data is located. " required="true" enabled="true" order="-1">
+                                <format type="Directory" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/test_data/test_small</value>
+                        </values>
+                </dataModule>
+                <variables>
+                        <variable name="Age">//idaxs/project/subject/study/subjectAge</variable>
+                        <variable name="Var 1">Value</variable>
+                        <variable name="CDRSCORE">//idaxs/project/subject/visit/assessment[@name='CDR']/component[@name='CDR Total Score']/assessmentScore[@attribute='CDGLOBAL']</variable>
+                        <variable name="SUID">//idaxs/project/subject/subjectIdentifier</variable>
+                        <variable name="Var sasasa2">Value</variable>
+                        <variable name="age">//idaxs/project/subject/study/subjectAge</variable>
+                        <variable name="TestCDR">//idaxs/project/subject/study/weightKg</variable>
+                        <variable name="MMSCORE">//idaxs/project/subject/visit/assessment[@name='MMSE']/component[@name='MMSE Total Score']/assessmentScore[@attribute='MMSCORE']</variable>
+                        <variable name="y">//idaxs/project/subject/study/subjectAge</variable>
+                </variables>
+        </moduleGroup>
+</pipeline>

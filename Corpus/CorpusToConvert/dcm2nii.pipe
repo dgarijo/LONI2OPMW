@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".1">
+        <moduleGroup id="dcm2nii_1" name="dcm2nii" posX="0" posY="0">
+                <module id="DICOMTONIFTI_1" name="DICOM TO NIFTI" package="Utilities" version="12.2009" description="MRIcron&#xA;&#xA;dcm2nii &lt;options&gt; &lt;sourcenames&gt;&#xA;OPTIONS:&#xA;-a Anonymize [remove identifying information]: Y,N = Y&#xA;-d Date in filename [filename.dcm -&gt; 20061230122032.nii]: Y,N = Y&#xA;-e events (series/acq) in filename [filename.dcm -&gt; s002a003.nii]: Y,N = Y&#xA;-f Source filename [e.g. filename.par -&gt; filename.nii]: Y,N = Y&#xA;-g gzip output, filename.nii.gz [ignored if '-n n']: Y,N = Y&#xA;-i ID  in filename [filename.dcm -&gt; johndoe.nii]: Y,N = Y&#xA;-n output .nii file [if no, create .hdr/.img pair]: Y,N = Y&#xA;-o Output Directory, e.g. 'C:\TEMP' (if unspecified, source directory is used)&#xA;-p Protocol in filename [filename.dcm -&gt; TFE_T1.nii]: Y,N = Y&#xA;-s SPM2/Analyze not SPM5/NIfTI [ignored if '-n y']: Y,N = N&#xA;-v Convert every PAR file in the directory: Y,N = Y&#xA;&#xA;EXAMPLE: dcm2nii -a y /Users/Joe/Documents/dcm/IM_0116&#xA;&#xA;" location="pipeline://cranium.loni.usc.edu//usr/local/loniApps/mricron/dcm2nii" sourceCode="" icon="/9j/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAx&#xA;NDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy&#xA;MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAAUCAA2AFYEASIAAhEBAxEBBCIA/8QAHwAAAQUB&#xA;AQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEG&#xA;E1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW&#xA;V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLD&#xA;xMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAA&#xA;AAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKR&#xA;obHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hp&#xA;anN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU&#xA;1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADgQBAAIRAxEEAAA/APCKKKVVZ2CqCWJwAO9fRmJ7&#xA;/RRRSV0GheCte8QgPY2TeR/z2kOxPzPX8K7/AMD/AAzgghj1XxCgZsbo7Vui+7f4V3N74ktrZPJt&#xA;UDBRgBeFFeDjc7jTfLR+/wDy/wAzy8RmMKfwv5/5BRRRXlcnwe1tIdwvLJpMZ8sM388Vhp4C1rzX&#xA;imjjgdDgiRuv0x2r2zRrq41BpbmZvlB2Ko6Duf6VyXj/AFx9M1+2HlBw9sC2Dg8Mwr3uHlUxkb1V&#xA;zOV7dLW9Lbnm4LO3Xxjwz2tv5hRRRXn1x4D12FS0duk4H/PKQE/kea5+6s7mylMV1BJDIP4XUg16&#xA;VZ+NLQkCUyRfVcj9K3U1HS9btzBN5F1GeqNyR/UV7GIy2UNeVr+v66n0SncKKKK8Sor0HXvh+hRr&#xA;nRHJxybZzk/8BJ/ka4CSN4pGjkUq6nDKRgg15lSlKG5adwoooptFFFZjCiiiivVPhp4RjRE17UYw&#xA;T1to2/8AQj/SuC8NaV/bOvW1o3+qJ3SH/ZHWvbrq8SC18qIBVVdqqO1fP53jXTSoQ67+nb5nk5li&#xA;uRezXzCiiiq2ravLeysoYiEHhR39zWM8lX4tF1a7XdBp9w6nodmB+tEnhXX8Z/syb8CD/WvjPbUe&#xA;b35q/qjwI4TEVHzuDfyYUUUV0XhxQNGjP95mJ/OvLfiRdi68WyIDkW8SRfzY/wDoVer6Ta3mmeHD&#xA;Ne2k0KwB2fch4Aya8E1K7e/1O6u5M75pWcg9snpX7RwhTjOnGrF3Sil95lkmDqRx1WrUi1a6183/&#xA;AJBRRRVWlVmRgykhh0IPSkor7g+tCiiiuq0DxRcRzJa3bl1bhJD1B9D61Z8V6NDq9s19bKBexjLY&#xA;/wCWg9/euMBIII6iursdWLxIS3OOfrXkY7AQnrFb7mkZBRRRXAUVf1mJIdVnEYwjHcB9eaK+NrU3&#xA;SqOD6HQndBRRRW54Cuo7bWZVYjzZYtsfuc9BX0H4a0W0so1urtkkvG5weRH7D396+U45GilWRDhl&#xA;IIPvXXWnj3V4UCrqU6Y7N836kV8PxNk2Kxj5sPLR7/12NcFl+Hq4h1qk0paWT29Qooor6nDKehBq&#xA;nqGr6fpcZe+vIoBjOGbk/QdTXza/jnVrhdsmrzkHsJNv8qqf2ujsWeYMx6ktkmvi4cKVk/3kvuR9&#xA;dhstw83erWVvL/N/5BRRRXsPiP4jW+o2Muk6errBIfnnfjcPQDsPrXFTW1vcr+9iSQH1Ga5tL9GG&#xA;QQR7VZivtn3XK/Q1+i5Bnf8AZOHjhZU7xj1T1+ff8D6rD4PB06Xs6VrPe+twoooqW78MWkwJt2aF&#xA;vT7wrmr7TbnT32zJ8p+645Brq01R+5VvqKWe7iurd4ZoQyMMH5q+2wvGeB/5eTaXmnf8Lnj5lwth&#xA;sTFyoJRn5bP1X+QUUUVxFOS4aH7pqnLcbZGUDOCRnNQtMze1e7Xz3DqP7vU/NPYyTswoooqS9n+0&#xA;XBc+gFFV6K+TrVXVqOo+pslZWCiiiiiiisxhRRRRRRRQAUUUU5XZDlWKn2NWY9SuI+rbh70UVjUo&#xA;UqvxxTNqWJrUf4cmgoooq3HrTD70Z/A0Ta5I0ZSJSpIxuJ6UUV5ywGGVa3L+Z6zzbG+wf7x/gFFF&#xA;FZNFFFeueGFFFFFFFFABRRRX/9k=" posX="127" posY="160" executableVersion="12.2009">
+                        <authors>
+                                <author fullName="Alen Zamanyan" email="" website="" />
+                        </authors>
+                        <executableAuthors>
+                                <author fullName="Chris Rorden" email="" website="" />
+                        </executableAuthors>
+                        <license>http://www.cabiatl.com/mricro/mricron/install.html
+License
+
+Chris Rorden's MRIcron, copyright 2007, all rights 
+reserved. Redistribution and use in binary forms
+, with or without modification, are permitted 
+provided inclusion of the copyright notice, 
+this list of conditions and the following disclaimer 
+is provided with the distribution: 
+Neither the name of the copyright owner nor 
+the name of this project (MRIcron) may be used
+ to endorse or promote products derived from 
+this software without specific prior written 
+permission.This software is provided by the 
+copyright holder "as is" and any express or 
+implied warranties, including, but not limited
+ to, the implied warranties of merchantability
+ and fitness for a particular purpose are 
+disclaimed. In no event shall the copyright 
+owner be liable for any direct, indirect, 
+incidental, special, exemplary, or consequential 
+damages (including, but not limited to, 
+procurement of substitute goods or services; 
+loss of use, data, or profits; or business 
+interruption) however caused and on any theory 
+of liability, whether in contract, strict 
+liability, or tort (including negligence or 
+otherwise) arising in any way out of the use 
+of this software, even if advised of the possibility 
+of such damage.</license>
+                        <tag>convert</tag>
+                        <tag>dicom</tag>
+                        <tag>nifti</tag>
+                        <uri>http://www.cabiatl.com/mricro/mricron/dcm2nii.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Fri Apr 22 11:37:08 PDT 2011" />
+                        </metadata>
+                        <input id="DICOMTONIFTI_1.Anonymize" name="Anonymize" description="-a Anonymize [remove identifying information]: Y,N = Y&#xA;" required="false" enabled="true" order="0" prefix="-a" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Y</enumeration>
+                                        <enumeration>N</enumeration>
+                                </format>
+                                <values>
+                                        <value>Y</value>
+                                </values>
+                        </input>
+                        <input id="DICOMTONIFTI_1.DateinFilename" name="Date in Filename" description="-d Date in filename [filename.dcm -&gt; 20061230122032.nii]: Y,N = Y" required="false" enabled="false" order="1" prefix="-d" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Y</enumeration>
+                                        <enumeration>N</enumeration>
+                                </format>
+                        </input>
+                        <input id="DICOMTONIFTI_1.Events" name="Events" description="-e events (series/acq) in filename [filename.dcm -&gt; s002a003.nii]: Y,N = Y" required="false" enabled="false" order="2" prefix="-e" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Y</enumeration>
+                                        <enumeration>N</enumeration>
+                                </format>
+                        </input>
+                        <input id="DICOMTONIFTI_1.SourceFilename" name="Source Filename" description="-f Source filename [e.g. filename.par -&gt; filename.nii]: Y,N = Y" required="false" enabled="false" order="3" prefix="-f" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Y</enumeration>
+                                        <enumeration>N</enumeration>
+                                </format>
+                        </input>
+                        <input id="DICOMTONIFTI_1.GzipOutput" name="Gzip Output" description="-g gzip output, filename.nii.gz [ignored if '-n n']: Y,N = Y" required="false" enabled="false" order="4" prefix="-g" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Y</enumeration>
+                                        <enumeration>N</enumeration>
+                                </format>
+                        </input>
+                        <input id="DICOMTONIFTI_1.IDinFilename" name="ID in Filename" description="-i ID  in filename [filename.dcm -&gt; johndoe.nii]: Y,N = Y" required="false" enabled="false" order="5" prefix="-i" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Y</enumeration>
+                                        <enumeration>N</enumeration>
+                                </format>
+                        </input>
+                        <input id="DICOMTONIFTI_1.Output.niiFile" name="Output .nii File" description="-n output .nii file [if no, create .hdr/.img pair]: Y,N = Y" required="false" enabled="true" order="6" prefix="-n" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Y</enumeration>
+                                        <enumeration>N</enumeration>
+                                </format>
+                                <values>
+                                        <value>N</value>
+                                </values>
+                        </input>
+                        <input id="DICOMTONIFTI_1.OutputDirectory" name="Output Directory" description="-o Output Directory, e.g. 'C:\TEMP' (if unspecified, source directory is used)" required="false" enabled="false" order="7" prefix="-o" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Directory" cardinality="1" />
+                        </input>
+                        <input id="DICOMTONIFTI_1.ProtocolinFilename" name="Protocol in Filename" description="-p Protocol in filename [filename.dcm -&gt; TFE_T1.nii]: Y,N = Y&#xA;" required="false" enabled="false" order="8" prefix="-p" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Y</enumeration>
+                                        <enumeration>N</enumeration>
+                                </format>
+                        </input>
+                        <input id="DICOMTONIFTI_1.SPM2AnalyzenotSPM5NIfTI" name="SPM2/Analyze not SPM5/NIfTI" description="-s SPM2/Analyze not SPM5/NIfTI [ignored if '-n y']: Y,N = N" required="false" enabled="false" order="9" prefix="-s" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Y</enumeration>
+                                        <enumeration>N</enumeration>
+                                </format>
+                        </input>
+                        <input id="DICOMTONIFTI_1.ConvertEveryPARFile" name="Convert Every PAR File" description="-v Convert every PAR file in the directory: Y,N = Y" required="false" enabled="false" order="10" prefix="-v" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>Y</enumeration>
+                                        <enumeration>N</enumeration>
+                                </format>
+                        </input>
+                        <input id="DICOMTONIFTI_1.InputDirectoryofDICOMs" name="Input Directory of DICOMs" required="true" enabled="true" order="11">
+                                <format type="Directory" cardinality="1" />
+                        </input>
+                </module>
+        </moduleGroup>
+</pipeline>
+

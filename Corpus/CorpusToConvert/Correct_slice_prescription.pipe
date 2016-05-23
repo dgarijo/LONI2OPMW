@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="CreateDiff-Easy_1.output.diff" sink="MultDiff_1.Input"/>
+                <connection source="Invert_air2_1.Output" sink="ResliceDiff_1.InputAIR"/>
+                <connection source="MultDiff_1.Output" sink="ResliceDiff_1.InputDIFF"/>
+                <connection source="ResliceDiff_1.OutputDIFF" sink="ScanDiff_1.Input.difffile"/>
+                <connection source="DICOMdir2ANA_1.SlicepresAIR" sink="Invert_air2_1.Input"/>
+        </connections>
+        <icons>
+                <icon id="1" value="iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAHVElEQVR42u2Ye3BU1R3HqXY6jvaP
+Tl9/dEadii9swfK2VYdUSNJpFSqgRhA0KRAohGcCCCpCxIi8AiRIiIViEEEQiYKlCSCPNlBBiEAg
+kAC7m93Nvu6+7mvv3r3n29+5WTSbQIia/tH27sx3MnN+5/x+5/M7v/O46Qag2/+yulmAFqAFaAFa
+gBagBWgBWoAWoAVoAVqAFqAF+H8CWIFEQoCutygeF8CYQO3DbzAui/q5WsbRGO4DOED6edKeZ/q5
+6vfa8lC/PaRRpFv+E4B8Mlfinx2FduDvpCrE9u5G4solasYG0q0djM0xwiFoB6uhVf8N8VPHwXS9
+jtrvSdrnJXxeaPv3Qvu0yvTdEiMp3n7kABIOGwg0RP2Xkm7rasCpRsAXVzaVQV63EvJbKyGtWYrY
+xzvAFClB9j4djB2baHYpcvkayCVLoX5EY+LxE9TePWkv0C81MHntCshlqyCvXw35L6VfiY97awWk
+0uUt8aIRntTXSTd1FSAviWrtH/shri6iQMug7NgMcUUhxOWF0C+e4wFfI33nuoCuJkUqfZP6L4L6
+wRYwTUsFbKhnUvFi06eyvQL6udPQ6+uYXn+W6bUnoHxA8VYVQVy2EOrOLYCq8pg9ugowgymyIJYX
+I/L6XEjvrEMiKEBcU4RIYQGUXVth7i3gzusCNtmU6IqF5nh568b2gBfqWHTJfERemw31k5188vWk
+V0n5pLVGNCKLG0oQeWO+GVNv5GbM6QpAXgbLtBM1CBfNRbgwH+qhKoAByt5dCL04yWzT7Zd5wFnX
+A9QdlxU+PrRgGqSKMgKMpQDGz59m4UUzEXo5jxL2HlgiUdnaB0voZ5U928k+1ewTq/mUx1vTQdV0
+GvABOi2viJvLIMyZgOCiWTAiQZnaj+oXzpoTFvLHQa6kVUwkmqj9B9cEtDUqwVenmz6iG1aDxdRU
+wLpTLDjvzxAKxkHavon74gS/IP2UlM3iWkh8Zy2Nz4UwKwdxik2/2V2xghN5OYQILDDjBUTfXsUd
+nyf9BrGYS9xYgsDU5yDQSiY8Tm7Lvibg5YsK7xOY/jyiZcvbAWqnP2eBWX8yfUnbNnI/EqmBxzLE
+SFTevYPgJiKQ9xwi5SvBVJ5j9Pu2gD/m95W0awt8uSPhnzIK2plT3HFx0l7My9U/+VkEJmdBoknQ
+j3f4blvAeGO9EpiZA/+kZxChvdsOsPYz5p8ymhIwllZxPIKvTGsRVUiQSjIwMxt8vLh5PejKidOY
+xdeI87UBH9abnQhQIG/OMASoPIxoWKP2gUl7ZiIYUIN0cHC7n0o1Wb7PtANsOKf4Jo82+4VWLiRA
+JQUwdvIY804YDh8lwJc3Gn6eDCpFPwF7s4eZfxVKJl0vV/feTd/2HuTZKVMPV6P56cFozkqHXMX3
+PcL8TiRNIr3ITzuJ9p/n+SfgyR4K6aP3eR86hfC9FMALdYp33Ah4RmUiRKclU9sAHq9hnrF/gOfZ
+DISK6epx2DTD4wpodV9AoEPMM/p3Jqj04RZ+2Tfe6IroDOAdhhj1C4vnonl4GtwkcdsmqEf2Qz28
+L0Xiu+W0Mk9SIobAPyMHTBJ5EjJaA2rnzyieMY+j+clBCBbOpsdBKqB67AhrfmoI3MMeQZjuSwZ2
+PPkEXJLweeCb/gLcI9Io0RlQjx7mSSzt6ATtDGBBvKEerqGD4P7jb+FMHwBH37tgf/D2dnL06w7n
+Y33gHkqJGDEE8icf8gm8nQJYd1pxj0yHK/MhCC/NaLeCas0h5nr8UYrTn0qY3gwJfU+rN+du5VA1
+jR0IZ8YA+AsmgQ4eKXnKfiPAW6jWL4TpadT0SE84B/dHeF0xZHoXXk/RTevheiKNQPvS3plIeyzm
+Jj99rwLGztQqTgJoGvQr+GdPhqHIKYDKkQOsaUh/OCiesGQBf6vuTR5y3N7LkETDPyMXTWm94Rj0
+INR/HuJJLP8mgHzZM3W303BmPgrHwF/CPfL3iNttSD5yc83X/1fie/Flkt+TkwXHQ5SQ9Ieh7K+6
++l7kPsfEvjipND02EPZ+PeCbOgFMbgN4cB9z/LoX7H3uhbBoflvAm0l/FXe+D0fve805tfiQ5FY+
+Og34fVJldNt7sPe8D7a774BQVMgv3n9R+886eO1URre+S2XcC7b77qJVnA4YxsXkV8iI2MnPFceA
+3rDd3x3e8XyfSqmA+6qYvef9sN1zJwLz5rQF5ErXKcnNWSNhf+Bu2Hv1gHrsKE/iG20OtBsCZhGM
+Fi4ppeM6jzI1DWqN6eilG+zZp4xwmPkLCuCdMgWBBa8gfsn8lBrPv+HijY3w5efTNUBPu5ISXsIp
+n0ux2loznjc3F9GKCg54kNp/0sr/D/leFCsr4Z0wnuaVR4feNnoyMr4X074O4HKSj045gcpI4H8J
+2EdtgzvxxVH35TguXQ8m7yy6IA37l7ZYrN0HL709TZvB7ZrG7dtJP2oTYwz5FAwp6V9VeT8/6U3r
+XxYWoAVoAVqAFqAFaAFagBagBWgBWoAWoAVoAf6X6N+5CDpPmpgIGAAAAABJRU5ErkJggg=="/>
+                <icon id="0" value="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"/>
+        </icons>
+        <moduleGroup id="CorrectSlicePrescription_1" name="Correct Slice Prescription" package="LONI DTI Suite" version="1.0" description="Getting started (convert data from DICOM to analyze, correct gradient table for slice prescription, generate .diff file and/or bvals/bvecs for FSL)." posX="0" posY="0" sourceCode="">
+                <tag>slice prescription</tag>
+                <uri>http://www.loni.ucla.edu/twiki/bin/view/Main/KristiClark</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Tue Jun 15 10:07:59 PDT 2010"/>
+                </metadata>
+                <module id="CreateDiff-Easy_1" name="CreateDiff-Easy" package="LONI DTI Suite" version="1.0" description="Easy to use perl script for generating a .diff file from a text file." icon="0" posX="558" posY="94" sourceCode="" location="pipeline://cranium.loni.usc.edu/create_diff_file.pl">
+                        <authors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </authors>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/Main/KristiClark</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 10 12:16:18 EDT 2007"/>
+                        </metadata>
+                        <input id="CreateDiff-Easy_1.total.txt" name="total.txt" description="Single textfile that describes all diffusion info." required="false" enabled="false" order="0" prefix="-t" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="CreateDiff-Easy_1.bvalue" name="bvalue" description="One b-value that was used for every image that has diffusion-weighting." required="false" enabled="true" order="1" prefix="-b" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="CreateDiff-Easy_1.gradients.txt" name="gradients.txt" description="Gradients only textfile with exactly 3 columns for x, y, and z gradients.  Each row represents an image." required="false" enabled="true" order="2" prefix="-g" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="CreateDiff-Easy_1.output.diff" name="output.diff" description="Output diff file." required="true" enabled="true" order="3" prefix="-o" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Diff" extension="diff" description="A type of .diff file."/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="CreateDiff-Easy_1.num_images" name="num_images" description="Number of images, including b0s." required="true" enabled="true" order="4" prefix="-n" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </executableAuthors>
+                </module>
+                <module id="MultDiff_1" name="Mult Diff" package="LONI DTI Suite" version="1.0" description="This program will read a .diff file and multiply it by a constant." icon="0" posX="489" posY="212" sourceCode="" location="pipeline://cranium.loni.usc.edu/multdiff">
+                        <authors>
+                                <author fullName="Quang Hoang" email="" website=""/>
+                        </authors>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/Main/KristiClark</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Jul 30 14:22:57 PDT 2007"/>
+                        </metadata>
+                        <output id="MultDiff_1.Output" name="Output" description="Specifies the output file path." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Diff" extension="diff" description="A type of .diff file."/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="MultDiff_1.MultiplyXComponent" name="Multiply X Component" description="Multiply the x components by a value.
+Requires: &lt;#&gt;" required="false" enabled="false" order="2" prefix="-x" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="MultDiff_1.MultiplyYComponent" name="Multiply Y Component" description="Multiply the y components by a value.
+Requires: &lt;#&gt;" required="false" enabled="false" order="3" prefix="-y" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>-1.0</value>
+                                </values>
+                        </input>
+                        <input id="MultDiff_1.MultiplyZComponent" name="Multiply Z Component" description="Multiply the z components by a value.
+Requires: &lt;#&gt;" required="false" enabled="false" order="4" prefix="-z" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                                <values>
+                                        <value>-1.0</value>
+                                </values>
+                        </input>
+                        <input id="MultDiff_1.NormalizeVectors" name="Normalize Vectors" description="Normalize the vectors (necessary for accurate tensor estimation)." required="false" enabled="true" order="5" prefix="-n" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="MultDiff_1.SwapBytes" name="Swap Bytes" description="Swap bytes." required="false" enabled="false" order="6" prefix="-b" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="MultDiff_1.Input" name="Input" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Diff" extension="diff" description="A type of .diff file."/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </executableAuthors>
+                </module>
+                <module id="ResliceDiff_1" name="Reslice Diff" package="LONI DTI Suite" version="1.0" description="Applies an .air file to a .diff file.
+
+Note: Overwrite permission for the input is assumed.
+
+Note: This program should only be used with .air files that describe rigid-body transformation (e.g. translations and rotations) only. Other .air files should be applied either to tensors or white matter tracts." icon="0" posX="300" posY="326" sourceCode="" location="pipeline://cranium.loni.usc.edu/reslicediff">
+                        <authors>
+                                <author fullName="Quang Hoang" email="" website=""/>
+                        </authors>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/Main/KristiClark</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Jul 30 14:38:40 PDT 2007"/>
+                        </metadata>
+                        <input id="ResliceDiff_1.InputAIR" name="Input AIR" description="Specifies the input AIR file path." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="AIR file" extension="air" description="AIR Linear transformation"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="ResliceDiff_1.OutputDIFF" name="Output DIFF" description="Specifies the output DIFF file path." required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Diff" extension="diff" description="A type of .diff file."/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="ResliceDiff_1.OneRowOnly" name="One Row Only" description="Only apply the .air file to one row of the .diff file.
+Requires: &lt;#&gt;" required="false" enabled="false" order="3" prefix="-d" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="ResliceDiff_1.InputDIFF" name="Input DIFF" description="Input .diff file." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Diff" extension="diff" description="A type of .diff file."/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </executableAuthors>
+                </module>
+                <module id="ScanDiff_1" name="Scan Diff" package="LONI DTI Suite" version="1.0" description="This program will read a .diff file that has in it information regarding the gradients and b-values used to acquire a diffusion dataset." icon="0" posX="412" posY="453" sourceCode="" location="pipeline://cranium.loni.usc.edu/scandiff">
+                        <authors>
+                                <author fullName="Quang Hoang" email="" website=""/>
+                        </authors>
+                        <uri>http://www.loni.ucla.edu/twiki/bin/view/Main/KristiClark</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Jul 30 14:47:48 PDT 2007"/>
+                        </metadata>
+                        <input id="ScanDiff_1.SwapBytes" name="Swap Bytes" description="Swap bytes." required="false" enabled="false" order="1" prefix="-s" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="ScanDiff_1.Input.difffile" name="Input .diff file" description="Input .diff file" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Diff" extension="diff" description="A type of .diff file."/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </executableAuthors>
+                </module>
+                <module id="DICOMdir2ANA_1" name="DICOMdir2ANA" package="LONI DTI Suite" version="1.0" description="Calls a perl script to convert a directory of DICOM files to ANALYZE files.  Also outputs an .air file to describe the slice prescription.  " icon="0" posX="60" posY="54" sourceCode="" location="pipeline://cranium.loni.usc.edu/dicomdir2ana_airfiles.pl">
+                        <authors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </authors>
+                        <uri>http://bishopw.loni.ucla.edu/AIR5/</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Sep 10 14:10:23 EDT 2007"/>
+                        </metadata>
+                        <input id="DICOMdir2ANA_1.Inputdirectory" name="Input directory" description="Input directory of DICOM files." required="true" enabled="true" order="0" prefix="-i" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Directory" cardinality="1"/>
+                        </input>
+                        <output id="DICOMdir2ANA_1.Outputdirectory" name="Output directory" description="Output directory for the ANALYZE files." required="true" enabled="true" order="1" prefix="-o" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Directory" cardinality="1"/>
+                        </output>
+                        <input id="DICOMdir2ANA_1.Outputprefix" name="Output prefix" description="Output prefix.  For example, Subject001 will 
+        result in the outputs: Subject001_b0.img, 
+        Subject001_b1.img, etc." required="false" enabled="false" order="3" prefix="-p" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="DICOMdir2ANA_1.Numberofdirections" name="Number of directions" description="Directions for diffusion data.  Default is 6.  Start counting from 0 (i.e. if directions is 6, then there are 7 images).
+Volumes for functional data (start counting with 0).
+Use value of 0 for an MPRAGE
+" required="false" enabled="true" order="5" prefix="-d" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="DICOMdir2ANA_1.MirrorX" name="Mirror X" description="Mirror in x-dir the final analyze image (reorient)" required="false" enabled="false" order="6" prefix="-x" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="DICOMdir2ANA_1.MirrorY" name="Mirror Y" description="Mirror in y-dir the final analyze image (reorient)" required="false" enabled="false" order="7">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="DICOMdir2ANA_1.MirrorZ" name="Mirror Z" description="Mirror in z-dir the final analyze image (reorient)" required="false" enabled="false" order="8">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="DICOMdir2ANA_1.AlternativeFirstVol" name="Alternative First Vol" description="First DICOM images for first volume.  Default is the 
+        numerically first value in the directory
+" required="false" enabled="false" order="9" prefix="-f" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="DICOMdir2ANA_1.Swapbytes" name="Swap bytes" description="Swap bytes of DICOM files." required="false" enabled="false" order="4" prefix="-b" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="DICOMdir2ANA_1.SlicepresAIR" name="Slice pres AIR" description="One of the output .airfiles to be used as an input to reslicediff.  This argument is otherwise redundant.  Make sure that this argument is a full path that matches the output directory &amp; the output prefix." required="false" enabled="true" order="2" prefix="-g" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="AIR file" extension="air" description="AIR Linear transformation"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Roger Woods" email="rwoods@ucla.edu" website=""/>
+                        </executableAuthors>
+                        <license>http://www.loni.ucla.edu/Software/license.php
+
+By registering for downloads from the UCLA Laboratory of Neuro Imaging, you are agreeing to the following terms and conditions as well as to the Terms of Use of the LONI website. To view the LONI website's Terms of Use go to, http://www.loni.ucla.edu/software/termsofuse.php.
+
+    * Permission is granted to use this software without charge for non-commercial research purposes only.
+    * Other than the rights granted herein, LONI retains all rights, title, and interest in LONI software and Technology, and You retain all rights, title, and interest in Your Modifications and associated specifications, subject to the terms of this License.
+    * You may make verbatim copies of this software for personal use, or for use within your organization, provided that you duplicate all of the original copyright notices and associated disclaimers. If you provide the use of the software to other users within your organization, they also must comply with all the terms of this Software Distribution Agreement.
+    * YOU MAY NOT DISTRIBUTE COPIES of this software, or copies of software derived from this software, to others outside your organization without specific prior written permission from the UCLA Laboratory of Neuro Imaging, except where noted for specific software products.
+    * You must not remove or alter any copyright or other proprietary notices in the software.
+    * Software has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, IRB-approved Research Use Only. In no event shall data or images generated through the use of the Software be used in the provision of patient care.
+    * THE SOFTWARE IS PROVIDED "AS IS," AND THE UNIVERSITY OF CALIFORNIA AND ITS COLLABORATORS DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR RESPONSIBILITY FOR THE USE OF THIS SOFTWARE.
+    * This software is for research purposes only and has not been approved for clinical use.
+    * You may publish papers and books using results produced using software provided by this site provided that you reference the appropriate citations. A list of citations is available here.
+    * You agree to comply with LONI's Trademark Usage Requirements, as modified from time to time, described in the "Use of Materials Limitations" section of the LONI Terms of Use Agreement. Except as expressly provided in this License, you are granted no rights in or to any LONI trademarks now or hereafter used or licensed by LONI.
+
+    * All Technology and technical data delivered under this Agreement are subject to US export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with all such laws and regulations and acknowledge that you have the responsibility to obtain such licenses to export, re-export, or import as may be required after delivery to you.</license>
+                </module>
+                <module id="Invert_air2_1" name="Invert_air2" package="LONI DTI Suite" version="1.0" description="Some slight modification to help out with different compiler options." icon="1" posX="187" posY="181" sourceCode="" location="pipeline://cranium.loni.usc.edu/invert_air2">
+                        <authors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </authors>
+                        <uri>http://bishopw.loni.ucla.edu/AIR5/invert_air.html</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Sun Jan 27 23:19:02 PST 2008"/>
+                        </metadata>
+                        <input id="Invert_air2_1.Input" name="Input" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="AIR file" extension="air" description="AIR Linear transformation"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Invert_air2_1.Output" name="Output" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="AIR file" extension="air" description="AIR Linear transformation"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="Invert_air2_1.Overwriteyn" name="Overwrite (y/n)" required="false" enabled="false" order="2">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>y</enumeration>
+                                        <enumeration>n</enumeration>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Roger Woods" email="" website=""/>
+                        </executableAuthors>
+                        <license>http://www.loni.ucla.edu/Software/license.php
+
+By registering for downloads from the UCLA Laboratory of Neuro Imaging, you are agreeing to the following terms and conditions as well as to the Terms of Use of the LONI website. To view the LONI website's Terms of Use go to, http://www.loni.ucla.edu/software/termsofuse.php.
+
+    * Permission is granted to use this software without charge for non-commercial research purposes only.
+    * Other than the rights granted herein, LONI retains all rights, title, and interest in LONI software and Technology, and You retain all rights, title, and interest in Your Modifications and associated specifications, subject to the terms of this License.
+    * You may make verbatim copies of this software for personal use, or for use within your organization, provided that you duplicate all of the original copyright notices and associated disclaimers. If you provide the use of the software to other users within your organization, they also must comply with all the terms of this Software Distribution Agreement.
+    * YOU MAY NOT DISTRIBUTE COPIES of this software, or copies of software derived from this software, to others outside your organization without specific prior written permission from the UCLA Laboratory of Neuro Imaging, except where noted for specific software products.
+    * You must not remove or alter any copyright or other proprietary notices in the software.
+    * Software has not been reviewed or approved by the Food and Drug Administration, and is for non-clinical, IRB-approved Research Use Only. In no event shall data or images generated through the use of the Software be used in the provision of patient care.
+    * THE SOFTWARE IS PROVIDED "AS IS," AND THE UNIVERSITY OF CALIFORNIA AND ITS COLLABORATORS DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR RESPONSIBILITY FOR THE USE OF THIS SOFTWARE.
+    * This software is for research purposes only and has not been approved for clinical use.
+    * You may publish papers and books using results produced using software provided by this site provided that you reference the appropriate citations. A list of citations is available here.
+    * You agree to comply with LONI's Trademark Usage Requirements, as modified from time to time, described in the "Use of Materials Limitations" section of the LONI Terms of Use Agreement. Except as expressly provided in this License, you are granted no rights in or to any LONI trademarks now or hereafter used or licensed by LONI.
+
+    * All Technology and technical data delivered under this Agreement are subject to US export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with all such laws and regulations and acknowledge that you have the responsibility to obtain such licenses to export, re-export, or import as may be required after delivery to you.</license>
+                </module>
+                <annotations visible="true">
+                        <annotation width="200" height="82" posX="299" posY="15" background="102,102,204,51" foreground="0,0,0,255" expanded="true" type="text">This pipeline corrects a diffusion gradient table for the slice prescription.  In addition, this pipeline converts the data from DICOM to analyze format.</annotation>
+                        <annotation width="200" height="67" posX="595" posY="457" background="102,102,204,51" foreground="0,0,0,255" expanded="true" type="text">After pipeline completes, open the execution log for scandiff &amp; select the output stream to see the corrected gradient table.</annotation>
+                        <annotation width="200" height="97" posX="683" posY="177" background="102,102,204,51" foreground="0,0,0,255" expanded="true" type="text">If the x, y, or z components need to be multiplied by a value (e.g. -1.0), then that can be done with multdiff.  If you need to do this step, it will be obvious when you try to do tractography.</annotation>
+                        <annotation width="200" height="52" posX="95" posY="344" background="102,102,204,51" foreground="0,0,0,255" expanded="true" type="text">If you are going to continue with my tools, make sure to save out the .diff from reslicediff.</annotation>
+                </annotations>
+        </moduleGroup>
+</pipeline>

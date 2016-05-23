@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="InputfileBasename_1.Output" sink="PLINKMakebfile_1.tfiles"/>
+                <connection source="PLINKAssoc_1.OutputFilenamecomplete" sink="PLINKAssocOutput_1.Input"/>
+                <connection source="PLINKAssocAdjusted_1.OutputFilenamecomplete" sink="PLINKAssocAdjustedOutput_1.Input"/>
+                <connection source="PLINKMakebfile_1.Output" sink="PLINKAssoc_1.bfile"/>
+                <connection source="PLINKControlsassoc_1.Output" sink="PLINKAssoc_1.Association"/>
+                <connection source="PLINKControlsnoweb_1.Output" sink="PLINKAssoc_1.Web"/>
+                <connection source="PLINKMakebfile_1.Output" sink="PLINKAssocAdjusted_1.bfile"/>
+                <connection source="PLINKControlsmissing_1.Output" sink="PLINKAssocAdjusted_1.missingness"/>
+                <connection source="PLINKControlsassoc_1.Output" sink="PLINKAssocAdjusted_1.Assoc"/>
+                <connection source="PLINKControlsnoweb_1.Output" sink="PLINKAssocAdjusted_1.Web"/>
+                <connection source="PLINKControlsadjust_1.Output" sink="PLINKAssocAdjusted_1.Adjust"/>
+        </connections>
+        <icons>
+                <icon id="0" value="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"/>
+        </icons>
+        <moduleGroup id="PLINKassociation_1" name="PLINK association" package="Bioinformatics" version="1.0" description="PLINK is an open-source genome association analysis (GWAS) suite of tools providing a range of basic, large-scale computationally-efficient analyses. PLINK may be used for analysis of genotype/phenotype data, but requires some outside data-preprocessing (e.g., study design and planning, generating genotype or CNV calls from raw data). Support for visualization, annotation and storage of results is provided via gPLINK and Haploview.
+
+Problems addressed by the PLINK Association workflow
+
+Detailed Workflow Usage &amp; Specifications
+The PLINK Association workflow provides testing for disease traits using comparing allele frequencies between cases and controls (asymptotic and empirical p-values are available). Specifically it provides the Cochran-Armitage trend test, Fisher's exact test, different genetic models (dominant, recessive and general), tests for stratified samples (e.g. Cochran-Mantel-Haenszel, Breslow-Day tests), a test for a quantitative trait; a test for differences in missing genotype rate between cases and controls; multilocus tests, using either Hotelling's T(2) statistic or a sum-statistic approach (evaluated by permutation) as well as haplotype tests. The basic tests can be performed with permutation, described in the following section to provide empirical p-values, and allow for different designs (e.g. by use of structured, within-cluster permutation)" posX="0" posY="0" sourceCode="">
+                <tag>PLINK association bfile genomics bioinformatics</tag>
+                <uri>http://pngu.mgh.harvard.edu/~purcell/plink/</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Tue Sep 24 14:12:12 PDT 2013"/>
+                </metadata>
+                <module id="PLINKMakebfile_1" name="PLINK Make bfile" package="PLINK" version="1.07" icon="0" posX="138" posY="182" sourceCode="" location="pipeline://cranium.loni.usc.edu/plink" gridVariables="h_vmem=6;h_stack=256">
+                        <citations>
+                                <citation>PMID: 17701901</citation>
+                        </citations>
+                        <tag/>
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 17 13:56:17 PDT 2010"/>
+                        </metadata>
+                        <input id="PLINKMakebfile_1.tfiles" name="tfiles" required="true" enabled="true" order="0" prefix="--tfile" prefixSpaced="true" prefixAllArgs="false" includeTransformedParameter="true">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                        <transform order="0" operation="Subtract">.tfam</transform>
+                                </format>
+                        </input>
+                        <input id="PLINKMakebfile_1.MakeBedArgu" name="Make Bed Argu" required="true" enabled="true" order="1" prefix="--make-bed" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <output id="PLINKMakebfile_1.Output" name="Output" required="true" enabled="true" order="2" prefix="--out" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="bed" extension="bed" description="PLINK bed file type"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <license>GNU General Public License</license>
+                </module>
+                <dataModule id="PLINKAssocOutput_1" name="PLINK Assoc Output" posX="191" posY="628" sourceCode="" type="File" source="false" loopIndex="false" dirDump="true">
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue May 03 15:17:39 PDT 2011"/>
+                        </metadata>
+                        <input id="PLINKAssocOutput_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/{$tempdir}/{$username}</value>
+                        </values>
+                </dataModule>
+                <dataModule id="InputfileBasename_1" name="Input file (Basename)" package="LONI" version="1.0" description="Basename of the .tped and .tfam files.
+
+E.g., 
+/usr/local/loniWorkflows/Bioinformatics/data/early1.*" posX="103" posY="61" sourceCode="" type="File" source="true" loopIndex="false">
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 17 14:36:19 PDT 2010"/>
+                        </metadata>
+                        <output id="InputfileBasename_1.Output" name="Output" description="Basename of the .tped and .tfam files.
+
+E.g., 
+/usr/local/loniWorkflows/Bioinformatics/data/early1.*" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu//usr/local/LONI/workflows/Bioinformatics/data/early1.tfam</value>
+                        </values>
+                </dataModule>
+                <dataModule id="PLINKAssocAdjustedOutput_1" name="PLINK Assoc Adjusted Output" posX="573" posY="624" sourceCode="" type="File" source="false" loopIndex="false" dirDump="true">
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue May 03 15:17:39 PDT 2011"/>
+                        </metadata>
+                        <input id="PLINKAssocAdjustedOutput_1.Input" name="Input" required="true" enabled="true" order="-1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <fileTypes>
+                                <filetype name="File" extension="" description="Any type of data file"/>
+                        </fileTypes>
+                        <values>
+                                <value>pipeline://cranium.loni.usc.edu/{$tempdir}/{$username}</value>
+                        </values>
+                </dataModule>
+                <dataModule id="PLINKControlsassoc_1" name="PLINK Controls (assoc)" description="--assoc" posX="393" posY="116" sourceCode="" type="String" source="true" loopIndex="false">
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink/summary.shtml</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Nov 15 18:40:02 PST 2010"/>
+                        </metadata>
+                        <output id="PLINKControlsassoc_1.Output" name="Output" description="--assoc" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>--assoc</value>
+                        </values>
+                </dataModule>
+                <module id="PLINKAssoc_1" name="PLINK Assoc" package="PLINK" version="1.07" description="The basic association test is for a disease trait and is based on comparing allele frequencies between cases and controls (asymptotic and empirical p-values are available). Also implemented are the Cochran-Armitage trend test, Fisher's exact test, different genetic models (dominant, recessive and general), tests for stratified samples (e.g. Cochran-Mantel-Haenszel, Breslow-Day tests), a test for a quantitative trait; a test for differences in missing genotype rate between cases and controls; multilocus tests, using either Hotelling's T(2) statistic or a sum-statistic approach (evaluated by permutation) as well as haplotype tests. The basic tests can be performed with permutation, described in the following section to provide empirical p-values, and allow for different designs (e.g. by use of structured, within-cluster permutation). Family-based tests are described in the next section
+
+HINT The basic association commands (--assoc, --model, --fisher, --linear and --logistic) will test only a single phenotype. If your alternate phenotype file contains more than one phenotype, then adding the --all-pheno flag will make PLINK cycle over each phenotype, e.g. instead of a single plink.assoc output file, if there are 100 phenotypes, PLINK will now show
+
+     plink.P1.assoc
+     plink.P2.assoc
+     ...
+     plink.P100.assoc
+
+Naturally, it will take 100 times longer... If you are testing a very large number of phenotypes, it might be worth specifying --pfilter also, to reduce the amount of amount (e.g. only outputing tests significant at p=1e-4 if --pfilter 1e-4 is specified). 
+
+http://pngu.mgh.harvard.edu/~purcell/plink/anal.shtml" icon="0" posX="166" posY="473" sourceCode="" location="pipeline://cranium.loni.usc.edu/plink" gridVariables="h_stack=256;h_vmem=6">
+                        <citations>
+                                <citation>PMID: 17701901</citation>
+                        </citations>
+                        <tag/>
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 17 13:56:17 PDT 2010"/>
+                        </metadata>
+                        <input id="PLINKAssoc_1.bfile" name="bfile" required="true" enabled="true" order="0" prefix="--bfile" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="bed" extension="bed" description="PLINK bed file type"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="PLINKAssoc_1.Association" name="Association" required="false" enabled="true" order="1">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="PLINKAssoc_1.Web" name="Web" required="false" enabled="true" order="2">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <output id="PLINKAssoc_1.OutputFilenamecomplete" name="Output Filename (complete)" required="true" enabled="true" order="4" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="bfile">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                        <transform order="1" operation="Replace">.Output-1.bed:_txt</transform>
+                                        <transform order="1" operation="Append">.assoc</transform>
+                                </format>
+                        </output>
+                        <output id="PLINKAssoc_1.OutputBaseName" name="Output Base Name" required="true" enabled="true" order="3" prefix="--out" prefixSpaced="true" prefixAllArgs="false" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="bfile">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                        <transform order="0" operation="Replace">.Output-1.bed:_txt</transform>
+                                </format>
+                        </output>
+                        <license>GNU General Public License</license>
+                </module>
+                <dataModule id="PLINKControlsnoweb_1" name="PLINK Controls (noweb)" description="--noweb" posX="468" posY="171" sourceCode="" type="String" source="true" loopIndex="false">
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink/summary.shtml</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Nov 15 18:40:02 PST 2010"/>
+                        </metadata>
+                        <output id="PLINKControlsnoweb_1.Output" name="Output" description="--noweb" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>--noweb</value>
+                        </values>
+                </dataModule>
+                <dataModule id="PLINKControlsadjust_1" name="PLINK Controls (adjust)" description="--adjust" posX="617" posY="303" sourceCode="" type="String" source="true" loopIndex="false">
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink/summary.shtml</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Nov 15 18:40:02 PST 2010"/>
+                        </metadata>
+                        <output id="PLINKControlsadjust_1.Output" name="Output" description="--adjust" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>--adjust</value>
+                        </values>
+                </dataModule>
+                <module id="PLINKAssocAdjusted_1" name="PLINK Assoc Adjusted" package="PLINK" version="1.07" icon="0" posX="510" posY="472" sourceCode="" location="pipeline://cranium.loni.usc.edu/plink" gridVariables="h_vmem=6;h_stack=256">
+                        <citations>
+                                <citation>PMID: 17701901</citation>
+                        </citations>
+                        <tag/>
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Tue Aug 17 13:56:17 PDT 2010"/>
+                        </metadata>
+                        <input id="PLINKAssocAdjusted_1.bfile" name="bfile" required="true" enabled="true" order="0" prefix="--bfile" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="bed" extension="bed" description="PLINK bed file type"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="PLINKAssocAdjusted_1.missingness" name="missingness" required="true" enabled="true" order="1">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="PLINKAssocAdjusted_1.Assoc" name="Assoc" required="false" enabled="true" order="4">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="PLINKAssocAdjusted_1.Web" name="Web" required="false" enabled="true" order="5">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <input id="PLINKAssocAdjusted_1.Adjust" name="Adjust" required="false" enabled="true" order="6">
+                                <format type="String" cardinality="1"/>
+                        </input>
+                        <output id="PLINKAssocAdjusted_1.OutputFilenamecomplete" name="Output Filename (complete)" required="true" enabled="true" order="3" includeTransformedParameter="false">
+                                <format type="File" cardinality="1" transformationBase="bfile">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                        <transform order="2" operation="Append">.assoc.adjusted</transform>
+                                        <transform order="2" operation="Replace">.bed:_txt</transform>
+                                </format>
+                        </output>
+                        <output id="PLINKAssocAdjusted_1.OutputBaseName" name="Output Base Name" description="Running a --missing command on the basic fileset, ignoring the obligatory missing nature of some of the data, results in the following:
+plink --file test --missing
+
+which shows in the LOG file that 6 individuals were removed because of missing data
+
+     ...
+     6 of 12 individuals removed for low genotyping ( MIND &gt; 0.1 )
+     ...
+
+and the corresponding output files (plink.imiss and plink.lmiss) indicate no missing data (purely because the six individuals with 2 of 3 genotypes missing were already filtered out and everybody else left happens to have complete genotyping). " required="true" enabled="true" order="2" prefix="--out" prefixSpaced="true" prefixAllArgs="false" includeTransformedParameter="true">
+                                <format type="File" cardinality="1" transformationBase="bfile">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                        <transform order="1" operation="Replace">.bed:_txt</transform>
+                                </format>
+                        </output>
+                        <license>GNU General Public License</license>
+                </module>
+                <dataModule id="PLINKControlsmissing_1" name="PLINK Controls (missing)" description="--missing --noweb" posX="539" posY="237" sourceCode="" type="String" source="true" loopIndex="false">
+                        <uri>http://pngu.mgh.harvard.edu/~purcell/plink/summary.shtml</uri>
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Nov 15 18:40:02 PST 2010"/>
+                        </metadata>
+                        <output id="PLINKControlsmissing_1.Output" name="Output" description="--missing --noweb" required="true" enabled="true" order="-1">
+                                <format type="String" cardinality="1"/>
+                        </output>
+                        <values>
+                                <value>--missing</value>
+                        </values>
+                </dataModule>
+                <annotations visible="true">
+                        <annotation width="749" height="26" posX="34" posY="0" background="102,102,204,51" foreground="0,0,255,255" expanded="true" type="text" name="Documentation: http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoPLINK">
+                                <styles>
+                                        <style name="Documentation: $0" fontSize="15"/>
+                                        <style name="http://www.loni.ucla.edu/twiki/bin/view/CCB/PipelineWorkflows_BioinfoPLINK$15" fontSize="15" isBold="true"/>
+                                </styles>
+                        </annotation>
+                </annotations>
+        </moduleGroup>
+</pipeline>

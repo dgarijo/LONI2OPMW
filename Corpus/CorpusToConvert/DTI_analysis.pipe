@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline version=".2">
+        <connections>
+                <connection source="Compute_single_tensor_1.Outputtensorimage" sink="Tensor_eig_1.Inputtensorimage"/>
+                <connection source="Tensor_eig_1.Outputeigenvolumeimage" sink="Streamlinefibertracking_1.Inputeigenvolume"/>
+                <connection source="Tensor_eig_1.Outputeigenvolumeimage" sink="Tensorindices_1.Inputeigenvolume"/>
+                <connection source="Compute_single_tensor_1.Outputtensorimage" sink="TensConvert_1.Inputtensorimage"/>
+                <connection source="Compute_single_tensor_1.Outputtensorimage" sink="DTIRegressionStatistics_1.Inputdifftensorimagefile"/>
+                <connection source="Compute_single_tensor_1.Outputb=0interceptimage" sink="DTIRegressionStatistics_1.Inputb0estimatedimagefile"/>
+        </connections>
+        <icons>
+                <icon id="0" value="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"/>
+        </icons>
+        <moduleGroup id="DTIAnalysis_1" name="DTI Analysis" package="LONI DTI Suite" version="1.0" description="DTI analysis, a collection of tools to estimate the tensor, tensor-derived scalar metrics (MD, FA, etc.), regression statistics to evaluate the fit of the tensor model at each voxel, and streamline tractography." posX="0" posY="0" sourceCode="">
+                <tag>dti analysis</tag>
+                <uri>http://www.loni.ucla.edu/twiki/bin/view/Main/KristiClark</uri>
+                <metadata>
+                        <data key="__creationDateKey" value="Tue Jun 15 10:37:12 PDT 2010"/>
+                </metadata>
+                <module id="Compute_single_tensor_1" name="Compute_single_tensor" package="LONI DTI Suite" version="1.0" description="Computes diffusion tensor at each voxel." icon="0" posX="155" posY="51" sourceCode="" location="pipeline://cranium.loni.usc.edu/compute_single_tensorP">
+                        <metadata>
+                                <data key="__creationDateKey" value="Wed Oct 24 22:19:13 EDT 2007"/>
+                        </metadata>
+                        <input id="Compute_single_tensor_1.Input4Danalyzeimage" name="Input 4D analyze image" description="Raw data." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 4D" extension="img" description="Analyze Image 4D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Compute_single_tensor_1.Input.diff" name="Input .diff" description="Describes the gradients and bvalues." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Compute_single_tensor_1.Outputtensorimage" name="Output tensor image" description="Output tensor image will have t-dim of 6 for the six unique elements of the diffusion tensor.  Replaces previous output_prefix_D.img." required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 4D" extension="img" description="Analyze Image 4D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Compute_single_tensor_1.Outputb=0interceptimage" name="Output b=0 intercept image" description="Output intercept (b=0) image." required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="Compute_single_tensor_1.Swapbytes" name="Swap bytes" description="Swap bytes of the .diff file." required="false" enabled="false" order="4" prefix="-s" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Compute_single_tensor_1.Maskimage3D" name="Mask image (3D)" description="Mask image (not tested thoroughly)." required="false" enabled="false" order="5" prefix="-m" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Compute_single_tensor_1.Constraintheeigenvaluestobepositive" name="Constrain the eigenvalues to be positive" description="Fitting is a bit slower." required="false" enabled="false" order="6" prefix="-c" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Compute_single_tensor_1.Constraintheeigenvaluestofixedvalues" name="Constrain the eigenvalues to fixed values" description="Artificially fix the eigenvalues.  Use with caution.  Should be on the order of 0.0015, 0.0002, etc." required="false" enabled="false" order="7" prefix="-e" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="3"/>
+                        </input>
+                        <input id="Compute_single_tensor_1.Tensorestimationmethod" name="Tensor estimation method" description="1: Linear least squares (Default)
+2: Nonlinear least squares (slower)" required="false" enabled="false" order="8" prefix="-t" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>1</enumeration>
+                                        <enumeration>4</enumeration>
+                                </format>
+                        </input>
+                        <input id="Compute_single_tensor_1.EstimatethenoiseasRician" name="Estimate the noise as Rician" description="Estimate the noise as Rician rather than gaussian.  Slower fitting." required="false" enabled="false" order="9" prefix="-n 3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </executableAuthors>
+                </module>
+                <module id="Tensor_eig_1" name="Tensor_eig" package="LONI DTI Suite" version="1.0" description="Computes the eigenvectors and eigenvalues of the diffusion tensor image." icon="0" posX="375" posY="184" sourceCode="" location="pipeline://cranium.loni.usc.edu/tensor_eig">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Oct 25 11:58:32 EDT 2007"/>
+                        </metadata>
+                        <input id="Tensor_eig_1.Inputtensorimage" name="Input tensor image" required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 4D" extension="img" description="Analyze Image 4D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Tensor_eig_1.Outputeigenvolumeimage" name="Output eigenvolume image" required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 4D" extension="img" description="Analyze Image 4D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </executableAuthors>
+                </module>
+                <module id="Streamlinefibertracking_1" name="Streamline fiber tracking" package="LONI DTI Suite" version="1.0" icon="0" posX="529" posY="294" sourceCode="" location="pipeline://cranium.loni.usc.edu/fiber_track">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Oct 25 12:00:22 EDT 2007"/>
+                        </metadata>
+                        <input id="Streamlinefibertracking_1.Inputeigenvolume" name="Input eigenvolume" description="Should be output of tensor_eig." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 4D" extension="img" description="Analyze Image 4D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Streamlinefibertracking_1.Output.ucf" name="Output.ucf" description="Output UCF file with the fiber tracts." required="false" enabled="false" order="1" prefix="-u" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="UCF file" extension="ucf" description=""/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="Streamlinefibertracking_1.Tractographymethod" name="Tractography method" description="1  Streamline algorithm, Euler method (default)
+2  Streamline algorithm, Runge-Kutta 2nd order
+3  Streamline algorithm, Runge-Kutta 4th order
+" required="false" enabled="false" order="2" prefix="-m" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>1</enumeration>
+                                        <enumeration>2</enumeration>
+                                        <enumeration>3</enumeration>
+                                </format>
+                        </input>
+                        <input id="Streamlinefibertracking_1.Vectorfieldinterpolationmethod" name="Vector field interpolation method" description="1  Nearest neighbor (default)
+2  Trilinear interpolation
+" required="false" enabled="false" order="3" prefix="-n" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>1</enumeration>
+                                        <enumeration>2</enumeration>
+                                </format>
+                        </input>
+                        <input id="Streamlinefibertracking_1.StartingROI" name="Starting ROI" description=" Fiber tracking will start with all non-zero voxels
+                in this image. Default is to track from any voxel 
+                above the FA threshold.  However this can 
+                lead to a segmentation fault from lack of memory.
+" required="false" enabled="false" order="4" prefix="-r" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="Analyze Header" extension="hdr" description="Analyze Header file">
+                                                        <need>img</need>
+                                                </filetype>
+                                                <filetype name="Analyze Header" extension="hdr" description="Analyze Header file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Streamlinefibertracking_1.Avoidimage" name="Avoid image" description="Any tracts that pass through any non-zero voxels
+                in this image will be removed.
+" required="false" enabled="false" order="5" prefix="-a" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Header" extension="hdr" description="Analyze Header file"/>
+                                                <filetype name="Analyze Header" extension="hdr" description="Analyze Header file">
+                                                        <need>img</need>
+                                                </filetype>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="Streamlinefibertracking_1.Includeimage" name="Include image" description="Tracts must pass through at least one non-zero
+                voxel in this image in order to be included." required="false" enabled="false" order="6" prefix="-i" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 4D" extension="img" description="Analyze Image 4D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                                <filetype name="Analyze Header" extension="hdr" description="Analyze Header file">
+                                                        <need>img</need>
+                                                </filetype>
+                                                <filetype name="Analyze Header" extension="hdr" description="Analyze Header file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Streamlinefibertracking_1.Outputimage" name="Output image" description="Output the tracts in analyze format." required="false" enabled="false" order="7" prefix="-o" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 3D" extension="img" description="Analyze Image 3D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="Streamlinefibertracking_1.Outputimagedimensions" name="Output image dimensions" description="X Y Z
+Output image dimensions (default is to match
+                the input image dimensions)" required="false" enabled="false" order="8" prefix="-w" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="3"/>
+                        </input>
+                        <output id="Streamlinefibertracking_1.Comprehensiveoutputtext" name="Comprehensive output text" description="Comprehensive output text: coordinates and FA" required="false" enabled="false" order="9" prefix="-c" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Text file" extension="txt" description="Text file"/>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="Streamlinefibertracking_1.Turninganglethreshold" name="Turning angle threshold" description="Turning angle threshold, must be less than 90
+                Default is 70 degrees." required="false" enabled="false" order="10" prefix="-t" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Streamlinefibertracking_1.FAthreshold" name="FA threshold" description="Fractional anisotropy threshold, must be less than 1
+                Default is 0.25." required="false" enabled="false" order="11" prefix="-f" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Streamlinefibertracking_1.Stepsizemm" name="Step size (mm)" description="Step size (mm) to be used
+                Default is voxel size in the x dimension
+" required="false" enabled="false" order="12" prefix="-s" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Streamlinefibertracking_1.Seeddensity" name="Seed density" description="Seed density (mm) to be used
+                Default is voxel size in the x dimension" required="false" enabled="false" order="13" prefix="-d" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="Streamlinefibertracking_1.Minmaxpointsallowed" name="Min &amp; max points allowed" description=" Min &amp; max number of points allowed per tract 
+                (def 1 10000)
+" required="false" enabled="false" order="14" prefix="-p" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="2"/>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </executableAuthors>
+                </module>
+                <module id="Tensorindices_1" name="Tensor indices" package="LONI DTI Suite" version="1.0" description="Compute scalar indices based on the diffusion tensor (e.g. FA)" icon="0" posX="402" posY="390" sourceCode="" location="pipeline://cranium.loni.usc.edu/tensor_indices">
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Oct 25 12:12:34 EDT 2007"/>
+                        </metadata>
+                        <input id="Tensorindices_1.Inputeigenvolume" name="Input eigenvolume" description="Input eigenvolume image (4D).  Should be outptu of tensor_eig." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 4D" extension="img" description="Analyze Image 4D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="Tensorindices_1.FA" name="FA" description="Fractional anisotropy" required="false" enabled="false" order="1" prefix="-f" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.RA" name="RA" description="Relative anisotropy" required="false" enabled="false" order="2" prefix="-r" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Meandiffusivity" name="Mean diffusivity" description="Mean diffusivity" required="false" enabled="false" order="3" prefix="-m" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.tensorinvariant1" name="tensor invariant 1" description="First tensor invariant (sum of eigenvalues)
+                   Note: this is also called the trace" required="false" enabled="false" order="4" prefix="-t1" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.tensorinvariant2" name="tensor invariant 2" description="Second tensor invariant 
+                   Tensor invariants described in Basser, 1997" required="false" enabled="false" order="5" prefix="-t2" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.tensorinvariant3" name="tensor invariant 3" description="Third tensor invariant (product of eigenvalues)" required="false" enabled="false" order="6" prefix="-t3" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Jmetric" name="J metric" description="J metric (Bahn, 1999)
+                   square root of 2nd tensor invariant divided by 3
+" required="false" enabled="false" order="7" prefix="-j" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Kmetric" name="K metric" description="K metric (Bahn, 1999)
+                   2nd tensor invariant divided by 1st tensor invariant" required="false" enabled="false" order="8" prefix="-k" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Geometricmean" name="Geometric mean" description="Geometric mean of eigenvalues" required="false" enabled="false" order="9" prefix="-gm" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Harmonicmean" name="Harmonic mean" description="Harmonic mean of eigenvalues
+" required="false" enabled="false" order="10" prefix="-h" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Volumefraction" name="Volume fraction" description="Volume fraction" required="false" enabled="false" order="12" prefix="-vf" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Volumeratio" name="Volume ratio" description="Volume ratio" required="false" enabled="false" order="11" prefix="-vr" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Coefficientofvariation" name="Coefficient of variation" description="Coefficient of variation of the eigenvalues" required="false" enabled="false" order="13" prefix="-cv" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Cl" name="Cl" description="Describes how much the diffusion tensor is cigar-like" required="false" enabled="false" order="14" prefix="-cl" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Cp" name="Cp" description="Describes how much the diffusion tensor is planar
+" required="false" enabled="false" order="15" prefix="-cp" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Cs" name="Cs" description="Describes how much the diffusion tensor is spherical" required="false" enabled="false" order="16" prefix="-cs" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="Tensorindices_1.Ca" name="Ca" description=" Ca=Cl+Cp=1-Cs (Westin et al., 1997)" required="false" enabled="false" order="17" prefix="-ca" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <executableAuthors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </executableAuthors>
+                </module>
+                <module id="TensConvert_1" name="TensConvert" package="LONI DTI Suite" version="1.0" description="Convert tensors to DTIStudio format" icon="0" posX="32" posY="283" sourceCode="" location="pipeline://cranium.loni.usc.edu/for_dtistudio.pl">
+                        <metadata>
+                                <data key="__creationDateKey" value="Mon Jan 07 11:55:13 PST 2008"/>
+                        </metadata>
+                        <input id="TensConvert_1.Inputtensorimage" name="Input tensor image" description="Input tensor image in my convention (ANZ 4D floats).
+This should be output from compute_single_tensor" required="true" enabled="true" order="0" prefix="-i" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 4D" extension="img" description="Analyze Image 4D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="TensConvert_1.Outputtensorimage" name="Output tensor image" description="Output tensor image in DTI Studio convention (ANZ 4D floats)
+" required="true" enabled="true" order="1" prefix="-o" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image 4D" extension="img" description="Analyze Image 4D file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="TensConvert_1.Swap" name="Swap" description="Swap bytes" required="false" enabled="false" order="2" prefix="-s" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="0">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </executableAuthors>
+                </module>
+                <module id="DTIRegressionStatistics_1" name="DTI Regression Statistics" package="LONI DTI Suite" version="1.0" description="This program will compute statistics based on the linear LS estimate of the second rank tensor." icon="0" posX="276" posY="461" sourceCode="" location="pipeline://cranium.loni.usc.edu/dti_regress_stats">
+                        <authors>
+                                <author fullName="Stephen Tabaquin" email="" website=""/>
+                        </authors>
+                        <metadata>
+                                <data key="__creationDateKey" value="Thu Jul 26 16:43:29 PDT 2007"/>
+                        </metadata>
+                        <input id="DTIRegressionStatistics_1.Input4Drawdataimagefile" name="Input 4D raw data image file" description="Input 4D ANZ raw data.  This should be the same as the input to the compute_single_tensor module.  Raw data: diffusion-weighted &amp; non-diffusion-weighted images." required="true" enabled="true" order="0">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="File" extension="" description="Any type of data file"/>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="DTIRegressionStatistics_1.Inputdifffile" name="Input diff file" description="Input .diff file that describes gradient vectors &amp; bvalues.  Same as input to compute_single_tensor." required="true" enabled="true" order="1">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="DTIRegressionStatistics_1.Inputdifftensorimagefile" name="Input diff tensor image file" description="The tensor image.  4D analyze image that has the 6 elements of the diffusion tensor.  Should be output of compute_single_tensor." required="true" enabled="true" order="2">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <input id="DTIRegressionStatistics_1.Inputb0estimatedimagefile" name="Input b0 estimated image file" description="Estimated intercept (b=0) image.  Should be output of compute_single_tensor." required="true" enabled="true" order="3">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </input>
+                        <output id="DTIRegressionStatistics_1.OutputRsquaredimage" name="Output Rsquared image" description="Specifies output file as an Rsquared image.
+Note: For nonlinear models, the Rsquared can be negative." required="false" enabled="true" order="4" prefix="-r" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="DTIRegressionStatistics_1.OutputCorrelationcoefficientimage" name="Output Correlation coefficient image" description="Specifies the correlation coefficient (r) for the model." required="false" enabled="false" order="5" prefix="-c" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="DTIRegressionStatistics_1.OutputFstatisticsregression" name="Output F statistics (regression)" description="Specifies output as F statistic for the regression." required="false" enabled="false" order="6" prefix="-f" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="DTIRegressionStatistics_1.OutputResiduals" name="Output Residuals" description="Output the residuals as a 4D image." required="false" enabled="false" order="7" prefix="-d" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="DTIRegressionStatistics_1.OutputStandardizedresiduals" name="Output Standardized residuals" description="Output the standardized residuals as a 4D image." required="false" enabled="false" order="8" prefix="-t" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="DTIRegressionStatistics_1.OutputAICvoxel" name="Output AIC (voxel)" description="Outputs AIC computed for each voxel." required="false" enabled="false" order="9" prefix="-a" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="DTIRegressionStatistics_1.OutputAICwcorrectionforsmalln" name="Output AIC (w/correction for small n)" description="Outputs AIC computed with correction for small n." required="false" enabled="false" order="10" prefix="-i" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="DTIRegressionStatistics_1.OutputBICvoxel" name="Output BIC (voxel)" description="Outputs BIC computed at each voxel." required="false" enabled="false" order="11" prefix="-j" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <output id="DTIRegressionStatistics_1.OutputLikelihoodvoxel" name="Output Likelihood (voxel)" description="Log likelihood computed at each voxel." required="false" enabled="false" order="12" prefix="-k" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="File" cardinality="1">
+                                        <fileTypes>
+                                                <filetype name="Analyze Image" extension="img" description="Analyze Image file">
+                                                        <need>hdr</need>
+                                                </filetype>
+                                        </fileTypes>
+                                </format>
+                        </output>
+                        <input id="DTIRegressionStatistics_1.Onlycomputesliceinx" name="Only compute # slice in x" description="Only compute for the #th slice in the x dimension." required="false" enabled="false" order="13" prefix="-x" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="DTIRegressionStatistics_1.Onlycomputesliceiny" name="Only compute # slice in y" description="Only compute for the #th slice in the y dimension." required="false" enabled="false" order="14" prefix="-y" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="DTIRegressionStatistics_1.Onlycomputesliceinz" name="Only compute # slice in z" description="Only compute for the #th slice in the z dimension." required="false" enabled="false" order="15" prefix="-z" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Number" cardinality="1"/>
+                        </input>
+                        <input id="DTIRegressionStatistics_1.Swapbytes" name="Swap bytes" description="Swap bytes of the .diff file." required="false" enabled="false" order="16" prefix="-s" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="String" cardinality="0"/>
+                        </input>
+                        <input id="DTIRegressionStatistics_1.b0datausage" name="b0 data usage" description="Indicate how the b0 data was used.
+Options are:
+0 - b0 data was treated as any other measurement (default)
+1 - b0 signal was constrained, directly estimated from data.
+2 - b0 data was ignored." required="false" enabled="false" order="17" prefix="-b" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>0</enumeration>
+                                        <enumeration>1</enumeration>
+                                        <enumeration>2</enumeration>
+                                </format>
+                        </input>
+                        <input id="DTIRegressionStatistics_1.Eigenvalueconstraints" name="Eigenvalue constraints" description="Indicates how many eigenvalues were constrained.
+Options are:
+0 - Eigenvalues were all estimated (default).
+1 - 1 eigenvalue was constrained.
+2 - 2 eigenvalues were constrained.
+3 - 3 eigenvalues were constrained.
+6 - 6 eigenvalues were constrained.
+9 - 9 eigenvalues were constrained." required="false" enabled="false" order="18" prefix="-e" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>0</enumeration>
+                                        <enumeration>1</enumeration>
+                                        <enumeration>2</enumeration>
+                                        <enumeration>3</enumeration>
+                                        <enumeration>6</enumeration>
+                                        <enumeration>9</enumeration>
+                                </format>
+                        </input>
+                        <input id="DTIRegressionStatistics_1.Modelmenu" name="Model menu" description="Specifies model.
+Options:
+1 - LS scalar ADC
+2 - NLS scalar ADC
+3 - NLS scalar ADC + noise
+4 - NLS scalar ADC mixture model
+5 - NLS scalar ADC mixture model + noise
+6 - Linear estimate of single tensor
+7 - NLS single tensor
+8 - NLS single tensor + noise
+9 - NLS single tensor + an isotropic compartment
+10 - NLS single tensor + an isotropic compartment + noise
+11 - NLS two tensors
+12 - NLS two tensors + noise
+13 - NLS two tensors + an isotropic compartment
+14 - NLS two tensors + isotropic compartment + noise
+15 - NLS three tensors
+16 - NLS three tensors + noise
+17 - NLS three tensors + an isotropic compartment
+18 - NLS three tensors + isotropic compartment + noise" required="false" enabled="true" order="19" prefix="-m" prefixSpaced="true" prefixAllArgs="false">
+                                <format type="Enumerated" cardinality="1">
+                                        <enumeration>1</enumeration>
+                                        <enumeration>2</enumeration>
+                                        <enumeration>3</enumeration>
+                                        <enumeration>4</enumeration>
+                                        <enumeration>5</enumeration>
+                                        <enumeration>6</enumeration>
+                                        <enumeration>7</enumeration>
+                                        <enumeration>8</enumeration>
+                                        <enumeration>9</enumeration>
+                                        <enumeration>10</enumeration>
+                                        <enumeration>11</enumeration>
+                                        <enumeration>12</enumeration>
+                                        <enumeration>13</enumeration>
+                                        <enumeration>14</enumeration>
+                                        <enumeration>15</enumeration>
+                                        <enumeration>16</enumeration>
+                                        <enumeration>17</enumeration>
+                                        <enumeration>18</enumeration>
+                                </format>
+                                <values>
+                                        <value>6</value>
+                                </values>
+                        </input>
+                        <executableAuthors>
+                                <author fullName="Kristi Clark" email="kaclark@ucla.edu" website=""/>
+                        </executableAuthors>
+                </module>
+                <annotations visible="true">
+                        <annotation width="200" height="262" posX="610" posY="19" background="102,102,204,51" foreground="0,0,0,255" expanded="true" type="text">This pipeline computes 
+at each voxel:
+1) A diffusion tensor 
+  (Compute_single_tensor)
+2) Its associated eigenvectors &amp; eigenvalues 
+  (Tensor_eig)
+3) Regression stats for 
+  the tensor model (dti_reg_stats)
+4) Various scalar indices, e.g. FA 
+   (Tensor indices)
+5) Streamline tractography  
+  (Streamline fiber tracking)
+Also this pipeline converts the tensor image into a format that can be read by DTIStudio for fiber tracking (TensConvert).</annotation>
+                </annotations>
+        </moduleGroup>
+</pipeline>
